@@ -16,4 +16,9 @@ setup(name='excel2sbol',
       description='convert excel templates into sbol',
       packages=find_packages(include=[‘excel2sbol’]),
       long_description=open('README.md').read(),
+      install_requires=[
+        'sbol2==1.0b8',
+        'pandas==1.0.1',
+        'numpy==1.18.1'
+      ],
       zip_safe=False)
