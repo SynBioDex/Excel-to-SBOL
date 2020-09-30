@@ -8,12 +8,12 @@ Created on Sun Jun 21 14:57:34 2020
 #Set up
 import os
 import pandas as pd
-from excel2sbol import quality_check_metadata, load_libraries, get_data
-from excel2sbol import get_parts, check_name, write_sbol_comp, fix_msec_sbol
+from excel2sbol.functions import quality_check_metadata, load_libraries, get_data
+from excel2sbol.functions import get_parts, check_name, write_sbol_comp, fix_msec_sbol
 
 cwd = os.path.dirname(os.path.abspath("__file__")) #get current working directory
-path_filled = os.path.join(cwd, "darpa_template.xlsx")
-path_blank = os.path.join(cwd, "templates/darpa_template_blank.xlsx")
+path_filled = os.path.join(cwd, "templates", "darpa_template.xlsx")
+path_blank = os.path.join(cwd, "templates", "darpa_template_blank.xlsx")
 
 
 #Load Data
@@ -47,7 +47,7 @@ compositions, all_parts = get_parts(list_of_rows, table, compositions)
 compositions = check_name(compositions)
 
 #Create sbol
-doc = write_sbol_comp(libraries, compositions)
+doc = write_sbol_comp(libraries, compositions, all_parts)
 # doc.write("Compositions1.xml")
 
 # #Edit igem2sbol activity to include milliseconds and avoid validation error
