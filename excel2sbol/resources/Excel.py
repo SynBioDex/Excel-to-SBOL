@@ -9,13 +9,13 @@ Created on Sun May 24 18:33:56 2020
 #Setup
 import pandas as pd
 import os
-from excel2sbol.functions import read_library, quality_check, write_sbol
+from excel2sbol.utils.converter_utils import read_library, quality_check, write_sbol
 
 
 cwd = os.path.dirname(os.path.abspath("__file__")) #get current working directory
 path_blank = os.path.join(cwd, "templates/darpa_template_blank.xlsx")
-# path_filled = os.path.join("C:\\Users\\JVM\\Downloads\\build-request-template_BsPpVn.xlsx")
-# file_path_out = "C:\\Users\\JVM\\Downloads\\converted.xml"
+path_filled = None #os.path.join("C:\\Users\\JVM\\Downloads\\build-request-template_BsPpVn.xlsx")
+file_path_out = None #"C:\\Users\\JVM\\Downloads\\converted.xml"
 
 #Read in template and filled spreadsheet for the Parts library
 start_row = 13

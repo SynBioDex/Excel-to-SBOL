@@ -7,11 +7,11 @@ def convert_part_library(input_excel: str, output_file: str):
     start_row = 13
     nrows = 8
     description_row = 9
-
+    path_blank = None # TODO: os.path.join(cwd, "templates/darpa_template_blank.xlsx")
     filled_library, filled_library_metadata, filled_description = converter_utils.read_library(input_excel,
                                                                                start_row=start_row, nrows=nrows,
                                                                                description_row=description_row)
-    blank_library, blank_library_metadata, blank_description = converter_utils.read_library(input_excel,
+    blank_library, blank_library_metadata, blank_description = converter_utils.read_library(path_blank,
                                                                             start_row=start_row, nrows=nrows,
                                                                             description_row=description_row)
 

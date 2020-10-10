@@ -8,8 +8,8 @@ Created on Sun Jun 21 14:57:34 2020
 #Set up
 import os
 import pandas as pd
-from excel2sbol.functions import quality_check_metadata, load_libraries, get_data
-from excel2sbol.functions import get_parts, check_name, write_sbol_comp, fix_msec_sbol
+from excel2sbol.utils.converter_utils import quality_check_metadata, load_libraries, get_data
+from excel2sbol.utils.converter_utils import get_parts, check_name, write_sbol_comp, fix_msec_sbol
 
 cwd = os.path.dirname(os.path.abspath("__file__")) #get current working directory
 path_filled = os.path.join(cwd, "templates", "darpa_template.xlsx")
