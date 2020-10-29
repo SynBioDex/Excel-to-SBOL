@@ -432,19 +432,19 @@ def read_library(path, start_row, nrows, description_row, use_cols = [0, 1],
                  start_row = 13, nrows = 8, description_row = 9)
 
     """
-    basic_DNA_parts = pd.read_excel (path, sheet_name = sheet_name, 
-                                     header= 0, skiprows = start_row)
+    basic_DNA_parts = pd.read_excel(path, sheet_name=sheet_name,
+                                     header=0, skiprows=start_row)
     
-    metadata = pd.read_excel (path, sheet_name = sheet_name,
-                              header= None, nrows = nrows, usecols = use_cols)
+    metadata = pd.read_excel (path, sheet_name=sheet_name,
+                              header=None, nrows=nrows, usecols=use_cols)
     
-    description = pd.read_excel (path, sheet_name = sheet_name, skiprows = description_row,
-                                 nrows = 1, usecols = description_col)
+    description = pd.read_excel (path, sheet_name=sheet_name, skiprows=description_row,
+                                 nrows=1, usecols=description_col)
     
     return (basic_DNA_parts, metadata, description)
 
 def quality_check(filled_library, blank_library, filled_metadata, blank_metadata, filled_description,
-                  blank_description, nrows, description_row, description_col=[0], use_cols = [0,1]):
+                  blank_description, nrows, description_row, description_col=[0], use_cols=[0,1]):
     """
     the function compares the edited excel spreadsheet with the template
 
