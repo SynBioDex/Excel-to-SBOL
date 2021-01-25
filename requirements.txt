@@ -1,5 +1,5 @@
-sbol2==1.0b8
-pandas==1.0.1
-numpy==1.18.1
+sbol2>=1.0b8
+pandas>=1.0.1
+numpy>=1.18.1
 xlrd >= 1.0.0
 pytest
