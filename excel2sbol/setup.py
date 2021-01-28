@@ -8,8 +8,7 @@ Created on Fri Sep 25 16:41:00 2020
 
 from setuptools import find_packages, setup
 
-setup(name='ExcelToSBOL',
-      version='1.0.0-alpha',
+setup(name='excel2sbol',
       url='https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol',
       license='BSD 3-clause',
       maintainer='Tramy Nguyen',
