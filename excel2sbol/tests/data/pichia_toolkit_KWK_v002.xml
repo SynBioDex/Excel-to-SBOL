@@ -1,0 +1,483 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.w3.org/ns/prov#" xmlns:ns1="http://purl.org/dc/terms/">
+  <sbol:Sequence rdf:about="http://examples.org/RFP_sequence/1">
+    <sbol:elements>atcgcaacttccggtatggtgtcaaagggagaggaaaataatatggctattattaaggagtttatgcgttttaaggtacatatggaaggttctgtcaacggtcacgaattcgaaattgaaggtgagggggaggggaggccatacgagggaactcagactgctaagttaaaggtcactaaaggtggtcctttacctttcgcctgggatatcctgtctccacagtttatgtacggttcaaaggcttatgtgaaacatcctgccgatatcccagattatcttaaactttctttccctgagggttttaagtgggagagggtaatgaactttgaagacggtggtgtggtcactgttactcaggactcaagtctgcaggacggtgagttcatctacaaggtgaagctgagaggtaccaattttccatcagatggtcccgtgatgcaaaaaaagacaatgggttgggaagcttctagtgaacgtatgtatcccgaagatggagctttgaaaggtgaaattaagcaaagactaaaacttaaggatggtggacattacgatgctgaagttaagacgacctacaaggccaaaaagccagtccagttgcctggagcatacaatgttaacatcaaattggatataacttcccataatgaagactataccatcgtcgagcaatacgaacgagccgaagggagacacagtactggtggtatggatgaactttataaaggatccggaaccgca</sbol:elements>
+    <ns1:title>RFP Sequence</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>RFP_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RFP_sequence"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pENO1/1">
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:sequence rdf:resource="http://examples.org/pENO1_sequence/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <sbh:designNotes>BsaI and BsmBI site removed</sbh:designNotes>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <ns1:description>Enolase 1</ns1:description>
+    <ns1:title>pENO1</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pENO1"/>
+    <sbol:displayId>pENO1</sbol:displayId>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/pENO1_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pENO1_sequence"/>
+    <sbol:displayId>pENO1_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>pENO1 Sequence</ns1:title>
+    <sbol:elements>agaaagcatactatactattcgacattcctttcaatcctggaattaacagtcacttttaaaaaagacatctaccgtgaaggtgccgtagagtatcgcgttaccatatcgccaaaaactgatatacgccgcggaaaccaggcaaacaattgaaaagaaaaattttgaggaactctctgcatcgaagccgtctagagttaccactagtcagatgccgcgggcacttgagcacctcatgcacagcaataacacaacacaatggttagtagcaacctgaattcggtcattgatgcatgcatgtgccgtgaagcgggacaaccagaaaagtcgtctataaatgccggcacgtgcgatcatcgtggcggggttttaagagtgcatatcacaaattgtcgcattaccgcggaaccgccagatattcattacttgacgcaaaagcgtttgaaataatgacgaaaaagaaggaagaaaaaaaaagaaaaataccgcttctaggcgggttatctactgatccgagcttccactaggatagcacccaaacacctgcatatttggacgacctttacttacaccaccaaaaaccactttcgcctctcccgcccctgataacgtccactaattgagcgattacctgagcggtcctcttttgtttgcagcatgagacttgcatactgcaaatcgtaagtagcaacctctcaaggtcaaaactgtatggaaaccttgtcacctcacttaattctagctagcctaccctgcaagtcaagagctctccgtgattcctagccacctcaaggtatgcctctccccggaaactgtggccttttctggcacacatgatctccacgatttcaacatataaatagcttttgataatggcaatattaatcaaatttattttacttctttcttgtaacatctctcttgtaatcccttattccttctagctatttttcataaaaaaccaagcaactgcttatcaacacacaaacactaaatcaaa</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/tAOX1_sequence/1">
+    <sbol:elements>tcaagaggatgtcagaatgccatttgcctgagagatgcaggcttcatttttgatacttttttatttgtaacctatatagtataggattttttttgtcattttgtttcttctcgtacgagcttgctcctgatcagcctatctcgcagctgatgaatatcttgtggtaggggtttgggaaaatcattcgagtttgatgtttttcttggtatttcccactcctcttcagagtacagaagattaagtgaga</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tAOX1_sequence"/>
+    <ns1:title>tAOX1 Sequence</ns1:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>tAOX1_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/aAmylase_u45_aMF_916_sequence/1">
+    <sbol:displayId>aAmylase_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aAmylase_u45_aMF_916_sequence"/>
+    <ns1:title>aAmylase-aMF&#916; Sequence</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>atggtggcatggtggtccttattcttatatggtcttcaagttgctgctcctgcccttgctatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/yEGFP_Sec_sequence/1">
+    <sbol:displayId>yEGFP_Sec_sequence</sbol:displayId>
+    <ns1:title>yEGFP_Sec Sequence</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/yEGFP_Sec_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>gtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctacggcgtgcagtgcttcagccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagagcgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaag</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/aMF_916_sequence/1">
+    <ns1:title>aMF&#916; Sequence</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>atgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_916_sequence"/>
+    <sbol:displayId>aMF_916_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/PARS_sequence/1">
+    <sbol:displayId>PARS_sequence</sbol:displayId>
+    <ns1:title>PARS Sequence</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PARS_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ccttcgtttgtgcggatccaattaatatttacttattttggtcaaccccaaataggttgatttcatacttggttcattcaaaaataagtagtcttttgagatctttcaatattataataaatatactataacagccgacttgtttcattttcgcgaatgttcccccagcttatcg</sbol:elements>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/attB_sequence/1">
+    <sbol:displayId>attB_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/attB_sequence"/>
+    <sbol:version>1</sbol:version>
+    <ns1:title>attB Sequence</ns1:title>
+    <sbol:elements>tggccgtggccgtgctcgtcctcgtcggccggcttgtcgacgacggcggtcaccgtcgtcaggatcatccgggccacaagcttgctgacagaagcctcaagaaaaaaaaaattcttcttcgactatgctggaggcagagatgatcgagccggtagttaactatatatagctaaattggttccatcac</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/attB/1">
+    <ns1:description>BxbI recognition site, BsaI site removed</ns1:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/attB"/>
+    <sbol:version>1</sbol:version>
+    <ns1:title>attB</ns1:title>
+    <sbh:designNotes>BsaI site removed</sbh:designNotes>
+    <sbol:sequence rdf:resource="http://examples.org/attB_sequence/1"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000342"/>
+    <sbol:displayId>attB</sbol:displayId>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aMF_916/1">
+    <ns1:description>&#945;-mating factor, pre-sequence shortened</ns1:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_916"/>
+    <sbh:designNotes>Pre-sequence shortened</sbh:designNotes>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:title>aMF&#916;</ns1:title>
+    <sbol:displayId>aMF_916</sbol:displayId>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:version>1</sbol:version>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/Truncated/1"/>
+    <sbol:sequence rdf:resource="http://examples.org/aMF_916_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Inulinase_u45_aMF_916/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Inulinase_u45_aMF_916</sbol:displayId>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <ns1:description>Inulinase followed by aMF&#916;</ns1:description>
+    <ns1:title>Inulinase-aMF&#916;</ns1:title>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:sequence rdf:resource="http://examples.org/Inulinase_u45_aMF_916_sequence/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Inulinase_u45_aMF_916"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/aMF_no_EAEA_sequence/1">
+    <sbol:elements>atgagatttccttcaatttttactgctgttttattcgcagcatcctccgcattagctgctccagtcaacactacaacagaagatgaaacggcacaaattccggctgaagctgtcatcggttactcagatttagaaggggatttcgatgttgctgttttgccattttccaacagcacaaataacgggttattgtttataaatactactattgccagcattgctgctaaagaagaaggggtatctctcgagaaaagag</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_no_EAEA_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns1:title>aMF_no_EAEA Sequence</ns1:title>
+    <sbol:displayId>aMF_no_EAEA_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pTPI1/1">
+    <sbol:displayId>pTPI1</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns1:description>Triose phosphate isomerase 1</ns1:description>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pTPI1"/>
+    <ns1:title>pTPI1</ns1:title>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <sbol:sequence rdf:resource="http://examples.org/pTPI1_sequence/1"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/SA_u45_aMF_916_sequence/1">
+    <ns1:title>SA-aMF&#916; Sequence</ns1:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>atgaagtgggtaactttcatctcattgttattcttgttctcctctgcttactctatgagatttcctagtattttcactgctgtgctatttgcctctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:displayId>SA_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SA_u45_aMF_916_sequence"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Inulinase_u45_aMF_916_sequence/1">
+    <ns1:title>Inulinase-aMF&#916; Sequence</ns1:title>
+    <sbol:elements>atgaaactggcttactccctgttgctacctctggctggagtttccgctatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Inulinase_u45_aMF_916_sequence"/>
+    <sbol:displayId>Inulinase_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aAmylase_u45_aMF_916/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/Composite/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <sbol:version>1</sbol:version>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:sequence rdf:resource="http://examples.org/aAmylase_u45_aMF_916_sequence/1"/>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:displayId>aAmylase_u45_aMF_916</sbol:displayId>
+    <ns1:title>aAmylase-aMF&#916;</ns1:title>
+    <ns1:description>&#945;-Amylase followed by aMF&#916;</ns1:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aAmylase_u45_aMF_916"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/Killer_u45_aMF_916_sequence/1">
+    <ns1:title>Killer-aMF&#916; Sequence</ns1:title>
+    <sbol:displayId>Killer_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:elements>atgaccaaaccaacgcaagtcttagttcgttcagtctctattttattcttcatcacactgttgcacttggttgttgcaatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Killer_u45_aMF_916_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Killer_u45_aMF_916/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:sequence rdf:resource="http://examples.org/Killer_u45_aMF_916_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Killer_u45_aMF_916"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:description>Killer followed by aMF&#916;</ns1:description>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Killer_u45_aMF_916</sbol:displayId>
+    <ns1:title>Killer-aMF&#916;</ns1:title>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/aMF_sequence/1">
+    <sbol:version>1</sbol:version>
+    <ns1:title>aMF Sequence</ns1:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>aMF_sequence</sbol:displayId>
+    <sbol:elements>atgagatttccttcaatttttactgctgttttattcgcagcatcctccgcattagctgctccagtcaacactacaacagaagatgaaacggcacaaattccggctgaagctgtcatcggttactcagatttagaaggggatttcgatgttgctgttttgccattttccaacagcacaaataacgggttattgtttataaatactactattgccagcattgctgctaaagaagaaggggtatctctcgagaaaagagaggctgaagct</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_sequence"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX1/1">
+    <sbol:version>1</sbol:version>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <ns1:title>pAOX1</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/direct/1"/>
+    <sbol:displayId>pAOX1</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/pAOX1_sequence/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <ns1:description>Alcohol oxidase 1</ns1:description>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX1"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/pTPI1_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns1:title>pTPI1 Sequence</ns1:title>
+    <sbol:elements>gtgtttaaagattacggatatttaacttacttagaataatgccatttttttgagttataataatcctacgttagtgtgagcgggatttaaactgtgaggaccttaatacattcagacacttctgcggtatcaccctacttattcccttcgagattatatctaggaacccatcaggttggtggaagattacccgttctaagacttttcagcttcctctattgatgttacacctggacaccccttttctggcatccagtttttaatcttcagtggcatgtgagattctccgaaattaactaaagcaatcacacaattctctcggataccacctcggttgaaactgacaggtggtttgttacgcatgctaatgcaaaggagcctatatacctttggctcggctgctgtaacagggaatataaagggcagcataatttaggagtttagtgaacttgcaacatttactattttcccttcttacgtaaatatttttctttttaattctaaatcaatctttttcaattttttgtttgtattcttttcttgcttaaatctataactacaaaaaacacatacataaactaaaa</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pTPI1_sequence"/>
+    <sbol:displayId>pTPI1_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Invertase_u45_aMF_916/1">
+    <sbol:version>1</sbol:version>
+    <ns1:title>Invertase-aMF&#916;</ns1:title>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <ns1:description>Invertase followed by aMF&#916;</ns1:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Invertase_u45_aMF_916"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/Invertase_u45_aMF_916_sequence/1"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:displayId>Invertase_u45_aMF_916</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/yEGFP/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <ns1:description>Green fluorescent protein</ns1:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/yEGFP"/>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+    <sbh:designNotes>No stop codon</sbh:designNotes>
+    <ns1:title>yEGFP</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/yEGFP_sequence/1"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=6100"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:displayId>yEGFP</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/yEGFP_Sec/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:description>Green fluorescent protein</ns1:description>
+    <sbol:sequence rdf:resource="http://examples.org/yEGFP_Sec_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/yEGFP_Sec"/>
+    <sbh:designNotes>No start or stop codon, for use with N-terminal secretion tag</sbh:designNotes>
+    <ns1:title>yEGFP_Sec</ns1:title>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=6100"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:displayId>yEGFP_Sec</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aMF_no_EAEA/1">
+    <sbol:displayId>aMF_no_EAEA</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/Truncated/1"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <sbh:designNotes>No EAEA</sbh:designNotes>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <ns1:title>aMF_no_EAEA</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_no_EAEA"/>
+    <ns1:description>&#945;-mating factor no EAEA</ns1:description>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/aMF_no_EAEA_sequence/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/RFP_Sec_sequence/1">
+    <sbol:version>1</sbol:version>
+    <ns1:title>RFP_Sec Sequence</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RFP_Sec_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>gcaacttccggtatggtgtcaaagggagaggaaaataatatggctattattaaggagtttatgcgttttaaggtacatatggaaggttctgtcaacggtcacgaattcgaaattgaaggtgagggggaggggaggccatacgagggaactcagactgctaagttaaaggtcactaaaggtggtcctttacctttcgcctgggatatcctgtctccacagtttatgtacggttcaaaggcttatgtgaaacatcctgccgatatcccagattatcttaaactttctttccctgagggttttaagtgggagagggtaatgaactttgaagacggtggtgtggtcactgttactcaggactcaagtctgcaggacggtgagttcatctacaaggtgaagctgagaggtaccaattttccatcagatggtcccgtgatgcaaaaaaagacaatgggttgggaagcttctagtgaacgtatgtatcccgaagatggagctttgaaaggtgaaattaagcaaagactaaaacttaaggatggtggacattacgatgctgaagttaagacgacctacaaggccaaaaagccagtccagttgcctggagcatacaatgttaacatcaaattggatataacttcccataatgaagactataccatcgtcgagcaatacgaacgagccgaagggagacacagtactggtggtatggatgaactttataaaggatccggaaccgca</sbol:elements>
+    <sbol:displayId>RFP_Sec_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/aMF_916_no_Kex_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>atgagattcccatcaatttttactgctgttctgttcgccgcttctagtgcacttgccatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcacagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <ns1:title>aMF&#916;_no_Kex Sequence</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_916_no_Kex_sequence"/>
+    <sbol:displayId>aMF_916_no_Kex_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Invertase_u45_aMF_916_sequence/1">
+    <ns1:title>Invertase-aMF&#916; Sequence</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Invertase_u45_aMF_916_sequence"/>
+    <sbol:elements>atgttattgcaagcttttttatttctgctggcaggttttgcagcaaagatttctgccatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:displayId>Invertase_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Glucoamylase_u45_aMF_916_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns1:title>Glucoamylase-aMF&#916; Sequence</ns1:title>
+    <sbol:displayId>Glucoamylase_u45_aMF_916_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Glucoamylase_u45_aMF_916_sequence"/>
+    <sbol:elements>atgtctttcagatccctattggcattgtcagggttggtctgttctggattggctatgagatttcctagtattttcactgctgtgctatttgccgctagttccgctctagctgctccagttaatactactactgaagatgaattggagggtgacttcgatgttgctgttctgcctttttccgcttctatcgcagccaaggaagaaggtgtatctctagagaagcgt</sbol:elements>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pGAP/1">
+    <sbh:designNotes>BsaI site removed</sbh:designNotes>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pGAP"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:title>pGAP</ns1:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequence rdf:resource="http://examples.org/pGAP_sequence/1"/>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns1:description>Glyceraldehyde-3-phosphate dehydrogenase</ns1:description>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:displayId>pGAP</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Glucoamylase_u45_aMF_916/1">
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:displayId>Glucoamylase_u45_aMF_916</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/Glucoamylase_u45_aMF_916_sequence/1"/>
+    <ns1:title>Glucoamylase-aMF&#916;</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Glucoamylase_u45_aMF_916"/>
+    <ns1:description>Glucoamylase followed by aMF&#916;</ns1:description>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/RFP_Sec/1">
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RFP_Sec"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:designNotes>No start or stop codon, for use with N-terminal secretion tag</sbh:designNotes>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=86600"/>
+    <sbol:displayId>RFP_Sec</sbol:displayId>
+    <ns1:title>RFP_Sec</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/RFP_Sec_sequence/1"/>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns1:description>Red fluorescent protein, BsaI removed</ns1:description>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/tAOX1/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:title>tAOX1</ns1:title>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <ns1:description>Alcohol oxidase 1</ns1:description>
+    <sbol:sequence rdf:resource="http://examples.org/tAOX1_sequence/1"/>
+    <sbol:displayId>tAOX1</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tAOX1"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/direct/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/pAOX1_sequence/1">
+    <sbol:elements>gatctaacatccaaagacgaaaggttgaatgaaacctttttgccatccgacatccacaggtccattctcacacataagtgccaaacgcaacaggaggggatacactagcagcagaccgttgcaaacgcaggacctccactcctcttctcctcaacacccacttttgccatcgaaaaaccagcccagttattgggcttgattggagctcgctcattccaattccttctattaggctactaacaccatgactttattagcctgtctatcctggcccccctggcgaggttcatgtttgtttatttccgaatgcaacaagctccgcattacacccgaacatcactccagatgagggctttctgagtgtggggtcaaatagtttcatgttccccaaatggcccaaaactgacagtttaaacgctgtcttggaacctaatatgacaaaagcgtgatctcatccaagatgaactaagtttggttcgttgaaatgctaacggccagttggtcaaaaagaaacttccaaaagtcggcataccgtttgtcttgtttggtattgattgacgaatgctcaaaaataatctcattaatgcttagcgcagtctctctatcgcttctgaaccccggtgcacctgtgccgaaacgcaaatggggaaacacccgctttttggatgattatgcattgtctccacattgtatgcttccaagattctggtgggaatactgctgatagcctaacgttcatgatcaaaatttaactgttctaacccctacttgacagcaatatataaacagaaggaagctgccctgtcttaaacctttttttttatcatcattattagcttactttcataattgcgactggttccaattgacaagcttttgattttaacgacttttaacgacaacttgagaagatcaaaaaacaactaattattcgaaacg</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX1_sequence"/>
+    <sbol:displayId>pAOX1_sequence</sbol:displayId>
+    <ns1:title>pAOX1 Sequence</ns1:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/SA_u45_aMF_916/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SA_u45_aMF_916"/>
+    <ns1:title>SA-aMF&#916;</ns1:title>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/SA_u45_aMF_916_sequence/1"/>
+    <ns1:description>Serum albumin followed by aMF&#916;</ns1:description>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>SA_u45_aMF_916</sbol:displayId>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/yEGFP_sequence/1">
+    <ns1:title>yEGFP Sequence</ns1:title>
+    <sbol:elements>atggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctacggcgtgcagtgcttcagccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagagcgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaag</sbol:elements>
+    <sbol:displayId>yEGFP_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/yEGFP_sequence"/>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aMF/1">
+    <sbol:sequence rdf:resource="http://examples.org/aMF_sequence/1"/>
+    <sbol:displayId>aMF</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <ns1:description>&#945;-mating factor</ns1:description>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:title>aMF</ns1:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aMF_916_no_Kex/1">
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4932"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aMF_916_no_Kex"/>
+    <sbh:designNotes>No Kex recognition site</sbh:designNotes>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002251"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:description>&#945;-mating factor no Kex recognition site</ns1:description>
+    <ns1:title>aMF&#916;_no_Kex</ns1:title>
+    <sbol:displayId>aMF_916_no_Kex</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/aMF_916_no_Kex_sequence/1"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/Truncated/1"/>
+    <sbol:version>1</sbol:version>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/pGAP_sequence/1">
+    <sbol:displayId>pGAP_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pGAP_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>tttttgtagaaatgtcttggtgtcctcgtccaatcaggtagccatctctgaaatatctggctccgttgcaactccgaacgacctgctggcaacgtaaaattctccggggtaaaacttaaatgtggagtaatggaaccagaaacgtgtcttcccttctctctccttccaccgcccgttaccgtccctaggaaattttactctgctggagagcttcttctacggcccccttgcagcaatgctcttcccagcattacgttgcgggtaaaacggaggtcgtgtacccgacctagcagcccagggatggaaaagtcccggccgtcgctggcaataatagcgggcggacgcatgtcatgagattattggaaaccaccagaatcgaatataaaaggcgaacacctttcccaattttggtttctcctgacccaaagactttaaatttaatttatttgtccctatttcaatcaattgaacaactat</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns1:title>pGAP Sequence</ns1:title>
+  </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/RFP/1">
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:sequence rdf:resource="http://examples.org/RFP_sequence/1"/>
+    <sbol:displayId>RFP</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RFP"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <ns1:description>Red fluorescent protein, BsaI removed</ns1:description>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=86600"/>
+    <sbol:version>1</sbol:version>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <ns1:title>RFP</ns1:title>
+    <sbh:designNotes>No stop codon</sbh:designNotes>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/PARS/1">
+    <ns0:wasGeneratedBy rdf:resource="https://synbiohub.org/public/Excel2SBOL/mutations/1"/>
+    <sbol:sequence rdf:resource="http://examples.org/PARS_sequence/1"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+    <sbol:displayId>PARS</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957/"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:description>Pichia autonomously replicating sequence</ns1:description>
+    <sbh:targetOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PARS"/>
+    <sbh:sourceOrganism rdf:resource="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=4922"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000296"/>
+    <ns1:title>PARS</ns1:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+</rdf:RDF>
