@@ -73,7 +73,7 @@ def check_name(name_to_check):
     if not bool(re.match('^[a-zA-Z0-9]+$', name_to_check)):
         #replace special characters with numbers
         for letter in name_to_check:
-            if ord(letter) > 122:
+            if ord(letter) > 122 or ord(letter)<48:
                 #122 is the highest decimal code number for common latin letters or arabic numbers
                 #this helps identify special characters like ä or ñ, which isalnum() returns as true
                 #the characters that don't meet this criterion are replaced by their decimal code number separated by an underscore
