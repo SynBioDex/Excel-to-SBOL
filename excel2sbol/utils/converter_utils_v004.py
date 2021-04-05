@@ -14,6 +14,15 @@ template_dict = {"darpa_template_blank_v005_20220222.xlsx":
                     "collection_columns": [0,1],
                     "description_start_row": 10,
                     "description_columns": [0]
+                    },
+
+                "darpa_template_blank_v006_20210405.xlsx":
+                    {"library_start_row": 18,
+                    "sheet_name": "Library",
+                    "number_of_collection_rows": 8,
+                    "collection_columns": [0,1],
+                    "description_start_row": 10,
+                    "description_columns": [0]
                     }
                 }
 
@@ -155,13 +164,12 @@ class sbol_methods:
         #this together with target organism could be implemented in a better and more general way, possibly a general uri version
         self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
         component.sourceOrganism = sbol2.URIProperty(component, f'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1,[])
-        component.sourceOrganism = f'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id={cell_value}'
-
+        component.sourceOrganism = f'https://identifiers.org/taxonomy:{cell_value}'
 
     def sbh_targetOrganism(self):
         self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
         component.targetOrganism = sbol2.URIProperty(component, f'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1,[])
-        component.targetOrganism = f'https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id={cell_value}'
+        component.targetOrganism = f'https://identifiers.org/taxonomy:{cell_value}'
 
 
     def sbol_role(self):
