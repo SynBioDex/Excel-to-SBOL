@@ -1,6 +1,0 @@
-{
-    "python.linting.enabled": true,
-    "python.linting.pycodestyleEnabled": false,
-    "python.pythonPath": "excel2sbolenv\\Scripts\\python.exe",
-    "python.linting.flake8Enabled": true
-}
