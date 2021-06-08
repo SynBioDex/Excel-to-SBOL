@@ -1,7 +1,5 @@
-from numpy import NaN
 import pytest
 import sbol2
-import random
 
 
 @pytest.fixture()
@@ -21,6 +19,7 @@ def sbol_component():
     comp.name = comp_nm
     yield comp
 
+
 @pytest.fixture()
 def norm_dict():
     expected_dict = {'A': {'To_This': 1}, 'B': {'To_This': 2},
@@ -38,6 +37,7 @@ def norm_dict():
                      'Y': {'To_This': 25}, 'Z': {'To_This': 26}
                      }
     return(expected_dict)
+
 
 @pytest.fixture()
 def replacement_dict():
@@ -66,6 +66,6 @@ def replacement_dict():
                      'W': {'To_This': '23{REPLACE_HERE}23'},
                      'X': {'To_This': '24{REPLACE_HERE}24'},
                      'Y': {'To_This': '25{REPLACE_HERE}25'},
-                     'Z': {'To_This': '26{REPLACE_HERE}26'} 
+                     'Z': {'To_This': '26{REPLACE_HERE}26'}
                      }
     return(expected_dict)

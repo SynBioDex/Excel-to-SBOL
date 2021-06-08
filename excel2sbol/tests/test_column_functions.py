@@ -116,7 +116,7 @@ class Test_sbol_methods:
             x.sbol_displayId()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert comp.name == expected1 and comp.displayId == expected2
 
     @pytest.mark.parametrize(
@@ -154,7 +154,7 @@ class Test_sbol_methods:
             x.sbol_roleCircular()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert set(comp.roles) == set(expected)
 
     @pytest.mark.parametrize(
@@ -188,7 +188,7 @@ class Test_sbol_methods:
             x.sbol_role()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert set(comp.roles) == set(expected)
 
     @pytest.mark.parametrize(
@@ -217,7 +217,7 @@ class Test_sbol_methods:
             x.sbh_targetOrganism()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert comp.targetOrganism == expected
 
     @pytest.mark.parametrize(
@@ -246,7 +246,7 @@ class Test_sbol_methods:
             x.sbh_sourceOrganism()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert comp.sourceOrganism == expected
 
     @pytest.mark.parametrize(
@@ -280,7 +280,7 @@ class Test_sbol_methods:
             x.sbh_dataSource()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             if pubmedExpected:
                 identi = os.path.split(expected)[1]
                 assert comp.wasDerivedFrom[0] == expected and comp.OBI_0001617 == identi
@@ -315,7 +315,7 @@ class Test_sbol_methods:
             x.sbh_alteredSequence()
             sbol_doc.addComponentDefinition(sbol_component)
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             assert comp.wasGeneratedBy[0] == expected
 
     @pytest.mark.parametrize(
@@ -346,7 +346,7 @@ class Test_sbol_methods:
             sbol_doc.addComponentDefinition(sbol_component)
             sbol_term_sfx = sbol_term.split("_", 1)[1]
 
-            comp = sbol_doc.componentDefinitions[f'http://examples.org/test_comp_name/1']
+            comp = sbol_doc.componentDefinitions['http://examples.org/test_comp_name/1']
             comp_attr = getattr(comp, sbol_term_sfx)
             assert comp_attr == expected
 

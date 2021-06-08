@@ -1,4 +1,3 @@
-import os
 import sbol2
 import utils.helper_functions as hf
 import utils.column_functions as cf
@@ -47,7 +46,7 @@ def converter(template_name, file_path_in, file_path_out):
                 # the sbol_term of the column
                 col_meth = cf.sbol_methods(sheet_tbl.column_list[col].namespace_url,
                                            component, doc, cell_val)
-                col_result = col_meth.switch(sheet_tbl.column_list[col].sbol_term)
+                col_meth.switch(sheet_tbl.column_list[col].sbol_term)
 
         doc.addComponentDefinition(component)
     # print(doc)
