@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.9.1
+      - name: Set up Python 3.9.5
         uses: actions/setup-python@v1
         with:
-          python-version: 3.9.1
+          python-version: 3.9.5
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
@@ -20,4 +20,4 @@ jobs:
           python -m pip install pytest
           python -m pip install -e excel2sbol
       - name: Test with pytest
-        run: pytest -vv
+        run: python -m pytest -vv -s
