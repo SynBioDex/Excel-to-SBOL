@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  linting:
+  linting_job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,4 +16,5 @@ jobs:
           # Fail if "new" violations detected or "any", default "new"
           failIf: any
           # Additional arguments to pass to flake8, default "." (current directory)
-          args: "--ignore=E501 ." # ignoring lines that are too long
+          # E501 is lines that are too long
+          args: "--ignore=E501 ."
