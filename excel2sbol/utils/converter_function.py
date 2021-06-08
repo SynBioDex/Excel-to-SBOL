@@ -40,7 +40,7 @@ def converter(template_name, file_path_in, file_path_out):
 
         for col in row:
             if row[col] != '':
-                #checks that the column isn't blank
+                # checks that the column isn't blank
                 cell_val = row[col]
                 if sheet_tbl.column_list[col].lookup and not sheet_tbl.column_list[col].replacement_lookup:
                     # pull converted cell value from lookup table
