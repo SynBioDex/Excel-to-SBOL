@@ -23,7 +23,7 @@ import rdflib.compare
 )
 def test_converter(file_name, template_name, raising_err, expected):
     cwd = os.getcwd()
-    file_path_in = os.path.join(cwd, 'excel2sbol', 'tests', 'test_files',
+    file_path_in = os.path.join(cwd, 'tests', 'test_files',
                                 file_name)
     with tempfile.TemporaryDirectory() as dirpath:
         file_path_out = os.path.join(dirpath, 'sbol_out.xml')
@@ -35,7 +35,7 @@ def test_converter(file_name, template_name, raising_err, expected):
         else:
             confun.converter(template_name, file_path_in, file_path_out)
 
-            expected = os.path.join(cwd, 'excel2sbol', 'tests', 'test_files',
+            expected = os.path.join(cwd, 'tests', 'test_files',
                                     expected)
             expected_graph = rdflib.Graph()
             expected_graph.load(expected)
