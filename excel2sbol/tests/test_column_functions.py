@@ -485,8 +485,8 @@ class Test_sbol_methods:
 )
 def test_column_class(column_dict_entry, raising_err, expected,
                       norm_dict, replacement_dict):
-    cwd = os.getcwd()
-    file_path_in = os.path.join(cwd, 'tests', 'test_files',
+    file_dir = os.path.dirname(__file__)
+    file_path_in = os.path.join(file_dir, 'test_files',
                                 'Column_Class_test.xlsx')
     if raising_err:
         with pytest.raises(expected):

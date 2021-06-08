@@ -86,8 +86,8 @@ def read_in_sheet(templt_name, file_path_in):
                                     }
     """
 
-    cwd = os.getcwd()
-    with open(os.path.join(cwd, 'excel2sbol', 'utils',
+    file_dir = os.path.dirname(__file__)
+    with open(os.path.join(file_dir,
                            'template_constants.txt')) as f:
         templt_dict = json.loads(f.read())
 

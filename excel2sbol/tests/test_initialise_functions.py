@@ -5,8 +5,8 @@ import json
 import os
 
 
-cwd = os.getcwd()
-test_files_path = os.path.join(cwd, 'tests', 'test_files')
+file_dir = os.path.dirname(__file__)
+test_files_path = os.path.join(file_dir, 'test_files')
 
 
 @pytest.mark.parametrize(
