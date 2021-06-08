@@ -60,15 +60,17 @@ The SBOL file that is output can then be used by further [SBOL tools](https://sb
 An [example spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/pichia_toolkit_KWK_v002.xlsx) that contains data was taken and converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/pichia_toolkit_KWK_v002.xml) which was subsequently [uploaded to SynBioHub](https://synbioks.org/public/pichia_toolkit_KWK/pichia_toolkit_KWK_collection/1).
 
 **Example Spreadsheet**
-![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_spreadsheet.PNG)
+![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/excel2sbol_spreadsheet.PNG)
 
 **Example SBOL**
-![Example SBOL](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_xml.PNG)
+![Example SBOL](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/excel2sbol_xml.PNG)
 
 **Example SynBioHub Upload**
-![Example SynBioHub](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_synbiohub.PNG)
+![Example SynBioHub](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/excel2sbol_synbiohub.PNG)
 
 # Architecture
+
+This repository contains the [excel2sbol module](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/utils), [resources](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources) to use it (such as [templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates)), and the [tests](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/tests) for all of the functions it contains.
 
 Excel-to-SBOL works by splitting the spreadsheet into three parts:
 1. Overview information (e.g. Collection Name, Date Created, and Authors)
