@@ -20,4 +20,4 @@ jobs:
           python -m pip install pytest
           python -m pip install -e excel2sbol
       - name: Test with pytest
-        run: pytest -vv
+        run: python -m pytest -vv -s
