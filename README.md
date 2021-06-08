@@ -2,15 +2,15 @@
 
 For further depth and information on Excel-to-SBOL, visit the [Excel-to-SBOL wiki on github](https://github.com/SynBioDex/Excel-to-SBOL/wiki)
 
-**Excel-to-SBOL* is an open source python library providing conversion from [Excel Templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates) to [SBOL](https://sbolstandard.org/) documents.
+**Excel-to-SBOL** is an open source python library providing conversion from [Excel Templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates) to [SBOL](https://sbolstandard.org/) documents.
 
 # Table of Contents
-- Installation & How to Use
+- [Installation & How to Use](#installation--how-to-use)
 -- Installation
 -- How to Use
-- Example Conversion
-- Architecture
-- Publishing
+- [Example Conversion](#example-conversion)
+- [Architecture](#architecture)
+- [Publishing](#publishing)
 
 <!-- # Interface
 
@@ -56,10 +56,13 @@ The SBOL file that is output can then be used by further [SBOL tools](https://sb
 An [example spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/pichia_toolkit_KWK_v002.xlsx) that contains data was taken and converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/pichia_toolkit_KWK_v002.xml) which was subsequently [uploaded to SynBioHub](https://synbioks.org/public/pichia_toolkit_KWK/pichia_toolkit_KWK_collection/1).
 
 **Example Spreadsheet**
+![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_spreadsheet.PNG)
 
 **Example SBOL**
+![Example SBOL](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_xml.PNG)
 
 **Example SynBioHub Upload**
+![Example SynBioHub](https://github.com/SynBioDex/Excel-to-SBOL/blob/read-me-stuff/images/excel2sbol_synbiohub.PNG)
 
 # Architecture
 
