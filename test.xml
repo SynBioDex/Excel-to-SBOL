@@ -1,9 +1,0 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/">
-  <sbol:ComponentDefinition rdf:about="http://examples.org/test_comp_name/1">
-    <ns0:title>t&#949;st_name</ns0:title>
-    <sbol:displayId>t_u949_st_name</sbol:displayId>
-    <sbol:version>1</sbol:version>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/test_comp_name"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-  </sbol:ComponentDefinition>
-</rdf:RDF>
