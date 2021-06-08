@@ -6,7 +6,7 @@ import os
 
 
 cwd = os.getcwd()
-test_files_path = os.path.join(cwd, 'excel2sbol', 'tests', 'test_files')
+test_files_path = os.path.join(cwd, 'tests', 'test_files')
 
 
 @pytest.mark.parametrize(
