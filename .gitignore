@@ -1,3 +1,5 @@
 .vscode
 .pytest_cache
 excel2sbolenv
+excel2sbol.egg-info
+~$*.xlsx
