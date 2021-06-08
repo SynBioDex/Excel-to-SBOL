@@ -6,8 +6,8 @@ For further depth and information on Excel-to-SBOL, visit the [Excel-to-SBOL wik
 
 # Table of Contents
 - [Installation & How to Use](#installation--how-to-use)
--- Installation
--- How to Use
+    - Installation
+    - How to Use
 - [Example Conversion](#example-conversion)
 - [Architecture](#architecture)
 - [Publishing](#publishing)
