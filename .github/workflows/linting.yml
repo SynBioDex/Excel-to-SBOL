@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  lint:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -18,7 +18,7 @@ jobs:
           # Fail if "new" violations detected or "any", default "new"
           failIf: any
           # Additional arguments to pass to flake8, default "." (current directory)
-          # args: "--ignore=E121,E123 ."
+          args: "--ignore=E501 ."
   # flake8_py3:
   #   runs-on: ubuntu-latest
   #   steps:

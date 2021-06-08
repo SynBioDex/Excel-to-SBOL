@@ -10,14 +10,14 @@ import rdflib.compare
     'file_name, template_name, raising_err, expected',
     [
         (
-         "pichia_toolkit_KWK_v002.xlsx",
-         'darpa_template_blank_v005_20220222.xlsx',  False,
-         'pichia_toolkit_KWK_v002.xml'
+            "pichia_toolkit_KWK_v002.xlsx",
+            'darpa_template_blank_v005_20220222.xlsx', False,
+            'pichia_toolkit_KWK_v002.xml'
         ),
         (
-         "does_not_exist.xlsx",
-         'darpa_template_blank_v005_20220222.xlsx',  True,
-         FileNotFoundError
+            "does_not_exist.xlsx",
+            'darpa_template_blank_v005_20220222.xlsx', True,
+            FileNotFoundError
         )
     ]
 )
