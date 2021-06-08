@@ -3,6 +3,20 @@ import re
 
 
 def truthy_strings(to_check):
+    """Takes in several variants of True and False and returns a boolean
+    True or False
+
+    Args:
+        to_check (string,boolean): A string or boolean such as 'True', 'TRUE',
+        'tRue', or True
+
+    Raises:
+        TypeError: If the value can't be converted to 'true' or 'false'
+        an error is raised
+
+    Returns:
+        [boolean]: True or False is returned depending on the inputs
+    """
     if str(to_check).lower() == 'false':
         return False
     elif str(to_check).lower() == 'true':
@@ -13,17 +27,20 @@ def truthy_strings(to_check):
 
 def col_to_num(col_name):
     """takes an excel column name, e.g. AA and converts it to a
-    zero indexed number e.g. 27
+    zero indexed number e.g. 26
 
     Args:
-        col_name (string): An excel formatted column name, e.g. AA
+       col_name (string): An excel formatted column name, e.g. AA
+
+    Raises:
+        TypeError: Raised if the input is not a string
+        ValueError: Raised if the string is longer than three
+                    or contains spaces
 
     Returns:
         num (integer): A zero indexed column index
-
-    Example:
-        col_index = col_name("B")
     """
+
     if type(col_name) != str:
         # is not a string
         raise TypeError
@@ -43,19 +60,16 @@ def col_to_num(col_name):
 
 
 def check_name(nm_to_chck):
-    """
-    the function verifies that the names is alphanumeric and
+    """the function verifies that the names is alphanumeric and
     separated by underscores if that is not the case the special characters are
     replaced by their unicode decimal code number
 
-    Parameters
-    ----------
-    nm_to_chck : string
+    Args:
+        nm_to_chck (string): the name to be checked
 
-    Returns
-    -------
-    compliant_name : string
-        alphanumberic name with special characters replaced by _u###
+    Returns:
+        compliant_name (string): alphanumberic name with special
+                                 characters replaced by _u###_
     """
 
     if not bool(re.match('^[a-zA-Z0-9]+$', nm_to_chck)):

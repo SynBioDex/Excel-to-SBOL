@@ -5,23 +5,34 @@ import utils.column_functions as cf
 
 
 class table:
+    """Used to go from a regular dictionary to a dictionary of column objects
+    """
     def __init__(self, table_doc_path, column_read_dict):
-        # creates dictionary of the form:
-        # {column_name1: cf.column_object1, column_name2: cf.column_object2}
-        # from the input path to the spreadsheet
-        # and {column_name1:  {'SBOL Term': 'sbol_term',
-        #                      'Namespace URL': 'nm_url',
-        #                      'Sheet Lookup': 'TRUE',
-        #                      'Replacement Lookup': 'TRUE',
-        #                      'Sheet Name': 'Replacement',
-        #                      'From Col': 'A', 'To Col': 'B'},
-        #      column_name2:  {'SBOL Term': 'sbol_term',
-        #                      'Namespace URL': 'nm_url',
-        #                      'Sheet Lookup': 'TRUE',
-        #                      'Replacement Lookup': 'TRUE',
-        #                      'Sheet Name': 'Replacement',
-        #                      'From Col': 'A', 'To Col': 'B'},
-        #     }
+        """[summary]
+
+        Args:
+            table_doc_path (str): Full path to the input sheet
+                E.g. 'C:/users/user/filled.xlsx'
+            column_read_dict (dict): Dictionary of columns each with
+                a dictionary. It takes the form:
+                {column_name1:  {'SBOL Term': 'sbol_term',
+                                'Namespace URL': 'nm_url',
+                                'Sheet Lookup': 'TRUE',
+                                'Replacement Lookup': 'TRUE',
+                                'Sheet Name': 'Replacement',
+                                'From Col': 'A', 'To Col': 'B'},
+                column_name2:  {'SBOL Term': 'sbol_term',
+                                'Namespace URL': 'nm_url',
+                                'Sheet Lookup': 'TRUE',
+                                'Replacement Lookup': 'TRUE',
+                                'Sheet Name': 'Replacement',
+                                'From Col': 'A', 'To Col': 'B'},
+                }
+
+        Raises:
+            TypeError: If column_read_dict is not a dictionary a TypeError
+                is raised.
+        """
 
         if not isinstance(column_read_dict, dict):
             raise TypeError
