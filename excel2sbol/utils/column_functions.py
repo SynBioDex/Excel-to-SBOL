@@ -133,7 +133,7 @@ class sbol_methods:
             if "pubmed.ncbi.nlm.nih.gov/" in self.cell_val:
                 self.doc.addNamespace('http://purl.obolibrary.org/obo/', 'obo')
                 self.component.OBI_0001617 = sbol2.TextProperty(self.component,
-                                                                f'http://purl.obolibrary.org/obo/OBI_0001617',
+                                                                'http://purl.obolibrary.org/obo/OBI_0001617',
                                                                 0, 1, [])
                 self.component.OBI_0001617 = self.cell_val.split(".gov/")[1].replace("/", "")
 
@@ -150,7 +150,7 @@ class sbol_methods:
             raise TypeError
         else:
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
-            self.component.sourceOrganism = sbol2.URIProperty(self.component, f'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1, [])
+            self.component.sourceOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1, [])
             self.component.sourceOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbh_targetOrganism(self):
@@ -164,7 +164,7 @@ class sbol_methods:
             raise TypeError
         else:
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
-            self.component.targetOrganism = sbol2.URIProperty(self.component, f'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1, [])
+            self.component.targetOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1, [])
             self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbol_role(self):
