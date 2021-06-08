@@ -1,0 +1,5 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.pythonPath": "excel2sbolenv\\Scripts\\python.exe"
+}

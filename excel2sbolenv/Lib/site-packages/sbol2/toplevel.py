@@ -1,0 +1,54 @@
+import posixpath
+
+from rdflib import URIRef
+
+from .config import Config
+from .config import ConfigOptions
+from .config import getHomespace
+from .constants import *
+from .identified import Identified
+from .property import ReferencedObject
+
+
+class TopLevel(Identified):
+    """All SBOL classes derived from TopLevel appear as top level nodes
+    in the RDF/XML document tree and SBOL files."""
+
+    def __init__(self, type_uri=SBOL_TOP_LEVEL,
+                 uri=URIRef("example"), version=VERSION_STRING):
+        super().__init__(type_uri, uri, version)
+        # TODO could this be moved into 'identified' constructor?
+        if Config.getOption(ConfigOptions.SBOL_COMPLIANT_URIS.value) is True:
+            if Config.getOption(ConfigOptions.SBOL_TYPED_URIS.value) is True:
+                self.persistentIdentity = posixpath.join(getHomespace(),
+                                                         self.getClassName(type_uri),
+                                                         self.displayId)
+        self.attachments = ReferencedObject(self, SBOL_ATTACHMENTS,
+                                            SBOL_ATTACHMENT, '0', '*', [], [])
+
+    def addToDocument(self, document):
+        raise NotImplementedError("Not yet implemented")
+
+    def generateTopLevel(self, uri, agent=None, plan=None, usages=None):
+        """
+        :param uri: A URI for the new object, or a displayId if operating
+                    in SBOLCompliant mode
+        :return:
+        """
+        # TODO this originally was called 'generate' but
+        # TODO it didn't override parent function of same name.
+        raise NotImplementedError("Not yet implemented")
+
+    def initialize(self, uri):
+        raise NotImplementedError("Not yet implemented")
+
+    def update_uri(self):
+        """
+        Recursively generates SBOL compliant ids for an object and all
+        its owned objects, then checks to make sure that these ids are unique.
+        :return: None
+        """
+        return
+
+    def is_top_level(self):
+        return True
