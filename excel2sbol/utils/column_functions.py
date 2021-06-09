@@ -44,7 +44,7 @@ class column:
             self.sheet_name = column_dict_entry['Sheet Name']
 
             if type(column_dict_entry['From Col']) == str:
-                # if string convert column from name to 0-indexed
+                #if string convert column from name to 0-indexed
                 self.col_from = hf.col_to_num(column_dict_entry['From Col'])
             elif type(column_dict_entry['From Col']) == int:
                 # if integer remove one to make it zero indexed
