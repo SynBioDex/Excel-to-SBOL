@@ -1,6 +1,6 @@
 # Excel-to-SBOL
 
-For further depth and information on Excel-to-SBOL, visit the [Excel-to-SBOL wiki on github](https://github.com/SynBioDex/Excel-to-SBOL/wiki)
+For further depth and information on Excel-to-SBOL, including how to contribute to the project, visit the [Excel-to-SBOL wiki on github](https://github.com/SynBioDex/Excel-to-SBOL/wiki)
 
 **Excel-to-SBOL** is an open source python library providing conversion from [Excel Templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates) to [SBOL](https://sbolstandard.org/) documents.
 
@@ -31,7 +31,10 @@ To get the latest version you can use `git clone https://github.com/SynBioDex/Ex
 Choose an excel template from the [templates folder](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates).
 We suggest choosing the latest version (dates are given at the end of the file names in the form yyyymmdd). Fill out the template as the instructions indicate.
 
-**2) Run the converter**
+**2) Install the Converter**
+There are several ways to install the converter. The easiest is via pip: `pip install excel2sbol` but it can also be done by [cloning the repository](https://github.com/SynBioDex/Excel-to-SBOL/wiki/2.-Cloning-From-GitHub).
+
+**3) Run the Converter**
 
 Use the code below substituting {things in brackets} with the appropriate values.
 
@@ -52,7 +55,7 @@ conf.converter("darpa_template_blank_v005_20220222.xlsx",
 ```
 The use of `os.getcwd()` and `os.path.join` is reccommended for the creation of the file paths.
 
-**3) Use the output file**
+**4) Use the output file**
 The SBOL file that is output can then be used by further [SBOL tools](https://sbolstandard.org/applications/) or uploaded to an SBOL repository like [SynBioHub](https://synbiohub.org/).
 
 # Example Conversion
@@ -70,6 +73,8 @@ An [example spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/
 
 # Architecture
 
+The [repository architecture](https://github.com/SynBioDex/Excel-to-SBOL/wiki/5.-Excel2SBOL-Architecture#repository-architecture) is described in the wiki.
+
 This repository contains the [excel2sbol module](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/utils), [resources](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources) to use it (such as [templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates)), and the [tests](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/tests) for all of the functions it contains.
 
 Excel-to-SBOL works by splitting the spreadsheet into three parts:
@@ -85,7 +90,7 @@ The architecture is:
 - [helper_functions.py](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/utils/helper_functions.py)
     - Function: **col_to_num**, converts excel column names like AA to zero indexed numbers like 26
     - Function: **check_name**, ensures that a string is alphanumeric and contains no special characters (including spaces) apart from '_'
-    - Function: truthy_strings, converts several different kinds of True or False input to the boolean True or False
+    - Function: **truthy_strings**, converts several different kinds of True or False input to the boolean True or False
 -  [column_functions.py](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/utils/column_functions.py)
     - Class: **sbol_methods**, a class which is used to implement a switch statement to process each of the excel columns. For example if sbh_sourceOrganism is present in the column_definitions sheet then sbol_methods.sbh_sourceOrganism() will automatically be called and used to transform the data as needed.
     - Class: **column**, creates a column object to make handelling data associated with the column easier. This includes the creation of a lookup dictionary if specified in the dictionary it takes as input.
@@ -101,9 +106,9 @@ The architecture is:
 
 # Publishing
 
-A new version of the python package is automatically published via a [GitHub action](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/.github/workflows/python-publish.yml) whenever a new release is created.
+A new version of the python package is automatically published via [the python-publish GitHub action](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/.github/workflows/python-publish.yml) whenever a new release is created.
 
 Alternatively you can also make changes to the package and then use it locally:
 1. Clone the directory: `git clone https://github.com/SynBioDex/Excel-to-SBOL`
 2. Change to the excel2sbol folder: `cd .\excel2sbol`
-3. Install an edittable version of the package: `python -m pip install -e .` (will overwrite the directory in site-packages with a symbolic link to the locations repository). If a virtual environment is being used the python -m can be left off.
+3. Install an editable version of the package: `python -m pip install -e .` (will overwrite the directory in site-packages with a symbolic link to the locations repository). If a virtual environment is being used the python -m can be left off.
