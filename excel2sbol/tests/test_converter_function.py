@@ -11,12 +11,12 @@ import rdflib.compare
     [
         (
             "pichia_toolkit_KWK_v002.xlsx",
-            'darpa_template_blank_v005_20220222.xlsx', False,
+            'excel2bol_darpa_template_blank_v005_20220222.xlsx', False,
             'pichia_toolkit_KWK_v002.xml'
         ),
         (
             "does_not_exist.xlsx",
-            'darpa_template_blank_v005_20220222.xlsx', True,
+            'excel2bol_darpa_template_blank_v005_20220222.xlsx', True,
             FileNotFoundError
         )
     ]

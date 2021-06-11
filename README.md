@@ -49,7 +49,7 @@ An example:
 ```
 import excel2sbol.converter_function as conf
 
-conf.converter("darpa_template_blank_v005_20220222.xlsx",
+conf.converter("excel2bol_darpa_template_blank_v005_20220222.xlsx",
                "C:/Users/Test_User/Downloads/Filled_Template.xlsx",
                "C:/Users/Test_User/Downloads/Output_SBOL.xml")
 ```
@@ -73,7 +73,7 @@ A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/mast
 
 # Architecture
 
-The [repository architecture and module architecture](https://github.com/SynBioDex/Excel-to-SBOL/wiki/5.-Excel2SBOL-Architecture) are described in the wiki.
+The [repository architecture and module architecture](https://github.com/SynBioDex/Excel-to-SBOL/wiki/4.-Excel2SBOL-Module-and-Repository-Architecture) are described in the wiki.
 
 # Publishing
 
