@@ -44,14 +44,14 @@ class column:
             self.sheet_name = column_dict_entry['Sheet Name']
 
             if type(column_dict_entry['From Col']) == str:
-                #if string convert column from name to 0-indexed
+                # if string convert column from name to 0-indexed
                 self.col_from = hf.col_to_num(column_dict_entry['From Col'])
             elif type(column_dict_entry['From Col']) == int:
-                # if integer remove one to make it zero indexed
+                #if integer remove one to make it zero indexed
                 self.col_from = int(column_dict_entry['From Col']) - 1
 
             if str(column_dict_entry['To Col']).isdigit():
-                # if integer remove one to make it zero indexed
+                #if integer remove one to make it zero indexed
                 self.col_to = int(column_dict_entry['To Col']) - 1
             elif type(column_dict_entry['To Col']) == str:
                 # if string convert column from name to 0-indexed
