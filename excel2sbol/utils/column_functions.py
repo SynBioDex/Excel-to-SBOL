@@ -40,7 +40,7 @@ class column:
         self.replacement_lookup = hf.truthy_strings(self.replacement_lookup)
 
         if self.lookup:
-            #create a lookup dictionary from human readable to actual values
+            # create a lookup dictionary from human readable to actual values
             self.sheet_name = column_dict_entry['Sheet Name']
 
             if type(column_dict_entry['From Col']) == str:
