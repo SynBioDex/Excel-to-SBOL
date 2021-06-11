@@ -1,4 +1,4 @@
-{"darpa_template_blank_v005_20220222.xlsx":
+{"excel2bol_darpa_template_blank_v005_20220222.xlsx":
     {"library_start_row": 18,
     "sheet_name": "Library",
     "number_of_collection_rows": 8,
@@ -7,7 +7,7 @@
     "description_columns": [0]
     },
 
-"darpa_template_blank_v006_20210405.xlsx":
+"excel2bol_darpa_template_blank_v006_20210405.xlsx":
     {"library_start_row": 18,
     "sheet_name": "Library",
     "number_of_collection_rows": 8,

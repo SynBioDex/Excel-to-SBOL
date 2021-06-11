@@ -1,3 +1,6 @@
+# Make sure to update the dependency graphic
+# https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
+# if change are made to modle dependencie
 import sbol2
 import utils.helper_functions as hf
 import utils.column_functions as cf
