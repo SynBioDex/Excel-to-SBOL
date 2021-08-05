@@ -20,5 +20,6 @@ setup(name='excel2sbol',
       install_requires=['sbol2>=1.0b8',
                         'pandas>=1.0.1',
                         'numpy>=1.18.1',
+                        'validators>=0.18.2',
                         'xlrd >= 1.0.0'],
       zip_safe=False)
