@@ -86,4 +86,5 @@ Alternatively you can also make changes to the package and then use it locally:
                                    For WindowsOS: - `cd .\excel2sbol`
                                     
                                    For MacOS/LinuxOS: - `cd ./excel2sbol`
+                                   
 4. Install an editable version of the package: `python -m pip install -e .` (will overwrite the directory in site-packages with a symbolic link to the locations repository). If a virtual environment is being used the python -m can be left off.
