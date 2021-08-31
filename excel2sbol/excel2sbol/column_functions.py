@@ -6,7 +6,7 @@ import sbol2
 import pandas as pd
 import re
 import validators
-import utils.helper_functions as hf
+import excel2sbol.helper_functions as hf
 
 
 class column:

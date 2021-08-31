@@ -2,9 +2,9 @@
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencie
 import sbol2
-import utils.helper_functions as hf
-import utils.column_functions as cf
-import utils.initialise_functions as initf
+import excel2sbol.helper_functions as hf
+import excel2sbol.column_functions as cf
+import excel2sbol.initialise_functions as initf
 
 
 def converter(template_name, file_path_in, file_path_out):
