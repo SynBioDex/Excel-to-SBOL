@@ -4,7 +4,7 @@
 import os
 import json
 import pandas as pd
-import utils.column_functions as cf
+import excel2sbol.column_functions as cf
 
 
 class table:

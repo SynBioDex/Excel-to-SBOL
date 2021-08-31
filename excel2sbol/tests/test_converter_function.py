@@ -1,5 +1,5 @@
 import pytest
-import utils.converter_function as confun
+import excel2sbol.converter_function as confun
 import os
 import tempfile
 import rdflib

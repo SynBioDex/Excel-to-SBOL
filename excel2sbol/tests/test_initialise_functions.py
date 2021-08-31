@@ -1,6 +1,6 @@
 import pytest
-import utils.initialise_functions as initf
-import utils.column_functions as cf
+import excel2sbol.initialise_functions as initf
+import excel2sbol.column_functions as cf
 import json
 import os
 
