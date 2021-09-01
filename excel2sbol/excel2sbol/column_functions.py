@@ -141,11 +141,10 @@ class sbol_methods:
         """
         self.sbol_term = sbol_term
         # Try redoing this with suggested form
-        if len(self.cell_val)>1:
-            try:  # try looking for a specified function
-                return getattr(self, sbol_term)()
-            except AttributeError:  # use the default add function
-                return getattr(self, 'add_new')()
+        try:  # try looking for a specified function
+            return getattr(self, sbol_term)()
+        except AttributeError:  # use the default add function
+            return getattr(self, 'add_new')()
 
     def Not_applicable(self):
         """This is a method called to indicate nothing should happen
@@ -201,7 +200,7 @@ class sbol_methods:
             ValueError: If the value is not a url
         """
         if type(self.cell_val) != str:
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not validators.url(self.cell_val):
             raise ValueError
         else:
@@ -229,9 +228,9 @@ class sbol_methods:
         # this together with target organism could be implemented in a better
         # and more general way, possibly a general uri version
         if not isinstance(self.cell_val, (str, int)):
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif type(self.cell_val) == str and not self.cell_val.isdigit():
-            raise ValueError
+            raise ValueError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif type(self.cell_val) == bool:
             raise TypeError
         else:
