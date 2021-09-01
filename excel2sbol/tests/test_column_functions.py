@@ -199,7 +199,8 @@ class Test_sbol_methods:
             ('nm_url', "23", False, 'https://identifiers.org/taxonomy:23'),
             ('nm_url', 23, False, 'https://identifiers.org/taxonomy:23'),
             ('nm_url', 'Hello', True, ValueError),
-            ('nm_url', 1.5, True, TypeError),
+            ('nm_url', 1.5, False, 'https://identifiers.org/taxonomy:1'),
+            ('nm_url', 1.0, False, 'https://identifiers.org/taxonomy:1'),
             ('nm_url', 1, False, 'https://identifiers.org/taxonomy:1'),
             ('nm_url', True, True, TypeError)
         ]
@@ -228,7 +229,8 @@ class Test_sbol_methods:
             ('nm_url', "23", False, 'https://identifiers.org/taxonomy:23'),
             ('nm_url', 23, False, 'https://identifiers.org/taxonomy:23'),
             ('nm_url', 'Hello', True, ValueError),
-            ('nm_url', 1.5, True, TypeError),
+            ('nm_url', 1.5, False, 'https://identifiers.org/taxonomy:1'),
+            ('nm_url', 1.0, False, 'https://identifiers.org/taxonomy:1'),
             ('nm_url', 1, False, 'https://identifiers.org/taxonomy:1'),
             ('nm_url', True, True, TypeError)
         ]
