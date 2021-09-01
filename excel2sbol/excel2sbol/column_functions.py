@@ -141,10 +141,11 @@ class sbol_methods:
         """
         self.sbol_term = sbol_term
         # Try redoing this with suggested form
-        try:  # try looking for a specified function
-            return getattr(self, sbol_term)()
-        except AttributeError:  # use the default add function
-            return getattr(self, 'add_new')()
+        if len(self.cell_val)>1:
+            try:  # try looking for a specified function
+                return getattr(self, sbol_term)()
+            except AttributeError:  # use the default add function
+                return getattr(self, 'add_new')()
 
     def Not_applicable(self):
         """This is a method called to indicate nothing should happen
@@ -182,7 +183,7 @@ class sbol_methods:
                     in it.
         """
         if not isinstance(self.cell_val, str):
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not validators.url(self.cell_val):
             raise ValueError
         elif "synbiohub.org" not in self.cell_val:
