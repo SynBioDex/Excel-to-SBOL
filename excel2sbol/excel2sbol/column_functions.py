@@ -227,13 +227,15 @@ class sbol_methods:
         """
         # this together with target organism could be implemented in a better
         # and more general way, possibly a general uri version
-        if not isinstance(self.cell_val, (str, int)):
+        if not isinstance(self.cell_val, (str, int, float)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif type(self.cell_val) == str and not self.cell_val.isdigit():
-            raise ValueError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            raise ValueError(f'Unexpected value of cell: {self.cell_val}')
         elif type(self.cell_val) == bool:
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         else:
+            if isinstance(self.cell_val, float):
+                self.cell_val = int(self.cell_val)
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
             self.component.sourceOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1, [])
             self.component.sourceOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
@@ -249,13 +251,15 @@ class sbol_methods:
             ValueError: If it is not a string that can be converted to an
                     integer or an integer
         """
-        if not isinstance(self.cell_val, (str, int)):
-            raise TypeError
+        if not isinstance(self.cell_val, (str, int, float)):
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif type(self.cell_val) == str and not self.cell_val.isdigit():
-            raise ValueError
+            raise ValueError(f'Unexpected value of cell: {self.cell_val}')
         elif type(self.cell_val) == bool:
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         else:
+            if isinstance(self.cell_val, float):
+                self.cell_val = int(self.cell_val)
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
             self.component.targetOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1, [])
             self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
