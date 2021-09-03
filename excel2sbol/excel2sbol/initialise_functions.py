@@ -117,20 +117,20 @@ def read_in_sheet(templt_name, file_path_in):
     collection_info = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                     header=None, nrows=collection_rows,
                                     usecols=collection_cols,
-                                    index_col=0).to_dict('index')
+                                    index_col=0, engine='openpyxl').to_dict('index')
     description_info = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                      header=None,
                                      skiprows=description_start_row, nrows=1,
-                                     usecols=description_cols).iloc[0, 0]
+                                     usecols=description_cols, engine='openpyxl').iloc[0, 0]
 
     # read in the body of the sheet
     sheet_read = pd.read_excel(file_path_in, sheet_name=sheet_name, header=0,
-                               skiprows=start_row).fillna("")
+                               skiprows=start_row, engine='openpyxl').fillna("")
     sheet_dict = sheet_read.to_dict('index')
 
     # pull in the column definitions from the excel sheet
     column_read_dict = pd.read_excel(file_path_in,
                                      sheet_name="column_definitions", header=0,
-                                     index_col=0).to_dict('index')
+                                     index_col=0, engine='openpyxl').to_dict('index')
 
     return (column_read_dict, sheet_dict, description_info, collection_info)
