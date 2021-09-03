@@ -22,5 +22,6 @@ setup(name='excel2sbol',
                         'pandas>=1.0.1',
                         'numpy>=1.18.1',
                         'validators>=0.18.2',
+                        'openpyxl>=3.0.7',
                         'xlrd >= 1.0.0'],
       zip_safe=False)
