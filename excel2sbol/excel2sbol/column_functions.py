@@ -71,7 +71,7 @@ class column:
             self.lookup_dict = pd.read_excel(file_path_in,
                                              sheet_name=self.sheet_name,
                                              header=0, usecols=[self.col_from,
-                                                                self.col_to])
+                                                                self.col_to], engine='openpyxl')
             # remove any rows that only contain blanks
             temp_dict = self.lookup_dict.dropna(axis='rows', how='all')
 
