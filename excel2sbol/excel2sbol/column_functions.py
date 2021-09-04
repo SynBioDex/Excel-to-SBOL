@@ -275,7 +275,7 @@ class sbol_methods:
                 'identifiers.org/so/SO:' term
         """
         if not isinstance(self.cell_val, str):
-            raise TypeError(f'Cell: {self.cell_val} is causing issues')
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not re.match(r"http:\/\/identifiers.org/so/SO:[0-9]{7}",
                           self.cell_val):
             raise ValueError
@@ -310,7 +310,7 @@ class sbol_methods:
             else:
                 self.cell_val = False
         elif not isinstance(self.cell_val, (bool)):
-            raise TypeError
+            raise TypeError (f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         # add the circular role to the end of the roles object, or create
         # a new roles object based on if the roles object exists or not
@@ -335,9 +335,9 @@ class sbol_methods:
                 that is only a number
         """
         if not isinstance(self.cell_val, str):
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif self.cell_val.isdigit():
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         self.component.description = str(self.cell_val)
 
@@ -352,9 +352,9 @@ class sbol_methods:
             TypeError: [description]
         """
         if not isinstance(self.cell_val, str):
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not bool(re.match('^[a-zA-Z ]+$', self.cell_val)):
-            raise TypeError
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         # removes spaces, enters, and makes all lower case
         self.cell_val = "".join(self.cell_val.split())
