@@ -275,7 +275,7 @@ class sbol_methods:
                 'identifiers.org/so/SO:' term
         """
         if not isinstance(self.cell_val, str):
-            raise TypeError
+            raise TypeError(f'Cell: {self.cell_val} is causing issues')
         elif not re.match(r"http:\/\/identifiers.org/so/SO:[0-9]{7}",
                           self.cell_val):
             raise ValueError
