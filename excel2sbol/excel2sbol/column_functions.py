@@ -299,6 +299,8 @@ class sbol_methods:
 
         # convert cell_value to boolean if it can be converted, otherwise
         # raise a type error
+        if isinstance(self.cell_val, float):
+            self.cell_val = int(self.cell_val)
         if isinstance(self.cell_val, str) and self.cell_val.lower() in bool_ls:
             if self.cell_val.lower() in ['true', '1']:
                 self.cell_val = True
