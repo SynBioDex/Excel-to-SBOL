@@ -132,9 +132,6 @@ def read_in_sheet(templt_name, file_path_in):
     column_read_dict = pd.read_excel(file_path_in,
                                      sheet_name="column_definitions", header=0,
                                      index_col=0, engine='openpyxl')
-    try:
-        column_read_dict = column_read_dict.to_dict('index')
-    except:
-        raise NameError(column_read_dict)
+    column_read_dict = column_read_dict.to_dict('index')
 
     return (column_read_dict, sheet_dict, description_info, collection_info)
