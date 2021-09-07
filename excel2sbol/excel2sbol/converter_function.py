@@ -58,8 +58,12 @@ def converter(template_name, file_path_in, file_path_out):
                     cell_val_prefix = cell_val.split(":", 1)[0]
                     cell_val_suffix = cell_val.split(":", 1)[1]
                     cell_val = list(sheet_tbl.column_list[col].lookup_dict[cell_val_prefix].values())[0].replace("{REPLACE_HERE}", cell_val_suffix)
-                elif sheet.tbl.column_list[col].ontology_lookup:
-                    return ontology_name.Role
+                elif sheet_tbl.column_list[col].ontology_lookup:
+                    # if it is an ontology lookup and sheet lookup is false
+                    # For returning the URI, we need the following:
+                    # ontology_name & role
+                    # Currently works only for the role
+                    return (ontology_name.Role)
 
                 # carry out method of column processing based on
                 # the sbol_term of the column
