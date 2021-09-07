@@ -62,8 +62,8 @@ def converter(template_name, file_path_in, file_path_out):
                     # if it is an ontology lookup and sheet lookup is false
                     # For returning the URI, we need the following:
                     # ontology_name & role
-                    # Currently works only for the role
-                    return (ontology_name.Role)
+                    # Currently works only for the role component
+                    cell_val = tyto.ontology_name.Role
 
                 # carry out method of column processing based on
                 # the sbol_term of the column
