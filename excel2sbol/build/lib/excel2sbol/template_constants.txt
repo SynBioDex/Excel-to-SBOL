@@ -1,0 +1,18 @@
+{"excel2bol_darpa_template_blank_v005_20220222.xlsx":
+    {"library_start_row": 18,
+    "sheet_name": "Library",
+    "number_of_collection_rows": 8,
+    "collection_columns": [0,1],
+    "description_start_row": 10,
+    "description_columns": [0]
+    },
+
+"excel2bol_darpa_template_blank_v006_20210405.xlsx":
+    {"library_start_row": 18,
+    "sheet_name": "Library",
+    "number_of_collection_rows": 8,
+    "collection_columns": [0,1],
+    "description_start_row": 10,
+    "description_columns": [0]
+    }
+}
