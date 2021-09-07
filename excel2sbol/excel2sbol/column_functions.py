@@ -355,7 +355,7 @@ class sbol_methods:
         """
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif not bool(re.match('^[a-zA-Z ]+$', self.cell_val)):
+        elif not bool(re.match('^[a-zA-Z \s*]+$', self.cell_val)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         # removes spaces, enters, and makes all lower case
