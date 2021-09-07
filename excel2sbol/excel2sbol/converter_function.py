@@ -49,7 +49,10 @@ def converter(template_name, file_path_in, file_path_out):
                     # pull converted cell value from lookup table
                     # created by table class and column class
                     # and use the lookup column to get the new cell_value
-                    cell_val = list(sheet_tbl.column_list[col].lookup_dict[cell_val].values())[0]
+                    try:
+                        cell_val = list(sheet_tbl.column_list[col].lookup_dict[cell_val].values())[0]
+                    except KeyError:
+                        raise KeyError(f'cell vlaue: {cell_val} not in the lookup dictionary: {sheet_tbl.column_list[col].lookup_dict}')
                 elif sheet_tbl.column_list[col].lookup:
                     # if it is a lookup and a replacement lookup
                     # create a url based on the prefix
