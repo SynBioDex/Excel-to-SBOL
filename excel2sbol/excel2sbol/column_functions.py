@@ -312,7 +312,7 @@ class sbol_methods:
             else:
                 self.cell_val = False
         elif not isinstance(self.cell_val, (bool)):
-            raise TypeError (f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         # add the circular role to the end of the roles object, or create
         # a new roles object based on if the roles object exists or not
@@ -355,7 +355,7 @@ class sbol_methods:
         """
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif not bool(re.match('^[a-zA-Z \s*]+$', self.cell_val)):
+        elif not bool(re.match(r'^[a-zA-Z \s*]+$', self.cell_val)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
 
         # removes spaces, enters, and makes all lower case
