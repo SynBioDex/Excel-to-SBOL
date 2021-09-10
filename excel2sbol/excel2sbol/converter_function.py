@@ -6,6 +6,7 @@ import excel2sbol.helper_functions as hf
 import excel2sbol.column_functions as cf
 import excel2sbol.initialise_functions as initf
 from tyto import *
+import re
 
 
 def converter(template_name, file_path_in, file_path_out):
@@ -63,7 +64,13 @@ def converter(template_name, file_path_in, file_path_out):
                     # For returning the URI, we need the following:
                     # ontology_name & role
                     # Currently works only for the role component
-                    cell_val = tyto.ontology_name.Role
+                    cell_val = Ontology_Name.cell_val
+                    cell_underscored_val  = re.sub("[^A-Za-z0-9]","_",cell_val)
+                    cell_output = getattr(Ontology_Name, cell_underscored_val)
+                    print(cell_output)
+
+
+                    
 
                 # carry out method of column processing based on
                 # the sbol_term of the column
