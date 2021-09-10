@@ -98,7 +98,7 @@ def check_name(nm_to_chck):
                 # special characters that are under 122
                 if len(ltr) > 0:
                     nm_to_chck = nm_to_chck.replace(ltr, str(f"_u{ord(ltr)}_"))
-    if len(nm_to_chck)>0:
+    if len(nm_to_chck) > 0:
         if nm_to_chck[0].isnumeric():
             # ensures it doesn't start with a number
             nm_to_chck = f"_{nm_to_chck}"
