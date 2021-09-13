@@ -7,6 +7,7 @@ import pandas as pd
 import re
 import validators
 import excel2sbol.helper_functions as hf
+from tyto import *
 
 
 class column:
