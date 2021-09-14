@@ -67,7 +67,7 @@ def converter(template_name, file_path_in, file_path_out):
                     # For returning the URI, we need the following:
                     # ontology_name & cell_val
                     cell_underscored_val  = re.sub("[^A-Za-z0-9]","_",cell_val)
-                    cell_output = getattr(Ontology_Name, cell_underscored_val)
+                    cell_output = getattr(sheet_tbl.column_list[col].ontology_name, cell_underscored_val)
                     print(cell_output)
 
                 # carry out method of column processing based on

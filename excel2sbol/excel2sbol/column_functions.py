@@ -277,7 +277,7 @@ class sbol_methods:
         """
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif not re.match(r"http:\/\/identifiers.org/so/SO:[0-9]{7}",
+        elif not re.match(r"https:\/\/identifiers.org/SO:[0-9]{7}",
                           self.cell_val):
             raise ValueError
 
