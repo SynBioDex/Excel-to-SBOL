@@ -39,6 +39,8 @@ class column:
         self.namespace_url = column_dict_entry['Namespace URL']
         self.lookup = column_dict_entry['Sheet Lookup']
         self.replacement_lookup = column_dict_entry['Replacement Lookup']
+        self.ontology_lookup = column_dict_entry['Ontology_Lookup']
+        self.ontology_name = column_dict_entry['Ontology_Name']
 
         self.lookup = hf.truthy_strings(self.lookup)
         self.replacement_lookup = hf.truthy_strings(self.replacement_lookup)
@@ -266,10 +268,10 @@ class sbol_methods:
             self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbol_role(self):
+        
         """Used to process roles. It uses the built in functionality of sbol
         roles. It can add a role to the end of a list or create a new roles
         object.
-
         Raises:
             TypeError: If cell_value is not a string
             ValueError: If cell_value doesn't seem to be an
@@ -277,8 +279,8 @@ class sbol_methods:
         """
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif not re.match(r"https:\/\/identifiers.org/SO:[0-9]{7}",
-                          self.cell_val):
+        elif not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}",
+                        self.cell_val):
             raise ValueError
 
         # new object created if it doesn't exist yet, otherwise append

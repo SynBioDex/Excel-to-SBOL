@@ -5,7 +5,7 @@ import sbol2
 import excel2sbol.helper_functions as hf
 import excel2sbol.column_functions as cf
 import excel2sbol.initialise_functions as initf
-from tyto import *
+import tyto
 import re
 
 
@@ -65,10 +65,13 @@ def converter(template_name, file_path_in, file_path_out):
                 elif sheet_tbl.column_list[col].ontology_lookup:
                     # if it is an ontology lookup and sheet lookup is false
                     # For returning the URI, we need the following:
+                
                     # ontology_name & cell_val
                     cell_underscored_val  = re.sub("[^A-Za-z0-9]","_",cell_val)
-                    cell_output = getattr(sheet_tbl.column_list[col].ontology_name, cell_underscored_val)
-                    print(cell_output)
+                    cell_val = tyto.endpoint.Ontobee.get_uri_by_term(getattr(tyto, sheet_tbl.column_list[col].ontology_name), cell_underscored_val)
+                    
+                    
+                    
 
                 # carry out method of column processing based on
                 # the sbol_term of the column
