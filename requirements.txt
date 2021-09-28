@@ -3,7 +3,6 @@ charset-normalizer==2.0.4
 decorator==5.0.9
 Deprecated==1.2.12
 et-xmlfile==1.1.0
--e git+https://github.com/PRUBHTEJ/Excel-to-SBOL.git@dc98b6e591bd8249c70420f196863000e48d47fc#egg=excel2sbol&subdirectory=excel2sbol
 idna==3.2
 isodate==0.6.0
 lxml==4.6.3
