@@ -160,13 +160,13 @@ class Test_sbol_methods:
     @pytest.mark.parametrize(
         'nm_url, cell_val, raising_err, roles, expected',
         [
-            ('nm_url', "http://identifiers.org/so/SO:0000167",
+            ('nm_url', "http://purl.obolibrary.org/obo/SO_0000167",
              False, ["0000316"], ['0000316', '0000167']),
-            ('nm_url', "http://identifiers.org/so/SO:0000167", False, [],
+            ('nm_url', "http://purl.obolibrary.org/obo/SO_0000167", False, [],
              ['0000167']),
-            ('nm_url', "http://identifiers.org/so/SO:0000139", False,
+            ('nm_url', "http://purl.obolibrary.org/obo/SO_0000139", False,
              ["0000316", '0000167'], ['0000139', '0000316', '0000167']),
-            ('nm_url', "http://identifiers.org/so/SO:000013", True, ["0000316"], ValueError),
+            ('nm_url', "http://purl.obolibrary.org/obo/SO_000013", True, ["0000316"], ValueError),
             ('nm_url', "random stuff", True, ["0000316"], ValueError),
             ('nm_url', 576, True, [], TypeError)
         ]
@@ -177,14 +177,14 @@ class Test_sbol_methods:
         x = cf.sbol_methods(nm_url, sbol_component, sbol_doc, cell_val)
         if len(roles) > 0:
             for role in roles:
-                sbol_component.roles = sbol_component.roles + [f'http://identifiers.org/so/SO:{role}']
+                sbol_component.roles = sbol_component.roles + [f'http://purl.obolibrary.org/obo/SO_{role}']
 
         if raising_err:
             with pytest.raises(expected):
                 x.sbol_role()
 
         else:
-            expected = [f'http://identifiers.org/so/SO:{role}' for role in expected]
+            expected = [f'http://purl.obolibrary.org/obo/SO_{role}' for role in expected]
             x.sbol_role()
             sbol_doc.addComponentDefinition(sbol_component)
 
