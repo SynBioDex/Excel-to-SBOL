@@ -311,7 +311,7 @@ class sbol_methods:
                 self.cell_val = True
             else:
                 self.cell_val = False
-        elif not isinstance(self.cell_val,(bool)):
+        elif not isinstance(self.cell_val, (bool)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         # add the circular role to the end of the roles object, or create
         # a new roles object based on if the roles object exists or not
