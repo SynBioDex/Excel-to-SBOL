@@ -7,7 +7,7 @@ import pandas as pd
 import re
 import validators
 import excel2sbol.helper_functions as hf
-from tyto import *
+
 
 
 class column:
@@ -268,7 +268,6 @@ class sbol_methods:
             self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbol_role(self):
-        
         """Used to process roles. It uses the built in functionality of sbol
         roles. It can add a role to the end of a list or create a new roles
         object.
@@ -280,7 +279,7 @@ class sbol_methods:
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}",
-                        self.cell_val):
+                         self.cell_val):
             raise ValueError
 
         # new object created if it doesn't exist yet, otherwise append
