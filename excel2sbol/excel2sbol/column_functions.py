@@ -7,9 +7,6 @@ import pandas as pd
 import re
 import validators
 import excel2sbol.helper_functions as hf
-
-
-
 class column:
     """A class used solely to create a column object, potentially with
     a look up dictionary.
@@ -279,7 +276,7 @@ class sbol_methods:
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}",
-                         self.cell_val):
+                                                                         self.cell_val):
             raise ValueError
 
         # new object created if it doesn't exist yet, otherwise append
@@ -315,7 +312,6 @@ class sbol_methods:
                 self.cell_val = False
         elif not isinstance(self.cell_val, (bool)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-
         # add the circular role to the end of the roles object, or create
         # a new roles object based on if the roles object exists or not
         if len(self.component.roles) == 0 and self.cell_val:
@@ -359,7 +355,6 @@ class sbol_methods:
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not bool(re.match(r'^[a-zA-Z \s*]+$', self.cell_val)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-
         # removes spaces, enters, and makes all lower case
         self.cell_val = "".join(self.cell_val.split())
         self.cell_val = self.cell_val.replace(u"\ufeff", "").lower()
