@@ -63,12 +63,11 @@ def converter(template_name, file_path_in, file_path_out):
                     cell_val_suffix = cell_val.split(":", 1)[1]
                     cell_val = list(sheet_tbl.column_list[col].lookup_dict[cell_val_prefix].values())[0].replace("{REPLACE_HERE}", cell_val_suffix)
                 elif sheet_tbl.column_list[col].ontology_lookup:
-                    # if it is an ontology lookup and sheet lookup is false
+                    # if the ontology lookup is TRUE and sheet lookup is FALSE
                     # For returning the URI, we need the following:
                     # ontology_name & cell_val
                     cell_underscored_val = re.sub("[^A-Za-z0-9]", "_", cell_val)
-                    cell_val = tyto.endpoint.Ontobee.get_uri_by_term(getattr(tyto, 
-                                                                                 sheet_tbl.column_list[col].ontology_name), cell_underscored_val)
+                    cell_val = tyto.endpoint.Ontobee.get_uri_by_term(getattr(tyto, sheet_tbl.column_list[col].ontology_name), cell_underscored_val)
                 # carry out method of column processing based on
                 # the sbol_term of the column
                 col_meth = cf.sbol_methods(sheet_tbl.column_list[col].namespace_url,

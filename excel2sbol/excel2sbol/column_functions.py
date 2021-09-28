@@ -7,6 +7,8 @@ import pandas as pd
 import re
 import validators
 import excel2sbol.helper_functions as hf
+
+
 class column:
     """A class used solely to create a column object, potentially with
     a look up dictionary.
@@ -275,8 +277,7 @@ class sbol_methods:
         """
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}",
-                                                                         self.cell_val):
+        elif not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}", self.cell_val):
             raise ValueError
 
         # new object created if it doesn't exist yet, otherwise append
@@ -310,7 +311,7 @@ class sbol_methods:
                 self.cell_val = True
             else:
                 self.cell_val = False
-        elif not isinstance(self.cell_val, (bool)):
+        elif not isinstance(self.cell_val,(bool)):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         # add the circular role to the end of the roles object, or create
         # a new roles object based on if the roles object exists or not
