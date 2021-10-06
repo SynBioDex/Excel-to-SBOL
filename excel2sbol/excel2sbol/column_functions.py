@@ -32,14 +32,26 @@ class column:
                                     'Sheet Lookup': 'TRUE',
                                     'Replacement Lookup': 'TRUE',
                                     'Sheet Name': 'Replacement',
-                                    'From Col': 'A', 'To Col': 'B'}
+                                    'From Col': 'A', 'To Col': 'B'
+                                    'ontology_lookup': 'True'/'False'}
+                                    (For the terms that use tyto, ontology_lookup
+                                    shall be True, else it shall be False)
         """
         self.sbol_term = column_dict_entry['SBOL Term']
         self.namespace_url = column_dict_entry['Namespace URL']
         self.lookup = column_dict_entry['Sheet Lookup']
         self.replacement_lookup = column_dict_entry['Replacement Lookup']
-        self.ontology_lookup = column_dict_entry['Ontology_Lookup']
-        self.ontology_name = column_dict_entry['Ontology_Name']
+
+        # if statement!!!
+        if excel_dict_file.ontology_lookup == "True":
+            self.ontology_lookup = column_dict_entry['Ontology_Lookup']
+            self.ontology_name = column_dict_entry['Ontology_Name']
+        
+        # if statment!!! for composite!
+        #if excel_dict_file.composite_column == "True":
+            #self.composite_column = column_dict_entry['Composite Column']
+
+        # if statement, for tyto.
 
         self.lookup = hf.truthy_strings(self.lookup)
         self.replacement_lookup = hf.truthy_strings(self.replacement_lookup)
@@ -368,3 +380,63 @@ class sbol_methods:
 
         # link sequence object to component definition
         self.component.sequences = sequence
+
+    def sbol_pullpart(self):
+        # Currently, this function does nothing.
+        pass
+
+    def sbol_composite(self):
+        # This function takes in the compiled value from columns
+        # namely Part 1 to part 4.
+        """
+        Raises:
+            TypeError: If cell_value is not a string
+        """
+        if not isinstance(self.cell_val, str):
+            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+        # Splits the values 
+        # Note: Don't hard code!!
+        value = self.cell_val.split(":", 3)
+    
+        # Iterates over the list "value"
+        for i in value:
+            
+            pass
+          
+    def sbol_finalproduct(self):
+        # This function takes in a True or False value.
+        # If the value is True, then it is the final product to be produced
+        # Else, if the value is False, then it is at intermediate stage.
+        """"
+        Raises:
+        TypeError: Raised if cell_value is not a form of True, False
+                (including 1, 0 and string versions)
+        """
+        bool_ls = ['true', 'false', '1', '0']
+
+        # convert cell_value to boolean if it can be converted, otherwise
+        # raise a type error
+        if isinstance(self.cell_val, float):
+            self.cell_val = int(self.cell_val)
+            if isinstance(self.cell_val, str) and self.cell_val.lower() in bool_ls:
+                if self.cell_val.lower() in ['true', '1']:
+                    self.cell_val = True
+                else:
+                    self.cell_val = False
+            elif isinstance(self.cell_val, int) and self.cell_val in [1, 0]:
+                if self.cell_val == 1:
+                    self.cell_val = True
+                else:
+                    self.cell_val = False
+            elif not isinstance(self.cell_val, (bool)):
+                raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+
+    def sbol_Backbone_locus(self):
+        # Currently, this function does nothing.
+        pass
+
+    def sbol_constraints(self):
+        # Currently, this function does nothing.
+        pass
+
+   
