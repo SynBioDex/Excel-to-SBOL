@@ -112,6 +112,8 @@ def read_in_sheet(templt_name, file_path_in):
     description_start_row = templt_dict[templt_name]["description_start_row"]
     collection_cols = templt_dict[templt_name]["collection_columns"]
     description_cols = templt_dict[templt_name]["description_columns"]
+    ontology_lookup = templt_dict[templt_name]["ontology_lookup"]
+    # composite_cols = templt_dict[templt_name]["Composite Column"]
 
     # pull in collection info
     collection_info = pd.read_excel(file_path_in, sheet_name=sheet_name,

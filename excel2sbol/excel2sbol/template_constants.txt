@@ -5,7 +5,7 @@
     "collection_columns": [0,1],
     "description_start_row": 10,
     "description_columns": [0],
-    "ontology_lookup" : False
+    "ontology_lookup_col" : False
     },
 
 "excel2bol_darpa_template_blank_v006_20210405.xlsx":
@@ -15,7 +15,7 @@
     "collection_columns": [0,1],
     "description_start_row": 10,
     "description_columns": [0],
-    "ontology_lookup" : False
+    "ontology_lookup_col" : False
     },
 
 "excel2bol_darpa_template_blank_v007_20210907.xlsx":
@@ -25,7 +25,7 @@
     "collection_columns": [0,1],
     "description_start_row": 10,
     "description_columns": [0],
-    "ontology_lookup" : False
+    "ontology_lookup_col" : False
     },
 excel2sbol_ontology_template_blank_v001_20210928.xlsx{
     "library_start_row": 18,
@@ -34,7 +34,7 @@ excel2sbol_ontology_template_blank_v001_20210928.xlsx{
     "collection_columns": [0,1],
     "description_start_row": 10,
     "description_columns": [0],
-    "ontology_lookup" : True
+    "ontology_lookup_col" : True
     }
     
 }

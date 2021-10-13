@@ -41,17 +41,13 @@ class column:
         self.namespace_url = column_dict_entry['Namespace URL']
         self.lookup = column_dict_entry['Sheet Lookup']
         self.replacement_lookup = column_dict_entry['Replacement Lookup']
-
         # if statement!!!
-        if excel_dict_file.ontology_lookup == "True":
+        if self.ontology_lookup == "True":
             self.ontology_lookup = column_dict_entry['Ontology_Lookup']
             self.ontology_name = column_dict_entry['Ontology_Name']
-        
         # if statment!!! for composite!
-        #if excel_dict_file.composite_column == "True":
-            #self.composite_column = column_dict_entry['Composite Column']
-
-        # if statement, for tyto.
+        # if composite_column == "True":
+        #    self.composite_column = column_dict_entry['Composite Column']
 
         self.lookup = hf.truthy_strings(self.lookup)
         self.replacement_lookup = hf.truthy_strings(self.replacement_lookup)
@@ -381,6 +377,8 @@ class sbol_methods:
         # link sequence object to component definition
         self.component.sequences = sequence
 
+    # Commenting out the functions for composite template
+    '''
     def sbol_pullpart(self):
         # Currently, this function does nothing.
         pass
@@ -401,8 +399,8 @@ class sbol_methods:
         # Iterates over the list "value"
         for i in value:
             
-            pass
-          
+            pass     
+        
     def sbol_finalproduct(self):
         # This function takes in a True or False value.
         # If the value is True, then it is the final product to be produced
@@ -430,13 +428,13 @@ class sbol_methods:
                     self.cell_val = False
             elif not isinstance(self.cell_val, (bool)):
                 raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-
+    
+    
     def sbol_Backbone_locus(self):
         # Currently, this function does nothing.
         pass
 
     def sbol_constraints(self):
         # Currently, this function does nothing.
-        pass
-
-   
+        pass   
+    ''' 
