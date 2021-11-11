@@ -10,7 +10,7 @@ import excel2sbol.column_functions as cf
 class table:
     """Used to go from a regular dictionary to a dictionary of column objects
     """
-    def __init__(self, table_doc_path, column_read_dict):
+    def __init__(self, table_doc_path, column_read_dict, tyto_use):
         """[summary]
 
         Args:
@@ -31,18 +31,18 @@ class table:
                                 'Sheet Name': 'Replacement',
                                 'From Col': 'A', 'To Col': 'B'},
                 }
+                # might also contain 'Tyto Lookup': 'TRUE'
 
         Raises:
             TypeError: If column_read_dict is not a dictionary a TypeError
                 is raised.
         """
-
         if not isinstance(column_read_dict, dict):
             raise TypeError
 
         self.column_list = {}
         for key, value in column_read_dict.items():
-            self.column_list[key] = cf.column(table_doc_path, value)
+            self.column_list[key] = cf.column(table_doc_path, value, tyto_use)
 
 
 def read_in_sheet(templt_name, file_path_in):
@@ -112,6 +112,7 @@ def read_in_sheet(templt_name, file_path_in):
     description_start_row = templt_dict[templt_name]["description_start_row"]
     collection_cols = templt_dict[templt_name]["collection_columns"]
     description_cols = templt_dict[templt_name]["description_columns"]
+    tyto_use = templt_dict[templt_name]["tyto_use"]
 
     # pull in collection info
     collection_info = pd.read_excel(file_path_in, sheet_name=sheet_name,
@@ -134,4 +135,4 @@ def read_in_sheet(templt_name, file_path_in):
                                      index_col=0, engine='openpyxl')
     column_read_dict = column_read_dict.to_dict('index')
 
-    return (column_read_dict, sheet_dict, description_info, collection_info)
+    return (column_read_dict, sheet_dict, description_info, collection_info, tyto_use)

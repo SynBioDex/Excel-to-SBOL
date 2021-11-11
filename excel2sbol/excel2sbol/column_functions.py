@@ -5,6 +5,7 @@ import logging
 import sbol2
 import pandas as pd
 import re
+import tyto
 import validators
 import excel2sbol.helper_functions as hf
 
@@ -13,7 +14,7 @@ class column:
     """A class used solely to create a column object, potentially with
     a look up dictionary.
     """
-    def __init__(self, file_path_in, column_dict_entry):
+    def __init__(self, file_path_in, column_dict_entry, tyto_use):
         """This takes in a dictionary and creates a column object as that is
         easier to handle for other functions. A lookup dictionary is created
         if needed.
@@ -38,6 +39,9 @@ class column:
         self.namespace_url = column_dict_entry['Namespace URL']
         self.lookup = column_dict_entry['Sheet Lookup']
         self.replacement_lookup = column_dict_entry['Replacement Lookup']
+        if tyto_use:
+            self.tyto_lookup = column_dict_entry['Tyto Lookup']
+            self.onto_name = column_dict_entry['Ontology Name']
 
         self.lookup = hf.truthy_strings(self.lookup)
         self.replacement_lookup = hf.truthy_strings(self.replacement_lookup)
@@ -99,7 +103,7 @@ class sbol_methods:
     is where the processing of column values happens.
     """
 
-    def __init__(self, namespace_url, component, doc, cell_value):
+    def __init__(self, namespace_url, component, doc, cell_value, tyto_use):
         """Initialisation of the sbol_methods class. This ensures
         that all the values that the switch case statements might need
         are available as properties of the self object.
@@ -122,6 +126,7 @@ class sbol_methods:
         self.component = component
         self.namespace_url = namespace_url
         self.doc = doc
+        self.tyto_use = tyto_use
 
     # create method for each sbol term that can be called via the column class
     def switch(self, sbol_term):
@@ -227,18 +232,23 @@ class sbol_methods:
         """
         # this together with target organism could be implemented in a better
         # and more general way, possibly a general uri version
-        if not isinstance(self.cell_val, (str, int, float)):
-            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif type(self.cell_val) == str and not self.cell_val.isdigit():
-            raise ValueError(f'Unexpected value of cell: {self.cell_val}')
-        elif type(self.cell_val) == bool:
-            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        else:
-            if isinstance(self.cell_val, float):
-                self.cell_val = int(self.cell_val)
+        if self.tyto_use:
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
             self.component.sourceOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1, [])
-            self.component.sourceOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
+            self.component.sourceOrganism = self.cell_val
+        else:
+            if not isinstance(self.cell_val, (str, int, float)):
+                raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            elif type(self.cell_val) == str and not self.cell_val.isdigit():
+                raise ValueError(f'Unexpected value of cell: {self.cell_val}')
+            elif type(self.cell_val) == bool:
+                raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            else:
+                if isinstance(self.cell_val, float):
+                    self.cell_val = int(self.cell_val)
+                self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
+                self.component.sourceOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#sourceOrganism', 0, 1, [])
+                self.component.sourceOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbh_targetOrganism(self):
         """Used to indicate the target organism. What organism was the part
@@ -251,18 +261,23 @@ class sbol_methods:
             ValueError: If it is not a string that can be converted to an
                     integer or an integer
         """
-        if not isinstance(self.cell_val, (str, int, float)):
-            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        elif type(self.cell_val) == str and not self.cell_val.isdigit():
-            raise ValueError(f'Unexpected value of cell: {self.cell_val}')
-        elif type(self.cell_val) == bool:
-            raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        else:
-            if isinstance(self.cell_val, float):
-                self.cell_val = int(self.cell_val)
+        if self.tyto_use:
             self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
             self.component.targetOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1, [])
-            self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
+            self.component.targetOrganism = self.cell_val
+        else:
+            if not isinstance(self.cell_val, (str, int, float)):
+                raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            elif type(self.cell_val) == str and not self.cell_val.isdigit():
+                raise ValueError(f'Unexpected value of cell: {self.cell_val}')
+            elif type(self.cell_val) == bool:
+                raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+            else:
+                if isinstance(self.cell_val, float):
+                    self.cell_val = int(self.cell_val)
+                self.doc.addNamespace('https://wiki.synbiohub.org/wiki/Terms/synbiohub#', 'sbh')
+                self.component.targetOrganism = sbol2.URIProperty(self.component, 'https://wiki.synbiohub.org/wiki/Terms/synbiohub#targetOrganism', 0, 1, [])
+                self.component.targetOrganism = f'https://identifiers.org/taxonomy:{self.cell_val}'
 
     def sbol_role(self):
         """Used to process roles. It uses the built in functionality of sbol
@@ -277,8 +292,8 @@ class sbol_methods:
         if not isinstance(self.cell_val, str):
             raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
         elif not re.match(r"http:\/\/identifiers.org/so/SO:[0-9]{7}",
-                          self.cell_val):
-            raise ValueError
+                          self.cell_val) and not re.match(r"http:\/\/purl.obolibrary.org/obo/SO_[0-9]{7}", self.cell_val):
+            raise ValueError(f'The cell value {self.cell_val} is not of the expected format for a role')
 
         # new object created if it doesn't exist yet, otherwise append
         # the role to the enbd of the existing roles object

@@ -1,6 +1,8 @@
 # Make sure to update the dependency graphic
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencie
+import re
+import tyto
 import sbol2
 import excel2sbol.helper_functions as hf
 import excel2sbol.column_functions as cf
@@ -23,8 +25,8 @@ def converter(template_name, file_path_in, file_path_out):
     """
     # read in the sheet and convert it to a dictionary
     (col_read_dict, sheet_dict, descrip_info,
-     collection_info) = initf.read_in_sheet(template_name, file_path_in)
-    sheet_tbl = initf.table(file_path_in, col_read_dict)
+     collection_info, tyto_use) = initf.read_in_sheet(template_name, file_path_in)
+    sheet_tbl = initf.table(file_path_in, col_read_dict, tyto_use)
 
     # initialise the sbol document
     doc = sbol2.Document()
@@ -40,11 +42,24 @@ def converter(template_name, file_path_in, file_path_out):
         # set up component
         component = sbol2.ComponentDefinition(hf.check_name(row["Part Name"]),
                                               molecule_type)
-
+        print(row["Part Name"])
         for col in row:
+            print(col, row[col])
             if row[col] != '':
                 # checks that the column isn't blank
                 cell_val = row[col]
+                if tyto_use:
+                    if sheet_tbl.column_list[col].tyto_lookup:
+                        # if the ontology lookup is TRUE and sheet lookup is FALSE
+                        # For returning the URI, we need the following:
+                        # ontology_name & cell_val
+                        er_val = cell_val
+                        onto_name = sheet_tbl.column_list[col].onto_name
+                        if onto_name == "SO":
+                            cell_val = re.sub("[^A-Za-z0-9]", "_", cell_val)
+                        cell_val = tyto.endpoint.Ontobee.get_uri_by_term(getattr(tyto, onto_name), cell_val)
+                        if cell_val is None:
+                            raise ValueError(f'The Cell value {er_val} does not appear to be in {onto_name} please check spelling, capitalisation, and for species if it is the most up to date species name')
                 if sheet_tbl.column_list[col].lookup and not sheet_tbl.column_list[col].replacement_lookup:
                     # pull converted cell value from lookup table
                     # created by table class and column class
@@ -64,7 +79,7 @@ def converter(template_name, file_path_in, file_path_out):
                 # carry out method of column processing based on
                 # the sbol_term of the column
                 col_meth = cf.sbol_methods(sheet_tbl.column_list[col].namespace_url,
-                                           component, doc, cell_val)
+                                           component, doc, cell_val, tyto_use)
                 col_meth.switch(sheet_tbl.column_list[col].sbol_term)
 
         doc.addComponentDefinition(component)
