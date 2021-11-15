@@ -4,8 +4,7 @@
     "number_of_collection_rows": 8,
     "collection_columns": [0,1],
     "description_start_row": 10,
-    "description_columns": [0],
-    "tyto_use": false
+    "description_columns": [0]
     },
 
 "excel2bol_darpa_template_blank_v006_20210405.xlsx":
@@ -14,8 +13,7 @@
     "number_of_collection_rows": 8,
     "collection_columns": [0,1],
     "description_start_row": 10,
-    "description_columns": [0],
-    "tyto_use": false
+    "description_columns": [0]
     },
 
 "excel2bol_darpa_template_blank_v007_20210907.xlsx":
@@ -24,8 +22,7 @@
     "number_of_collection_rows": 8,
     "collection_columns": [0,1],
     "description_start_row": 10,
-    "description_columns": [0],
-    "tyto_use": false
+    "description_columns": [0]
     },
 
 "excel2bol_darpa_template_blank_v008_20211110.xlsx":
@@ -34,7 +31,6 @@
     "number_of_collection_rows": 8,
     "collection_columns": [0,1],
     "description_start_row": 10,
-    "description_columns": [0],
-    "tyto_use": true
+    "description_columns": [0]
     }
 }
