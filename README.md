@@ -83,8 +83,6 @@ Alternatively you can also make changes to the package and then use it locally:
 1. Clone the directory: `git clone https://github.com/SynBioDex/Excel-to-SBOL`
 2. Change to the excel2sbol folder: 
                                    
-                                   For WindowsOS: - cd .\excel2sbol
-                                 
-                                   For MacOS/LinuxOS: - cd users/<user_name>/Excel_to_SBOL/excel2sbol
+cd ./Excel_to_SBOL/excel2sbol
                                    
 3. Install an editable version of the package: `python -m pip install -e .` (will overwrite the directory in site-packages with a symbolic link to the locations repository). If a virtual environment is being used the python -m can be left off.
