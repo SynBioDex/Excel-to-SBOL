@@ -1,12 +1,9 @@
 # Make sure to update the dependency graphic
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
-# if change are made to modle dependencie
-import logging
+# if change are made to modle dependencies
+import re
 import sbol2
 import pandas as pd
-import re
-import tyto
-import validators
 import excel2sbol.helper_functions as hf
 
 
@@ -106,7 +103,7 @@ class sbol_methods:
     """
 
     def __init__(self, namespace_url, obj, doc, cell_value, split_on,
-                 col_type, pattern):
+                 col_type, pattern, object_type):
         """Initialisation of the sbol_methods class. This ensures
         that all the values that the switch case statements might need
         are available as properties of the self object.
@@ -127,6 +124,7 @@ class sbol_methods:
         """
         self.cell_val = cell_value
         self.obj = obj
+        self.object_type = object_type
         self.namespace_url = namespace_url
         self.doc = doc
         self.doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
@@ -177,7 +175,7 @@ class sbol_methods:
                     # can't have multiple values
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
             else:
-                raise ValueError(f'SBOL has no attribute {self.sbol_term_suf}')
+                raise ValueError(f'This SBOL object ({self.object_type}) has no attribute {self.sbol_term_suf}')
 
         else:
             # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
@@ -192,8 +190,8 @@ class sbol_methods:
                 if not hasattr(self.obj, self.sbol_term_suf):
                     setattr(self.obj, self.sbol_term_suf,
                             sbol2.URIProperty(self.obj,
-                            f'{self.namespace_url}{self.sbol_term_suf}',
-                            '0', '*', []))
+                                              f'{self.namespace_url}{self.sbol_term_suf}',
+                                              '0', '*', []))
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
                 else:
                     if not isinstance(self.cell_val, list):
@@ -208,8 +206,8 @@ class sbol_methods:
                 if not hasattr(self.obj, self.sbol_term_suf):
                     setattr(self.obj, self.sbol_term_suf,
                             sbol2.TextProperty(self.obj,
-                            f'{self.namespace_url}{self.sbol_term_suf}',
-                            '0', '*'))
+                                               f'{self.namespace_url}{self.sbol_term_suf}',
+                                               '0', '*'))
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
                 else:
                     if not isinstance(self.cell_val, list):
@@ -217,106 +215,48 @@ class sbol_methods:
                     current = current = getattr(self.obj, self.sbol_term_suf)
                     setattr(self.obj, self.sbol_term_suf, current + self.cell_val)
 
+    def objectType(self):
+        # used to decide the object type in the converter function
+        pass
 
+    def displayId(self):
+        # used to set the object display id in converter function
+        pass
 
     def dataSource(self):
-        pass
-        # """This is used to point to the data source where the data was pulled
-        # from using the wasDerivedFrom property. If it is a pubmed source then
-        # the obo term is also used as an indicator of the source.
+        self.obj.wasDerivedFrom = self.cell_val
+        if "pubmed.ncbi.nlm.nih.gov/" in self.cell_val:
+            if 'obo' not in self.doc_pref_terms:
+                self.doc.addNamespace('http://purl.obolibrary.org/obo/', 'obo')
+                self.doc_pref_terms.append('obo')
 
-        # Raises:
-        #     TypeError: If the cell_value is not a string
-        #     ValueError: If the value is not a url
-        # """
-        # if type(self.cell_val) != str:
-        #     raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        # elif not validators.url(self.cell_val):
-        #     raise ValueError
-        # else:
-        #     if self.cell_val[-1] == '/':
-        #         self.cell_val = self.cell_val[:-1]
-        #     self.component.wasDerivedFrom = self.cell_val
-        #     if "pubmed.ncbi.nlm.nih.gov/" in self.cell_val:
-        #         self.doc.addNamespace('http://purl.obolibrary.org/obo/', 'obo')
-        #         self.component.OBI_0001617 = sbol2.TextProperty(self.component,
-        #                                                         'http://purl.obolibrary.org/obo/OBI_0001617',
-        #                                                         0, 1, [])
-        #         self.component.OBI_0001617 = self.cell_val.split(".gov/")[1].replace("/", "")
-
-
-    def roleCircular(self):
-        if self.cell_val:
-            print("Hello")
-            self.obj.roles = self.obj.roles + [sbol2.SO_CIRCULAR]
-
-    #     """If the value is True then add the circular role to the
-    #     componentDefinition roles
-
-    #     Raises:
-    #         TypeError: Raised if cell_value is not a form of True, False
-    #             (including 1, 0 and string versions)
-    #     """
-    #     bool_ls = ['true', 'false', '1', '0']
-
-    #     # convert cell_value to boolean if it can be converted, otherwise
-    #     # raise a type error
-    #     if isinstance(self.cell_val, float):
-    #         self.cell_val = int(self.cell_val)
-    #     if isinstance(self.cell_val, str) and self.cell_val.lower() in bool_ls:
-    #         if self.cell_val.lower() in ['true', '1']:
-    #             self.cell_val = True
-    #         else:
-    #             self.cell_val = False
-    #     elif isinstance(self.cell_val, int) and self.cell_val in [1, 0]:
-    #         if self.cell_val == 1:
-    #             self.cell_val = True
-    #         else:
-    #             self.cell_val = False
-    #     elif not isinstance(self.cell_val, (bool)):
-    #         raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-
-    #     # add the circular role to the end of the roles object, or create
-    #     # a new roles object based on if the roles object exists or not
-    #     if len(self.component.roles) == 0 and self.cell_val:
-    #         self.component.roles = sbol2.SO_CIRCULAR
-    #     elif self.cell_val:
-    #         self.component.roles = self.component.roles + [sbol2.SO_CIRCULAR]
-
-    # def sbol_displayId(self):
-    #     """Sets the human readable name to cell_value and the displayId
-    #     to the alphanumeric version of the cell_value
-    #     """
-    #     self.component.name = self.cell_val
-    #     self.component.displayId = hf.check_name(self.cell_val)
-
+            self.obj.OBI_0001617 = sbol2.TextProperty(self.obj,
+                                                            'http://purl.obolibrary.org/obo/OBI_0001617',
+                                                            0, 1, [])
+            self.obj.OBI_0001617 = self.cell_val.split(".gov/")[1].replace("/", "")
 
     def sequence(self):
-        # ADD ABILITY TO DEAL WITH SEQUENCE URIS
-        pass
-        # """Used to add a sequence to the componentdefinition and create
-        # a sequence object to which the componentdefinition points. The
-        # sequence is only output as lowercase
+        if re.fullmatch(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.cell_val):
+            # if a url
+            self.obj.sequences = self.cell_val
 
-        # Raises:
-        #     TypeError: Raised if the cell_value is not a string or contains
-        #             characters other than a-z (lower or upper) and spaces
-        #     TypeError: [description]
-        # """
-        # if not isinstance(self.cell_val, str):
-        #     raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
-        # elif not bool(re.match(r'^[a-zA-Z \s*]+$', self.cell_val)):
-        #     raise TypeError(f'Unexpected type: {type(self.cell_val)}, of cell: {self.cell_val}')
+        elif re.match(r'^[a-zA-Z \s*]+$', self.cell_val):
+            # if a sequence string
 
-        # # removes spaces, enters, and makes all lower case
-        # self.cell_val = "".join(self.cell_val.split())
-        # self.cell_val = self.cell_val.replace(u"\ufeff", "").lower()
+            # removes spaces, enters, and makes all lower case
+            self.cell_val = "".join(self.cell_val.split())
+            self.cell_val = self.cell_val.replace(u"\ufeff", "").lower()
 
-        # # create sequence object
-        # sequence = sbol2.Sequence(f"{self.component.displayId}_sequence",
-        #                           self.cell_val, sbol2.SBOL_ENCODING_IUPAC)
-        # sequence.name = f"{self.component.name} Sequence"
-        # self.doc.addSequence(sequence)
+            # create sequence object
+            sequence = sbol2.Sequence(f"{self.obj.displayId}_sequence",
+                                      self.cell_val, sbol2.SBOL_ENCODING_IUPAC)
+            if self.obj.name is not None:
+                sequence.name = f"{self.obj.name} Sequence"
 
-        # # link sequence object to component definition
-        # self.component.sequences = sequence
+            self.doc.addSequence(sequence)
+
+            # link sequence object to component definition
+            self.obj.sequences = sequence
+
+        else:
+            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val}')
