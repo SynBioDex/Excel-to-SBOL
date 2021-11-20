@@ -70,7 +70,7 @@ def converter(template_name, file_path_in, file_path_out):
         else:
             obj = var_func(hf.check_name(row[display_id_col]))
 
-        print(row[display_id_col])
+        # print(row[display_id_col])
         for col in row:
             print(col, row[col])
             if row[col] != '':

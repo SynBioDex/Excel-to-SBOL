@@ -1,25 +1,50 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/" xmlns:ns1="http://www.w3.org/ns/prov#">
-  <sbol:Sequence rdf:about="http://examples.org/example_sequence/1">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.w3.org/ns/prov#" xmlns:ns1="http://purl.org/dc/terms/">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/rbs_hgh/1">
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/rbs_hgh"/>
     <sbol:version>1</sbol:version>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/example_sequence"/>
-    <sbol:elements>gatctaacatccaaagacgaaaggttgaatgaaacctttttgccatccgacatccacaggtccattctcacacataagtgccaaacgcaacaggaggggatacactagcagcagaccgttgcaaacgcaggacctccactcctcttctcctcaacacccacttttgccatcgaaaaaccagcccagttattgggcttgattggagctcgctcattccaattccttctattaggctactaacaccatgactttattagcctgtctatcctggcccccctggcgaggttcatgtttgtttatttccgaatgcaacaagctccgcattacacccgaacatcactccagatgagggctttctgagtgtggggtcaaatagtttcatgttccccaaatggcccaaaactgacagtttaaacgctgtcttggaacctaatatgacaaaagcgtgatctcatccaagatgaactaagtttggttcgttgaaatgctaacggccagttggtcaaaaagaaacttccaaaagtcggcataccgtttgtcttgtttggtattgattgacgaatgctcaaaaataatctcattaatgcttagcgcagtctctctatcgcttctgaaccccggtgcacctgtgccgaaacgcaaatggggaaacacccgctttttggatgattatgcattgtctccacattgtatgcttccaagattctggtgggaatactgctgatagcctaacgttcatgatcaaaatttaactgttctaacccctacttgacagcaatatataaacagaaggaagctgccctgtcttaaacctttttttttatcatcattattagcttactttcataattgcgactggttccaattgacaagcttttgattttaacgacttttaacgacaacttgagaagatcaaaaaacaactaattattcgaaacg</sbol:elements>
-    <sbol:displayId>example_sequence</sbol:displayId>
-  </sbol:Sequence>
-  <pAOX1 rdf:about="http://examples.org/example/1">
-    <sbol:displayId>example</sbol:displayId>
-    <sbh:splitTest>this</sbh:splitTest>
-    <sbh:splitTest>and</sbh:splitTest>
-    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/direct/1"/>
-    <sbh:splitTest>testing</sbh:splitTest>
-    <ns0:description>Alcohol oxidase 1</ns0:description>
-    <sbh:splitTest>world</sbh:splitTest>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/example"/>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <sbol:displayId>rbs_hgh</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/6091124"/>
+    <obo:OBI_0001617>6091124</obo:OBI_0001617>
+    <ns1:description>allow or prevent access to HGH CDS</ns1:description>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/rbs_test/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/27860310"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/rbs_test"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <ns1:description>allow or prevent access to testosterone CDS</ns1:description>
+    <sbol:displayId>rbs_test</sbol:displayId>
     <sbol:version>1</sbol:version>
-    <obo:OBI_0001617>28252957</obo:OBI_0001617>
-    <ns1:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957"/>
-    <sbh:splitTest>hello</sbh:splitTest>
-  </pAOX1>
+    <obo:OBI_0001617>27860310</obo:OBI_0001617>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pro_Test/1">
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/27860310"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <sbol:displayId>pro_Test</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pro_Test"/>
+    <obo:OBI_0001617>27860310</obo:OBI_0001617>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <sbol:version>1</sbol:version>
+    <ns1:description>starts transcription of test gene</ns1:description>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/DHT/1">
+    <sbol:version>1</sbol:version>
+    <obo:OBI_0001617>10839207</obo:OBI_0001617>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns1:description>coding sequence for release of DHT</ns1:description>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <sbol:displayId>DHT</sbol:displayId>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/10839207"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DHT"/>
+  </sbol:ComponentDefinition>
 </rdf:RDF>

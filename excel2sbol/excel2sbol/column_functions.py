@@ -223,6 +223,14 @@ class sbol_methods:
         # used to set the object display id in converter function
         pass
 
+    def subcomponents(self):
+        for sub in self.cell_val:
+            cd = sbol2.ComponentDefinition(sub)
+            self.doc.add(cd)
+        # self.obj.assemblePrimaryStructure(self.cell_val, assembly_method=, doc=self.doc)
+        self.obj.compile()
+        # obj.sequence
+
     def dataSource(self):
         self.obj.wasDerivedFrom = self.cell_val
         if "pubmed.ncbi.nlm.nih.gov/" in self.cell_val:
@@ -236,6 +244,7 @@ class sbol_methods:
             self.obj.OBI_0001617 = self.cell_val.split(".gov/")[1].replace("/", "")
 
     def sequence(self):
+        # might need to be careful if the object type is sequence!
         if re.fullmatch(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.cell_val):
             # if a url
             self.obj.sequences = self.cell_val
