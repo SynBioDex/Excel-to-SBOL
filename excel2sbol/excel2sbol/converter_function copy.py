@@ -5,14 +5,13 @@ import re
 import math
 import sbol2
 import logging
-import pandas as pd
 import excel2sbol.lookup as lk
 import excel2sbol.helper_functions as hf
 import excel2sbol.column_functions as cf
 import excel2sbol.initialise_functions as initf
 
 
-def converter(file_path_in, file_path_out, template_name):
+def converter(template_name, file_path_in, file_path_out):
     """This runs a full conversion from an excel template to an sbol file.
     The sbol file is output at the file_path_out location. The conversion is
     based on parameters found in template_constants.txt, accessed based on
@@ -26,10 +25,6 @@ def converter(file_path_in, file_path_out, template_name):
         file_path_out (str): The full path to where the sbol file should be
                 saved. E.g. 'C:/users/user/output.xml'
     """
-#     init_info = pd.read_excel(file_path_in, sheet_name="Init",
-#                                     header=None, index_col=0, engine='openpyxl').to_dict('index')
-
-
     # read in the sheet and convert it to a dictionary
     (col_read_dict, sheet_dict, descrip_info,
      collection_info) = initf.read_in_sheet(template_name, file_path_in)
@@ -71,19 +66,15 @@ def converter(file_path_in, file_path_out, template_name):
         # var_func = getattr(sbol2, sbol_obj_type)
         sbol_obj_type2 = sbol_obj_type[0].lower() + sbol_obj_type[1:]
         # print(sbol_obj_type2)
-
         var_func_temp = getattr(doc, f'{sbol_obj_type2}s')
         var_func = getattr(var_func_temp, 'create')
         if sbol_obj_type == "ComponentDefinition" and len(sbol_type_col) == 0:
             print(f'var func:{var_func}')
             obj = var_func(hf.check_name(row[display_id_col]))
             obj.addType = sbol2.BIOPAX_DNA
-            # obj.addType = sbol2.BIOPAX_PROTEIN #this doesn't work as expected
-            print(sbol2.BIOPAX_PROTEIN)
             logging.warning("No type column was given so all component definitions are being implemented as DNA")
         else:
             obj = var_func(hf.check_name(row[display_id_col]))
-        # obj = doc.experimentalData(hf.check_name(row[display_id_col]))
 
         # print(row[display_id_col])
         for col in row:

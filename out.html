@@ -1,50 +1,163 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.w3.org/ns/prov#" xmlns:ns1="http://purl.org/dc/terms/">
-  <sbol:ComponentDefinition rdf:about="http://examples.org/rbs_hgh/1">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.w3.org/ns/prov#">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/GFP/1">
+    <sbol:version>1</sbol:version>
+    <dcterms:title>Green fluorescent protein</dcterms:title>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
+    <sbol:displayId>GFP</sbol:displayId>
+    <obo:OBI_0001617>17685514</obo:OBI_0001617>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/17685514"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000804"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbh:uniprotId>P42212</sbh:uniprotId>
+    <dcterms:description>Energy-transfer acceptor. Its role is to transduce the blue chemiluminescence of the protein aequorin into green fluorescent light by energy transfer. Fluoresces in vivo upon receiving energy from the Ca2+-activated photoprotein aequorin.</dcterms:description>
+    <sbol:sequence rdf:resource="http://examples.org/GFP_sequence/1"/>
+    <sbh:pdbId>1b9c</sbh:pdbId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/EXO84/1">
+    <sbol:displayId>EXO84</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <dcterms:description>Involved in the secretory pathway as part of the exocyst complex which tethers secretory vesicles to the sites of exocytosis. Plays a role in both the assembly of the exocyst and the polarization of this complex to specific sites of the plasma membrane for exocytosis and to the budding site. Also involved in assembly of the spliceosome.</dcterms:description>
+    <sbh:uniprotId>P38261</sbh:uniprotId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/EXO84"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/16249794"/>
+    <dcterms:title>Exocyst complex component EXO84</dcterms:title>
+    <obo:OBI_0001617>16249794</obo:OBI_0001617>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4932"/>
+    <sbol:sequence rdf:resource="http://examples.org/EXO84_sequence/1"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000804"/>
+    <sbh:pdbId>2D2S</sbh:pdbId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/tetR/1">
+    <obo:OBI_0001617>9642048</obo:OBI_0001617>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/9642048"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000804"/>
+    <dcterms:title>Tetracycline repressor protein class D</dcterms:title>
+    <sbh:pdbId>1A6I</sbh:pdbId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbh:uniprotId>P0ACT4</sbh:uniprotId>
+    <sbol:sequence rdf:resource="http://examples.org/tetR_sequence/1"/>
+    <dcterms:description>TetR is the repressor of the tetracycline resistance element; its N-terminal region forms a helix-turn-helix structure and binds DNA. Binding of tetracycline to TetR reduces the repressor affinity for the tetracycline resistance gene (tetA) promoter operator sites.</dcterms:description>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/rbs_hgh"/>
     <sbol:version>1</sbol:version>
-    <sbol:displayId>rbs_hgh</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/6091124"/>
-    <obo:OBI_0001617>6091124</obo:OBI_0001617>
-    <ns1:description>allow or prevent access to HGH CDS</ns1:description>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tetR"/>
+    <sbol:displayId>tetR</sbol:displayId>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/rbs_test/1">
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/27860310"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/rbs_test"/>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-    <ns1:description>allow or prevent access to testosterone CDS</ns1:description>
-    <sbol:displayId>rbs_test</sbol:displayId>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/LacI/1">
+    <obo:OBI_0001617>10647179</obo:OBI_0001617>
+    <dcterms:title>Lactose operon repressor</dcterms:title>
+    <sbol:sequence rdf:resource="http://examples.org/LacI_sequence/1"/>
+    <sbol:displayId>LacI</sbol:displayId>
     <sbol:version>1</sbol:version>
-    <obo:OBI_0001617>27860310</obo:OBI_0001617>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/10647179"/>
+    <dcterms:description>Repressor of the lactose operon. Binds allolactose as an inducer.</dcterms:description>
+    <sbh:uniprotId>P03023</sbh:uniprotId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbh:pdbId>1CJG</sbh:pdbId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000804"/>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pro_Test/1">
-    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/27860310"/>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-    <sbol:displayId>pro_Test</sbol:displayId>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pro_Test"/>
-    <obo:OBI_0001617>27860310</obo:OBI_0001617>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/wbdD/1">
+    <sbh:pdbId>4AX8</sbh:pdbId>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:sequence rdf:resource="http://examples.org/wbdD_sequence/1"/>
     <sbol:version>1</sbol:version>
-    <ns1:description>starts transcription of test gene</ns1:description>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/wbdD"/>
+    <sbol:displayId>wbdD</sbol:displayId>
+    <dcterms:title>O-antigen chain terminator bifunctional methyltransferase/kinase WbdD</dcterms:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000141"/>
+    <obo:OBI_0001617>22993091</obo:OBI_0001617>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/22993091"/>
+    <sbh:uniprotId>J714B7</sbh:uniprotId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:description>Regulates the length of the LPS O-antigen polysaccharide chain. Stops the polymerization of the chain by phosphorylating and then methylating the phosphate on the terminal sugar. This terminal modification is essential for export of the O-antigen across the inner membrane. WbdD is also required for correct localization of the WbdA mannosyltransferase.</dcterms:description>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/DHT/1">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Rho/1">
+    <sbol:displayId>Rho</sbol:displayId>
+    <dcterms:description>Facilitates transcription termination by a mechanism that involves Rho binding to the nascent RNA, activation of Rho's RNA-dependent ATPase activity, and release of the mRNA from the DNA template. RNA-dependent NTPase which utilizes all four ribonucleoside triphosphates as substrates.</dcterms:description>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/9586995"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000141"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:title>Transcription termination factor Rho</dcterms:title>
+    <sbh:uniprotId>P0AG30</sbh:uniprotId>
+    <sbol:sequence rdf:resource="http://examples.org/Rho_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Rho"/>
+    <obo:OBI_0001617>9586995</obo:OBI_0001617>
+    <sbh:pdbId>1A62</sbh:pdbId>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
     <sbol:version>1</sbol:version>
-    <obo:OBI_0001617>10839207</obo:OBI_0001617>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <ns1:description>coding sequence for release of DHT</ns1:description>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-    <sbol:displayId>DHT</sbol:displayId>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/10839207"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/DHT"/>
   </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/araC/1">
+    <dcterms:title>Arabinose operon regulatory protein</dcterms:title>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:version>1</sbol:version>
+    <sbh:pdbId>1XJA</sbh:pdbId>
+    <obo:OBI_0001617>17173282</obo:OBI_0001617>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/araC"/>
+    <ns0:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/17173282"/>
+    <sbh:uniprotId>P0A9E0</sbh:uniprotId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:description>Transcription factor that regulates the expression of several genes involved in the transport and metabolism of L-arabinose</dcterms:description>
+    <sbol:sequence rdf:resource="http://examples.org/araC_sequence/1"/>
+    <sbol:displayId>araC</sbol:displayId>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000804"/>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/GFP_sequence/1">
+    <dcterms:title>Green fluorescent protein Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>GFP_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>mskgeelftgvvpilveldgdvnghkfsvsgegegdatygkltlkficttgklpvpwptlvttfsygvqcfsrypdhmkqhdffksampegyvqertiffkddgnyktraevkfegdtlvnrielkgidfkedgnilghkleynynshnvyimadkqkngikvnfkirhniedgsvqladhyqqntpigdgpvllpdnhylstqsalskdpnekrdhmvllefvtaagithgmdelyk</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/EXO84_sequence/1">
+    <sbol:elements>mvefslkkarnnwkhvkksasspakqktppspakpkqktkknpysdlkdpatsytlptinarersrvatsmqrrlsihntnyapptldysmplpdmpnmivpndnvdsshnnssfttenesvsskgpsnslnlstadlslndssynkvparsamrntvnpsgsndpfnnstslrkmlanphfnakdfvhdklgnasaitidkftsnltdlsiqvqeevklninksyneimtvnndlnvamlelkrvranindlnevldqctkiaekrlqlqdqidqerqgnfnnveshsnspallpplkagqngnlmrrdrssvlilekfwdteldqlfknvegaqkfinstkgrhilmnsanwmelntttgkplqmvqifilndlvliadksrdkqndfivsqcyplkdvtvtqeefstkrllfkfsnsnsslyecrdadecsrlldvirkakddlcdifhveeenskriresfrylqstqqtpgrennrspnknkrrsmggsitpgrnvtgamdqyllqnltlsmhsrprsrdmsstaqrlkfldegveeidielarlrfesavetlldiesqledlserisdeelmllnlislkieqrreaissklsqsilssneivhlksgtenmiklglpeqaldlflqnrsnfiqdlilqigsvdnptnyltqlavirfqtikktvedfqdifkelgakissilvdwcsdevdnhfklidkqllndemlspgsikssrkqidglkavgldfvykldefikknsdkir</sbol:elements>
+    <sbol:displayId>EXO84_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/EXO84_sequence"/>
+    <sbol:version>1</sbol:version>
+    <dcterms:title>Exocyst complex component EXO84 Sequence</dcterms:title>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/tetR_sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_sequence"/>
+    <sbol:displayId>tetR_sequence</sbol:displayId>
+    <dcterms:title>Tetracycline repressor protein class D Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>marlnresvidaalellnetgidglttrklaqklgieqptlywhvknkralldalaveilarhhdyslpaageswqsflrnnamsfrrallryrdgakvhlgtrpdekqydtvetqlrfmtengfslrdglyaisavshftlgavleqqehtaaltdrpaapdenlppllrealqimdsddgeqaflhgleslirgfevqltallqivggdkliipfc</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/LacI_sequence/1">
+    <sbol:elements>mkpvtlydvaeyagvsyqtvsrvvnqashvsaktrekveaamaelnyipnrvaqqlagkqslligvatsslalhapsqivaaiksradqlgasvvvsmversgveackaavhnllaqrvsgliinyplddqdaiaveaactnvpalfldvsdqtpinsiifshedgtrlgvehlvalghqqiallagplssvsarlrlagwhkyltrnqiqpiaeregdwsamsgfqqtmqmlnegivptamlvandqmalgamraitesglrvgadisvvgyddtedsscyipplttikqdfrllgqtsvdrllqlsqgqavkgnqllpvslvkrkttlapntqtaspraladslmqlarqvsrlesgq</sbol:elements>
+    <dcterms:title>Lactose operon repressor Sequence</dcterms:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>LacI_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/wbdD_sequence/1">
+    <sbol:elements>mtkdlntlvselpeiyqtifghpewdgdaardcnqrldliteqydnlsralgrplnvldlgcaqgffslslaskgativgidfqqeninvcralaeenpdfaaefrvgrieeviaaleegefdlaiglsvfhhivhlhgidevkrllsrladvtqavilelavkeepfywgvsqpddprelieqcafyrligefdthlspvprpmylvsnhrvlindfnqpfqhwqnqpyagaglahkrsrryffgedyvckffyydmphgiltaeesqrnkyelhneikfltqppagfdapavlahgenaqsgwlvmeklpgrllsdmlaageeidrekilgsllrslaalekqgfwhddvrpwnvmvdarqharlidfgsivttpqdcswptnlvqsffvfvnelfaenkswngfwrsapvhpfnlpqpwsnwlyavwqepverwnfvlllalfekkaklpsaeqqrgateqwiiaqetvllelqsrvrnesagsealrgqihtleqqmaqlqsaqdafvekaqqqvevsheltwlgenmeqlaallqtaqahaqadvqpelppetaellqrleaanreihhlsnenqqlrqeiekihrsrswrmtkgyrylglqihllrqygfvqrckhfikrvlrfvfsfmrkhpqvkhtavnglhklglyqpayrlyrrmnplphsqyqadaqilsqtelqvmhpellppevyeiylkltknk</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/wbdD_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>wbdD_sequence</sbol:displayId>
+    <dcterms:title>O-antigen chain terminator bifunctional methyltransferase/kinase WbdD Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Rho_sequence/1">
+    <sbol:elements>mnltelkntpvselitlgenmglenlarmrkqdiifailkqhaksgedifgdgvleilqdgfgflrsadssylagpddiyvspsqirrfnlrtgdtisgkirppkegeryfallkvnevnfdkpenarnkilfenltplhansrlrmergngstedltarvldlaspigrgqrglivappkagktmllqniaqsiaynhpdcvlmvlliderpeevtemqrlvkgevvastfdepasrhvqvaemviekakrlvehkkdviilldsitrlarayntvvpasgkvltggvdanalhrpkrffgaarnveeggsltiiatalidtgskmdeviyeefkgtgnmelhlsrkiaekrvfpaidynrsgtrkeellttqeelqkmwilrkiihpmgeidameflinklamtktnddffemmkrs</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Rho_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Rho_sequence"/>
+    <dcterms:title>Transcription termination factor Rho Sequence</dcterms:title>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/araC_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/araC_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>araC_sequence</sbol:displayId>
+    <sbol:elements>maeaqndpllpgysfnahlvagltpieangyldffidrplgmkgyilnltirgqgvvknqgrefvcrpgdillfppgeihhygrhpearewyhqwvyfrpraywhewlnwpsifantgffrpdeahqphfsdlfgqiinagqgegrysellainlleqlllrrmeaineslhppmdnrvreacqyisdhladsnfdiasvaqhvclspsrlshlfrqqlgisvlswredqrisqaklllsttrmpiatvgrnvgfddqlyfsrvfkkctgaspsefragceekvndvavkls</sbol:elements>
+    <dcterms:title>Arabinose operon regulatory protein Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
 </rdf:RDF>
