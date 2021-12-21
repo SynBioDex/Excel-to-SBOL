@@ -8,6 +8,7 @@ import math
 import re
 
 homespace_url = "http://examples.org/"
+# homespace_url = ''
 cwd = os.getcwd()
 file_path_in = os.path.join(cwd, 'excel2sbol', 'tests', 'test_files', 'pichia_comb_dev_compiler.xlsx')
 file_path_out = os.path.join(cwd, 'out.xml')
@@ -71,7 +72,7 @@ col_read_df = pd.read_excel(file_path_in,
                                  engine='openpyxl')
 
 # col_read_df = col_read_df.to_dict('index')
-# print(col_read_df)
+
 
 ################################################################
 """Making a list of all objects in the document"""
@@ -79,6 +80,7 @@ col_read_df = pd.read_excel(file_path_in,
 # create uris for every item in to convert sheets (note might want generic top level if object type is not an sbol object type)
 dict_of_objs = {}
 doc = sbol2.Document()
+sbol2.setHomespace('http://examples.org/')
 sbol2.setHomespace('')
 # sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_COMPLIANT_URIS, False)
 sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_TYPED_URIS, False)
@@ -89,6 +91,7 @@ def non_implemented_class(types, uri):
     return tp
 
 
+sht_convert_dict = {}
 for sht in to_convert:
     sht_df = col_read_df.loc[col_read_df['Sheet Name'] == sht]
 
@@ -102,6 +105,7 @@ for sht in to_convert:
     except IndexError as e:
         raise KeyError(f'The sheet "{sht}" has no column with sbol_objectType as type. Thus the following error was raised: {e}')
 
+    sht_convert_dict[sht] = dis_name_col
     ids = compiled_sheets[sht]['library'][dis_name_col]
     types = compiled_sheets[sht]['library'][obj_type_col]
 
@@ -113,6 +117,7 @@ for sht in to_convert:
         if hasattr(sbol2, types[ind]):
             varfunc = getattr(sbol2, types[ind])
             obj = varfunc(uri)
+            obj.displayId = sanitised_id
 
         else:
             obj = non_implemented_class(types[ind], uri)
@@ -124,7 +129,9 @@ for sht in to_convert:
 # all id lookup and parent lookup columns
 # id_lookup_rows = col_read_df.loc[col_read_df['Object_ID Lookup'] == True]
 
-# print(col_read_df['Object_ID Lookup'])
+for obj_name in dict_of_objs:
+    obj = dict_of_objs[obj_name]['object']
+    doc.add(obj)
 
 ###########################################################################
 # parse columns of all to convert sheets
@@ -133,8 +140,12 @@ for sht in to_convert:
     print(sht)
     sht_lib = compiled_sheets[sht]['library']
     num_rows = len(sht_lib[list(sht_lib.keys())[0]])  # pulls first column and checks the number of elements in it
+
     for row_num in range(0, num_rows):
-        # pull display id column to work on object from dict of objects
+        disp_id = sht_lib[sht_convert_dict[sht]][row_num]
+        obj = dict_of_objs[disp_id]['object']
+        obj_uri = dict_of_objs[disp_id]['uri']
+
         for col in sht_lib.keys():
             cell_val = sht_lib[col][row_num]
 
@@ -149,7 +160,8 @@ for sht in to_convert:
                 split_on = '[' + "".join(split_on) + ']'
                 if len(split_on) > 2:  # used as string will always be '[]' at least
                     cell_val = re.split(split_on, cell_val)
-                    # print(cell_val)
+                if isinstance(cell_val, list):
+                    cell_val = [x.strip() for x in cell_val]
 
                 # cell value or list of cell values based on lookups
                 if isinstance(cell_val, list):
@@ -167,8 +179,8 @@ for sht in to_convert:
 
                 # Ensures that the cell value after possible conversion
                 # matches one of the patterns specified
-                pattern = col_convert_df['Pattern'][0]
-                if isinstance(pattern, str):
+                pattern = col_convert_df['Pattern'].values[0]
+                if isinstance(pattern, str) and len(pattern) > 2:
                     pattern = pattern = pattern.split('"')
                     pattern = [x for x in pattern if x != '' and x != ' ']
                     if isinstance(cell_val, list):
@@ -185,18 +197,16 @@ for sht in to_convert:
 
                 # carry out method of column processing based on
                 # the sbol_term of the column
-                # UPDATE TO WORK WITH COMPILER VERSION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                col_meth = cf.sbol_methods(col_convert_df['Namespace URL'][0],
-                                           obj, doc, cell_val,
-                                           col_convert_df['Split On'][0],
-                                           col_convert_df['Type'][0],
-                                           col_convert_df['Pattern'],
-                                           sbol_obj_type)
-                col_meth.switch(sheet_tbl.column_list[col].sbol_term)
+                parental_lookup = col_convert_df['Parent Lookup'].values[0]
+                col_meth = cf.sbol_methods(col_convert_df['Namespace URL'].values[0],
+                                           obj, obj_uri, dict_of_objs, doc,
+                                           cell_val,
+                                           col_convert_df['Type'].values[0],
+                                           parental_lookup,
+                                           homespace_url)
+                col_meth.switch(col_convert_df['SBOL Term'].values[0])
 
-        # doc.add(obj)
-    # doc.write(file_path_out)
+
+
+doc.write(file_path_out)
 # output sbol
-
-# print(to_convert)
-# print(compiled_sheets)

@@ -4,6 +4,7 @@
 import re
 import sbol2
 import pandas as pd
+import logging
 import excel2sbol.helper_functions as hf
 
 class sbol_methods:
@@ -11,8 +12,8 @@ class sbol_methods:
     is where the processing of column values happens.
     """
 
-    def __init__(self, namespace_url, obj, doc, cell_value, split_on,
-                 col_type, pattern, object_type):
+    def __init__(self, namespace_url, obj, obj_uri, obj_dict, doc, cell_value,
+                 col_type, parental_lookup, homespace_url):
         """Initialisation of the sbol_methods class. This ensures
         that all the values that the switch case statements might need
         are available as properties of the self object.
@@ -33,13 +34,14 @@ class sbol_methods:
         """
         self.cell_val = cell_value
         self.obj = obj
-        self.object_type = object_type
+        self.obj_uri = obj_uri
+        self.obj_dict = obj_dict
         self.namespace_url = namespace_url
         self.doc = doc
         self.doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
-        self.split_on = split_on
         self.col_type = col_type
-        self.pattern = pattern
+        self.parental_lookup = parental_lookup
+        self.homespace_url = homespace_url
 
     # create method for each sbol term that can be called via the column class
     def switch(self, sbol_term):
@@ -60,6 +62,11 @@ class sbol_methods:
         self.sbol_term_pref = sbol_term.split("_", 1)[0]
         self.sbol_term_suf = sbol_term.split("_", 1)[1]
 
+        if self.parental_lookup:
+            # switches the object being worked on
+            self.obj = self.obj_dict[self.cell_val]['object']
+            self.cell_val = self.obj_uri
+
         # if not applicable then do nothing
         if sbol_term == "Not_applicable":
             pass
@@ -69,6 +76,8 @@ class sbol_methods:
             return getattr(self, self.sbol_term_suf)()
 
         # if it is an sbol term use standard pySBOL implementation
+        # unless it is a top level object in which case the standard
+        # implementations don't work
         elif self.sbol_term_pref == "sbol":
             if hasattr(self.obj, self.sbol_term_suf):
                 # if the attribute is a list append the new value
@@ -84,7 +93,7 @@ class sbol_methods:
                     # can't have multiple values
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
             else:
-                raise ValueError(f'This SBOL object ({self.object_type}) has no attribute {self.sbol_term_suf}')
+                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}')
 
         else:
             # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
@@ -121,7 +130,7 @@ class sbol_methods:
                 else:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
-                    current = current = getattr(self.obj, self.sbol_term_suf)
+                    current = getattr(self.obj, self.sbol_term_suf)
                     setattr(self.obj, self.sbol_term_suf, current + self.cell_val)
 
     def objectType(self):
@@ -133,19 +142,60 @@ class sbol_methods:
         pass
 
     def subcomponents(self):
-        for sub in self.cell_val:
-            print(self.doc)
-            if sub not in self.doc.componentDefinitions:
-                print("sub", sub)
-                cd = sbol2.ComponentDefinition(sub) # HOW DO I GET THIS TO NOT GIVE EXAMPLES.ORG/HTTPS/IGEMSTUFF
-                cd_seq = sbol2.Sequence(f'{sub}_seq')
-                cd_seq.elements = "aaaaaaaaaaaaaa" # NEEEEEEEEEEEEEEEEEEEEEEEEEDS EDITTING!!!!!!!!!!!!!!!!
-                cd.sequence = cd_seq
-                self.doc.add(cd)
-        # print(self.cell_val)
-        self.obj.assemblePrimaryStructure(self.cell_val)
-        self.obj.compile(assembly_method=None)
-        # obj.sequence
+        pass
+        # if type is compdef do one thing, if combdev do another, else error
+        if isinstance(self.obj, sbol2.componentdefinition.ComponentDefinition):
+            self.cell_val = [f'{sbol2.getHomespace()}{x}' for x in self.cell_val]
+            self.obj.assemblePrimaryStructure(self.cell_val)
+            self.obj.compile(assembly_method=None)
+        elif isinstance(self.obj, sbol2.combinatorialderivation.CombinatorialDerivation):
+            comp_list = self.cell_val
+
+            comp_ind = 0
+            variant_comps = {}
+            for ind, comp in enumerate(comp_list):
+                if "," in comp:
+                    comp_list[ind] = f'{self.obj.displayId}_subcomponent_{comp_ind}'
+                    uri = f'{self.homespace_url}{self.obj.displayId}_subcomponent_{comp_ind}'
+                    sub_comp = sbol2.ComponentDefinition(uri)
+                    sub_comp.displayId = f'{self.obj.displayId}_subcomponent_{comp_ind}'
+                    self.doc.add(sub_comp)
+                    variant_comps[f'subcomponent_{comp_ind}'] = {'object': sub_comp, 'variant_list': comp}
+                    comp_ind += 1
+                else:
+                    comp_list[ind] = f'{sbol2.getHomespace()}{comp}'
+
+            template = sbol2.ComponentDefinition(f'{self.homespace_url}{self.obj.displayId}_template')
+            template.displayId = f'{self.obj.displayId}_template'
+            self.doc.add(template)
+
+            template.assemblePrimaryStructure(comp_list)
+            template.compile(assembly_method=None)
+
+            self.obj.masterTemplate = template
+            for var in variant_comps:
+                var_comp = sbol2.VariableComponent(f'{self.homespace_url}var_{var}')
+                var_comp.displayId = f'var_{var}'
+                var_comp.variable = variant_comps[var]['object']
+
+                var_list = re.split(",", variant_comps[var]['variant_list'])
+                var_list = [f'{sbol2.getHomespace()}{x.strip()}' for x in var_list]
+                # for sub_var in var_list:
+                #     pass
+                var_comp.variants = var_list
+                self.obj.variableComponents.add(var_comp)
+                print(var)
+
+
+            # var = sbol2.VariableComponent('cds_variable')
+            # var.variable = save_this
+            # var1 = sbol2.ComponentDefinition('var_1')
+            # var2 = sbol2.ComponentDefinition('var_2')
+            # var.variants = [var1, var2]
+            # comb_dev.variableComponents.add(var)
+            # ISSUES HERE TO BE IMPLEMENTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        else:
+            raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents.')
 
     def dataSource(self):
         self.obj.wasDerivedFrom = self.cell_val
