@@ -2,6 +2,8 @@
 import sbol2
 import os
 
+# print(sbol2.SBOL_COMBINATORIAL_DERIVATION)
+
 cwd = os.getcwd()
 file_path_out = os.path.join(cwd, 'out.html')
 

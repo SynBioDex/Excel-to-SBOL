@@ -7,8 +7,7 @@ import sbol2
 import math
 import re
 
-homespace_url = "http://examples.org/"
-# homespace_url = ''
+# the homespace only works if the change is made to pysbol2 shown in https://github.com/SynBioDex/pySBOL2/pull/411/files
 cwd = os.getcwd()
 file_path_in = os.path.join(cwd, 'excel2sbol', 'tests', 'test_files', 'pichia_comb_dev_compiler.xlsx')
 file_path_out = os.path.join(cwd, 'out.xml')
@@ -81,7 +80,6 @@ col_read_df = pd.read_excel(file_path_in,
 dict_of_objs = {}
 doc = sbol2.Document()
 sbol2.setHomespace('http://examples.org/')
-sbol2.setHomespace('')
 # sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_COMPLIANT_URIS, False)
 sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_TYPED_URIS, False)
 
@@ -111,23 +109,18 @@ for sht in to_convert:
 
     for ind, id in enumerate(ids):
         sanitised_id = hf.check_name(id)
-        uri = f'{homespace_url}{sanitised_id}'
-        dict_of_objs[id] = uri
+        uri = f'{sbol2.getHomespace()}{sanitised_id}'
 
         if hasattr(sbol2, types[ind]):
             varfunc = getattr(sbol2, types[ind])
-            obj = varfunc(uri)
+            obj = varfunc(sanitised_id)
             obj.displayId = sanitised_id
 
         else:
             obj = non_implemented_class(types[ind], uri)
 
-        dict_of_objs[id] = {'uri': uri, 'object': obj}
+        dict_of_objs[id] = {'uri': uri, 'object': obj, 'displayId': sanitised_id}
 
-# check all uris have been made for the id lookup columns, make any not yet called and call warning
-# can move this to where the column is processed and if it causes difficulties call an error there.
-# all id lookup and parent lookup columns
-# id_lookup_rows = col_read_df.loc[col_read_df['Object_ID Lookup'] == True]
 
 for obj_name in dict_of_objs:
     obj = dict_of_objs[obj_name]['object']
@@ -202,11 +195,10 @@ for sht in to_convert:
                                            obj, obj_uri, dict_of_objs, doc,
                                            cell_val,
                                            col_convert_df['Type'].values[0],
-                                           parental_lookup,
-                                           homespace_url)
+                                           parental_lookup)
                 col_meth.switch(col_convert_df['SBOL Term'].values[0])
 
 
 
 doc.write(file_path_out)
-# output sbol
+

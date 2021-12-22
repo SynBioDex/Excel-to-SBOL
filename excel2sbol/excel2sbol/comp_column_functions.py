@@ -13,7 +13,7 @@ class sbol_methods:
     """
 
     def __init__(self, namespace_url, obj, obj_uri, obj_dict, doc, cell_value,
-                 col_type, parental_lookup, homespace_url):
+                 col_type, parental_lookup):
         """Initialisation of the sbol_methods class. This ensures
         that all the values that the switch case statements might need
         are available as properties of the self object.
@@ -41,7 +41,6 @@ class sbol_methods:
         self.doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
         self.col_type = col_type
         self.parental_lookup = parental_lookup
-        self.homespace_url = homespace_url
 
     # create method for each sbol term that can be called via the column class
     def switch(self, sbol_term):
@@ -142,30 +141,26 @@ class sbol_methods:
         pass
 
     def subcomponents(self):
-        pass
         # if type is compdef do one thing, if combdev do another, else error
         if isinstance(self.obj, sbol2.componentdefinition.ComponentDefinition):
-            self.cell_val = [f'{sbol2.getHomespace()}{x}' for x in self.cell_val]
             self.obj.assemblePrimaryStructure(self.cell_val)
             self.obj.compile(assembly_method=None)
+
         elif isinstance(self.obj, sbol2.combinatorialderivation.CombinatorialDerivation):
             comp_list = self.cell_val
-
             comp_ind = 0
             variant_comps = {}
             for ind, comp in enumerate(comp_list):
                 if "," in comp:
                     comp_list[ind] = f'{self.obj.displayId}_subcomponent_{comp_ind}'
-                    uri = f'{self.homespace_url}{self.obj.displayId}_subcomponent_{comp_ind}'
+                    uri = f'{self.obj.displayId}_subcomponent_{comp_ind}'
                     sub_comp = sbol2.ComponentDefinition(uri)
                     sub_comp.displayId = f'{self.obj.displayId}_subcomponent_{comp_ind}'
                     self.doc.add(sub_comp)
                     variant_comps[f'subcomponent_{comp_ind}'] = {'object': sub_comp, 'variant_list': comp}
                     comp_ind += 1
-                else:
-                    comp_list[ind] = f'{sbol2.getHomespace()}{comp}'
 
-            template = sbol2.ComponentDefinition(f'{self.homespace_url}{self.obj.displayId}_template')
+            template = sbol2.ComponentDefinition(f'{self.obj.displayId}_template')
             template.displayId = f'{self.obj.displayId}_template'
             self.doc.add(template)
 
@@ -174,26 +169,16 @@ class sbol_methods:
 
             self.obj.masterTemplate = template
             for var in variant_comps:
-                var_comp = sbol2.VariableComponent(f'{self.homespace_url}var_{var}')
+                var_comp = sbol2.VariableComponent(f'var_{var}')
                 var_comp.displayId = f'var_{var}'
                 var_comp.variable = variant_comps[var]['object']
 
                 var_list = re.split(",", variant_comps[var]['variant_list'])
                 var_list = [f'{sbol2.getHomespace()}{x.strip()}' for x in var_list]
-                # for sub_var in var_list:
-                #     pass
                 var_comp.variants = var_list
                 self.obj.variableComponents.add(var_comp)
                 print(var)
 
-
-            # var = sbol2.VariableComponent('cds_variable')
-            # var.variable = save_this
-            # var1 = sbol2.ComponentDefinition('var_1')
-            # var2 = sbol2.ComponentDefinition('var_2')
-            # var.variants = [var1, var2]
-            # comb_dev.variableComponents.add(var)
-            # ISSUES HERE TO BE IMPLEMENTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         else:
             raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents.')
 
