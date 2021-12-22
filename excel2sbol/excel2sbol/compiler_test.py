@@ -2,6 +2,7 @@ import pandas as pd
 import excel2sbol.helper_functions as hf
 import excel2sbol.lookup_compiler as lk
 import excel2sbol.comp_column_functions as cf
+import logging
 import sbol2
 import sbol3
 import math
@@ -131,8 +132,88 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
     return(doc, dict_of_objs, sht_convert_dict)
 
 
+def parse_objects3(col_read_df, to_convert, compiled_sheets,
+                  homespace='http://examples.org/', sbol_version=3):
+    """Making a list of all objects in the document"""
+
+    # create uris for every item in to convert sheets
+    # (note might want generic top level
+    # if object type is not an sbol object type)
+
+    dict_of_objs = {}
+    sht_convert_dict = {}
+    doc = sbol3.Document()
+    sbol3.set_namespace(homespace)
+
+    # sbol3.ConfigOptions.SBOL_TYPED_URIS = False
+    # sbol3.Config.setOption(sbol3.ConfigOptions.SBOL_TYPED_URIS = False)
+    # sbol3.Config.setOption(sbol3.ConfigOptions.SBOL_TYPED_URIS, False)
+
+    for sht in to_convert:
+        sht_df = col_read_df.loc[col_read_df['Sheet Name'] == sht]
+
+        try:
+            dis_name_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_displayId']['Column Name'].values[0]
+        except IndexError as e:
+            raise KeyError(f'The sheet "{sht}" has no column with sbol_displayID as type. Thus the following error was raised: {e}')
+
+        try:
+            obj_type_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_objectType']['Column Name'].values[0]
+        except IndexError as e:
+            raise KeyError(f'The sheet "{sht}" has no column with sbol_objectType as type. Thus the following error was raised: {e}')
+
+        try:
+            mol_type_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_type']['Column Name'].values[0]
+            mol_types = compiled_sheets[sht]['library'][mol_type_col]
+        except IndexError:
+            mol_types = None
+
+        sht_convert_dict[sht] = dis_name_col
+        ids = compiled_sheets[sht]['library'][dis_name_col]
+        obj_types = compiled_sheets[sht]['library'][obj_type_col]
+
+        for ind, id in enumerate(ids):
+            sanitised_id = hf.check_name(id)
+
+            uri = f'{sbol3.get_namespace()}{sanitised_id}'
+
+            if hasattr(sbol3, obj_types[ind]):
+                varfunc = getattr(sbol3, obj_types[ind])
+                print(obj_types[ind])
+                if obj_types[ind] == "Component":
+                    if mol_types is not None:
+                        obj = varfunc(sanitised_id, mol_types[ind])
+                    else:
+                        obj = varfunc(sanitised_id, sbol3.SBO_DNA)
+                        logging.warning(f'As no molecule type was giving the component {id} was initiated as a DNA molecule')
+                elif obj_types[ind] == "CombinatorialDerivation":
+                    template = sbol3.Component(f'{sanitised_id}_template', sbol3.SBO_DNA)
+                    template.displayId = f'{sanitised_id}_template'
+                    dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol3.get_namespace()}{sanitised_id}_template',
+                                        'object': template,
+                                        'displayId': f'{sanitised_id}_template'}
+
+                    obj = varfunc(sanitised_id, template)
+                    # doesnt work for comb dev at the moment!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                else:
+                    obj = varfunc(sanitised_id)
+                obj.displayId = sanitised_id
+
+            else:
+                # if not a known sbol class use generic toplevel
+                obj = sbol3.TopLevel(type_uri=obj_types[ind], identity=uri)
+
+            dict_of_objs[id] = {'uri': uri, 'object': obj,
+                                'displayId': sanitised_id}
+
+    for obj_name in dict_of_objs:
+        obj = dict_of_objs[obj_name]['object']
+        doc.add(obj)
+    return(doc, dict_of_objs, sht_convert_dict)
+
+
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
-                 col_read_df, doc, file_path_out):
+                 col_read_df, doc, file_path_out, sbol_version=3):
 
     for sht in to_convert:
         print(sht)
@@ -204,12 +285,22 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     # carry out method of column processing based on
                     # the sbol_term of the column
                     parental_lookup = col_convert_df['Parent Lookup'].values[0]
-                    col_meth = cf.sbol_methods(col_convert_df['Namespace URL'].values[0],
-                                               obj, obj_uri, dict_of_objs, doc,
-                                               cell_val,
-                                               col_convert_df['Type'].values[0],
-                                               parental_lookup)
-                    col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                    if sbol_version == 2:
+                        col_meth = cf.sbol_methods2(col_convert_df['Namespace URL'].values[0],
+                                                obj, obj_uri, dict_of_objs, doc,
+                                                cell_val,
+                                                col_convert_df['Type'].values[0],
+                                                parental_lookup)
+                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                    elif sbol_version == 3:
+                        col_meth = cf.sbol_methods3(col_convert_df['Namespace URL'].values[0],
+                                                obj, obj_uri, dict_of_objs, doc,
+                                                cell_val,
+                                                col_convert_df['Type'].values[0],
+                                                parental_lookup)
+                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                    else:
+                        raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
 
     doc.write(file_path_out)
     return

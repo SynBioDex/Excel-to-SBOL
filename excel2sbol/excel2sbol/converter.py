@@ -12,9 +12,14 @@ sbol_version = 3
 
 col_read_df, to_convert, compiled_sheets = e2s.initialise(file_path_in)
 
-doc, dict_of_objs, sht_convert_dict = e2s.parse_objects(col_read_df,
-                                                        to_convert,
-                                                        compiled_sheets)
+if sbol_version == 2:
+    doc, dict_of_objs, sht_convert_dict = e2s.parse_objects(col_read_df,
+                                                            to_convert,
+                                                            compiled_sheets)
+elif sbol_version == 3:
+    doc, dict_of_objs, sht_convert_dict = e2s.parse_objects3(col_read_df,
+                                                            to_convert,
+                                                            compiled_sheets)
 
 e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
-                 col_read_df, doc, file_path_out)
+                 col_read_df, doc, file_path_out, sbol_version=sbol_version)

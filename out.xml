@@ -1,321 +1,197 @@
-<rdf:RDF xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.helloworld.com/thing#">
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX1/1">
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <dcterms:description>thing 1</dcterms:description>
-    <sbol:sequence rdf:resource="http://examples.org/pAOX1_seq/1"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957"/>
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
+   xmlns:sbol="http://sbols.org/v3#"
+>
+  <rdf:Description rdf:about="http://examples.org/colect2">
+    <sbol:displayId>colect2</sbol:displayId>
+    <sbol:description>thing 2</sbol:description>
+    <rdf:type rdf:resource="http://www.helloworld.com/thing#testtype"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
     <sbh:splitTest>and</sbh:splitTest>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX1"/>
-    <sbol:displayId>pAOX1</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <obo:OBI_0001617>28252957</obo:OBI_0001617>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbol:version>1</sbol:version>
-    <sbh:splitTest>this1</sbh:splitTest>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX2/1">
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252958"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>pAOX2</sbol:displayId>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
     <sbh:splitTest>this2</sbh:splitTest>
-    <dcterms:description>thing 2</dcterms:description>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
     <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX2"/>
     <obo:OBI_0001617>28252958</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_template/SubComponent2">
+    <sbol:displayId>SubComponent2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/pAOX4_subcomponent_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX2">
+    <sbol:displayId>pAOX2</sbol:displayId>
+    <sbol:description>thing 2</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
     <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this2</sbh:splitTest>
     <sbh:designNotes>Test this</sbh:designNotes>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX3/1">
-    <sbh:splitTest>and</sbh:splitTest>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbh:splitTest>this3</sbh:splitTest>
-    <obo:OBI_0001617>28252959</obo:OBI_0001617>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252958</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX3">
     <sbol:displayId>pAOX3</sbol:displayId>
-    <dcterms:description>thing 3</dcterms:description>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252959"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX3"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:version>1</sbol:version>
+    <sbol:description>thing 3</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
     <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX5/1">
-    <sbh:splitTest>this5</sbh:splitTest>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <dcterms:description>thing 5</dcterms:description>
     <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this3</sbh:splitTest>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252961"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX5"/>
-    <obo:OBI_0001617>28252961</obo:OBI_0001617>
-    <sbol:version>1</sbol:version>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252959</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX5">
     <sbol:displayId>pAOX5</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX6/1">
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252962"/>
-    <obo:OBI_0001617>28252962</obo:OBI_0001617>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
-    <sbh:splitTest>this6</sbh:splitTest>
+    <sbol:description>thing 5</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
     <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbol:displayId>pAOX6</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX6"/>
+    <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this5</sbh:splitTest>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
     <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <dcterms:description>thing 6</dcterms:description>
-    <sbh:splitTest>and</sbh:splitTest>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX7/1">
-    <sbol:version>1</sbol:version>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <dcterms:description>thing 7</dcterms:description>
-    <obo:OBI_0001617>28252963</obo:OBI_0001617>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252963"/>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbh:splitTest>and</sbh:splitTest>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:displayId>pAOX7</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX7"/>
-    <sbh:splitTest>this7</sbh:splitTest>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX8/1">
-    <sbh:splitTest>and</sbh:splitTest>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX8"/>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <obo:OBI_0001617>28252964</obo:OBI_0001617>
-    <dcterms:description>thing 8</dcterms:description>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbh:splitTest>this8</sbh:splitTest>
-    <sbol:version>1</sbol:version>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252961</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX8">
     <sbol:displayId>pAOX8</sbol:displayId>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252964"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX4_subcomponent_0/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_subcomponent_0"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:displayId>pAOX4_subcomponent_0</sbol:displayId>
-    <sbol:version>1</sbol:version>
-    <sbol:sequence rdf:resource="http://examples.org/pAOX4_subcomponent_0_seq/1"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX4_subcomponent_1/1">
-    <sbol:displayId>pAOX4_subcomponent_1</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:sequence rdf:resource="http://examples.org/pAOX4_subcomponent_1_seq/1"/>
-    <sbol:version>1</sbol:version>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_subcomponent_1"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX4_template/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:sequenceConstraint>
-      <sbol:SequenceConstraint rdf:about="http://examples.org/pAOX4_template/constraint_1/1">
-        <sbol:version>1</sbol:version>
-        <sbol:restriction rdf:resource="http://sbols.org/v2#precedes"/>
-        <sbol:subject rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_0/1"/>
-        <sbol:displayId>constraint_1</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/constraint_1"/>
-        <sbol:object rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_0/1"/>
-      </sbol:SequenceConstraint>
-    </sbol:sequenceConstraint>
-    <sbol:version>1</sbol:version>
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
-    <sbol:sequenceAnnotation>
-      <sbol:SequenceAnnotation rdf:about="http://examples.org/pAOX4_template/pAOX1_annotation_0/1">
-        <sbol:location>
-          <sbol:Range rdf:about="http://examples.org/pAOX4_template/pAOX1_annotation_0/pAOX1_annotation_0_range/1">
-            <sbol:version>1</sbol:version>
-            <sbol:start>1</sbol:start>
-            <sbol:displayId>pAOX1_annotation_0_range</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX1_annotation_0/pAOX1_annotation_0_range"/>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-            <sbol:end>0</sbol:end>
-          </sbol:Range>
-        </sbol:location>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX1_annotation_0"/>
-        <sbol:component rdf:resource="http://examples.org/pAOX4_template/pAOX1_0/1"/>
-        <sbol:version>1</sbol:version>
-        <sbol:displayId>pAOX1_annotation_0</sbol:displayId>
-      </sbol:SequenceAnnotation>
-    </sbol:sequenceAnnotation>
-    <sbol:sequenceAnnotation>
-      <sbol:SequenceAnnotation rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_annotation_0/1">
-        <sbol:displayId>pAOX4_subcomponent_0_annotation_0</sbol:displayId>
-        <sbol:component rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_0/1"/>
-        <sbol:version>1</sbol:version>
-        <sbol:location>
-          <sbol:Range rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_annotation_0/pAOX4_subcomponent_0_annotation_0_range/1">
-            <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_annotation_0/pAOX4_subcomponent_0_annotation_0_range"/>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-            <sbol:end>0</sbol:end>
-            <sbol:version>1</sbol:version>
-            <sbol:displayId>pAOX4_subcomponent_0_annotation_0_range</sbol:displayId>
-            <sbol:start>1</sbol:start>
-          </sbol:Range>
-        </sbol:location>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_annotation_0"/>
-      </sbol:SequenceAnnotation>
-    </sbol:sequenceAnnotation>
-    <sbol:sequenceConstraint>
-      <sbol:SequenceConstraint rdf:about="http://examples.org/pAOX4_template/constraint_0/1">
-        <sbol:version>1</sbol:version>
-        <sbol:restriction rdf:resource="http://sbols.org/v2#precedes"/>
-        <sbol:subject rdf:resource="http://examples.org/pAOX4_template/pAOX1_0/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/constraint_0"/>
-        <sbol:displayId>constraint_0</sbol:displayId>
-        <sbol:object rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_0/1"/>
-      </sbol:SequenceConstraint>
-    </sbol:sequenceConstraint>
-    <sbol:displayId>pAOX4_template</sbol:displayId>
-    <sbol:sequenceAnnotation>
-      <sbol:SequenceAnnotation rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_annotation_0/1">
-        <sbol:displayId>pAOX4_subcomponent_1_annotation_0</sbol:displayId>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_annotation_0"/>
-        <sbol:location>
-          <sbol:Range rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_annotation_0/pAOX4_subcomponent_1_annotation_0_range/1">
-            <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_annotation_0/pAOX4_subcomponent_1_annotation_0_range"/>
-            <sbol:start>1</sbol:start>
-            <sbol:version>1</sbol:version>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-            <sbol:displayId>pAOX4_subcomponent_1_annotation_0_range</sbol:displayId>
-            <sbol:end>0</sbol:end>
-          </sbol:Range>
-        </sbol:location>
-        <sbol:component rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_0/1"/>
-      </sbol:SequenceAnnotation>
-    </sbol:sequenceAnnotation>
-    <sbol:component>
-      <sbol:Component rdf:about="http://examples.org/pAOX4_template/pAOX1_0/1">
-        <sbol:displayId>pAOX1_0</sbol:displayId>
-        <sbol:version>1</sbol:version>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:definition rdf:resource="http://examples.org/pAOX1/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX1_0"/>
-      </sbol:Component>
-    </sbol:component>
-    <sbol:component>
-      <sbol:Component rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_0/1">
-        <sbol:displayId>pAOX4_subcomponent_0_0</sbol:displayId>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_0_0"/>
-        <sbol:definition rdf:resource="http://examples.org/pAOX4_subcomponent_0/1"/>
-      </sbol:Component>
-    </sbol:component>
-    <sbol:component>
-      <sbol:Component rdf:about="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_0/1">
-        <sbol:definition rdf:resource="http://examples.org/pAOX4_subcomponent_1/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template/pAOX4_subcomponent_1_0"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:version>1</sbol:version>
-        <sbol:displayId>pAOX4_subcomponent_1_0</sbol:displayId>
-      </sbol:Component>
-    </sbol:component>
-    <sbol:sequence rdf:resource="http://examples.org/pAOX4_template_seq/1"/>
-  </sbol:ComponentDefinition>
-  <pAOX4 rdf:about="http://examples.org/example/1">
-    <obo:OBI_0001617>28252960</obo:OBI_0001617>
-    <sbol:variableComponent>
-      <var_subcomponent_0 rdf:about="http://examples.org/example/var_subcomponent_0/1">
-        <sbol:persistentIdentity rdf:resource="http://examples.org/example/var_subcomponent_0"/>
-        <sbol:variant rdf:resource="http://examples.org/pAOX2"/>
-        <sbol:variable rdf:resource="http://examples.org/pAOX4_subcomponent_0/1"/>
-        <sbol:version>1</sbol:version>
-        <sbol:displayId>var_subcomponent_0</sbol:displayId>
-        <sbol:variant rdf:resource="http://examples.org/pAOX6"/>
-        <sbol:variant rdf:resource="http://examples.org/pAOX5"/>
-        <sbol:operator rdf:resource="http://sbols.org/v2#one"/>
-      </var_subcomponent_0>
-    </sbol:variableComponent>
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>pAOX4</sbol:displayId>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252960"/>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:template rdf:resource="http://examples.org/pAOX4_template/1"/>
-    <dcterms:description>thing 4</dcterms:description>
-    <sbh:splitTest>this4</sbh:splitTest>
+    <sbol:description>thing 8</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
     <sbh:splitTest>and</sbh:splitTest>
-    <sbol:variableComponent>
-      <var_subcomponent_1 rdf:about="http://examples.org/example/var_subcomponent_1/1">
-        <sbol:displayId>var_subcomponent_1</sbol:displayId>
-        <sbol:variant rdf:resource="http://examples.org/pAOX7"/>
-        <sbol:variant rdf:resource="http://examples.org/pAOX3"/>
-        <sbol:version>1</sbol:version>
-        <sbol:operator rdf:resource="http://sbols.org/v2#one"/>
-        <sbol:variable rdf:resource="http://examples.org/pAOX4_subcomponent_1/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/example/var_subcomponent_1"/>
-      </var_subcomponent_1>
-    </sbol:variableComponent>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/example"/>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-  </pAOX4>
-  <sbol:Collection rdf:about="http://examples.org/colect1/1">
-    <obo:OBI_0001617>28252957</obo:OBI_0001617>
-    <sbol:member rdf:resource="http://examples.org/pAOX7"/>
-    <sbol:member rdf:resource="http://examples.org/pAOX3"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/colect1"/>
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>colect1</sbol:displayId>
-    <sbol:member rdf:resource="http://examples.org/pAOX1"/>
-    <sbol:member rdf:resource="http://examples.org/pAOX2"/>
+    <sbh:splitTest>this8</sbh:splitTest>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
     <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <dcterms:description>thing 1</dcterms:description>
-    <sbol:member rdf:resource="http://examples.org/pAOX4"/>
+    <obo:OBI_0001617>28252964</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX1">
+    <sbol:displayId>pAOX1</sbol:displayId>
+    <sbol:description>thing 1</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
     <sbh:splitTest>and</sbh:splitTest>
     <sbh:splitTest>this1</sbh:splitTest>
-    <sbol:member rdf:resource="http://examples.org/pAOX5"/>
-    <sbol:member rdf:resource="http://examples.org/pAOX8"/>
-    <sbol:member rdf:resource="http://examples.org/pAOX6"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957"/>
-  </sbol:Collection>
-  <ns0:testtype rdf:about="http://examples.org/http://examples.org/colect2/1">
-    <sbol:version>1</sbol:version>
-    <dcterms:description>thing 2</dcterms:description>
-    <obo:OBI_0001617>28252958</obo:OBI_0001617>
-    <sbh:splitTest>this2</sbh:splitTest>
-    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:displayId>http://examples.org/colect2</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/http://examples.org/colect2"/>
-    <sbh:splitTest>and</sbh:splitTest>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252958"/>
-  </ns0:testtype>
-  <sbol:Sequence rdf:about="http://examples.org/pAOX4_template_seq/1">
-    <sbol:elements></sbol:elements>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-    <sbol:displayId>pAOX4_template_seq</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_template_seq"/>
-    <sbol:version>1</sbol:version>
-  </sbol:Sequence>
-  <sbol:Sequence rdf:about="http://examples.org/pAOX1_seq/1">
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>pAOX1_seq</sbol:displayId>
-    <sbol:elements></sbol:elements>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX1_seq"/>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-  </sbol:Sequence>
-  <sbol:Sequence rdf:about="http://examples.org/pAOX4_subcomponent_0_seq/1">
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_subcomponent_0_seq"/>
-    <sbol:version>1</sbol:version>
-    <sbol:elements></sbol:elements>
-    <sbol:displayId>pAOX4_subcomponent_0_seq</sbol:displayId>
-  </sbol:Sequence>
-  <sbol:Sequence rdf:about="http://examples.org/pAOX4_subcomponent_1_seq/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4_subcomponent_1_seq"/>
-    <sbol:version>1</sbol:version>
-    <sbol:elements></sbol:elements>
-    <sbol:displayId>pAOX4_subcomponent_1_seq</sbol:displayId>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-  </sbol:Sequence>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4/VariableFeature1">
+    <sbol:displayId>VariableFeature1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/pAOX4_subcomponent_0"/>
+    <sbol:variant rdf:resource="http://examples.org/pAOX2"/>
+    <sbol:variant rdf:resource="http://examples.org/pAOX5"/>
+    <sbol:variant rdf:resource="http://examples.org/pAOX6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX6">
+    <sbol:displayId>pAOX6</sbol:displayId>
+    <sbol:description>thing 6</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this6</sbh:splitTest>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252962</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX7">
+    <sbol:displayId>pAOX7</sbol:displayId>
+    <sbol:description>thing 7</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="DNA"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this7</sbh:splitTest>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252963</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4">
+    <sbol:displayId>pAOX4</sbol:displayId>
+    <sbol:description>thing 4</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/pAOX4_template"/>
+    <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this4</sbh:splitTest>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252960</obo:OBI_0001617>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/pAOX4/VariableFeature1"/>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/pAOX4/VariableFeature2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/colect1">
+    <sbol:displayId>colect1</sbol:displayId>
+    <sbol:description>thing 1</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX1"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX2"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX3"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX4"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX5"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX6"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX7"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX8"/>
+    <sbh:splitTest>and</sbh:splitTest>
+    <sbh:splitTest>this1</sbh:splitTest>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <sbh:targetOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4/VariableFeature2">
+    <sbol:displayId>VariableFeature2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/pAOX4_subcomponent_1"/>
+    <sbol:variant rdf:resource="http://examples.org/pAOX3"/>
+    <sbol:variant rdf:resource="http://examples.org/pAOX7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_template/SubComponent3">
+    <sbol:displayId>SubComponent3</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/pAOX4_subcomponent_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/pAOX1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_template">
+    <sbol:displayId>pAOX4_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/pAOX4_template/SubComponent1"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/pAOX4_template/SubComponent2"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/pAOX4_template/SubComponent3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_subcomponent_0">
+    <sbol:displayId>pAOX4_subcomponent_0</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX4_subcomponent_1">
+    <sbol:displayId>pAOX4_subcomponent_1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
 </rdf:RDF>
