@@ -1,10 +1,12 @@
-import tyto
+import excel2sbol.tyto
 import re
 import excel2sbol.helper_functions as hf
 
 
 def up(col_def_row, cell_val, compiled_sheets, obj_dict):
+    try:
     col_def_dict = col_def_row.to_dict(orient='list')
+    #if col_def_dict['Tyto Lookup'] exists && col_def_dict['Sheet Lookup'] exits: continue
     if col_def_dict['Tyto Lookup'][0] and not col_def_dict['Sheet Lookup'][0]:
         # if the ontology lookup is TRUE and sheet lookup is FALSE
         # For returning the URI, we need the following:

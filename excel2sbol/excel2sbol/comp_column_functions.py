@@ -125,7 +125,7 @@ class sbol_methods2:
                             sbol2.TextProperty(self.obj,
                                                f'{self.namespace_url}{self.sbol_term_suf}',
                                                '0', '*'))
-                    setattr(self.obj, self.sbol_term_suf, self.cell_val)
+                    setattr(self.obj, self.sbol_term_suf, str(self.cell_val))
                 else:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
@@ -338,7 +338,7 @@ class sbol_methods3:
                     setattr(self.obj, self.sbol_term_suf,
                             sbol3.TextProperty(self.obj,
                                                f'{self.namespace_url}{self.sbol_term_suf}',
-                                               '0', '*', initial_value=self.cell_val))
+                                               '0', '*', initial_value=str(self.cell_val)))
                 else:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
