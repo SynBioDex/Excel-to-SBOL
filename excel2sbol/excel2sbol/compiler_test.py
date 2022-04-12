@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import pandas as pd
 import excel2sbol.helper_functions as hf
 import excel2sbol.lookup_compiler as lk
@@ -14,7 +15,8 @@ import re
 def initialise(file_path_in):
     init_info = pd.read_excel(file_path_in, sheet_name="Init",
                               skiprows=9, index_col=0,
-                              engine='openpyxl').to_dict('index')
+                              engine='openpyxl')
+    init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
     # For key in dict read in sheet,
     # if sheet convert = true, add to convert list
@@ -24,7 +26,7 @@ def initialise(file_path_in):
         convert = val['Convert']
 
         if convert:
-            to_convert.append(sheet_name)
+            to_convert.append(sheet_name.strip())
 
         # read in collections, description, library
         sheet_dict = {}
@@ -45,7 +47,7 @@ def initialise(file_path_in):
 
         if val['Has Descripts']:
             x = val['Descript Cols']
-            if isinstance(x, float):
+            if isinstance(x, (float, int)):
                 x = int(x)
                 x = [x]
             elif isinstance(x, str):
@@ -62,10 +64,10 @@ def initialise(file_path_in):
         else:
             sheet_dict['description'] = ""
 
-        sheet_dict['library'] = pd.read_excel(file_path_in, sheet_name=sheet_name,
-                                              header=0,
-                                              skiprows=val['Lib Start Row'],
-                                              engine='openpyxl').fillna("").to_dict('list')
+        lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
+                               header=0, skiprows=val['Lib Start Row'],
+                               engine='openpyxl').fillna("")
+        sheet_dict['library'] = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('list')
 
         # need dicitonary with as keys every column name and as values a list of values (note ordered list and need place holder empty values)
         compiled_sheets[sheet_name] = sheet_dict
@@ -74,6 +76,7 @@ def initialise(file_path_in):
     col_read_df = pd.read_excel(file_path_in,
                                 sheet_name="column_definitions", header=0,
                                 engine='openpyxl')
+    col_read_df = col_read_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     return(col_read_df, to_convert, compiled_sheets)
 
 
@@ -133,7 +136,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
 
 def parse_objects3(col_read_df, to_convert, compiled_sheets,
-                  homespace='http://examples.org/', sbol_version=3):
+                   homespace='http://examples.org/', sbol_version=3):
     """Making a list of all objects in the document"""
 
     # create uris for every item in to convert sheets
@@ -190,8 +193,7 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
                     template = sbol3.Component(f'{sanitised_id}_template', sbol3.SBO_DNA)
                     template.displayId = f'{sanitised_id}_template'
                     dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol3.get_namespace()}{sanitised_id}_template',
-                                        'object': template,
-                                        'displayId': f'{sanitised_id}_template'}
+                                                                'object': template, 'displayId': f'{sanitised_id}_template'}
 
                     obj = varfunc(sanitised_id, template)
                     # doesnt work for comb dev at the moment!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -233,6 +235,8 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                 if cell_val != '':
                     # checks that the cell isn't blank
                     col_convert_df = col_read_df.loc[(col_read_df['Sheet Name'] == sht) & (col_read_df['Column Name'] == col)]
+                    if col_convert_df.empty:
+                        raise ValueError(f"There is an issue with the column definitions sheet missing values. Sheet:'{sht}' with Column:'{col}' cannot be found. Please check for any spaces.")
 
                     # split method
                     split_on = col_convert_df['Split On'].values[0]
@@ -275,29 +279,31 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                                 pat_truth = [re.match(pat, val) for pat in pattern]
                                 pat_truth = [True for pat in pat_truth if pat is not None]
                                 if len(pat_truth) < 1:
-                                    raise ValueError(f'The cell value provided did not meet (any of) the pattern criteria, cell value: {val}, pattern:{pattern}')
+                                    raise ValueError(f'The cell value provided did not meet (any of) the pattern criteria, cell value: {val} (in sheet:{sht}, column:{col},  row:{disp_id}), pattern:{pattern}')
                         else:
                             pat_truth = [re.match(pat, cell_val) for pat in pattern]
                             pat_truth = [True for pat in pat_truth if pat is not None]
                             if len(pat_truth) < 1:
-                                raise ValueError(f'The cell value provided did not meet (any of) the pattern criteria, cell value: {cell_val}, pattern:{pattern}')
+                                raise ValueError(f'The cell value provided did not meet (any of) the pattern criteria, cell value: {cell_val} (in sheet:{sht}, column:{col},  row:{disp_id}), pattern:{pattern}')
 
                     # carry out method of column processing based on
                     # the sbol_term of the column
                     parental_lookup = col_convert_df['Parent Lookup'].values[0]
                     if sbol_version == 2:
                         col_meth = cf.sbol_methods2(col_convert_df['Namespace URL'].values[0],
-                                                obj, obj_uri, dict_of_objs, doc,
-                                                cell_val,
-                                                col_convert_df['Type'].values[0],
-                                                parental_lookup)
+                                                    obj, obj_uri, dict_of_objs, doc,
+                                                    cell_val,
+                                                    col_convert_df['Type'].values[0],
+                                                    parental_lookup, sht, col,
+                                                    disp_id)
                         col_meth.switch(col_convert_df['SBOL Term'].values[0])
                     elif sbol_version == 3:
                         col_meth = cf.sbol_methods3(col_convert_df['Namespace URL'].values[0],
-                                                obj, obj_uri, dict_of_objs, doc,
-                                                cell_val,
-                                                col_convert_df['Type'].values[0],
-                                                parental_lookup)
+                                                    obj, obj_uri, dict_of_objs,
+                                                    doc, cell_val,
+                                                    col_convert_df['Type'].values[0],
+                                                    parental_lookup, sht, col,
+                                                    disp_id)
                         col_meth.switch(col_convert_df['SBOL Term'].values[0])
                     else:
                         raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
