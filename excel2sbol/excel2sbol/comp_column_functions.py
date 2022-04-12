@@ -43,8 +43,8 @@ class sbol_methods2:
         self.col_type = col_type
         self.parental_lookup = parental_lookup
         self.sheet = sheet
-        self.col = col
-        self.row = display_id
+        self.sht_col = col
+        self.sht_row = display_id
 
     # create method for each sbol term that can be called via the column class
     def switch(self, sbol_term):
@@ -99,7 +99,7 @@ class sbol_methods2:
                     # can't have multiple values
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
             else:
-                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}. The column definitions sheet SBOL Term needs to be updated. (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}. The column definitions sheet SBOL Term needs to be updated. (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
         else:
             # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
@@ -146,8 +146,6 @@ class sbol_methods2:
         # used to set the object display id in converter function
         pass
 
-    # def 
-
     def subcomponents(self):
         # if type is compdef do one thing, if combdev do another, else error
         if isinstance(self.obj, sbol2.componentdefinition.ComponentDefinition):
@@ -187,7 +185,7 @@ class sbol_methods2:
                 self.obj.variableComponents.add(var_comp)
 
         else:
-            raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents. (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+            raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents. (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
     def dataSource(self):
         self.obj.wasDerivedFrom = self.cell_val
@@ -226,7 +224,7 @@ class sbol_methods2:
             self.obj.sequences = sequence
 
         else:
-            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
 class sbol_methods3:
     """A class used to implement a switch method based on an sbol_term. This
@@ -263,8 +261,8 @@ class sbol_methods3:
         self.col_type = col_type
         self.parental_lookup = parental_lookup
         self.sheet = sheet
-        self.col = col
-        self.row = display_id
+        self.sht_col = col
+        self.sht_row = display_id
 
     # create method for each sbol term that can be called via the column class
     def switch(self, sbol_term):
@@ -321,7 +319,7 @@ class sbol_methods3:
                     # can't have multiple values
                     setattr(self.obj, self.sbol_term_suf, self.cell_val)
             else:
-                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf} (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
         else:
             # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
@@ -399,7 +397,7 @@ class sbol_methods3:
             # template.displayId = f'{self.obj.displayId}_template'
             # self.doc.add(template)
 
-            # print(self.obj_dict)
+
             template = self.obj_dict[f'{self.obj.displayId}_template']['object']
 
             for sub in comp_list:
@@ -419,10 +417,9 @@ class sbol_methods3:
                 var_list = [f'{sbol3.get_namespace()}{x.strip()}' for x in var_list]
                 var_comp.variants = var_list
                 self.obj.variable_features.append(var_comp)
-                # print(var)
 
         else:
-            raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents. (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+            raise KeyError(f'The object type "{type(self.obj)}" does not allow subcomponents. (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
     def dataSource(self):
         self.obj.wasDerivedFrom = self.cell_val
@@ -461,4 +458,4 @@ class sbol_methods3:
             self.obj.sequences = sequence
 
         else:
-            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.row}, col:{self.col})')
+            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
