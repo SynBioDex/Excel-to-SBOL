@@ -63,7 +63,10 @@ class sbol_methods2:
             are updated according to the sbol_term and cell_value
         """
         self.sbol_term_pref = sbol_term.split("_", 1)[0]
-        self.sbol_term_suf = sbol_term.split("_", 1)[1]
+        try:
+            self.sbol_term_suf = sbol_term.split("_", 1)[1]
+        except IndexError:
+            raise ValueError(f"The SBOL Term '{sbol_term}' (sheet name: {self.sheet}) does not appear to have an underscore")
 
         if self.parental_lookup:
             # switches the object being worked on
@@ -280,7 +283,10 @@ class sbol_methods3:
             are updated according to the sbol_term and cell_value
         """
         self.sbol_term_pref = sbol_term.split("_", 1)[0]
-        self.sbol_term_suf = sbol_term.split("_", 1)[1]
+        try:
+            self.sbol_term_suf = sbol_term.split("_", 1)[1]
+        except IndexError:
+            raise ValueError(f"The SBOL Term '{sbol_term}' (sheet name: {self.sheet}) does not appear to have an underscore")
 
         if self.parental_lookup:
             # switches the object being worked on
