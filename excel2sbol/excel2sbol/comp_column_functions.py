@@ -97,7 +97,10 @@ class sbol_methods2:
                 else:
                     # no iteration over list as else suggests that the property
                     # can't have multiple values
-                    setattr(self.obj, self.sbol_term_suf, self.cell_val)
+                    try:
+                        setattr(self.obj, self.sbol_term_suf, self.cell_val)
+                    except AttributeError:
+                        raise ValueError(f"Can't set attribute {self.sbol_term_pref}_{self.sbol_term_suf} for sheet:{self.sheet}, col: {self.sht_col}, row:{self.sht_row}. It is likely an issue with plural e.g. not sbol_type but sbol_types")
             else:
                 raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}. The column definitions sheet SBOL Term needs to be updated. (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
