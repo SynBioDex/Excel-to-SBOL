@@ -149,6 +149,11 @@ class sbol_methods2:
         # used to set the object display id in converter function
         pass
 
+    def types(self):
+        # overwrites standard #DnaRegion biopax where another type is given
+        if self.cell_val not in self.obj.types[0] and len(self.obj.types) == 1:
+            self.obj.types = self.cell_val
+
     def subcomponents(self):
         # if type is compdef do one thing, if combdev do another, else error
         if isinstance(self.obj, sbol2.componentdefinition.ComponentDefinition):
