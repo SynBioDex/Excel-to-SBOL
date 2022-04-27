@@ -1,857 +1,917 @@
 <rdf:RDF xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:fj="https://flapjack.rudge-lab.org/" xmlns:sbol="http://sbols.org/v2#">
   <sbol:Collection rdf:about="http://examples.org/Study1/1">
-    <sbol:member rdf:resource="http://examples.org/Assay2"/>
-    <sbol:member rdf:resource="http://examples.org/Assay1"/>
-    <sbol:displayId>Study1</sbol:displayId>
     <fj:public>False</fj:public>
-    <dcterms:title>Reporter behaviour</dcterms:title>
-    <sbol:version>1</sbol:version>
-    <prov:wasDerivedFrom rdf:resource="https://doi.org/10.1371/journal.pone.0187163"/>
     <dcterms:description>Behaviour&#160;of&#160;genetic&#160;circuits&#160;containing&#160;different&#160;TUs&#160;in&#160;FluoPi's&#160;image&#160;based&#160;experiments</dcterms:description>
+    <sbol:displayId>Study1</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Study1"/>
+    <prov:wasDerivedFrom rdf:resource="https://doi.org/10.1371/journal.pone.0187163"/>
+    <sbol:member rdf:resource="http://examples.org/Assay2"/>
+    <dcterms:title>Reporter behaviour</dcterms:title>
+    <sbol:member rdf:resource="http://examples.org/Assay1"/>
   </sbol:Collection>
   <sbol:Collection rdf:about="http://examples.org/Study2/1">
-    <fj:public>False</fj:public>
     <sbol:displayId>Study2</sbol:displayId>
     <dcterms:title>dCas9 Inverters</dcterms:title>
-    <sbol:version>1</sbol:version>
-    <sbol:member rdf:resource="http://examples.org/Assay11"/>
+    <fj:public>False</fj:public>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Study2"/>
-    <prov:wasDerivedFrom rdf:resource="and:this1"/>
     <dcterms:description>Inverters (NOT gates) based on repression by CRISPRi transcription regulation</dcterms:description>
+    <sbol:member rdf:resource="http://examples.org/Assay11"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="and:this1"/>
   </sbol:Collection>
   <sbol:Collection rdf:about="http://examples.org/Study3/1">
-    <fj:public>False</fj:public>
-    <sbol:version>1</sbol:version>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Study3"/>
     <sbol:displayId>Study3</sbol:displayId>
-    <dcterms:description>Effects&#160;of&#160;compositional&#160;and&#160;cellular&#160;context&#160;on&#160;gene&#160;expression</dcterms:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Study3"/>
     <sbol:member rdf:resource="http://examples.org/Assay21"/>
-    <prov:wasDerivedFrom rdf:resource="https://doi.org/10.1101/590299"/>
+    <dcterms:description>Effects&#160;of&#160;compositional&#160;and&#160;cellular&#160;context&#160;on&#160;gene&#160;expression</dcterms:description>
+    <fj:public>False</fj:public>
     <dcterms:title>Context Effects</dcterms:title>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://doi.org/10.1101/590299"/>
   </sbol:Collection>
   <sbol:Collection rdf:about="http://examples.org/Study4/1">
-    <prov:wasDerivedFrom rdf:resource="and:this2"/>
     <sbol:displayId>Study4</sbol:displayId>
+    <dcterms:title>CFPS&#160;of&#160;CFP&#160;YFP&#160;variants</dcterms:title>
+    <fj:public>False</fj:public>
+    <prov:wasDerivedFrom rdf:resource="and:this2"/>
+    <sbol:version>1</sbol:version>
     <dcterms:description>Cell-free&#160;reaction&#160;dynamics&#160;of&#160;different&#160;reporter&#160;proteins&#160;in&#160;different&#160;cell-free&#160;extracts</dcterms:description>
     <sbol:member rdf:resource="http://examples.org/Assay40"/>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Study4"/>
-    <dcterms:title>CFPS&#160;of&#160;CFP&#160;YFP&#160;variants</dcterms:title>
     <sbol:member rdf:resource="http://examples.org/Assay31"/>
-    <fj:public>False</fj:public>
-    <sbol:version>1</sbol:version>
   </sbol:Collection>
   <sbol:Experiment rdf:about="http://examples.org/Assay1/1">
-    <sbol:version>1</sbol:version>
-    <fj:machine>HTX Synergy</fj:machine>
-    <fj:temperature>37</fj:temperature>
     <dcterms:description>Kinetic&#160;4&#160;Top10,&#160;repeat&#160;3.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
-    <sbol:displayId>Assay1</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay1"/>
     <sbol:experimentalData rdf:resource="http://examples.org/Sample1"/>
     <dcterms:title>K4&#160;rep3&#160;Top10</dcterms:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay1"/>
+    <sbol:displayId>Assay1</sbol:displayId>
+    <fj:temperature>37</fj:temperature>
+    <fj:machine>HTX Synergy</fj:machine>
   </sbol:Experiment>
   <sbol:Experiment rdf:about="http://examples.org/Assay2/1">
     <fj:temperature>37</fj:temperature>
-    <sbol:displayId>Assay2</sbol:displayId>
+    <dcterms:title>K4&#160;rep2&#160;MG1655z1</dcterms:title>
     <dcterms:description>Kinetic&#160;4&#160;MG1655z1,&#160;repeat&#160;2.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
     <fj:machine>HTX Synergy</fj:machine>
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Assay2"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Assay2</sbol:displayId>
     <sbol:experimentalData rdf:resource="http://examples.org/Sample20"/>
-    <dcterms:title>K4&#160;rep2&#160;MG1655z1</dcterms:title>
   </sbol:Experiment>
   <sbol:Experiment rdf:about="http://examples.org/Assay11/1">
-    <dcterms:title>K4&#160;rep1&#160;MG1655z1</dcterms:title>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay11"/>
-    <sbol:version>1</sbol:version>
-    <sbol:experimentalData rdf:resource="http://examples.org/Sample110"/>
     <fj:machine>HTX Synergy</fj:machine>
-    <sbol:displayId>Assay11</sbol:displayId>
+    <dcterms:title>K4&#160;rep1&#160;MG1655z1</dcterms:title>
+    <sbol:version>1</sbol:version>
     <fj:temperature>37</fj:temperature>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay11"/>
     <dcterms:description>Kinetic&#160;4&#160;MG1655z1,&#160;repeat&#160;1.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
+    <sbol:displayId>Assay11</sbol:displayId>
+    <sbol:experimentalData rdf:resource="http://examples.org/Sample110"/>
   </sbol:Experiment>
   <sbol:Experiment rdf:about="http://examples.org/Assay21/1">
+    <sbol:displayId>Assay21</sbol:displayId>
+    <dcterms:description>Kinetic&#160;4&#160;Top10,&#160;repeat&#160;2.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
+    <sbol:experimentalData rdf:resource="http://examples.org/Sample210"/>
+    <sbol:version>1</sbol:version>
+    <dcterms:title>K4&#160;rep2&#160;Top10</dcterms:title>
+    <fj:temperature>37</fj:temperature>
     <fj:machine>HTX Synergy</fj:machine>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Assay21"/>
-    <sbol:experimentalData rdf:resource="http://examples.org/Sample210"/>
-    <sbol:displayId>Assay21</sbol:displayId>
-    <fj:temperature>37</fj:temperature>
-    <dcterms:title>K4&#160;rep2&#160;Top10</dcterms:title>
-    <sbol:version>1</sbol:version>
-    <dcterms:description>Kinetic&#160;4&#160;Top10,&#160;repeat&#160;2.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
   </sbol:Experiment>
   <sbol:Experiment rdf:about="http://examples.org/Assay31/1">
-    <dcterms:description>Kinetic&#160;4&#160;MG1655z1,&#160;repeat&#160;3.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
-    <dcterms:title>K4&#160;rep3&#160;MG1655z1</dcterms:title>
-    <sbol:version>1</sbol:version>
     <fj:machine>HTX Synergy</fj:machine>
     <sbol:displayId>Assay31</sbol:displayId>
+    <dcterms:description>Kinetic&#160;4&#160;MG1655z1,&#160;repeat&#160;3.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Assay31"/>
+    <dcterms:title>K4&#160;rep3&#160;MG1655z1</dcterms:title>
+    <sbol:version>1</sbol:version>
     <fj:temperature>37</fj:temperature>
     <sbol:experimentalData rdf:resource="http://examples.org/Sample310"/>
   </sbol:Experiment>
   <sbol:Experiment rdf:about="http://examples.org/Assay40/1">
-    <sbol:version>1</sbol:version>
-    <sbol:experimentalData rdf:resource="http://examples.org/Sample400"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay40"/>
-    <fj:machine>HTX Synergy</fj:machine>
-    <fj:temperature>37</fj:temperature>
-    <sbol:displayId>Assay40</sbol:displayId>
     <dcterms:title>K4&#160;rep1&#160;Top10</dcterms:title>
+    <sbol:version>1</sbol:version>
     <dcterms:description>Kinetic&#160;4&#160;Top10,&#160;repeat&#160;1.&#160;Plasmids:&#160;pBAA,&#160;pBCA,&#160;pBDA,&#160;pBFA</dcterms:description>
+    <sbol:displayId>Assay40</sbol:displayId>
+    <fj:temperature>37</fj:temperature>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Assay40"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/Sample400"/>
+    <fj:machine>HTX Synergy</fj:machine>
   </sbol:Experiment>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample1/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample1"/>
-    <sbol:displayId>Sample1</sbol:displayId>
-    <fj:column>3</fj:column>
+    <sbol:version>1</sbol:version>
     <fj:row>1</fj:row>
     <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign1"/>
-    <sbol:version>1</sbol:version>
+    <fj:column>3</fj:column>
+    <sbol:displayId>Sample1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample1"/>
   </sbol:ExperimentalData>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample20/1">
-    <fj:column>3</fj:column>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample20"/>
-    <sbol:version>1</sbol:version>
     <fj:row>5</fj:row>
+    <fj:column>3</fj:column>
     <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign20"/>
     <sbol:displayId>Sample20</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample20"/>
+    <sbol:version>1</sbol:version>
   </sbol:ExperimentalData>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample110/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample110"/>
-    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign110"/>
-    <sbol:version>1</sbol:version>
-    <fj:column>10</fj:column>
     <sbol:displayId>Sample110</sbol:displayId>
+    <fj:column>10</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample110"/>
     <fj:row>3</fj:row>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign110"/>
   </sbol:ExperimentalData>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample210/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample210"/>
-    <fj:row>3</fj:row>
-    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign210"/>
     <sbol:displayId>Sample210</sbol:displayId>
+    <fj:row>3</fj:row>
     <fj:column>12</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Sample210"/>
+    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign210"/>
     <sbol:version>1</sbol:version>
   </sbol:ExperimentalData>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample310/1">
-    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign310"/>
-    <fj:row>6</fj:row>
-    <sbol:displayId>Sample310</sbol:displayId>
-    <sbol:version>1</sbol:version>
     <fj:column>9</fj:column>
+    <fj:row>6</fj:row>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign310"/>
+    <sbol:displayId>Sample310</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Sample310"/>
   </sbol:ExperimentalData>
   <sbol:ExperimentalData rdf:about="http://examples.org/Sample400/1">
-    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign400"/>
     <fj:column>12</fj:column>
     <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="http://examples.org/SampleDesign400"/>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Sample400"/>
     <sbol:displayId>Sample400</sbol:displayId>
     <fj:row>2</fj:row>
   </sbol:ExperimentalData>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign1/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/SampleDesign1/SampleDesign1_Media2/1">
+        <sbol:displayId>SampleDesign1_Media2</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1/SampleDesign1_Media2"/>
+        <sbol:definition rdf:resource="http://examples.org/Media2"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>SampleDesign1</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign1/SampleDesign1_Vector5/1">
-        <sbol:version>1</sbol:version>
         <sbol:definition rdf:resource="http://examples.org/Vector5"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1/SampleDesign1_Vector5"/>
         <sbol:displayId>SampleDesign1_Vector5</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign1/Supplement2/1">
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:version>2.0.0</sbol:version>
+        <sbol:displayId>Supplement2</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1/Supplement2"/>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:version>1</sbol:version>
-    <sbol:displayId>SampleDesign1</sbol:displayId>
-    <sbol:module>
-      <sbol:Module rdf:about="http://examples.org/SampleDesign1/SampleDesign1_Media2/1">
-        <sbol:definition rdf:resource="http://examples.org/Media2"/>
-        <sbol:displayId>SampleDesign1_Media2</sbol:displayId>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1/SampleDesign1_Media2"/>
-      </sbol:Module>
-    </sbol:module>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1"/>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign1/SampleDesign1_Strain1/1">
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign1/SampleDesign1_Strain1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:version>1</sbol:version>
         <sbol:displayId>SampleDesign1_Strain1</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
+        <sbol:version>1</sbol:version>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign20/1">
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Strain1/1">
-        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Vector4/1">
+        <sbol:displayId>SampleDesign20_Vector4</sbol:displayId>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:version>1</sbol:version>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/Vector4"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/SampleDesign20_Vector4"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign20/Supplement2/1">
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>Supplement2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/Supplement2"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>2.0.0</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Media2/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/SampleDesign20_Media2"/>
+        <sbol:displayId>SampleDesign20_Media2</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/Media2"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20"/>
+    <sbol:displayId>SampleDesign20</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Strain1/1">
         <sbol:displayId>SampleDesign20_Strain1</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/SampleDesign20_Strain1"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20"/>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Vector4/1">
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:version>1</sbol:version>
-        <sbol:definition rdf:resource="http://examples.org/Vector4"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/SampleDesign20_Vector4"/>
-        <sbol:displayId>SampleDesign20_Vector4</sbol:displayId>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:displayId>SampleDesign20</sbol:displayId>
     <sbol:version>1</sbol:version>
-    <sbol:module>
-      <sbol:Module rdf:about="http://examples.org/SampleDesign20/SampleDesign20_Media2/1">
-        <sbol:displayId>SampleDesign20_Media2</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/Media2"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign20/SampleDesign20_Media2"/>
-        <sbol:version>1</sbol:version>
-      </sbol:Module>
-    </sbol:module>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign110/1">
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign110/SampleDesign110_Strain1/1">
-        <sbol:displayId>SampleDesign110_Strain1</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Strain1"/>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign110/SampleDesign110_Vector3/1">
-        <sbol:definition rdf:resource="http://examples.org/Vector3"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Vector3"/>
         <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Vector3"/>
         <sbol:displayId>SampleDesign110_Vector3</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/Vector3"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:version>1</sbol:version>
     <sbol:module>
       <sbol:Module rdf:about="http://examples.org/SampleDesign110/SampleDesign110_Media2/1">
         <sbol:definition rdf:resource="http://examples.org/Media2"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Media2"/>
         <sbol:displayId>SampleDesign110_Media2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Media2"/>
         <sbol:version>1</sbol:version>
       </sbol:Module>
     </sbol:module>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign110/Supplement2/1">
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:version>2.0.0</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/Supplement2"/>
+        <sbol:displayId>Supplement2</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
     <sbol:displayId>SampleDesign110</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign110/SampleDesign110_Strain1/1">
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/Strain1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110/SampleDesign110_Strain1"/>
+        <sbol:displayId>SampleDesign110_Strain1</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
     <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign110"/>
+    <sbol:version>1</sbol:version>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign210/1">
     <sbol:displayId>SampleDesign210</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210"/>
     <sbol:version>1</sbol:version>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign210/SampleDesign210_Vector2/1">
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Vector2"/>
-        <sbol:displayId>SampleDesign210_Vector2</sbol:displayId>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign210/Supplement2/1">
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:version>1</sbol:version>
-        <sbol:definition rdf:resource="http://examples.org/Vector2"/>
+        <sbol:version>2.0.0</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/Supplement2"/>
+        <sbol:displayId>Supplement2</sbol:displayId>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://examples.org/SampleDesign210/SampleDesign210_Media2/1">
-        <sbol:displayId>SampleDesign210_Media2</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Media2"/>
         <sbol:definition rdf:resource="http://examples.org/Media2"/>
         <sbol:version>1</sbol:version>
+        <sbol:displayId>SampleDesign210_Media2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Media2"/>
       </sbol:Module>
     </sbol:module>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign210/SampleDesign210_Vector2/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Vector2"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>SampleDesign210_Vector2</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/Vector2"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign210/SampleDesign210_Strain1/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Strain1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://examples.org/Strain1"/>
         <sbol:displayId>SampleDesign210_Strain1</sbol:displayId>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign210/SampleDesign210_Strain1"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign310/1">
     <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign310/Supplement2/1">
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310/Supplement2"/>
+        <sbol:version>2.0.0</sbol:version>
+        <sbol:displayId>Supplement2</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign310/SampleDesign310_Strain1/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:version>1</sbol:version>
         <sbol:definition rdf:resource="http://examples.org/Strain1"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310/SampleDesign310_Strain1"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:displayId>SampleDesign310_Strain1</sbol:displayId>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://examples.org/SampleDesign310/SampleDesign310_Media2/1">
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310/SampleDesign310_Media2"/>
-        <sbol:version>1</sbol:version>
         <sbol:displayId>SampleDesign310_Media2</sbol:displayId>
+        <sbol:version>1</sbol:version>
         <sbol:definition rdf:resource="http://examples.org/Media2"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310/SampleDesign310_Media2"/>
       </sbol:Module>
     </sbol:module>
+    <sbol:displayId>SampleDesign310</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310"/>
+    <sbol:version>1</sbol:version>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign310/SampleDesign310_Vector1/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:displayId>SampleDesign310_Vector1</sbol:displayId>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:definition rdf:resource="http://examples.org/Vector1"/>
-        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310/SampleDesign310_Vector1"/>
+        <sbol:displayId>SampleDesign310_Vector1</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign310"/>
-    <sbol:displayId>SampleDesign310</sbol:displayId>
-    <sbol:version>1</sbol:version>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/SampleDesign400/1">
+    <sbol:displayId>SampleDesign400</sbol:displayId>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign400/SampleDesign400_Vector5/1">
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign400/Supplement2/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/SampleDesign400_Vector5"/>
-        <sbol:definition rdf:resource="http://examples.org/Vector5"/>
-        <sbol:displayId>SampleDesign400_Vector5</sbol:displayId>
+        <prov:wasDerivedFrom rdf:resource="http://examples.org/Supplement2/1"/>
+        <sbol:displayId>Supplement2</sbol:displayId>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>2.0.0</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/Supplement2"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:displayId>SampleDesign400</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400"/>
     <sbol:module>
       <sbol:Module rdf:about="http://examples.org/SampleDesign400/SampleDesign400_Media2/1">
-        <sbol:displayId>SampleDesign400_Media2</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/Media2"/>
         <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/Media2"/>
+        <sbol:displayId>SampleDesign400_Media2</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/SampleDesign400_Media2"/>
       </sbol:Module>
     </sbol:module>
-    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign400/SampleDesign400_Vector5/1">
+        <sbol:displayId>SampleDesign400_Vector5</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/SampleDesign400_Vector5"/>
+        <sbol:definition rdf:resource="http://examples.org/Vector5"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://examples.org/SampleDesign400/SampleDesign400_Strain1/1">
         <sbol:definition rdf:resource="http://examples.org/Strain1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/SampleDesign400_Strain1"/>
         <sbol:displayId>SampleDesign400_Strain1</sbol:displayId>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/SampleDesign400/SampleDesign400_Strain1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/Media1/1">
-    <sbol:version>1</sbol:version>
-    <fj:mediaName>M9Glucose</fj:mediaName>
-    <sbol:displayId>Media1</sbol:displayId>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
     <dcterms:description>induction</dcterms:description>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
+    <sbol:displayId>Media1</sbol:displayId>
+    <fj:mediaName>M9Glucose</fj:mediaName>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Media1"/>
+    <sbol:version>1</sbol:version>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/Media2/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Media2"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
-    <fj:mediaName>MediaB</fj:mediaName>
-    <sbol:version>1</sbol:version>
     <dcterms:description>induction</dcterms:description>
+    <fj:mediaName>MediaB</fj:mediaName>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Media2"/>
+    <sbol:version>1</sbol:version>
     <sbol:displayId>Media2</sbol:displayId>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/Media3/1">
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Media3"/>
     <sbol:displayId>Media3</sbol:displayId>
     <dcterms:description>induction</dcterms:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Media3"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
     <sbol:version>1</sbol:version>
     <fj:mediaName>MediaC</fj:mediaName>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/Media4/1">
-    <fj:mediaName>MediaD</fj:mediaName>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Media4"/>
-    <dcterms:description>inhibition</dcterms:description>
-    <sbol:version>1</sbol:version>
     <sbol:displayId>Media4</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
+    <dcterms:description>inhibition</dcterms:description>
+    <fj:mediaName>MediaD</fj:mediaName>
   </sbol:ModuleDefinition>
   <sbol:ModuleDefinition rdf:about="http://examples.org/Media5/1">
-    <dcterms:description>inhibition</dcterms:description>
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Media5"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
-    <fj:mediaName>MediaF</fj:mediaName>
     <sbol:displayId>Media5</sbol:displayId>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C85504"/>
+    <dcterms:description>inhibition</dcterms:description>
+    <fj:mediaName>MediaF</fj:mediaName>
+    <sbol:version>1</sbol:version>
   </sbol:ModuleDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Signal1/1">
-    <sbol:version>1</sbol:version>
-    <dcterms:title>GFP</dcterms:title>
     <fj:signalColor>green</fj:signalColor>
+    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Signal1"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
     <dcterms:description>fluorescent</dcterms:description>
     <sbol:displayId>Signal1</sbol:displayId>
+    <dcterms:title>GFP</dcterms:title>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Signal2/1">
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
-    <dcterms:description>fluorescent</dcterms:description>
-    <sbol:displayId>Signal2</sbol:displayId>
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Signal2"/>
-    <fj:signalColor>red</fj:signalColor>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Signal2</sbol:displayId>
     <dcterms:title>RFP</dcterms:title>
+    <dcterms:description>fluorescent</dcterms:description>
+    <fj:signalColor>red</fj:signalColor>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Signal3/1">
     <sbol:displayId>Signal3</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal3"/>
     <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:description>fluorescent</dcterms:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal3"/>
     <fj:signalColor>yellow</fj:signalColor>
     <dcterms:title>YFP</dcterms:title>
-    <dcterms:description>fluorescent</dcterms:description>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Signal4/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal4"/>
-    <dcterms:description>inhibition</dcterms:description>
     <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal4"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:description>inhibition</dcterms:description>
+    <sbol:displayId>Signal4</sbol:displayId>
     <dcterms:title>CRISPRi</dcterms:title>
     <fj:signalColor>green</fj:signalColor>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
-    <sbol:displayId>Signal4</sbol:displayId>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Signal5/1">
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal5"/>
-    <dcterms:description>inhibition</dcterms:description>
-    <dcterms:title>Lysozyme</dcterms:title>
-    <sbol:version>1</sbol:version>
     <sbol:displayId>Signal5</sbol:displayId>
     <fj:signalColor>green</fj:signalColor>
+    <sbol:version>1</sbol:version>
+    <dcterms:title>Lysozyme</dcterms:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <dcterms:description>inhibition</dcterms:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Signal5"/>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Strain1/1">
-    <dcterms:description>E.coli</dcterms:description>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>Strain1</sbol:displayId>
-    <dcterms:title>StrainA</dcterms:title>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Strain1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>Strain1</sbol:displayId>
+    <dcterms:description>E.coli</dcterms:description>
+    <sbol:version>1</sbol:version>
+    <dcterms:title>StrainA</dcterms:title>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Strain2/1">
-    <dcterms:title>StrainB</dcterms:title>
-    <dcterms:description>B.subtilus</dcterms:description>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:displayId>Strain2</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Strain2"/>
+    <dcterms:title>StrainB</dcterms:title>
+    <dcterms:description>B.subtilus</dcterms:description>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Strain3/1">
-    <sbol:displayId>Strain3</sbol:displayId>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:version>1</sbol:version>
-    <dcterms:description>Pseudomonas</dcterms:description>
     <dcterms:title>StrainC</dcterms:title>
+    <sbol:displayId>Strain3</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Strain3"/>
+    <dcterms:description>Pseudomonas</dcterms:description>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Strain4/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Strain4"/>
-    <dcterms:description>Ampicillinresist</dcterms:description>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <dcterms:title>StrainD</dcterms:title>
     <sbol:displayId>Strain4</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Strain4"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <dcterms:description>Ampicillinresist</dcterms:description>
     <sbol:version>1</sbol:version>
+    <dcterms:title>StrainD</dcterms:title>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Strain5/1">
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Strain5"/>
-    <sbol:displayId>Strain5</sbol:displayId>
-    <dcterms:title>StrainE</dcterms:title>
     <dcterms:description>T7</dcterms:description>
+    <dcterms:title>StrainE</dcterms:title>
+    <sbol:displayId>Strain5</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Strain5"/>
+    <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Chemical1/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical1"/>
+    <sbol:displayId>Chemical1</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <fj:pubchemId>ID1</fj:pubchemId>
     <dcterms:description>ChemicalA</dcterms:description>
     <dcterms:title>IPTG</dcterms:title>
-    <sbol:displayId>Chemical1</sbol:displayId>
-    <fj:pubchemId>ID1</fj:pubchemId>
-    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical1"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Chemical2/1">
-    <sbol:displayId>Chemical2</sbol:displayId>
-    <fj:pubchemId>ID1</fj:pubchemId>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical2"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
-    <sbol:version>1</sbol:version>
     <dcterms:description>ChemicalB</dcterms:description>
+    <fj:pubchemId>ID1</fj:pubchemId>
     <dcterms:title>ATC</dcterms:title>
+    <sbol:displayId>Chemical2</sbol:displayId>
+    <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Chemical3/1">
     <dcterms:description>ChemicalC</dcterms:description>
-    <dcterms:title>LUX</dcterms:title>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical3"/>
     <fj:pubchemId>ID1</fj:pubchemId>
+    <dcterms:title>LUX</dcterms:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical3"/>
     <sbol:displayId>Chemical3</sbol:displayId>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
-    <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Chemical4/1">
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
-    <sbol:displayId>Chemical4</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical4"/>
-    <fj:pubchemId>ID1</fj:pubchemId>
     <sbol:version>1</sbol:version>
-    <dcterms:title>ATC</dcterms:title>
     <dcterms:description>ChemicalD</dcterms:description>
+    <fj:pubchemId>ID1</fj:pubchemId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical4"/>
+    <sbol:displayId>Chemical4</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+    <dcterms:title>ATC</dcterms:title>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Chemical5/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Chemical5"/>
     <dcterms:title>InducerB</dcterms:title>
     <fj:pubchemId>ID1</fj:pubchemId>
-    <sbol:displayId>Chemical5</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
     <dcterms:description>ChemicalE</dcterms:description>
+    <sbol:displayId>Chemical5</sbol:displayId>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Vector1/1">
-    <sbol:version>1</sbol:version>
-    <sbol:displayId>Vector1</sbol:displayId>
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
     <sbol:sequenceAnnotation>
       <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector1/DNA1_annotation_0/1">
-        <sbol:displayId>DNA1_annotation_0</sbol:displayId>
-        <sbol:version>1</sbol:version>
         <sbol:location>
           <sbol:Range rdf:about="http://examples.org/Vector1/DNA1_annotation_0/DNA1_annotation_0_range/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1/DNA1_annotation_0/DNA1_annotation_0_range"/>
+            <sbol:version>1</sbol:version>
             <sbol:end>0</sbol:end>
             <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1/DNA1_annotation_0/DNA1_annotation_0_range"/>
-            <sbol:displayId>DNA1_annotation_0_range</sbol:displayId>
             <sbol:start>1</sbol:start>
-            <sbol:version>1</sbol:version>
+            <sbol:displayId>DNA1_annotation_0_range</sbol:displayId>
           </sbol:Range>
         </sbol:location>
+        <sbol:displayId>DNA1_annotation_0</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1/DNA1_annotation_0"/>
+        <sbol:version>1</sbol:version>
         <sbol:component rdf:resource="http://examples.org/Vector1/DNA1_0/1"/>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
+    <sbol:sequence rdf:resource="http://examples.org/Vector1_seq/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <dcterms:title>VectorA</dcterms:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
+    <sbol:displayId>Vector1</sbol:displayId>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector1/DNA1_0/1">
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1/DNA1_0"/>
-        <sbol:definition rdf:resource="http://examples.org/DNA1/1"/>
-        <sbol:displayId>DNA1_0</sbol:displayId>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/DNA1/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1/DNA1_0"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>DNA1_0</sbol:displayId>
       </sbol:Component>
     </sbol:component>
-    <dcterms:title>VectorA</dcterms:title>
-    <sbol:sequence rdf:resource="http://examples.org/Vector1_seq/1"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Vector2/1">
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
-    <sbol:sequence rdf:resource="http://examples.org/Vector2_seq/1"/>
-    <sbol:sequenceAnnotation>
-      <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector2/DNA3_annotation_0/1">
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA3_annotation_0"/>
-        <sbol:location>
-          <sbol:Range rdf:about="http://examples.org/Vector2/DNA3_annotation_0/DNA3_annotation_0_range/1">
-            <sbol:displayId>DNA3_annotation_0_range</sbol:displayId>
-            <sbol:version>1</sbol:version>
-            <sbol:end>0</sbol:end>
-            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA3_annotation_0/DNA3_annotation_0_range"/>
-            <sbol:start>1</sbol:start>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-          </sbol:Range>
-        </sbol:location>
-        <sbol:displayId>DNA3_annotation_0</sbol:displayId>
-        <sbol:version>1</sbol:version>
-        <sbol:component rdf:resource="http://examples.org/Vector2/DNA3_0/1"/>
-      </sbol:SequenceAnnotation>
-    </sbol:sequenceAnnotation>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
-    <sbol:sequenceConstraint>
-      <sbol:SequenceConstraint rdf:about="http://examples.org/Vector2/constraint_0/1">
-        <sbol:version>1</sbol:version>
-        <sbol:displayId>constraint_0</sbol:displayId>
-        <sbol:subject rdf:resource="http://examples.org/Vector2/DNA2_0/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/constraint_0"/>
-        <sbol:restriction rdf:resource="http://sbols.org/v2#precedes"/>
-        <sbol:object rdf:resource="http://examples.org/Vector2/DNA3_0/1"/>
-      </sbol:SequenceConstraint>
-    </sbol:sequenceConstraint>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector2/DNA2_0/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA2_0"/>
         <sbol:displayId>DNA2_0</sbol:displayId>
+        <sbol:version>1</sbol:version>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://examples.org/DNA2/1"/>
-        <sbol:version>1</sbol:version>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA2_0"/>
       </sbol:Component>
     </sbol:component>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:sequenceAnnotation>
       <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector2/DNA2_annotation_0/1">
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA2_annotation_0"/>
-        <sbol:version>1</sbol:version>
+        <sbol:component rdf:resource="http://examples.org/Vector2/DNA2_0/1"/>
         <sbol:location>
           <sbol:Range rdf:about="http://examples.org/Vector2/DNA2_annotation_0/DNA2_annotation_0_range/1">
+            <sbol:displayId>DNA2_annotation_0_range</sbol:displayId>
             <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA2_annotation_0/DNA2_annotation_0_range"/>
+            <sbol:end>0</sbol:end>
             <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
             <sbol:version>1</sbol:version>
-            <sbol:end>0</sbol:end>
-            <sbol:displayId>DNA2_annotation_0_range</sbol:displayId>
             <sbol:start>1</sbol:start>
           </sbol:Range>
         </sbol:location>
         <sbol:displayId>DNA2_annotation_0</sbol:displayId>
-        <sbol:component rdf:resource="http://examples.org/Vector2/DNA2_0/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA2_annotation_0"/>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
-    <dcterms:title>VectorB</dcterms:title>
+    <sbol:sequenceConstraint>
+      <sbol:SequenceConstraint rdf:about="http://examples.org/Vector2/constraint_0/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>constraint_0</sbol:displayId>
+        <sbol:restriction rdf:resource="http://sbols.org/v2#precedes"/>
+        <sbol:object rdf:resource="http://examples.org/Vector2/DNA3_0/1"/>
+        <sbol:subject rdf:resource="http://examples.org/Vector2/DNA2_0/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/constraint_0"/>
+      </sbol:SequenceConstraint>
+    </sbol:sequenceConstraint>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector2/DNA3_annotation_0/1">
+        <sbol:component rdf:resource="http://examples.org/Vector2/DNA3_0/1"/>
+        <sbol:location>
+          <sbol:Range rdf:about="http://examples.org/Vector2/DNA3_annotation_0/DNA3_annotation_0_range/1">
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:start>1</sbol:start>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA3_annotation_0/DNA3_annotation_0_range"/>
+            <sbol:displayId>DNA3_annotation_0_range</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:end>0</sbol:end>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA3_annotation_0"/>
+        <sbol:displayId>DNA3_annotation_0</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
     <sbol:displayId>Vector2</sbol:displayId>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2"/>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector2/DNA3_0/1">
         <sbol:displayId>DNA3_0</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2/DNA3_0"/>
+        <sbol:version>1</sbol:version>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://examples.org/DNA3/1"/>
-        <sbol:version>1</sbol:version>
       </sbol:Component>
     </sbol:component>
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/Vector2_seq/1"/>
+    <dcterms:title>VectorB</dcterms:title>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Vector3/1">
-    <sbol:sequence rdf:resource="http://examples.org/Vector3_seq/1"/>
     <sbol:displayId>Vector3</sbol:displayId>
-    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/Vector3_seq/1"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector3/DNA4_0/1">
         <sbol:displayId>DNA4_0</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/DNA4/1"/>
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/DNA4/1"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3/DNA4_0"/>
       </sbol:Component>
     </sbol:component>
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
+    <sbol:version>1</sbol:version>
     <dcterms:title>VectorC</dcterms:title>
     <sbol:sequenceAnnotation>
       <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector3/DNA4_annotation_0/1">
-        <sbol:displayId>DNA4_annotation_0</sbol:displayId>
-        <sbol:version>1</sbol:version>
         <sbol:component rdf:resource="http://examples.org/Vector3/DNA4_0/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>DNA4_annotation_0</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3/DNA4_annotation_0"/>
         <sbol:location>
           <sbol:Range rdf:about="http://examples.org/Vector3/DNA4_annotation_0/DNA4_annotation_0_range/1">
-            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3/DNA4_annotation_0/DNA4_annotation_0_range"/>
-            <sbol:start>1</sbol:start>
             <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
             <sbol:version>1</sbol:version>
-            <sbol:displayId>DNA4_annotation_0_range</sbol:displayId>
+            <sbol:start>1</sbol:start>
             <sbol:end>0</sbol:end>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3/DNA4_annotation_0/DNA4_annotation_0_range"/>
+            <sbol:displayId>DNA4_annotation_0_range</sbol:displayId>
           </sbol:Range>
         </sbol:location>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3/DNA4_annotation_0"/>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Vector4/1">
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
-    <sbol:sequence rdf:resource="http://examples.org/Vector4_seq/1"/>
+    <dcterms:title>VectorD</dcterms:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
     <sbol:displayId>Vector4</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
     <sbol:sequenceAnnotation>
       <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector4/DNA5_annotation_0/1">
-        <sbol:component rdf:resource="http://examples.org/Vector4/DNA5_0/1"/>
         <sbol:version>1</sbol:version>
-        <sbol:location>
-          <sbol:Range rdf:about="http://examples.org/Vector4/DNA5_annotation_0/DNA5_annotation_0_range/1">
-            <sbol:version>1</sbol:version>
-            <sbol:end>0</sbol:end>
-            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4/DNA5_annotation_0/DNA5_annotation_0_range"/>
-            <sbol:displayId>DNA5_annotation_0_range</sbol:displayId>
-            <sbol:start>1</sbol:start>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
-          </sbol:Range>
-        </sbol:location>
         <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4/DNA5_annotation_0"/>
         <sbol:displayId>DNA5_annotation_0</sbol:displayId>
+        <sbol:location>
+          <sbol:Range rdf:about="http://examples.org/Vector4/DNA5_annotation_0/DNA5_annotation_0_range/1">
+            <sbol:end>0</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:displayId>DNA5_annotation_0_range</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:start>1</sbol:start>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4/DNA5_annotation_0/DNA5_annotation_0_range"/>
+          </sbol:Range>
+        </sbol:location>
+        <sbol:component rdf:resource="http://examples.org/Vector4/DNA5_0/1"/>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector4/DNA5_0/1">
         <sbol:displayId>DNA5_0</sbol:displayId>
-        <sbol:definition rdf:resource="http://examples.org/DNA5/1"/>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4/DNA5_0"/>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4/DNA5_0"/>
+        <sbol:definition rdf:resource="http://examples.org/DNA5/1"/>
         <sbol:version>1</sbol:version>
       </sbol:Component>
     </sbol:component>
-    <sbol:version>1</sbol:version>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <dcterms:title>VectorD</dcterms:title>
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4"/>
+    <sbol:sequence rdf:resource="http://examples.org/Vector4_seq/1"/>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/Vector5/1">
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5"/>
     <sbol:component>
       <sbol:Component rdf:about="http://examples.org/Vector5/DNA4_0/1">
         <sbol:definition rdf:resource="http://examples.org/DNA4/1"/>
+        <sbol:version>1</sbol:version>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5/DNA4_0"/>
-        <sbol:version>1</sbol:version>
         <sbol:displayId>DNA4_0</sbol:displayId>
       </sbol:Component>
     </sbol:component>
-    <sbol:sequence rdf:resource="http://examples.org/Vector5_seq/1"/>
     <dcterms:title>VectorE</dcterms:title>
-    <sbol:version>1</sbol:version>
-    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000987"/>
-    <sbol:displayId>Vector5</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
     <sbol:sequenceAnnotation>
       <sbol:SequenceAnnotation rdf:about="http://examples.org/Vector5/DNA4_annotation_0/1">
-        <sbol:component rdf:resource="http://examples.org/Vector5/DNA4_0/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5/DNA4_annotation_0"/>
         <sbol:location>
           <sbol:Range rdf:about="http://examples.org/Vector5/DNA4_annotation_0/DNA4_annotation_0_range/1">
+            <sbol:displayId>DNA4_annotation_0_range</sbol:displayId>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
+            <sbol:version>1</sbol:version>
             <sbol:end>0</sbol:end>
             <sbol:start>1</sbol:start>
-            <sbol:orientation rdf:resource="http://sbols.org/v2#inline"/>
             <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5/DNA4_annotation_0/DNA4_annotation_0_range"/>
-            <sbol:version>1</sbol:version>
-            <sbol:displayId>DNA4_annotation_0_range</sbol:displayId>
           </sbol:Range>
         </sbol:location>
-        <sbol:displayId>DNA4_annotation_0</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5/DNA4_annotation_0"/>
         <sbol:version>1</sbol:version>
+        <sbol:component rdf:resource="http://examples.org/Vector5/DNA4_0/1"/>
+        <sbol:displayId>DNA4_annotation_0</sbol:displayId>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>Vector5</sbol:displayId>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000155"/>
+    <sbol:sequence rdf:resource="http://examples.org/Vector5_seq/1"/>
+    <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/DNA1/1">
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA1"/>
     <sbol:sequence rdf:resource="http://examples.org/DNA1_seq/1"/>
     <dcterms:title>DNAA</dcterms:title>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
     <sbol:displayId>DNA1</sbol:displayId>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/DNA2/1">
-    <sbol:displayId>DNA2</sbol:displayId>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:sequence rdf:resource="http://examples.org/DNA2_seq/1"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA2"/>
-    <dcterms:title>DNAB</dcterms:title>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000139"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/DNA2/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>DNA2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA2"/>
+    <sbol:version>1</sbol:version>
+    <dcterms:title>DNAB</dcterms:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000139"/>
+    <sbol:sequence rdf:resource="http://examples.org/DNA2_seq/1"/>
+  </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/DNA3/1">
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000141"/>
+    <dcterms:title>DNAC</dcterms:title>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA3"/>
     <sbol:sequence rdf:resource="http://examples.org/DNA3_seq/1"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:displayId>DNA3</sbol:displayId>
-    <dcterms:title>DNAC</dcterms:title>
     <sbol:version>1</sbol:version>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000141"/>
+    <sbol:displayId>DNA3</sbol:displayId>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/DNA4/1">
-    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA4"/>
-    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000139"/>
-    <sbol:version>1</sbol:version>
     <sbol:sequence rdf:resource="http://examples.org/DNA4_seq/1"/>
-    <sbol:displayId>DNA4</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <dcterms:title>DNAD</dcterms:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000139"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA4"/>
+    <sbol:displayId>DNA4</sbol:displayId>
   </sbol:ComponentDefinition>
   <sbol:ComponentDefinition rdf:about="http://examples.org/DNA5/1">
-    <dcterms:title>DNAE</dcterms:title>
-    <sbol:displayId>DNA5</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/DNA5_seq/1"/>
     <sbol:version>1</sbol:version>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>DNA5</sbol:displayId>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/SO_0000167"/>
-    <sbol:sequence rdf:resource="http://examples.org/DNA5_seq/1"/>
+    <dcterms:title>DNAE</dcterms:title>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA5"/>
   </sbol:ComponentDefinition>
   <sbol:Sequence rdf:about="http://examples.org/Vector1_seq/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1_seq"/>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-    <sbol:version>1</sbol:version>
-    <sbol:elements></sbol:elements>
     <sbol:displayId>Vector1_seq</sbol:displayId>
+    <sbol:elements></sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector1_seq"/>
+    <sbol:version>1</sbol:version>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/DNA1_seq/1">
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA1_seq"/>
     <sbol:elements></sbol:elements>
-    <sbol:displayId>DNA1_seq</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>DNA1_seq</sbol:displayId>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/Vector2_seq/1">
-    <sbol:elements></sbol:elements>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:displayId>Vector2_seq</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2_seq"/>
+    <sbol:elements></sbol:elements>
     <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector2_seq"/>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/DNA2_seq/1">
+    <sbol:displayId>DNA2_seq</sbol:displayId>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA2_seq"/>
     <sbol:elements></sbol:elements>
     <sbol:version>1</sbol:version>
-    <sbol:displayId>DNA2_seq</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/DNA2_seq"/>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/DNA3_seq/1">
-    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA3_seq"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:displayId>DNA3_seq</sbol:displayId>
     <sbol:elements></sbol:elements>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/Vector3_seq/1">
+    <sbol:displayId>Vector3_seq</sbol:displayId>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:elements></sbol:elements>
-    <sbol:displayId>Vector3_seq</sbol:displayId>
     <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Vector3_seq"/>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/DNA4_seq/1">
     <sbol:elements></sbol:elements>
+    <sbol:version>1</sbol:version>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA4_seq"/>
     <sbol:displayId>DNA4_seq</sbol:displayId>
-    <sbol:version>1</sbol:version>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/Vector4_seq/1">
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4_seq"/>
-    <sbol:version>1</sbol:version>
-    <sbol:elements></sbol:elements>
     <sbol:displayId>Vector4_seq</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Vector4_seq"/>
+    <sbol:elements></sbol:elements>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/DNA5_seq/1">
-    <sbol:version>1</sbol:version>
-    <sbol:elements></sbol:elements>
-    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
-    <sbol:displayId>DNA5_seq</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://examples.org/DNA5_seq"/>
+    <sbol:displayId>DNA5_seq</sbol:displayId>
+    <sbol:elements></sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
   </sbol:Sequence>
   <sbol:Sequence rdf:about="http://examples.org/Vector5_seq/1">
-    <sbol:version>1</sbol:version>
+    <sbol:displayId>Vector5_seq</sbol:displayId>
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:elements></sbol:elements>
-    <sbol:displayId>Vector5_seq</sbol:displayId>
+    <sbol:version>1</sbol:version>
     <sbol:persistentIdentity rdf:resource="http://examples.org/Vector5_seq"/>
   </sbol:Sequence>
 </rdf:RDF>

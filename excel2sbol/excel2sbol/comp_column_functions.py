@@ -171,19 +171,17 @@ class sbol_methods2:
         self.obj.functionalComponents.add(fc1)
 
     def definedFunComponent(self):
-        # if isinstance(self.cell_val, list):
-        #     # pulling the functional component object
-        #     # by the name (hence the split) from the obj_cit
-        #     fcobj = self.obj_dict[self.cell_val[0].split("/")[-1]]['object']
-        # else:
-        #     # pulling the functional component object
-        #     # by the name (hence the split) from the obj_cit
-        #     fcobj = self.obj_dict[self.cell_val.split("/")[-1]]['object']
+        if isinstance(self.cell_val, list):
+            # pulling the functional component object
+            # by the name (hence the split) from the obj_cit
+            fcobj = self.obj_dict[self.cell_val[0].split("/")[-1]]['object']
+        else:
+            # pulling the functional component object
+            # by the name (hence the split) from the obj_cit
+            fcobj = self.obj_dict[self.cell_val.split("/")[-1]]['object']
 
         # print(self.obj, fcobj)
-        # self.obj.functionalComponents.add(fcobj)
-        
-        logging.warning("defined functional compoent has not yet been implemented")
+        self.obj.functionalComponents.add(fcobj.copy())
 
     def subcomponents(self):
         # if type is compdef do one thing, if combdev do another, else error

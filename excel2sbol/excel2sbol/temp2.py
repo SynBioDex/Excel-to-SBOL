@@ -21,9 +21,8 @@ mod2 = sbol2.ModuleDefinition("mod2")
 doc.add(mod1)
 doc.add(mod2)
 
-mod1.functionalComponents.add(fc1)
-mod2.functionalComponents.add(fc1)
-
+mod1.functionalComponents.add(fc1.copy())
+mod2.functionalComponents.add(fc1.copy())
 
 
 doc.write(file_path_out)
