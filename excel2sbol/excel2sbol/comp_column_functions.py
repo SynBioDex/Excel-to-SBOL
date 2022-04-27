@@ -154,6 +154,37 @@ class sbol_methods2:
         if self.cell_val not in self.obj.types[0] and len(self.obj.types) == 1:
             self.obj.types = self.cell_val
 
+    def moduleModuleDefiniton(self):
+        module_name_pref = self.obj_uri.split("/")[-1]
+        module_name_suf = self.cell_val.split("/")[-1]
+        mod1 = sbol2.Module(f"{module_name_pref}_{module_name_suf}")
+        mod1.definition = self.cell_val
+
+        self.obj.modules.add(mod1)
+
+    def additionalFuncComponent(self):
+        fc_name_pref = self.obj_uri.split("/")[-1]
+        fc_name_suf = self.cell_val.split("/")[-1]
+
+        fc1 = sbol2.FunctionalComponent(f"{fc_name_pref}_{fc_name_suf}")
+        fc1.definition = self.cell_val
+        self.obj.functionalComponents.add(fc1)
+
+    def definedFunComponent(self):
+        # if isinstance(self.cell_val, list):
+        #     # pulling the functional component object
+        #     # by the name (hence the split) from the obj_cit
+        #     fcobj = self.obj_dict[self.cell_val[0].split("/")[-1]]['object']
+        # else:
+        #     # pulling the functional component object
+        #     # by the name (hence the split) from the obj_cit
+        #     fcobj = self.obj_dict[self.cell_val.split("/")[-1]]['object']
+
+        # print(self.obj, fcobj)
+        # self.obj.functionalComponents.add(fcobj)
+        
+        logging.warning("defined functional compoent has not yet been implemented")
+
     def subcomponents(self):
         # if type is compdef do one thing, if combdev do another, else error
         if isinstance(self.obj, sbol2.componentdefinition.ComponentDefinition):

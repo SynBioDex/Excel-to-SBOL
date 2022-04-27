@@ -121,6 +121,8 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
                 varfunc = getattr(sbol2, types[ind])
                 obj = varfunc(sanitised_id)
                 obj.displayId = sanitised_id
+                # if "Supplement" in obj.displayId:
+                #     print(obj, type(obj))
 
             else:
                 # if not a known sbol class use generic toplevel
