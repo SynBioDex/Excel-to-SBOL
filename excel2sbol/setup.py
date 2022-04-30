@@ -23,5 +23,7 @@ setup(name='excel2sbol',
                         'numpy>=1.18.1',
                         'validators>=0.18.2',
                         'openpyxl>=3.0.7',
+                        'tyto>=1.2',
+                        'sbol3>=1.0.1',
                         'xlrd >= 1.0.0'],
       zip_safe=False)
