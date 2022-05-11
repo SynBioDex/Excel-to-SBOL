@@ -23,6 +23,7 @@ def initialise(file_path_in):
     compiled_sheets = {}
     to_convert = []
     for sheet_name, val in init_info.items():
+        # print(f"reading in {sheet_name}...")
         convert = val['Convert']
 
         if convert:
@@ -77,6 +78,29 @@ def initialise(file_path_in):
                                 sheet_name="column_definitions", header=0,
                                 engine='openpyxl')
     col_read_df = col_read_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
+    # processing to turn init columns into 'sheet' columns
+    extra_cols = list(list(init_info.values())[0].keys()) # pull all column names
+    extra_cols = extra_cols[8:]
+    for conv_sht in to_convert:
+        for xcol in extra_cols:
+            init_val = init_info[conv_sht][xcol]
+            if isinstance(init_val, str) or not math.isnan(init_val):
+                # add row to col def sheet
+                new_row = col_read_df[col_read_df['Sheet Name'] == 'Init']
+                new_row = new_row[new_row['Column Name'] == xcol].to_dict('records')
+                new_row[0]['Sheet Name'] = conv_sht
+                new_row_df = pd.DataFrame(new_row)
+                col_read_df = col_read_df.append(new_row_df)
+
+                # add col to compiled_sheets
+                num_rows = len(list(compiled_sheets[conv_sht]['library'].values())[0])
+                val_list = [init_val for x in range(num_rows)]  # make a list of appropriate length
+                compiled_sheets[conv_sht]['library'][xcol] = val_list
+                print(compiled_sheets[conv_sht]['library'])
+
+    # re index as otherwise causes issues later
+    col_read_df = col_read_df.reset_index(drop=True)
     return(col_read_df, to_convert, compiled_sheets)
 
 
