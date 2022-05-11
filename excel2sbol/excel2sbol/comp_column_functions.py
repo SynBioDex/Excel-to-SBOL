@@ -98,11 +98,18 @@ class sbol_methods2:
                     # no iteration over list as else suggests that the property
                     # can't have multiple values
                     try:
-                        setattr(self.obj, self.sbol_term_suf, self.cell_val)
+                        current = getattr(self.obj, self.sbol_term_suf)
+                        if isinstance(current, type(None)):
+                            setattr(self.obj, self.sbol_term_suf, self.cell_val)
+                        else:
+                            if isinstance(self.cell_val, str) and isinstance(current, str):
+                                value = current + "\n" + self.cell_val
+                                logging.warning(f'The SBOL term {self.sbol_term_suf} for sheet:{self.sheet}, col: {self.sht_col}, row: {self.sht_row} is being concatenated {current} with {self.cell_val}')
+                                setattr(self.obj, self.sbol_term_suf, value)
                     except AttributeError:
-                        raise ValueError(f"Can't set attribute {self.sbol_term_pref}_{self.sbol_term_suf} for sheet:{self.sheet}, col: {self.sht_col}, row:{self.sht_row}. It is likely an issue with plural e.g. not sbol_type but sbol_types")
+                        raise ValueError(f"Can't set attribute {self.sbol_term_pref}_{self.sbol_term_suf} for sheet:{self.sheet}, col: {self.sht_col}, row: {self.sht_row}. It is likely an issue with plural e.g. not sbol_type but sbol_types")
             else:
-                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}. The column definitions sheet SBOL Term needs to be updated. (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
+                raise ValueError(f'This SBOL object ({type(self.obj)}) has no attribute {self.sbol_term_suf}. The column definitions sheet SBOL Term needs to be updated. (sheet:{self.sheet}, row: {self.sht_row}, col:{self.sht_col})')
 
         else:
             # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
@@ -153,6 +160,14 @@ class sbol_methods2:
         # overwrites standard #DnaRegion biopax where another type is given
         if self.cell_val not in self.obj.types[0] and len(self.obj.types) == 1:
             self.obj.types = self.cell_val
+
+    def addToDescription(self):
+        current = getattr(self.obj, 'description')
+        if isinstance(current, type(None)):
+            current = ""
+        new = current + "\n" + self.sht_col + ": " + self.cell_val
+        setattr(self.obj, 'description', new)
+
 
     def moduleModuleDefiniton(self):
         module_name_pref = self.obj_uri.split("/")[-1]
