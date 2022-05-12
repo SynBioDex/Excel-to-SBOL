@@ -18,6 +18,12 @@ def initialise(file_path_in):
                               engine='openpyxl')
     init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
+    version_info = pd.read_excel(file_path_in, sheet_name="Init",
+                              nrows=1, index_col=0, header=None,
+                              engine='openpyxl')
+    version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+    version_info = version_info['SBOL Version'][1]
+
     # For key in dict read in sheet,
     # if sheet convert = true, add to convert list
     compiled_sheets = {}
@@ -97,11 +103,10 @@ def initialise(file_path_in):
                 num_rows = len(list(compiled_sheets[conv_sht]['library'].values())[0])
                 val_list = [init_val for x in range(num_rows)]  # make a list of appropriate length
                 compiled_sheets[conv_sht]['library'][xcol] = val_list
-                print(compiled_sheets[conv_sht]['library'])
 
     # re index as otherwise causes issues later
     col_read_df = col_read_df.reset_index(drop=True)
-    return(col_read_df, to_convert, compiled_sheets)
+    return(col_read_df, to_convert, compiled_sheets, version_info)
 
 
 def parse_objects(col_read_df, to_convert, compiled_sheets,
@@ -208,7 +213,6 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
 
             if hasattr(sbol3, obj_types[ind]):
                 varfunc = getattr(sbol3, obj_types[ind])
-                print(obj_types[ind])
                 if obj_types[ind] == "Component":
                     if mol_types is not None:
                         obj = varfunc(sanitised_id, mol_types[ind])

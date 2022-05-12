@@ -130,7 +130,7 @@ class sbol_methods2:
                 else:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
-                    current = current = getattr(self.obj, self.sbol_term_suf)
+                    current = getattr(self.obj, self.sbol_term_suf)
                     setattr(self.obj, self.sbol_term_suf, current + self.cell_val)
 
             # otherwise implement as text property
@@ -276,7 +276,9 @@ class sbol_methods2:
             self.obj.sequences = sequence
 
         else:
-            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
+            self.obj.sequences = self.cell_val
+            logging.warning(f'The cell value for {self.obj.identity} is not an accepted sequence type but it has been left for post processing. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
+            # raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
 
 class sbol_methods3:
     """A class used to implement a switch method based on an sbol_term. This
@@ -384,7 +386,6 @@ class sbol_methods3:
             if self.col_type == "URI":
                 # * allows multiple instance of this property
                 if not hasattr(self.obj, self.sbol_term_suf):
-                    # sbol3.URIProperty()
                     setattr(self.obj, self.sbol_term_suf,
                             sbol3.URIProperty(self.obj,
                                               f'{self.namespace_url}{self.sbol_term_suf}',
@@ -392,8 +393,8 @@ class sbol_methods3:
                 else:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
-                    current = current = getattr(self.obj, self.sbol_term_suf)
-                    setattr(self.obj, self.sbol_term_suf, current + self.cell_val)
+                    current = getattr(self.obj, self.sbol_term_suf)
+                    setattr(self.obj, self.sbol_term_suf, list(current) + self.cell_val)
 
             # otherwise implement as text property
             else:
@@ -407,19 +408,26 @@ class sbol_methods3:
                     if not isinstance(self.cell_val, list):
                         self.cell_val = [self.cell_val]
                     current = getattr(self.obj, self.sbol_term_suf)
-                    setattr(self.obj, self.sbol_term_suf, current + self.cell_val)
+                    setattr(self.obj, self.sbol_term_suf, list(current) + self.cell_val)
 
     def objectType(self):
         # used to decide the object type in the converter function
         pass
 
-    def type(self):
+    def types(self):
         # used to decide the molecule type in the converter function
         pass
 
     def displayId(self):
         # used to set the object display id in converter function
         pass
+
+    def addToDescription(self):
+        current = getattr(self.obj, 'description')
+        if isinstance(current, type(None)):
+            current = ""
+        new = current + "\n" + self.sht_col + ": " + self.cell_val
+        setattr(self.obj, 'description', new)
 
     def subcomponents(self):
         # if type is compdef do one thing, if combdev do another, else error
@@ -489,7 +497,7 @@ class sbol_methods3:
         # might need to be careful if the object type is sequence!
         if re.fullmatch(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.cell_val):
             # if a url
-            self.obj.sequences = self.cell_val
+            self.obj.sequences = [self.cell_val]
 
         elif re.match(r'^[a-zA-Z \s*]+$', self.cell_val):
             # if a sequence string
@@ -500,14 +508,15 @@ class sbol_methods3:
 
             # create sequence object
             sequence = sbol3.Sequence(f"{self.obj.displayId}_sequence",
-                                      self.cell_val, sbol3.SBOL_ENCODING_IUPAC)
+                                      elements=self.cell_val)
             if self.obj.name is not None:
                 sequence.name = f"{self.obj.name} Sequence"
 
-            self.doc.addSequence(sequence)
+            self.doc.add(sequence)
 
             # link sequence object to component definition
-            self.obj.sequences = sequence
+            self.obj.sequences = [sequence]
 
         else:
-            raise ValueError(f'The cell value for {self.obj.identity} is not an accepted sequence type, please use a sequence string or uri instead. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
+            logging.warning(f'The cell value for {self.obj.identity} is not an accepted sequence type, it has been added as a uri and left for post processing. Sequence value provided: {self.cell_val} (sheet:{self.sheet}, row:{self.sht_row}, col:{self.sht_col})')
+            self.obj.sequences = [self.cell_val]

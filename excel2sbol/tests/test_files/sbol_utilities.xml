@@ -1,140 +1,168 @@
-<rdf:RDF xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbol="http://sbols.org/v2#">
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX1/1">
-    <sbol:displayId>pAOX1</sbol:displayId>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 1 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <obo:OBI_0001617>28252957</obo:OBI_0001617>
-    <sbh:alteration>['Original']</sbh:alteration>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX1"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252957"/>
-    <sbol:version>1</sbol:version>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX2/1">
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <obo:OBI_0001617>28252958</obo:OBI_0001617>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX2"/>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <sbol:displayId>pAOX2</sbol:displayId>
-    <sbol:version>1</sbol:version>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 2 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-    <sbh:alteration>['Decreased GC content']</sbh:alteration>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252958"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX3/1">
-    <sbol:displayId>pAOX3</sbol:displayId>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252959"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <obo:OBI_0001617>28252959</obo:OBI_0001617>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 3 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX3"/>
-    <sbh:alteration>['Trimmed End']</sbh:alteration>
-    <sbol:version>1</sbol:version>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX4/1">
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
+   xmlns:sbol="http://sbols.org/v3#"
+>
+  <rdf:Description rdf:about="http://examples.org/pAOX4">
     <sbol:displayId>pAOX4</sbol:displayId>
+    <sbol:description>Promoter variant 4 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="E0040"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:alteration>Trimmed Start</sbh:alteration>
+    <sbh:alteration>Trimmed End</sbh:alteration>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
     <obo:OBI_0001617>28252960</obo:OBI_0001617>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252960"/>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 4 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX4"/>
-    <sbh:alteration>['Trimmed Start', 'Trimmed End']</sbh:alteration>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbol:version>1</sbol:version>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/GFP/1">
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252961"/>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <sbol:displayId>GFP</sbol:displayId>
-    <obo:OBI_0001617>28252961</obo:OBI_0001617>
-    <sbol:version>1</sbol:version>
-    <dcterms:description>
-Alteration 1: Original
-GFP protein
-More info: More info</dcterms:description>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/Terminator/1">
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252962"/>
-    <sbol:version>1</sbol:version>
-    <dcterms:description>
-Alteration 1: Original
-Terminator
-More info: More info</dcterms:description>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Terminator"/>
-    <sbol:displayId>Terminator</sbol:displayId>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <obo:OBI_0001617>28252962</obo:OBI_0001617>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX5/1">
-    <sbh:alteration>['Decreased AT content']</sbh:alteration>
-    <sbol:version>1</sbol:version>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 5 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-    <obo:OBI_0001617>28252963</obo:OBI_0001617>
-    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252963"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX5"/>
-    <sbol:displayId>pAOX5</sbol:displayId>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-  </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://examples.org/pAOX6/1">
-    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
-    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/pAOX6"/>
-    <obo:OBI_0001617>28252964</obo:OBI_0001617>
-    <sbh:alteration>['Trimmed Start']</sbh:alteration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX6">
     <sbol:displayId>pAOX6</sbol:displayId>
+    <sbol:description>Promoter variant 6 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/pAOX6_sequence"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:alteration>Trimmed Start</sbh:alteration>
     <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
-    <prov:wasDerivedFrom rdf:resource="https://pubmed.ncbi.nlm.nih.gov/28252964"/>
-    <sbol:version>1</sbol:version>
-    <dcterms:description>
-Alteration 1: Original
-Promoter variant 6 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase&#160;enzyme
-More info: More info</dcterms:description>
-  </sbol:ComponentDefinition>
-  <sbol:Collection rdf:about="http://examples.org/Promoter_u32_Collection/1">
-    <sbol:member rdf:resource="http://examples.org/pAOX2"/>
-    <sbol:version>1</sbol:version>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Promoter_u32_Collection"/>
-    <sbol:member rdf:resource="http://examples.org/pAOX1"/>
-    <dcterms:description>Collection of pAOX variants</dcterms:description>
-    <sbol:member rdf:resource="http://examples.org/pAOX3"/>
+    <obo:OBI_0001617>28252964</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX5_sequence">
+    <sbol:displayId>pAOX5_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atttgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX3">
+    <sbol:displayId>pAOX3</sbol:displayId>
+    <sbol:description>Promoter variant 3 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="ATP07149.1"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:alteration>Trimmed End</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252959</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX1">
+    <sbol:displayId>pAOX1</sbol:displayId>
+    <sbol:description>Promoter variant 1 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/pAOX1_sequence"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252957</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Promoter_u32_Collection">
     <sbol:displayId>Promoter_u32_Collection</sbol:displayId>
+    <sbol:description>Collection of pAOX variants</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX1"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX2"/>
+    <sbol:member rdf:resource="http://examples.org/pAOX3"/>
     <sbol:member rdf:resource="http://examples.org/pAOX4"/>
     <sbol:member rdf:resource="http://examples.org/pAOX5"/>
     <sbol:member rdf:resource="http://examples.org/pAOX6"/>
-  </sbol:Collection>
-  <sbol:Collection rdf:about="http://examples.org/Collection_u32_2/1">
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/GFP">
+    <sbol:displayId>GFP</sbol:displayId>
+    <sbol:description>GFP protein
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/GFP_sequence"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
+    <obo:OBI_0001617>28252961</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX5">
+    <sbol:displayId>pAOX5</sbol:displayId>
+    <sbol:description>Promoter variant 5 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/pAOX5_sequence"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:alteration>Decreased AT content</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252963</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX2">
+    <sbol:displayId>pAOX2</sbol:displayId>
+    <sbol:description>Promoter variant 2 for peroxisomal N(1)-acetyl-spermine/spermidine oxidase enzyme
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="https://www.pnas.org/content/pnas/95/17/9761.full.pdf"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:alteration>Decreased GC content</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252958</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Terminator_sequence">
+    <sbol:displayId>Terminator_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atttgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/GFP_sequence">
+    <sbol:displayId>GFP_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atttgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Terminator">
+    <sbol:displayId>Terminator</sbol:displayId>
+    <sbol:description>Terminator
+More info: More info</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/Terminator_sequence"/>
+    <sbh:alteration>Original</sbh:alteration>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4922"/>
+    <obo:OBI_0001617>28252962</obo:OBI_0001617>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Collection_u32_2">
     <sbol:displayId>Collection_u32_2</sbol:displayId>
-    <sbol:version>1</sbol:version>
-    <sbol:member rdf:resource="http://examples.org/Terminator"/>
-    <dcterms:description>Collection of other useful parts</dcterms:description>
+    <sbol:description>Collection of other useful parts</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
     <sbol:member rdf:resource="http://examples.org/GFP"/>
-    <sbol:persistentIdentity rdf:resource="http://examples.org/Collection_u32_2"/>
-  </sbol:Collection>
+    <sbol:member rdf:resource="http://examples.org/Terminator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX6_sequence">
+    <sbol:displayId>pAOX6_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atttgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pAOX1_sequence">
+    <sbol:displayId>pAOX1_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atttgc</sbol:elements>
+  </rdf:Description>
 </rdf:RDF>
