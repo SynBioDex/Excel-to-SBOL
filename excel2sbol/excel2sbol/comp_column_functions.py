@@ -416,6 +416,22 @@ class sbol_methods3:
 
     def types(self):
         # used to decide the molecule type in the converter function
+        cell = []
+
+        # Assuming that circular will come after molecule type column in most templates
+        if self.cell_val[0:4] == 'http':
+            if getattr(self.obj, self.sbol_term_suf)[0][0:4] == 'http':
+                cell.append(getattr(self.obj, self.sbol_term_suf)[0])
+                cell.append(self.cell_val)
+            elif self.sht_col == 'Circular':
+                cell.append(sbol3.SBO_DNA)
+                cell.append(self.cell_val)
+            else:
+                cell.append(self.cell_val)
+        else:
+            cell.append(self.cell_val)
+
+        setattr(self.obj, self.sbol_term_suf, cell)
         pass
 
     def displayId(self):
