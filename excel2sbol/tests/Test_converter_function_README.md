@@ -2,6 +2,11 @@ These tests are to be updated as the code is updated.
 
 For file simple_library2.xlsx:
 
+General sheet setup:
+Includes Init and Column Definitions sheet
+Includes SBOL Object type column on Init sheet
+Creating collections based on the sheet
+
 Terms being tested:
 sbol_displayId
 sbol_roles
@@ -16,7 +21,6 @@ sbol_objectType
 sbol_members
 
 Other items being tested:
-Collections made for each sheet
 Combinatorial Derivation objects made for Composite Parts sheet
 Multiple part options available for some combderiv objects
 Circular having correct implementation - type variable is a valid URI

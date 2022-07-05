@@ -27,13 +27,18 @@ def test_conversion():
         doc = sbol3.Document()
         doc.read(file_path_out)
 
-        # assert not doc.validate().errors
+        # Tests ensuring there are x amount of objects in different sheet collections
         assert len(doc.find('Composite_u32_Parts').members) == 6
         assert len(doc.find('Basic_u32_Parts').members) == 26
-        # assert len(doc.find('LinearDNAProducts').members) == 37
-        # assert len(doc.find('FinalProducts').members) == 24
+
+        # tests for later implementation:
+        # assert len(doc.find('LinearDNAProducts').members) == 2
+        # assert len(doc.find('FinalProducts').members) == 2
 
         # Holistic test here
+        # These RDF files are made isomorphic in order to compare them 1:1
+        # When isomorphic, they are aligned in the same way to easily compare.
+
         expected = os.path.join(TESTFILE_DIR,
                                     'sample_out.xml')
         expected_graph = rdflib.Graph()
@@ -43,5 +48,6 @@ def test_conversion():
         output_graph.parse(file_path_out)
         output_iso = rdflib.compare.to_isomorphic(output_graph)
 
+        # Check to see if the graphs (SBOL files) are equivalent
         assert output_iso.__eq__(expected_iso)
 
