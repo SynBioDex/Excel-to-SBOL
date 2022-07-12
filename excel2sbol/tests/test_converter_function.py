@@ -51,3 +51,6 @@ def test_conversion():
         # Check to see if the graphs (SBOL files) are equivalent
         assert output_iso.__eq__(expected_iso)
 
+# def test_constraints(self):
+#    sbol3.set_namespace('http://examples.org')
+
