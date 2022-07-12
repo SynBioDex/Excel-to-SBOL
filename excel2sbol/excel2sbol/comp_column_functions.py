@@ -2,6 +2,7 @@
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencies
 import re
+from typing import List
 import sbol2
 import sbol3
 import pandas as pd
@@ -415,23 +416,7 @@ class sbol_methods3:
         pass
 
     def types(self):
-        # used to decide the molecule type in the converter function
-        cell = []
-
-        # Assuming that circular will come after molecule type column in most templates
-        if self.cell_val[0:4] == 'http':
-            if getattr(self.obj, self.sbol_term_suf)[0][0:4] == 'http':
-                cell.append(getattr(self.obj, self.sbol_term_suf)[0])
-                cell.append(self.cell_val)
-            elif self.sht_col == 'Circular':
-                cell.append(sbol3.SBO_DNA)
-                cell.append(self.cell_val)
-            else:
-                cell.append(self.cell_val)
-        else:
-            cell.append(self.cell_val)
-
-        setattr(self.obj, self.sbol_term_suf, cell)
+        setattr(self.obj, self.sbol_term_suf, self.cell_val)
         pass
 
     def displayId(self):
@@ -476,8 +461,17 @@ class sbol_methods3:
 
             template = self.obj_dict[f'{self.obj.displayId}_template']['object']
 
+            # Remove the spaces in part names in order to create a valid URI
             for sub in comp_list:
-                sub_part = sbol3.SubComponent(f'{sbol3.get_namespace()}{sub}')
+                name = f'{sbol3.get_namespace()}{sub}'
+                name1 = ''
+                for letter in name:
+                    if letter == ' ':
+                        name1 += '_'
+                    else:
+                        name1 += letter
+
+                sub_part = sbol3.SubComponent(name1)
                 template.features.append(sub_part)
             # template.assemblePrimaryStructure(comp_list)
             # template.compile(assembly_method=None)

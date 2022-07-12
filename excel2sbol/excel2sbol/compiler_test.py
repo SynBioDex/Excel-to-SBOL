@@ -215,13 +215,6 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
                 varfunc = getattr(sbol3, obj_types[ind])
                 if obj_types[ind] == "Component":
                     if mol_types is not None:
-
-                        # Creating the list as a string, needs for conversion
-                        mol_new = []
-                        for mol in mol_types:
-                            mol_new.append(str(mol))
-                        mol_types = mol_new
-
                         obj = varfunc(sanitised_id, mol_types[ind])
                     else:
                         obj = varfunc(sanitised_id, sbol3.SBO_DNA)
