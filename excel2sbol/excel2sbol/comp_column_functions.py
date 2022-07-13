@@ -416,7 +416,6 @@ class sbol_methods3:
         pass
 
     def types(self):
-        setattr(self.obj, self.sbol_term_suf, self.cell_val)
         pass
 
     def displayId(self):
@@ -461,17 +460,10 @@ class sbol_methods3:
 
             template = self.obj_dict[f'{self.obj.displayId}_template']['object']
 
-            # Remove the spaces in part names in order to create a valid URI
             for sub in comp_list:
                 name = f'{sbol3.get_namespace()}{sub}'
-                name1 = ''
-                for letter in name:
-                    if letter == ' ':
-                        name1 += '_'
-                    else:
-                        name1 += letter
-
-                sub_part = sbol3.SubComponent(name1)
+                name = hf.check_name(name)
+                sub_part = sbol3.SubComponent(name)
                 template.features.append(sub_part)
             # template.assemblePrimaryStructure(comp_list)
             # template.compile(assembly_method=None)
