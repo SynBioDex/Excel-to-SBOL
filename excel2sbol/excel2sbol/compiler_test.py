@@ -265,9 +265,29 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
             disp_id = sht_lib[sht_convert_dict[sht]][row_num]
             obj = dict_of_objs[disp_id]['object']
             obj_uri = dict_of_objs[disp_id]['uri']
+            parts_string = ""
+            is_parts = False
 
             for col in sht_lib.keys():
                 cell_val = sht_lib[col][row_num]
+
+                if is_parts:
+                    # Going to have to change the col limiter in the future
+                    if cell_val == '' or col == 'Part 8':
+                        is_parts = False
+                        cell_val = parts_string
+                        col = 'Part 1'
+                    else:
+                        parts_string += ';' + cell_val
+                        continue
+                
+                if col == 'Part 1':
+                    if parts_string != '':
+                        is_parts == False
+                    else:
+                        is_parts = True
+                        parts_string += cell_val
+                        continue
 
                 if cell_val != '':
                     # checks that the cell isn't blank
