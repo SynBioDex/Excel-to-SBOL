@@ -1,47 +1,56 @@
+from unittest import TestCase
 import pytest
-import excel2sbol.converter_function as confun
+import excel2sbol.converter as confun
+import excel2sbol.compiler_test as e2s
 import os
 import tempfile
 import rdflib
 import rdflib.compare
+import openpyxl
+import sbol3
 
+TESTFILE_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_files')
 
-@pytest.mark.parametrize(
-    'file_name, template_name, raising_err, expected',
-    [
-        (
-            "pichia_toolkit_KWK_v002.xlsx",
-            'excel2bol_darpa_template_blank_v005_20220222.xlsx', False,
-            'pichia_toolkit_KWK_v002.xml'
-        ),
-        (
-            "does_not_exist.xlsx",
-            'excel2bol_darpa_template_blank_v005_20220222.xlsx', True,
-            FileNotFoundError
-        )
-    ]
-)
-def test_converter(file_name, template_name, raising_err, expected):
-    file_dir = os.path.dirname(__file__)
-    file_path_in = os.path.join(file_dir, 'test_files',
-                                file_name)
+def test_conversion():
+    sbol3.set_namespace('http://examples.org')
+
+    # Convert the document into a temporary file
+    # From that file have a document read the file
+    # Use that document to test
+
+    file_path_in = os.path.join(TESTFILE_DIR, 'simple_library2.xlsx')
+
     with tempfile.TemporaryDirectory() as dirpath:
-        file_path_out = os.path.join(dirpath, 'sbol_out.xml')
+        file_path_out = os.path.join(dirpath, 'sample_out.xml')
+        confun.converter(file_path_in, file_path_out, 3)
 
-        if raising_err:
-            with pytest.raises(expected):
-                confun.converter(template_name, file_path_in, file_path_out)
+        doc = sbol3.Document()
+        doc.read(file_path_out)
 
-        else:
-            confun.converter(template_name, file_path_in, file_path_out)
+        # Tests ensuring there are x amount of objects in different sheet collections
+        assert len(doc.find('Composite_u32_Parts').members) == 6
+        assert len(doc.find('Basic_u32_Parts').members) == 26
 
-            expected = os.path.join(file_dir, 'test_files',
-                                    expected)
-            expected_graph = rdflib.Graph()
-            expected_graph.load(expected)
-            expected_iso = rdflib.compare.to_isomorphic(expected_graph)
-            output_graph = rdflib.Graph()
-            output_graph.load(file_path_out)
-            output_iso = rdflib.compare.to_isomorphic(output_graph)
-            # rdf_diff = rdflib.compare.graph_diff(expected_iso, output_iso)
-            assert output_iso == expected_iso
+        # tests for later implementation:
+        # assert len(doc.find('LinearDNAProducts').members) == 2
+        # assert len(doc.find('FinalProducts').members) == 2
+
+        # Holistic test here
+        # These RDF files are made isomorphic in order to compare them 1:1
+        # When isomorphic, they are aligned in the same way to easily compare.
+
+        expected = os.path.join(TESTFILE_DIR,
+                                    'sample_out.xml')
+        expected_graph = rdflib.Graph()
+        expected_graph.parse(expected)
+        expected_iso = rdflib.compare.to_isomorphic(expected_graph)
+        output_graph = rdflib.Graph()
+        output_graph.parse(file_path_out)
+        output_iso = rdflib.compare.to_isomorphic(output_graph)
+
+        # Check to see if the graphs (SBOL files) are equivalent
+        assert output_iso.__eq__(expected_iso)
+
+# def test_constraints(self):
+#    sbol3.set_namespace('http://examples.org')
+

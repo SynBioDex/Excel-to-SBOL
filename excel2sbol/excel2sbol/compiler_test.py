@@ -197,7 +197,7 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
             raise KeyError(f'The sheet "{sht}" has no column with sbol_objectType as type. Thus the following error was raised: {e}')
 
         try:
-            mol_type_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_type']['Column Name'].values[0]
+            mol_type_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_types']['Column Name'].values[0]
             mol_types = compiled_sheets[sht]['library'][mol_type_col]
         except IndexError:
             mol_types = None

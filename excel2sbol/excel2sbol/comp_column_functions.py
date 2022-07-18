@@ -2,6 +2,7 @@
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencies
 import re
+from typing import List
 import sbol2
 import sbol3
 import pandas as pd
@@ -415,7 +416,6 @@ class sbol_methods3:
         pass
 
     def types(self):
-        # used to decide the molecule type in the converter function
         pass
 
     def displayId(self):
@@ -461,7 +461,9 @@ class sbol_methods3:
             template = self.obj_dict[f'{self.obj.displayId}_template']['object']
 
             for sub in comp_list:
-                sub_part = sbol3.SubComponent(f'{sbol3.get_namespace()}{sub}')
+                name = f'{sbol3.get_namespace()}{sub}'
+                name = hf.check_name(name)
+                sub_part = sbol3.SubComponent(name)
                 template.features.append(sub_part)
             # template.assemblePrimaryStructure(comp_list)
             # template.compile(assembly_method=None)

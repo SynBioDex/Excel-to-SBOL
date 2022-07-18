@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
+   xmlns:sbol="http://sbols.org/v3#"
+>
+  <rdf:Description rdf:about="http://examples.org/J364002_sequence">
+    <sbol:displayId>J364002_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ttgacagctagctcagtcctagggattgtgctagctactagagaaagaggagaaatactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent6">
+    <sbol:displayId>SubComponent6</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/B0015"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX">
+    <sbol:displayId>UNSX</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001623"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/UNSX_sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E0040_sequence">
+    <sbol:displayId>E0040_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaa</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UP_u32_element_u32_consensus">
+    <sbol:displayId>UP_u32_element_u32_consensus</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001659"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/UP_u32_element_u32_consensus_sequence"/>
+    <sbh:designNotes>consensus without runs of As and Ts -59 to -36 https://www.pnas.org/content/pnas/95/17/9761.full.pdf</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mCerulean3">
+    <sbol:displayId>mCerulean3</sbol:displayId>
+    <sbol:description>mCerulean3</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/mCerulean3_sequence"/>
+    <sbh:designNotes>Cyan FP; codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/STOP_sequence">
+    <sbol:displayId>STOP_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>taataa</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E1010">
+    <sbol:displayId>E1010</sbol:displayId>
+    <sbol:description>mRFP1</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/E1010_sequence"/>
+    <sbh:designNotes>Red FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0015">
+    <sbol:displayId>B0015</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/B0015_sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0032">
+    <sbol:displayId>B0032</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/B0032_sequence"/>
+    <sbh:designNotes>Moderate (?)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs/VariableFeature1">
+    <sbol:displayId>VariableFeature1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/All_u32_FPs_subcomponent_0"/>
+    <sbol:variant rdf:resource="http://examples.org/K592100"/>
+    <sbol:variant rdf:resource="http://examples.org/mTagBFP2"/>
+    <sbol:variant rdf:resource="http://examples.org/mmilCFP"/>
+    <sbol:variant rdf:resource="http://examples.org/ECFP"/>
+    <sbol:variant rdf:resource="http://examples.org/mCerulean3"/>
+    <sbol:variant rdf:resource="http://examples.org/meffCFP"/>
+    <sbol:variant rdf:resource="http://examples.org/E0040"/>
+    <sbol:variant rdf:resource="http://examples.org/E1010"/>
+    <sbol:variant rdf:resource="http://examples.org/J06504"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Basic_u32_Parts">
+    <sbol:displayId>Basic_u32_Parts</sbol:displayId>
+    <sbol:description>Collection from the Basic Parts sheet</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/UNSX"/>
+    <sbol:member rdf:resource="http://examples.org/UP_u32_element_u32_consensus"/>
+    <sbol:member rdf:resource="http://examples.org/J23101"/>
+    <sbol:member rdf:resource="http://examples.org/J23105"/>
+    <sbol:member rdf:resource="http://examples.org/B0032"/>
+    <sbol:member rdf:resource="http://examples.org/BioBricks_scar_short"/>
+    <sbol:member rdf:resource="http://examples.org/BioBricks_scar_long"/>
+    <sbol:member rdf:resource="http://examples.org/K592100"/>
+    <sbol:member rdf:resource="http://examples.org/mTagBFP2"/>
+    <sbol:member rdf:resource="http://examples.org/mmilCFP"/>
+    <sbol:member rdf:resource="http://examples.org/ECFP"/>
+    <sbol:member rdf:resource="http://examples.org/mCerulean3"/>
+    <sbol:member rdf:resource="http://examples.org/meffCFP"/>
+    <sbol:member rdf:resource="http://examples.org/E0040"/>
+    <sbol:member rdf:resource="http://examples.org/E1010"/>
+    <sbol:member rdf:resource="http://examples.org/J06504"/>
+    <sbol:member rdf:resource="http://examples.org/STOP"/>
+    <sbol:member rdf:resource="http://examples.org/B0015"/>
+    <sbol:member rdf:resource="http://examples.org/pSB1C3"/>
+    <sbol:member rdf:resource="http://examples.org/R0040"/>
+    <sbol:member rdf:resource="http://examples.org/I20270"/>
+    <sbol:member rdf:resource="http://examples.org/J364001"/>
+    <sbol:member rdf:resource="http://examples.org/J364002"/>
+    <sbol:member rdf:resource="http://examples.org/J364007"/>
+    <sbol:member rdf:resource="http://examples.org/J364009"/>
+    <sbol:member rdf:resource="http://examples.org/LmrA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364001">
+    <sbol:displayId>J364001</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J364001_sequence"/>
+    <sbh:designNotes>J23106 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23105">
+    <sbol:displayId>J23105</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J23105_sequence"/>
+    <sbh:designNotes>TBD SLM (expect 4.5)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_long_sequence">
+    <sbol:displayId>BioBricks_scar_long_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tactagag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs_subcomponent_0">
+    <sbol:displayId>All_u32_FPs_subcomponent_0</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_template/SubComponent2">
+    <sbol:displayId>SubComponent2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/_2018_u32_Interlab_subcomponent_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mmilCFP_sequence">
+    <sbol:displayId>mmilCFP_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggctctgcctaaacaaatgaaactgacttatcacatggagggtactgtgaacggtcatttttttatcatcaagggcgaaggagggggagagccgtatgagggtactcatacgatcaagttacaggtggtagagggaagcccgttgcccttttcaccggatattctttccaccgtcttccaatacggcaaccgctgcttcactaaataccctcccaacatcgttgattacttcaaaaactcctgctcgggcggcggttatacttttggacgtagcttcctttatgaggacggagctgtctgtactgcttccggtgacattacgctgagcagcgacaaatcatcctttgagcacaaatctaaatttctgggagtaaactttcctgccgatggcccggtgatgaaaaaagaaaccactaattgggagccttcatgtgagaaaatgacacccaacgggatgaccttaatcggtgatgtgacggagttcctgttgaagaaggacggtaagcgttacaagtgccaattccacacattccacgacgcgaaggagaaaagccgcaatatgccgatgcccgatttccatttcgttcagcacgagattgaacgtaaagatttgccaggaccaatgcaaacatggcagttgaccgagcacgcagcagcctgtaagaactgtttcacagag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mmilCFP">
+    <sbol:displayId>mmilCFP</sbol:displayId>
+    <sbol:description>mmilCFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/mmilCFP_sequence"/>
+    <sbh:designNotes>Blue FP (free); codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364002">
+    <sbol:displayId>J364002</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J364002_sequence"/>
+    <sbh:designNotes>J23117 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab/VariableFeature2">
+    <sbol:displayId>VariableFeature2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/_2018_u32_Interlab_subcomponent_1"/>
+    <sbol:variant rdf:resource="http://examples.org/J364002"/>
+    <sbol:variant rdf:resource="http://examples.org/J364007"/>
+    <sbol:variant rdf:resource="http://examples.org/J364009"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/K592100_sequence">
+    <sbol:displayId>K592100_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atgagcgaactgatcaaagagaacatgcacatgaagctgtacatggaaggcaccgttgacaaccaccactttaagtgcacgtctgagggtgagggtaagccgtacgaaggcacccaaaccatgcgtatcaaagttgtggagggcggtccactgccgttcgcttttgacattctggcgaccagcttcctgtacggttccaaaacgttcattaaccatactcagggcattccggatttcttcaaacagagctttccggaaggtttcacctgggagcgtgtcaccacgtatgaagatggtggtgtgttgaccgccacccaagatacctccctgcaagatggctgtctgatctataacgtgaaaattcgtggcgtcaactttacgagcaatggtccggtgatgcagaagaaaaccctgggttgggaggcgtttacggaaaccctgtatccggccgatggtggcctggagggccgtaacgacatggcactgaagctggttggtggcagccatttgatcgcaaatatcaagacgacgtaccgcagcaagaaaccggcgaaaaatctgaagatgccgggtgtttactatgtcgactaccgtctggaacgcattaaagaagcgaataatgagacttacgtggagcagcacgaggttgcagtcgcgcgctattgcgacttgcctagcaagctgggtcataaactgaat</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs_template">
+    <sbol:displayId>All_u32_FPs_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/All_u32_FPs_template/SubComponent1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order/VariableFeature1">
+    <sbol:displayId>VariableFeature1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/Round_u32_1_u32_order_subcomponent_0"/>
+    <sbol:variant rdf:resource="http://examples.org/2018_Interlab"/>
+    <sbol:variant rdf:resource="http://examples.org/FPs_small"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/UNSX-UP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab">
+    <sbol:displayId>_2018_u32_Interlab</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/_2018_u32_Interlab_template"/>
+    <sbh:designNotes>Swapped R0040 for TwistNeg as the negative control, due to Twist minimum synthesis length</sbh:designNotes>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/_2018_u32_Interlab/VariableFeature1"/>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/_2018_u32_Interlab/VariableFeature2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/meffCFP">
+    <sbol:displayId>meffCFP</sbol:displayId>
+    <sbol:description>meffCFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/meffCFP_sequence"/>
+    <sbh:designNotes>Cyan FP (free); codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB_template">
+    <sbol:displayId>BB_u45_B0032_u45_BB_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent1"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent2"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23101_sequence">
+    <sbol:displayId>J23101_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tttacagctagctcagtcctaggtattatgctagc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_short">
+    <sbol:displayId>BioBricks_scar_short</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000627"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/BioBricks_scar_short_sequence"/>
+    <sbh:designNotes>BioBricks scar (short one, w/o ag, before CDS)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/R0040">
+    <sbol:displayId>R0040</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/R0040_sequence"/>
+    <sbh:designNotes>negative control 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_short_sequence">
+    <sbol:displayId>BioBricks_scar_short_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tactag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order_subcomponent_0">
+    <sbol:displayId>Round_u32_1_u32_order_subcomponent_0</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/UNSX"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_subcomponent_1">
+    <sbol:displayId>_2018_u32_Interlab_subcomponent_1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Composite_u32_Parts">
+    <sbol:displayId>Composite_u32_Parts</sbol:displayId>
+    <sbol:description>Collection from the Composite Parts sheet</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/_2018_u32_Interlab"/>
+    <sbol:member rdf:resource="http://examples.org/FPs_u32_small"/>
+    <sbol:member rdf:resource="http://examples.org/Round_u32_1_u32_order"/>
+    <sbol:member rdf:resource="http://examples.org/All_u32_FPs"/>
+    <sbol:member rdf:resource="http://examples.org/UNSX_u45_UP"/>
+    <sbol:member rdf:resource="http://examples.org/BB_u45_B0032_u45_BB"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/ECFP">
+    <sbol:displayId>ECFP</sbol:displayId>
+    <sbol:description>ECFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/ECFP_sequence"/>
+    <sbh:designNotes>Cyan FP; codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/R0040_sequence">
+    <sbol:displayId>R0040_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tccctatcagtgatagagattgacatccctatcagtgatagagatactgagcac</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_template">
+    <sbol:displayId>_2018_u32_Interlab_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/_2018_u32_Interlab_template/SubComponent1"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/_2018_u32_Interlab_template/SubComponent2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_subcomponent_0">
+    <sbol:displayId>_2018_u32_Interlab_subcomponent_0</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pSB1C3">
+    <sbol:displayId>pSB1C3</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/SO_0000988"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000155"/>
+    <sbh:designNotes>pMB1 replicon, 100-300 copy</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23101">
+    <sbol:displayId>J23101</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J23101_sequence"/>
+    <sbh:designNotes>5.5 SLM (high, but variable)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364007">
+    <sbol:displayId>J364007</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J364007_sequence"/>
+    <sbh:designNotes>J23100 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_long">
+    <sbol:displayId>BioBricks_scar_long</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000627"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/BioBricks_scar_long_sequence"/>
+    <sbh:designNotes>BioBricks scar including ag (not before CDS)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J06504_sequence">
+    <sbol:displayId>J06504_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggtgagcaagggcgaggaggataacatggccatcatcaaggagttcatgcgcttcaaggtgcacatggagggctccgtgaacggccacgagttcgagatcgagggcgagggcgagggccgcccctacgagggcacccagaccgccaagctgaaggtgaccaagggtggccccctgcccttcgcctgggacatcctgtcccctcagttcatgtacggctccaaggcctacgtgaagcaccccgccgacatccccgactacttgaagctgtccttccccgagggcttcaagtgggagcgcgtgatgaacttcgaggacggcggcgtggtgaccgtgacccaggactcctccttgcaggacggcgagttcatctacaaggtgaagctgcgcggcaccaacttcccctccgacggccccgtaatgcagaagaagaccatgggctgggaggcctcctccgagcggatgtaccccgaggacggcgccctgaagggcgagatcaagcagaggctgaagctgaaggacggcggccactacgacgctgaggtcaagaccacctacaaggccaagaagcccgtgcagctgcccggcgcctacaacgtcaacatcaagttggacatcacctcccacaacgaggactacaccatcgtggaacagtacgaacgcgccgagggccgccactccaccggcggcatggacgagctgtacaag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/I20270_sequence">
+    <sbol:displayId>I20270_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ttgatggctagctcagtcctaggtacaatgctagctactagagtcacacaggaaagtactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mTagBFP2">
+    <sbol:displayId>mTagBFP2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/mTagBFP2_sequence"/>
+    <sbh:designNotes>Blue FP codon optimized</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mCerulean3_sequence">
+    <sbol:displayId>mCerulean3_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggtgtcgaaaggtgaagaactttttacaggtgtggtccccattttagtcgaattagatggggatgtgaatggtcacaaattctcggtgtctggggagggtgaaggtgacgcgacctacgggaagttgactctgaaattcatttgcactacggggaagttaccagtgccctggcccactctggttacaacactgtcatggggcgtccaatgttttgctcgttatcctgaccacatgaaacagcatgacttcttcaagagcgcaatgccggaaggctatgtccaagagcgtactatctttttcaaagacgatgggaactacaaaacacgcgcagaagtgaagtttgagggagataccctggttaatcgcattgaattgaaaggtatcgacttcaaggaggatggtaatatcctggggcacaaattggagtacaacgctatccacggcaatgtttacattacggcagacaaacagaaaaacggaattaaggccaatttcggacttaactgcaacatcgaagatgggtcggtacaactggcagaccactatcagcaaaatacgcctattggtgacggtcctgtcctgttaccggacaatcattatctttccactcagtcgaaactgagtaaagatccgaacgagaagcgcgatcacatggtattattagagttcgtcacagccgcaggtattacgttagggatggatgagctttacaag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0015_sequence">
+    <sbol:displayId>B0015_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/K592100">
+    <sbol:displayId>K592100</sbol:displayId>
+    <sbol:description>TagBFP2</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/K592100_sequence"/>
+    <sbh:designNotes>Blue FP</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/I20270">
+    <sbol:displayId>I20270</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/I20270_sequence"/>
+    <sbh:designNotes>positive control 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364001_sequence">
+    <sbol:displayId>J364001_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tttacggctagctcagtcctaggtatagtgctagctactagagaaagaggagaaatactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UP_u32_element_u32_consensus_sequence">
+    <sbol:displayId>UP_u32_element_u32_consensus_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tgaaatatattttcgaaaagccgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J06504">
+    <sbol:displayId>J06504</sbol:displayId>
+    <sbol:description>mCherry</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J06504_sequence"/>
+    <sbh:designNotes>Red FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364009">
+    <sbol:displayId>J364009</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/J364009_sequence"/>
+    <sbh:designNotes>J23116 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template">
+    <sbol:displayId>FPs_u32_small_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent1"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent2"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent3"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent4"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent5"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/FPs_u32_small_template/SubComponent6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs">
+    <sbol:displayId>All_u32_FPs</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/All_u32_FPs_template"/>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/All_u32_FPs/VariableFeature1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab/VariableFeature1">
+    <sbol:displayId>VariableFeature1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/_2018_u32_Interlab_subcomponent_0"/>
+    <sbol:variant rdf:resource="http://examples.org/R0040"/>
+    <sbol:variant rdf:resource="http://examples.org/I20270"/>
+    <sbol:variant rdf:resource="http://examples.org/J364001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/ECFP_sequence">
+    <sbol:displayId>ECFP_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggttagtaaaggggaagagttgtttacgggcgttgttccaatcttggtggagttggacggggacgttaatgggcacaaattttcggtctctggggaaggcgagggggacgccacgtatggtaagctgaccttgaagttcatttgcactactgggaaattgccggttccctggcctacgcttgttaccacgttgacctggggcgtacaatgtttctcgcgctatcctgaccacatgaaacaacatgatttctttaagtcagctatgcctgagggctacgtgcaggagcgcactatcttcttcaaggatgacgggaattacaaaacccgtgcggaggtaaagttcgagggtgacacgcttgtcaaccgcatcgagttgaagggcattgattttaaggaggatggcaacattttaggacataaattagagtataactatatttcgcataatgtctacattactgctgacaaacaaaagaacggcatcaaggctaatttcaaaattcgccacaacatcgaggatggatcggttcagttagcagatcattaccagcaaaacacgcccatcggtgacggaccagttctgttacctgacaaccactatctttctacacagagtgctcttagcaaggaccctaacgaaaaacgtgaccacatggtcctgctggagtttgtgacagccgcaggtattacattggggatggacgaattgtataag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order">
+    <sbol:displayId>Round_u32_1_u32_order</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/Round_u32_1_u32_order_template"/>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/Round_u32_1_u32_order/VariableFeature1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/BioBricks_scar_long"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/STOP">
+    <sbol:displayId>STOP</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000319"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/STOP_sequence"/>
+    <sbh:designNotes>2 stop codons</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order_template">
+    <sbol:displayId>Round_u32_1_u32_order_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/Round_u32_1_u32_order_template/SubComponent1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent3">
+    <sbol:displayId>SubComponent3</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/BioBricks_scar_short"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_sequence">
+    <sbol:displayId>UNSX_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ccaggatacatagattaccacaactccgagcccttccacc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364007_sequence">
+    <sbol:displayId>J364007_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ttgacggctagctcagtcctaggtacagtgctagctactagagaaagaggagaaatactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small">
+    <sbol:displayId>FPs_u32_small</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/FPs_u32_small_template"/>
+    <sbol:hasVariableFeature rdf:resource="http://examples.org/FPs_u32_small/VariableFeature1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP_template/SubComponent2">
+    <sbol:displayId>SubComponent2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/UP_element_consensus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_subcomponent_0">
+    <sbol:displayId>FPs_u32_small_subcomponent_0</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small/VariableFeature1">
+    <sbol:displayId>VariableFeature1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#VariableFeature"/>
+    <sbol:cardinality rdf:resource="http://sbols.org/v3#one"/>
+    <sbol:variable rdf:resource="http://examples.org/FPs_u32_small_subcomponent_0"/>
+    <sbol:variant rdf:resource="http://examples.org/J23101"/>
+    <sbol:variant rdf:resource="http://examples.org/J23105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent2">
+    <sbol:displayId>SubComponent2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/FPs_u32_small_subcomponent_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP">
+    <sbol:displayId>UNSX_u45_UP</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/UNSX_u45_UP_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E0040">
+    <sbol:displayId>E0040</sbol:displayId>
+    <sbol:description>GFPmut3</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:hasSequence rdf:resource="http://examples.org/E0040_sequence"/>
+    <sbh:designNotes>Green FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23105_sequence">
+    <sbol:displayId>J23105_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ttgacagctagctcagtcctagggactatgctagc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mTagBFP2_sequence">
+    <sbol:displayId>mTagBFP2_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggtatcgaagggtgaagagttgattaaggaaaacatgcacatgaagttatacatggaagggaccgtggataatcaccatttcaaatgcacatctgaaggagagggaaaaccttacgaagggacccagacaatgcgtatcaaagtggtcgagggtggccctttaccattcgcgttcgacatcctggcgacctcctttttatatgggagcaaaacattcattaaccacacccagggaatcccggatttcttcaagcagtctttccctgaagggtttacgtgggagcgtgtgacaacttatgaggatggcggggttttgacggctacgcaggatacttcgttacaagacggttgcttaatttacaatgtaaagattcgtggagtaaattttacatcaaacggtccggtcatgcaaaagaaaacccttggttgggaggcgtttaccgagacattgtatcctgccgacgggggattagagggtcgcaatgatatggcactgaaacttgtgggggggtctcatttaattgcaaacgctaagacaacttaccgctccaagaagcccgctaagaacctgaaaatgcctggggtctactatgttgactatcgccttgagcgtatcaaggaggcgaacaacgagacttacgtcgagcagcatgaggtagcggttgcccgttactgtgacctgccatctaagttaggacataagttgaat</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E1010_sequence">
+    <sbol:displayId>E1010_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgc</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/_2018_u32_Interlab_subcomponent_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364009_sequence">
+    <sbol:displayId>J364009_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>ttgacagctagctcagtcctagggactatgctagctactagagaaagaggagaaatactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP_template">
+    <sbol:displayId>UNSX_u45_UP_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/UNSX_u45_UP_template/SubComponent1"/>
+    <sbol:hasFeature rdf:resource="http://examples.org/UNSX_u45_UP_template/SubComponent2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/LmrA">
+    <sbol:displayId>LmrA</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:designNotes>From SymBioHub: https://synbiohub.programmingbiology.org/public/Eco1C1G1T1/LmrA/1</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/meffCFP_sequence">
+    <sbol:displayId>meffCFP_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>atggcgctttcaaagcagagtttaccgagtgacatgaagttgatctaccacatggacgggaacgtgaatggtcactctttcgtcattaagggtgaaggcgagggaaaaccctatgaaggaacacatactatcaagctgcaagttgttgagggctcaccgttacctttcagcgccgacattctgtccacagtttttcaatatgggaaccgctgtttcactaagtatccgcctaatatcgtcgattattttaagaatagctgttctggtgggggctacaagtttggacgcagctttctttacgaagacggtgcggtctgtacggcgtcaggcgatattactctgtccgcagacaaaaagagctttgaacacaaatcgaaattcttaggcgtgaacttcccggctgacggtccggtgatgaagaaagagaccaccaactgggaaccatcgtgcgaaaaaatgactccgaatggcatgacactgatcggtgacgttacgggttttttgttgaaggaggacggaaagcgttacaaatgtcaatttcataccttccatgacgctaaagataagtccaaaaagatgccgatgcccgacttccactttgtccagcataaaattgagcgcaaggaccttcctggaagtatgcaaacatggcgtcttaccgagcacgcggcagcatgtaaaacttgttttacggag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB_template/SubComponent2">
+    <sbol:displayId>SubComponent2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/B0032"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent4">
+    <sbol:displayId>SubComponent4</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/All_FPs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0032_sequence">
+    <sbol:displayId>B0032_sequence</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:elements>tcacacaggaaag</sbol:elements>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent5">
+    <sbol:displayId>SubComponent5</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/STOP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/All_u32_FPs_subcomponent_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB">
+    <sbol:displayId>BB_u45_B0032_u45_BB</sbol:displayId>
+    <sbol:description>5' UTR including B0032 RBS and BB scars (long and short)</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/BB_u45_B0032_u45_BB_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template/SubComponent3">
+    <sbol:displayId>SubComponent3</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/BB-B0032-BB"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order_template/SubComponent1">
+    <sbol:displayId>SubComponent1</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#SubComponent"/>
+    <sbol:instanceOf rdf:resource="http://examples.org/Round_u32_1_u32_order_subcomponent_0"/>
+  </rdf:Description>
+</rdf:RDF>
