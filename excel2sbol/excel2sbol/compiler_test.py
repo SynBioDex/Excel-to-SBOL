@@ -214,7 +214,8 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
             if hasattr(sbol3, obj_types[ind]):
                 varfunc = getattr(sbol3, obj_types[ind])
                 if obj_types[ind] == "Component":
-                    if mol_types is not None:
+                    # checks that a molecule type is given and it isn't a boolean like circular
+                    if mol_types is not None and isinstance(mol_types[ind], str):
                         obj = varfunc(sanitised_id, mol_types[ind])
                     else:
                         obj = varfunc(sanitised_id, sbol3.SBO_DNA)
@@ -250,6 +251,9 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
     for sht in to_convert:
         print(sht)
         sht_lib = compiled_sheets[sht]['library']
+
+        print(col_read_df)
+        #figure out which columns are repeated
 
         # pulls first column and checks the number of elements in it
         num_rows = len(sht_lib[list(sht_lib.keys())[0]])
