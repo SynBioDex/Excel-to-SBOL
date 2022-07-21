@@ -1,38 +1,19 @@
-# check if function exists in thing
-from inspect import getmembers, isfunction
-import excel_sbol_utils.library as eu
+import sbol3
 
-# term = "add"
-# func_list = [o[0] for o in getmembers(eu) if isfunction(o[1])]
+doc = sbol3.Document()
 
+colec = sbol3.Collection('FinalProducts', name='FinalProducts')
+doc.add(colec)
 
-class rowobj():
+# print(sbol3.get_namespace())
 
-    def __init__(self, A, B, C):
-        self.A = A
-        self.B = B
-        self.C = C
+sbol_objs = doc.objects
+sbol_objs_names = [x.name for x in sbol_objs]
+if 'FinalProducts' not in sbol_objs_names:
+    colec = sbol3.Collection('FinalProducts', name='FinalProducts')
+    # colec.members.append('test')
+    doc.add(colec)
+else:
+    colec = sbol_objs[sbol_objs_names.index('FinalProducts')]
 
-
-class switch():
-    func_list = func_list = [o[0] for o in getmembers(eu) if isfunction(o[1])]
-
-    def switch(self, rowobj, sbolterm):
-        if sbolterm in self.func_list:
-            res = getattr(eu, sbolterm)(rowobj)
-            print(res)
-
-
-row_obj = rowobj('one', 2, 3)
-sw = switch()
-sw.switch(row_obj, 'add')
-
-
-# if term in func_list:
-#     tot = getattr(eu, term)(2, 4)
-#     print(tot)
-
-# can maybe make a class with all the properties and then pass an object of that class to the switch statemnt (which may or may not be its own class)
-# look at inheritance
-# think about how to get the object to excel utils
-# continue to build out this simple example first
+colec.members.append('this')

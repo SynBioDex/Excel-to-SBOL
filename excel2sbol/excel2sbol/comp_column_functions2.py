@@ -9,7 +9,7 @@ import sbol3
 # import logging
 # import excel2sbol.helper_functions as hf
 from inspect import getmembers, isfunction
-import excel_sbol_utils.library as exutil
+import excel_sbol_utils.library3 as exutil3
 
 
 class rowobj():
@@ -29,7 +29,7 @@ class rowobj():
 
 
 class switch3():
-    func_list = func_list = [o[0] for o in getmembers(exutil) if isfunction(o[1])]
+    func_list = func_list = [o[0] for o in getmembers(exutil3) if isfunction(o[1])]
 
     def switch(self, rowobj, sbol_term):
 
@@ -47,7 +47,7 @@ class switch3():
 
         # if a special function has been defined in excel-sbol-utils then use that
         elif self.sbol_term_suf in self.func_list:
-            return getattr(exutil, self.sbol_term_suf)(rowobj)
+            return getattr(exutil3, self.sbol_term_suf)(rowobj)
 
         # if it is an sbol term use standard pySBOL implementation
         # unless it is a top level object in which case the standard
