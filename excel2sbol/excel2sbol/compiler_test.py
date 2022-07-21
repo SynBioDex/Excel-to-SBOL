@@ -1,8 +1,10 @@
 from multiprocessing.sharedctypes import Value
 import pandas as pd
+import numpy as np
 import excel2sbol.helper_functions as hf
 import excel2sbol.lookup_compiler as lk
 import excel2sbol.comp_column_functions as cf
+import excel2sbol.comp_column_functions2 as cf2
 import logging
 import sbol2
 import sbol3
@@ -245,6 +247,11 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
     return(doc, dict_of_objs, sht_convert_dict)
 
 
+class TermClass:
+    def __init__(self, row):
+        self.row_num = row
+
+
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                  col_read_df, doc, file_path_out, sbol_version=3):
 
@@ -252,13 +259,13 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
         print(sht)
         sht_lib = compiled_sheets[sht]['library']
 
-        print(col_read_df)
-        #figure out which columns are repeated
-
         # pulls first column and checks the number of elements in it
         num_rows = len(sht_lib[list(sht_lib.keys())[0]])
 
         for row_num in range(0, num_rows):
+
+            term_dict = TermClass(row_num)
+
             disp_id = sht_lib[sht_convert_dict[sht]][row_num]
             obj = dict_of_objs[disp_id]['object']
             obj_uri = dict_of_objs[disp_id]['uri']
@@ -323,6 +330,26 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     # carry out method of column processing based on
                     # the sbol_term of the column
                     parental_lookup = col_convert_df['Parent Lookup'].values[0]
+
+                    # This creates an object with the converted cell values
+                    # hierarchy: sbol term, multicolumn, column name, cell val
+                    mcol = col_convert_df['Multicolumn'].values[0]
+                    sbol_term = col_convert_df['SBOL Term'].values[0]
+
+                    if hasattr(term_dict, sbol_term):
+                        sbol_dict = getattr(term_dict, sbol_term)
+                    else:
+                        sbol_dict = {}
+
+                    if isinstance(mcol, str):
+                        if mcol not in sbol_dict:
+                            sbol_dict[mcol] = {}
+                        sbol_dict[mcol][col] = cell_val
+                    else:
+                        sbol_dict[col] = cell_val
+
+                    setattr(term_dict, sbol_term, sbol_dict)
+
                     if sbol_version == 2:
                         col_meth = cf.sbol_methods2(col_convert_df['Namespace URL'].values[0],
                                                     obj, obj_uri, dict_of_objs, doc,
@@ -342,5 +369,34 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     else:
                         raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
 
+            print(term_dict.__dict__)
+            for term in term_dict.__dict__:
+                if term != 'row_num':
+                    print(term, getattr(term_dict, term))
+                    col_cell_dict = getattr(term_dict, term)
+                    if sbol_version == 2:
+                        pass
+                        # col_meth = cf2.sbol_methods2(col_convert_df['Namespace URL'].values[0],
+                        #                             obj, obj_uri, dict_of_objs, doc,
+                        #                             cell_val,
+                        #                             col_convert_df['Type'].values[0],
+                        #                             parental_lookup, sht, col,
+                        #                             disp_id)
+                        # col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                    elif sbol_version == 3:
+                        pass
+                        col_meth = cf2.sbol_methods3(obj, obj_uri, dict_of_objs,
+                                                     doc, col_cell_dict, sht,
+                                                     disp_id)
+                        # col_meth = cf2.sbol_methods3(col_convert_df['Namespace URL'].values[0],
+                        #                             obj, obj_uri, dict_of_objs,
+                        #                             doc, cell_val,
+                        #                             col_convert_df['Type'].values[0],
+                        #                             parental_lookup, sht, col,
+                        #                             disp_id)
+                        # col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                    else:
+                        raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     doc.write(file_path_out)
     return
