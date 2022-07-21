@@ -387,7 +387,7 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                         pass
                         col_meth = cf2.sbol_methods3(obj, obj_uri, dict_of_objs,
                                                      doc, col_cell_dict, sht,
-                                                     disp_id)
+                                                     disp_id, col_read_df)
                         # col_meth = cf2.sbol_methods3(col_convert_df['Namespace URL'].values[0],
                         #                             obj, obj_uri, dict_of_objs,
                         #                             doc, cell_val,

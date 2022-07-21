@@ -8,6 +8,141 @@ import sbol3
 import pandas as pd
 import logging
 import excel2sbol.helper_functions as hf
+from inspect import getmembers, isfunction
+import excel_sbol_utils.library as exutil
+
+
+class rowobj():
+
+    def __init__(self, obj, obj_uri, obj_dict, doc, col_cell_dict,
+                 sheet, display_id, col_def_df):
+        self.obj = obj
+        self.obj_uri = obj_uri
+        self.obj_dict = obj_dict
+        self.doc = doc
+        self.doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
+        self.sheet = sheet
+        self.col_cell_dict = col_cell_dict
+        self.sht_row = display_id
+        self.col_def_df = col_def_df
+
+
+class switch3():
+    func_list = func_list = [o[0] for o in getmembers(exutil) if isfunction(o[1])]
+
+    def switch(self, rowobj, sbol_term):
+
+        # split sbol term into prefix and suffix
+        self.sbol_term = sbol_term
+        self.sbol_term_pref = sbol_term.split("_", 1)[0]
+        try:
+            self.sbol_term_suf = sbol_term.split("_", 1)[1]
+        except IndexError:
+            raise ValueError(f"The SBOL Term '{sbol_term}' (sheet name: {self.sheet}) does not appear to have an underscore")
+
+        # if not applicable then do nothing
+        if sbol_term == "Not_applicable":
+            pass
+
+        # if a special function has been defined in excel-sbol-utils then use that
+        elif self.sbol_term_suf in self.func_list:
+            return getattr(exutil, sbol_term)(rowobj)
+
+############################################
+        # if it is an sbol term use standard pySBOL implementation
+        # unless it is a top level object in which case the standard
+        # implementations don't work
+        elif self.sbol_term_pref == "sbol":
+            if hasattr(rowobj.obj, self.sbol_term_suf):
+                # if the attribute is a list append the new value
+                if isinstance(getattr(rowobj.obj, self.sbol_term_suf), list):
+                    current = getattr(rowobj.obj, self.sbol_term_suf)
+
+                    # if the col_cell_dict has multiple columns append each
+                    for col in rowobj.col_cell_dict:
+                        #HERE ADD PARENTAL LOOKKUP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        cell_val = rowobj.col_cell_dict[col]
+
+                        # if cell_val is a dict then mcol must have been given
+                        if isinstance(cell_val, dict):
+                            raise TypeError(f"A multicolumn value was unexpectedly given for sheet:{rowobj.sheet}, row:{rowobj.sht_row}, sbol term :{self.sbol_term}, sbol term dict: {rowobj.col_cell_dict}")
+                        # if the cell_val is a list append the whole list
+                        elif isinstance(cell_val, list):
+                            setattr(rowobj.obj, self.sbol_term_suf, current + cell_val)
+                        # otherwise append as a list object
+                        else:
+                            setattr(rowobj.obj, self.sbol_term_suf, current + [cell_val])
+
+                # if type sbol list then add by special append
+                # rather than regular list append
+                elif isinstance(getattr(rowobj.obj, self.sbol_term_suf), sbol3.refobj_property.ReferencedObjectList):
+
+                    for col in rowobj.col_cell_dict:
+                        #HERE ADD PARENTAL LOOKKUP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                        cell_val = rowobj.col_cell_dict[col]
+
+                        # if cell_val is a dict then mcol must have been given
+                        if isinstance(cell_val, dict):
+                            raise TypeError(f"A multicolumn value was unexpectedly given for sheet:{rowobj.sheet}, row:{rowobj.sht_row}, sbol term :{self.sbol_term}, sbol term dict: {rowobj.col_cell_dict}")
+                        # else should be fine to append
+                        else:
+                            getattr(getattr(rowobj.obj, self.sbol_term_suf), 'append')(cell_val)
+
+                #######################################
+                else:
+                    # no iteration over list as else suggests that the property
+                    # can't have multiple values
+                    setattr(self.obj, self.sbol_term_suf, self.cell_val)
+            else:
+                raise ValueError(f'This SBOL object ({type(rowobj.obj)}) has no attribute {self.sbol_term_suf} (sheet:{rowobj.sheet}, row:{rowobj.sht_row}, sbol term dict:{rowobj.col_cell_dict})')
+
+        else:
+            # logging.warning(f'This sbol term ({self.sbol_term}) has not yet been implemented so it has been added via the default method')
+            # define a new namespace if needed
+            if self.sbol_term_pref not in self.doc_pref_terms:
+                self.doc.addNamespace(self.namespace_url, self.sbol_term_pref)
+                self.doc_pref_terms.append(self.sbol_term_pref)
+
+            # if type is uri make it a uri property
+            if self.col_type == "URI":
+                # * allows multiple instance of this property
+                if not hasattr(self.obj, self.sbol_term_suf):
+                    setattr(self.obj, self.sbol_term_suf,
+                            sbol3.URIProperty(self.obj,
+                                              f'{self.namespace_url}{self.sbol_term_suf}',
+                                              '0', '*', initial_value=[self.cell_val]))
+                else:
+                    if not isinstance(self.cell_val, list):
+                        self.cell_val = [self.cell_val]
+                    current = getattr(self.obj, self.sbol_term_suf)
+                    setattr(self.obj, self.sbol_term_suf, list(current) + self.cell_val)
+
+            # otherwise implement as text property
+            else:
+                # * allows multiple instance of this property
+                if not hasattr(self.obj, self.sbol_term_suf):
+                    setattr(self.obj, self.sbol_term_suf,
+                            sbol3.TextProperty(self.obj,
+                                               f'{self.namespace_url}{self.sbol_term_suf}',
+                                               '0', '*', initial_value=str(self.cell_val)))
+                else:
+                    if not isinstance(self.cell_val, list):
+                        self.cell_val = [self.cell_val]
+                    current = getattr(self.obj, self.sbol_term_suf)
+                    setattr(self.obj, self.sbol_term_suf, list(current) + self.cell_val)
+        #############################
+        # needs to now be done on a column by column basis
+        if self.parental_lookup:
+            # switches the object being worked on
+            self.obj = self.obj_dict[self.cell_val]['object']
+            self.cell_val = self.obj_uri
+
+
+    #####################################
+        if sbol_term in self.func_list:
+            res = getattr(exutil, sbol_term)(rowobj)
+            print(res)
 
 class sbol_methods2:
     """A class used to implement a switch method based on an sbol_term. This
@@ -335,6 +470,7 @@ class sbol_methods3:
             Nothing is returned but the componentDefinition and sbol doc
             are updated according to the sbol_term and cell_value
         """
+        # DONE
         self.sbol_term = sbol_term
         self.sbol_term_pref = sbol_term.split("_", 1)[0]
         try:
@@ -347,6 +483,7 @@ class sbol_methods3:
             self.obj = self.obj_dict[self.cell_val]['object']
             self.cell_val = self.obj_uri
 
+        # DONE
         # if not applicable then do nothing
         if sbol_term == "Not_applicable":
             pass
