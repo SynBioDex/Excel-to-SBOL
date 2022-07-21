@@ -1,9 +1,9 @@
-from multiprocessing.sharedctypes import Value
+# from multiprocessing.sharedctypes import Value
 import pandas as pd
-import numpy as np
+# import numpy as np
 import excel2sbol.helper_functions as hf
 import excel2sbol.lookup_compiler as lk
-import excel2sbol.comp_column_functions as cf
+# import excel2sbol.comp_column_functions as cf
 import excel2sbol.comp_column_functions2 as cf2
 import logging
 import sbol2
@@ -21,8 +21,8 @@ def initialise(file_path_in):
     init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
     version_info = pd.read_excel(file_path_in, sheet_name="Init",
-                              nrows=1, index_col=0, header=None,
-                              engine='openpyxl')
+                                 nrows=1, index_col=0, header=None,
+                                 engine='openpyxl')
     version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
     version_info = version_info['SBOL Version'][1]
 
@@ -88,7 +88,8 @@ def initialise(file_path_in):
     col_read_df = col_read_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
     # processing to turn init columns into 'sheet' columns
-    extra_cols = list(list(init_info.values())[0].keys()) # pull all column names
+    # pull all column names
+    extra_cols = list(list(init_info.values())[0].keys())
     extra_cols = extra_cols[8:]
     for conv_sht in to_convert:
         for xcol in extra_cols:
@@ -254,6 +255,7 @@ class TermClass:
 
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                  col_read_df, doc, file_path_out, sbol_version=3):
+    doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
 
     for sht in to_convert:
         print(sht)
@@ -329,8 +331,6 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
 
                     # carry out method of column processing based on
                     # the sbol_term of the column
-                    parental_lookup = col_convert_df['Parent Lookup'].values[0]
-
                     # This creates an object with the converted cell values
                     # hierarchy: sbol term, multicolumn, column name, cell val
                     mcol = col_convert_df['Multicolumn'].values[0]
@@ -350,30 +350,13 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
 
                     setattr(term_dict, sbol_term, sbol_dict)
 
-                    if sbol_version == 2:
-                        col_meth = cf.sbol_methods2(col_convert_df['Namespace URL'].values[0],
-                                                    obj, obj_uri, dict_of_objs, doc,
-                                                    cell_val,
-                                                    col_convert_df['Type'].values[0],
-                                                    parental_lookup, sht, col,
-                                                    disp_id)
-                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
-                    elif sbol_version == 3:
-                        col_meth = cf.sbol_methods3(col_convert_df['Namespace URL'].values[0],
-                                                    obj, obj_uri, dict_of_objs,
-                                                    doc, cell_val,
-                                                    col_convert_df['Type'].values[0],
-                                                    parental_lookup, sht, col,
-                                                    disp_id)
-                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
-                    else:
-                        raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
 
             print(term_dict.__dict__)
             for term in term_dict.__dict__:
                 if term != 'row_num':
                     print(term, getattr(term_dict, term))
                     col_cell_dict = getattr(term_dict, term)
+                    term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
                     if sbol_version == 2:
                         pass
                         # col_meth = cf2.sbol_methods2(col_convert_df['Namespace URL'].values[0],
@@ -384,17 +367,14 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                         #                             disp_id)
                         # col_meth.switch(col_convert_df['SBOL Term'].values[0])
                     elif sbol_version == 3:
-                        pass
-                        col_meth = cf2.sbol_methods3(obj, obj_uri, dict_of_objs,
-                                                     doc, col_cell_dict, sht,
-                                                     disp_id, col_read_df)
-                        # col_meth = cf2.sbol_methods3(col_convert_df['Namespace URL'].values[0],
-                        #                             obj, obj_uri, dict_of_objs,
-                        #                             doc, cell_val,
-                        #                             col_convert_df['Type'].values[0],
-                        #                             parental_lookup, sht, col,
-                        #                             disp_id)
-                        # col_meth.switch(col_convert_df['SBOL Term'].values[0])
+                        # pass
+                        rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
+                                        col_cell_dict, sht, disp_id,
+                                        term_coldef_df, doc_pref_terms)
+                        sw = cf2.switch3()
+                        sw.switch(rj, term)
+                        doc_pref_terms = rj.doc_pref_terms
+
                     else:
                         raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

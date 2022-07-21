@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:jet="http://jet.org/v3#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
+   xmlns:sbol="http://sbols.org/v3#"
+>
+  <rdf:Description rdf:about="http://examples.org/I20270">
+    <sbol:displayId>I20270</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>positive control 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/pSB1C3">
+    <sbol:displayId>pSB1C3</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000155"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>pMB1 replicon, 100-300 copy</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_short">
+    <sbol:displayId>BioBricks_scar_short</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000627"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>BioBricks scar (short one, w/o ag, before CDS)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP_template">
+    <sbol:displayId>UNSX_u45_UP_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Basic_u32_Parts">
+    <sbol:displayId>Basic_u32_Parts</sbol:displayId>
+    <sbol:description>Collection from the Basic Parts sheet</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/UNSX"/>
+    <sbol:member rdf:resource="http://examples.org/UP_u32_element_u32_consensus"/>
+    <sbol:member rdf:resource="http://examples.org/J23101"/>
+    <sbol:member rdf:resource="http://examples.org/J23105"/>
+    <sbol:member rdf:resource="http://examples.org/B0032"/>
+    <sbol:member rdf:resource="http://examples.org/BioBricks_scar_short"/>
+    <sbol:member rdf:resource="http://examples.org/BioBricks_scar_long"/>
+    <sbol:member rdf:resource="http://examples.org/K592100"/>
+    <sbol:member rdf:resource="http://examples.org/mTagBFP2"/>
+    <sbol:member rdf:resource="http://examples.org/mmilCFP"/>
+    <sbol:member rdf:resource="http://examples.org/ECFP"/>
+    <sbol:member rdf:resource="http://examples.org/mCerulean3"/>
+    <sbol:member rdf:resource="http://examples.org/meffCFP"/>
+    <sbol:member rdf:resource="http://examples.org/E0040"/>
+    <sbol:member rdf:resource="http://examples.org/E1010"/>
+    <sbol:member rdf:resource="http://examples.org/J06504"/>
+    <sbol:member rdf:resource="http://examples.org/STOP"/>
+    <sbol:member rdf:resource="http://examples.org/B0015"/>
+    <sbol:member rdf:resource="http://examples.org/pSB1C3"/>
+    <sbol:member rdf:resource="http://examples.org/R0040"/>
+    <sbol:member rdf:resource="http://examples.org/I20270"/>
+    <sbol:member rdf:resource="http://examples.org/J364001"/>
+    <sbol:member rdf:resource="http://examples.org/J364002"/>
+    <sbol:member rdf:resource="http://examples.org/J364007"/>
+    <sbol:member rdf:resource="http://examples.org/J364009"/>
+    <sbol:member rdf:resource="http://examples.org/LmrA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23105">
+    <sbol:displayId>J23105</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>TBD SLM (expect 4.5)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mCerulean3">
+    <sbol:displayId>mCerulean3</sbol:displayId>
+    <sbol:description>mCerulean3</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Cyan FP; codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order_template">
+    <sbol:displayId>Round_u32_1_u32_order_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/STOP">
+    <sbol:displayId>STOP</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000319"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>2 stop codons</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J23101">
+    <sbol:displayId>J23101</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>5.5 SLM (high, but variable)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/meffCFP">
+    <sbol:displayId>meffCFP</sbol:displayId>
+    <sbol:description>meffCFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Cyan FP (free); codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0015">
+    <sbol:displayId>B0015</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab_template">
+    <sbol:displayId>_2018_u32_Interlab_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/B0032">
+    <sbol:displayId>B0032</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Moderate (?)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UP_u32_element_u32_consensus">
+    <sbol:displayId>UP_u32_element_u32_consensus</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001659"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>consensus without runs of As and Ts -59 to -36 https://www.pnas.org/content/pnas/95/17/9761.full.pdf</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/K592100">
+    <sbol:displayId>K592100</sbol:displayId>
+    <sbol:description>TagBFP2</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Blue FP</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E0040">
+    <sbol:displayId>E0040</sbol:displayId>
+    <sbol:description>GFPmut3</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Green FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364007">
+    <sbol:displayId>J364007</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>J23100 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Round_u32_1_u32_order">
+    <sbol:displayId>Round_u32_1_u32_order</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/Round_u32_1_u32_order_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364001">
+    <sbol:displayId>J364001</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>J23106 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mTagBFP2">
+    <sbol:displayId>mTagBFP2</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Blue FP codon optimized</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small">
+    <sbol:displayId>FPs_u32_small</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/FPs_u32_small_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364002">
+    <sbol:displayId>J364002</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>J23117 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/ECFP">
+    <sbol:displayId>ECFP</sbol:displayId>
+    <sbol:description>ECFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Cyan FP; codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs_template">
+    <sbol:displayId>All_u32_FPs_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB_template">
+    <sbol:displayId>BB_u45_B0032_u45_BB_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J364009">
+    <sbol:displayId>J364009</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>J23116 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/R0040">
+    <sbol:displayId>R0040</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000804"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>negative control 2018 interlab</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/Composite_u32_Parts">
+    <sbol:displayId>Composite_u32_Parts</sbol:displayId>
+    <sbol:description>Collection from the Composite Parts sheet</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Collection"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:member rdf:resource="http://examples.org/_2018_u32_Interlab"/>
+    <sbol:member rdf:resource="http://examples.org/FPs_u32_small"/>
+    <sbol:member rdf:resource="http://examples.org/Round_u32_1_u32_order"/>
+    <sbol:member rdf:resource="http://examples.org/All_u32_FPs"/>
+    <sbol:member rdf:resource="http://examples.org/UNSX_u45_UP"/>
+    <sbol:member rdf:resource="http://examples.org/BB_u45_B0032_u45_BB"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BB_u45_B0032_u45_BB">
+    <sbol:displayId>BB_u45_B0032_u45_BB</sbol:displayId>
+    <sbol:description>5' UTR including B0032 RBS and BB scars (long and short)</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/BB_u45_B0032_u45_BB_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX_u45_UP">
+    <sbol:displayId>UNSX_u45_UP</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/UNSX_u45_UP_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/LmrA">
+    <sbol:displayId>LmrA</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>From SymBioHub: https://synbiohub.programmingbiology.org/public/Eco1C1G1T1/LmrA/1</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/J06504">
+    <sbol:displayId>J06504</sbol:displayId>
+    <sbol:description>mCherry</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Red FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/FPs_u32_small_template">
+    <sbol:displayId>FPs_u32_small_template</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/BioBricks_scar_long">
+    <sbol:displayId>BioBricks_scar_long</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000627"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>BioBricks scar including ag (not before CDS)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/UNSX">
+    <sbol:displayId>UNSX</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001623"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/mmilCFP">
+    <sbol:displayId>mmilCFP</sbol:displayId>
+    <sbol:description>mmilCFP</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Blue FP (free); codon optimized using IDT tool &lt;https://www.idtdna.com/CodonOpt&gt;</sbh:designNotes>
+    <sbh:alteredSequence rdf:resource="https://synbiohub.org/public/Excel2SBOL/codon_optimisation/1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/E1010">
+    <sbol:displayId>E1010</sbol:displayId>
+    <sbol:description>mRFP1</sbol:description>
+    <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:type rdf:resource="https://identifiers.org/SBO:0000251"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <jet:spec>val1</jet:spec>
+    <jet:spec>val2</jet:spec>
+    <jet:spec>val3</jet:spec>
+    <sbh:designNotes>Red FP (off patent)</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/_2018_u32_Interlab">
+    <sbol:displayId>_2018_u32_Interlab</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/_2018_u32_Interlab_template"/>
+    <sbh:designNotes>Swapped R0040 for TwistNeg as the negative control, due to Twist minimum synthesis length</sbh:designNotes>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://examples.org/All_u32_FPs">
+    <sbol:displayId>All_u32_FPs</sbol:displayId>
+    <rdf:type rdf:resource="http://sbols.org/v3#CombinatorialDerivation"/>
+    <sbol:hasNamespace rdf:resource="http://examples.org/"/>
+    <sbol:template rdf:resource="http://examples.org/All_u32_FPs_template"/>
+  </rdf:Description>
+</rdf:RDF>
