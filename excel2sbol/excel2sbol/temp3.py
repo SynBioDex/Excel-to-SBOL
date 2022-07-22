@@ -1,5 +1,5 @@
 # import sbol3
-
+ import sbol2
 # doc = sbol3.Document()
 
 # colec = sbol3.Collection('FinalProducts', name='FinalProducts')
@@ -17,3 +17,8 @@
 #     colec = sbol_objs[sbol_objs_names.index('FinalProducts')]
 
 # colec.members.append('this')
+
+sbol2.CombinatorialDerivation()
+sbol2.ComponentDefinition()
+sbol2.getHomespace()
+sbol2.URIRef

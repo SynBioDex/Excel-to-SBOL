@@ -1,15 +1,11 @@
 # Make sure to update the dependency graphic
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencies
-# import re
-# from typing import List
-# import sbol2
 import sbol3
-# import pandas as pd
-# import logging
-# import excel2sbol.helper_functions as hf
+import sbol2
 from inspect import getmembers, isfunction
 import excel_sbol_utils.library3 as exutil3
+import excel_sbol_utils.library2 as exutil2
 
 
 class rowobj():
@@ -28,10 +24,19 @@ class rowobj():
         self.doc_pref_terms = doc_pref_terms
 
 
-class switch3():
-    func_list = func_list = [o[0] for o in getmembers(exutil3) if isfunction(o[1])]
+class switch1():
+    func_list2 = func_list = [o[0] for o in getmembers(exutil2) if isfunction(o[1])]
+    func_list3 = func_list = [o[0] for o in getmembers(exutil3) if isfunction(o[1])]
 
-    def switch(self, rowobj, sbol_term):
+    def switch(self, rowobj, sbol_term, sbol_version):
+        if sbol_version == 2:
+            self.func_list = self.func_list2
+            exutil = exutil2
+        elif sbol_version == 3:
+            self.func_list = self.func_list3
+            exutil = exutil3
+        else:
+            raise ValueError(f"SBOL Version ({sbol_version}) given to switch has not been implemented yet")
 
         # split sbol term into prefix and suffix
         self.sbol_term = sbol_term
@@ -47,7 +52,7 @@ class switch3():
 
         # if a special function has been defined in excel-sbol-utils then use that
         elif self.sbol_term_suf in self.func_list:
-            return getattr(exutil3, self.sbol_term_suf)(rowobj)
+            return getattr(exutil, self.sbol_term_suf)(rowobj)
 
         # if it is an sbol term use standard pySBOL implementation
         # unless it is a top level object in which case the standard
@@ -126,7 +131,14 @@ class switch3():
                 if col_type == "URI":
                     # * allows multiple instance of this property
                     if not hasattr(rowobj.obj, self.sbol_term_suf):
-                        setattr(rowobj.obj, self.sbol_term_suf,
+                        if sbol_version == 2:
+                            setattr(rowobj.obj, self.sbol_term_suf,
+                                sbol2.URIProperty(rowobj.obj,
+                                                f'{namespace_url}{self.sbol_term_suf}',
+                                                '0', '*', []))
+                            setattr(rowobj.obj, self.sbol_term_suf, cell_val)
+                        elif sbol_version == 3:
+                            setattr(rowobj.obj, self.sbol_term_suf,
                                 sbol3.URIProperty(rowobj.obj,
                                                   f'{namespace_url}{self.sbol_term_suf}',
                                                   '0', '*', initial_value=[cell_val]))
@@ -140,7 +152,14 @@ class switch3():
                 else:
                     # * allows multiple instance of this property
                     if not hasattr(rowobj.obj, self.sbol_term_suf):
-                        setattr(rowobj.obj, self.sbol_term_suf,
+                        if sbol_version == 2:
+                            setattr(rowobj.obj, self.sbol_term_suf,
+                                sbol2.TextProperty(rowobj.obj,
+                                                f'{namespace_url}{self.sbol_term_suf}',
+                                                '0', '*'))
+                            setattr(rowobj.obj, self.sbol_term_suf, str(cell_val))
+                        elif sbol_version == 3:
+                            setattr(rowobj.obj, self.sbol_term_suf,
                                 sbol3.TextProperty(rowobj.obj,
                                                    f'{namespace_url}{self.sbol_term_suf}',
                                                    '0', '*', initial_value=str(cell_val)))

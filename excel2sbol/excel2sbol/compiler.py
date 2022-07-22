@@ -150,7 +150,17 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
             uri = f'{sbol2.getHomespace()}{sanitised_id}'
 
             if hasattr(sbol2, types[ind]):
-                varfunc = getattr(sbol2, types[ind])
+                if types[ind] == "CombinatorialDerivation":
+                    # print('combdev', sanitised_id, types[ind])
+                    # template = sbol2.ComponentDefinition(f'{sanitised_id}_template')
+                    # template.displayId = f'{sanitised_id}_template'
+                    # dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol2.getHomespace()}{sanitised_id}_template',
+                    #                                             'object': template, 'displayId': f'{sanitised_id}_template'}
+
+                    obj = varfunc(uri=sanitised_id)
+                else:
+                    # print(sanitised_id, types[ind])
+                    varfunc = getattr(sbol2, types[ind])
                 obj = varfunc(sanitised_id)
                 obj.displayId = sanitised_id
                 # if "Supplement" in obj.displayId:
@@ -165,6 +175,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
     for obj_name in dict_of_objs:
         obj = dict_of_objs[obj_name]['object']
+        # print(obj_name, obj, type(obj))
         doc.add(obj)
     return(doc, dict_of_objs, sht_convert_dict)
 
@@ -357,26 +368,12 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     print(term, getattr(term_dict, term))
                     col_cell_dict = getattr(term_dict, term)
                     term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
-                    if sbol_version == 2:
-                        pass
-                        # col_meth = cf2.sbol_methods2(col_convert_df['Namespace URL'].values[0],
-                        #                             obj, obj_uri, dict_of_objs, doc,
-                        #                             cell_val,
-                        #                             col_convert_df['Type'].values[0],
-                        #                             parental_lookup, sht, col,
-                        #                             disp_id)
-                        # col_meth.switch(col_convert_df['SBOL Term'].values[0])
-                    elif sbol_version == 3:
-                        # pass
-                        rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
-                                        col_cell_dict, sht, disp_id,
-                                        term_coldef_df, doc_pref_terms)
-                        sw = cf2.switch3()
-                        sw.switch(rj, term)
-                        doc_pref_terms = rj.doc_pref_terms
-
-                    else:
-                        raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
+                    rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
+                                    col_cell_dict, sht, disp_id,
+                                    term_coldef_df, doc_pref_terms)
+                    sw = cf2.switch1()
+                    sw.switch(rj, term, sbol_version)
+                    doc_pref_terms = rj.doc_pref_terms
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     doc.write(file_path_out)
     return
