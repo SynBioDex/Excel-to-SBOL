@@ -1,5 +1,5 @@
 # import sbol3
- import sbol2
+import sbol2
 # doc = sbol3.Document()
 
 # colec = sbol3.Collection('FinalProducts', name='FinalProducts')

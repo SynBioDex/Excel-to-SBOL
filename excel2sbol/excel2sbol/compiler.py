@@ -150,18 +150,18 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
             uri = f'{sbol2.getHomespace()}{sanitised_id}'
 
             if hasattr(sbol2, types[ind]):
+                varfunc = getattr(sbol2, types[ind])
                 if types[ind] == "CombinatorialDerivation":
                     # print('combdev', sanitised_id, types[ind])
                     # template = sbol2.ComponentDefinition(f'{sanitised_id}_template')
                     # template.displayId = f'{sanitised_id}_template'
                     # dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol2.getHomespace()}{sanitised_id}_template',
                     #                                             'object': template, 'displayId': f'{sanitised_id}_template'}
-
                     obj = varfunc(uri=sanitised_id)
+                    print(f'here, {sanitised_id}')
                 else:
                     # print(sanitised_id, types[ind])
-                    varfunc = getattr(sbol2, types[ind])
-                obj = varfunc(sanitised_id)
+                    obj = varfunc(sanitised_id)
                 obj.displayId = sanitised_id
                 # if "Supplement" in obj.displayId:
                 #     print(obj, type(obj))

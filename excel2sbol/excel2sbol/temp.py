@@ -3,7 +3,7 @@ import os
 
 cwd = os.getcwd()
 print(cwd)
-file_path_in = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'SBOL3_simple_library4.xlsx')
+file_path_in = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'SBOL2_simple_library4.xlsx')
 file_path_out = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'sbol_lib4.xml')
 
 

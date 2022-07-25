@@ -16,7 +16,6 @@ class rowobj():
         self.obj_uri = obj_uri
         self.obj_dict = obj_dict
         self.doc = doc
-        self.doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
         self.sheet = sheet
         self.col_cell_dict = col_cell_dict
         self.sht_row = display_id
