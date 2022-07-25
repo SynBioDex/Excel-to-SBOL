@@ -1,8 +1,10 @@
-from multiprocessing.sharedctypes import Value
+# from multiprocessing.sharedctypes import Value
 import pandas as pd
+# import numpy as np
 import excel2sbol.helper_functions as hf
 import excel2sbol.lookup_compiler as lk
-import excel2sbol.comp_column_functions as cf
+# import excel2sbol.comp_column_functions as cf
+import excel2sbol.comp_column_functions2 as cf2
 import logging
 import sbol2
 import sbol3
@@ -19,8 +21,8 @@ def initialise(file_path_in):
     init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
     version_info = pd.read_excel(file_path_in, sheet_name="Init",
-                              nrows=1, index_col=0, header=None,
-                              engine='openpyxl')
+                                 nrows=1, index_col=0, header=None,
+                                 engine='openpyxl')
     version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
     version_info = version_info['SBOL Version'][1]
 
@@ -86,7 +88,8 @@ def initialise(file_path_in):
     col_read_df = col_read_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
     # processing to turn init columns into 'sheet' columns
-    extra_cols = list(list(init_info.values())[0].keys()) # pull all column names
+    # pull all column names
+    extra_cols = list(list(init_info.values())[0].keys())
     extra_cols = extra_cols[8:]
     for conv_sht in to_convert:
         for xcol in extra_cols:
@@ -148,7 +151,17 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
             if hasattr(sbol2, types[ind]):
                 varfunc = getattr(sbol2, types[ind])
-                obj = varfunc(sanitised_id)
+                if types[ind] == "CombinatorialDerivation":
+                    # print('combdev', sanitised_id, types[ind])
+                    # template = sbol2.ComponentDefinition(f'{sanitised_id}_template')
+                    # template.displayId = f'{sanitised_id}_template'
+                    # dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol2.getHomespace()}{sanitised_id}_template',
+                    #                                             'object': template, 'displayId': f'{sanitised_id}_template'}
+                    obj = varfunc(uri=sanitised_id)
+                    print(f'here, {sanitised_id}')
+                else:
+                    # print(sanitised_id, types[ind])
+                    obj = varfunc(sanitised_id)
                 obj.displayId = sanitised_id
                 # if "Supplement" in obj.displayId:
                 #     print(obj, type(obj))
@@ -162,6 +175,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
     for obj_name in dict_of_objs:
         obj = dict_of_objs[obj_name]['object']
+        # print(obj_name, obj, type(obj))
         doc.add(obj)
     return(doc, dict_of_objs, sht_convert_dict)
 
@@ -214,7 +228,8 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
             if hasattr(sbol3, obj_types[ind]):
                 varfunc = getattr(sbol3, obj_types[ind])
                 if obj_types[ind] == "Component":
-                    if mol_types is not None:
+                    # checks that a molecule type is given and it isn't a boolean like circular
+                    if mol_types is not None and isinstance(mol_types[ind], str):
                         obj = varfunc(sanitised_id, mol_types[ind])
                     else:
                         obj = varfunc(sanitised_id, sbol3.SBO_DNA)
@@ -244,8 +259,14 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
     return(doc, dict_of_objs, sht_convert_dict)
 
 
+class TermClass:
+    def __init__(self, row):
+        self.row_num = row
+
+
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                  col_read_df, doc, file_path_out, sbol_version=3):
+    doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
 
     for sht in to_convert:
         print(sht)
@@ -255,6 +276,9 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
         num_rows = len(sht_lib[list(sht_lib.keys())[0]])
 
         for row_num in range(0, num_rows):
+
+            term_dict = TermClass(row_num)
+
             disp_id = sht_lib[sht_convert_dict[sht]][row_num]
             obj = dict_of_objs[disp_id]['object']
             obj_uri = dict_of_objs[disp_id]['uri']
@@ -318,25 +342,38 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
 
                     # carry out method of column processing based on
                     # the sbol_term of the column
-                    parental_lookup = col_convert_df['Parent Lookup'].values[0]
-                    if sbol_version == 2:
-                        col_meth = cf.sbol_methods2(col_convert_df['Namespace URL'].values[0],
-                                                    obj, obj_uri, dict_of_objs, doc,
-                                                    cell_val,
-                                                    col_convert_df['Type'].values[0],
-                                                    parental_lookup, sht, col,
-                                                    disp_id)
-                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
-                    elif sbol_version == 3:
-                        col_meth = cf.sbol_methods3(col_convert_df['Namespace URL'].values[0],
-                                                    obj, obj_uri, dict_of_objs,
-                                                    doc, cell_val,
-                                                    col_convert_df['Type'].values[0],
-                                                    parental_lookup, sht, col,
-                                                    disp_id)
-                        col_meth.switch(col_convert_df['SBOL Term'].values[0])
-                    else:
-                        raise NotImplementedError(f'SBOL Version {sbol_version} has not been implemented yet')
+                    # This creates an object with the converted cell values
+                    # hierarchy: sbol term, multicolumn, column name, cell val
+                    mcol = col_convert_df['Multicolumn'].values[0]
+                    sbol_term = col_convert_df['SBOL Term'].values[0]
 
+                    if hasattr(term_dict, sbol_term):
+                        sbol_dict = getattr(term_dict, sbol_term)
+                    else:
+                        sbol_dict = {}
+
+                    if isinstance(mcol, str):
+                        if mcol not in sbol_dict:
+                            sbol_dict[mcol] = {}
+                        sbol_dict[mcol][col] = cell_val
+                    else:
+                        sbol_dict[col] = cell_val
+
+                    setattr(term_dict, sbol_term, sbol_dict)
+
+
+            print(term_dict.__dict__)
+            for term in term_dict.__dict__:
+                if term != 'row_num':
+                    print(term, getattr(term_dict, term))
+                    col_cell_dict = getattr(term_dict, term)
+                    term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
+                    rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
+                                    col_cell_dict, sht, disp_id,
+                                    term_coldef_df, doc_pref_terms)
+                    sw = cf2.switch1()
+                    sw.switch(rj, term, sbol_version)
+                    doc_pref_terms = rj.doc_pref_terms
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     doc.write(file_path_out)
     return

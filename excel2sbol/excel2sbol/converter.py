@@ -1,5 +1,5 @@
-from ensurepip import version
-import excel2sbol.compiler_test as e2s
+# from ensurepip import version
+import excel2sbol.compiler as e2s
 
 
 def converter(file_path_in, file_path_out, sbol_version=3):

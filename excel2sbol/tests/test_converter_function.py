@@ -1,7 +1,7 @@
 from unittest import TestCase
 import pytest
 import excel2sbol.converter as confun
-import excel2sbol.compiler_test as e2s
+import excel2sbol.compiler as e2s
 import os
 import tempfile
 import rdflib

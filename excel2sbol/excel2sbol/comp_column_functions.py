@@ -2,10 +2,10 @@
 # https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/dependency_structure.PNG
 # if change are made to modle dependencies
 import re
-from typing import List
+# from typing import List
 import sbol2
 import sbol3
-import pandas as pd
+# import pandas as pd
 import logging
 import excel2sbol.helper_functions as hf
 
