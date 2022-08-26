@@ -362,10 +362,10 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     setattr(term_dict, sbol_term, sbol_dict)
 
 
-            print(term_dict.__dict__)
+            # print(term_dict.__dict__)
             for term in term_dict.__dict__:
                 if term != 'row_num':
-                    print(term, getattr(term_dict, term))
+                    # print(term, getattr(term_dict, term))
                     col_cell_dict = getattr(term_dict, term)
                     term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
                     rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
@@ -374,6 +374,6 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     sw = cf2.switch1()
                     sw.switch(rj, term, sbol_version)
                     doc_pref_terms = rj.doc_pref_terms
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     doc.write(file_path_out)
     return
