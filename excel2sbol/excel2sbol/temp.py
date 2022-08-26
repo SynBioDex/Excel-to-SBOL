@@ -3,8 +3,8 @@ import os
 
 cwd = os.getcwd()
 print(cwd)
-file_path_in = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'SBOL2_simple_library4.xlsx')
-file_path_out = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'sbol_lib4.xml')
+file_path_in = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'SBOL2_simple_parts_template.xlsx')
+file_path_out = os.path.join(cwd, "excel2sbol", 'tests', 'test_files', 'sbol_parts_template.xml')
 
 
 conv.converter(file_path_in, file_path_out)
