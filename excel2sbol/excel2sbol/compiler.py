@@ -1,7 +1,8 @@
 # from multiprocessing.sharedctypes import Value
 import pandas as pd
 # import numpy as np
-import excel2sbol.helper_functions as hf
+# import excel2sbol.helper_functions as hf
+import excel_sbol_utils.helpers as hf
 import excel2sbol.lookup_compiler as lk
 # import excel2sbol.comp_column_functions as cf
 import excel2sbol.comp_column_functions2 as cf2
@@ -21,9 +22,13 @@ def initialise(file_path_in):
     init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
     version_info = pd.read_excel(file_path_in, sheet_name="Init",
-                                 nrows=1, index_col=0, header=None,
+                                 nrows=4, index_col=0, header=None,
                                  engine='openpyxl')
     version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+    if 'Homespace' in version_info:
+        homespace = version_info['Homespace'][1]
+    else:
+        homespace = ""
     version_info = version_info['SBOL Version'][1]
 
     # For key in dict read in sheet,
@@ -73,8 +78,9 @@ def initialise(file_path_in):
         else:
             sheet_dict['description'] = ""
 
+        skipval = val['Lib Start Row'] - 1  #to avoid zero index confusion
         lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
-                               header=0, skiprows=val['Lib Start Row'],
+                               header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
         sheet_dict['library'] = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('list')
 
@@ -109,7 +115,7 @@ def initialise(file_path_in):
 
     # re index as otherwise causes issues later
     col_read_df = col_read_df.reset_index(drop=True)
-    return(col_read_df, to_convert, compiled_sheets, version_info)
+    return(col_read_df, to_convert, compiled_sheets, version_info, homespace)
 
 
 def parse_objects(col_read_df, to_convert, compiled_sheets,
@@ -134,7 +140,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
         try:
             dis_name_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_displayId']['Column Name'].values[0]
         except IndexError as e:
-            raise KeyError(f'The sheet "{sht}" has no column with sbol_displayID as type. Thus the following error was raised: {e}')
+            raise KeyError(f'The sheet "{sht}" has no column with sbol_displayId as type. Thus the following error was raised: {e}')
 
         try:
             obj_type_col = sht_df.loc[col_read_df['SBOL Term'] == 'sbol_objectType']['Column Name'].values[0]
@@ -158,7 +164,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
                     # dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol2.getHomespace()}{sanitised_id}_template',
                     #                                             'object': template, 'displayId': f'{sanitised_id}_template'}
                     obj = varfunc(uri=sanitised_id)
-                    print(f'here, {sanitised_id}')
+                    # print(f'here, {sanitised_id}')
                 else:
                     # print(sanitised_id, types[ind])
                     obj = varfunc(sanitised_id)
