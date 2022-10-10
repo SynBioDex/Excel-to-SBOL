@@ -24,8 +24,8 @@ def up(col_def_row, cell_val, compiled_sheets, obj_dict):
         lk_dict_name = col_def_dict['Lookup Sheet Name'][0]
         lk_dict = compiled_sheets[lk_dict_name]['library']
 
-        lk_col_from = list(lk_dict.keys())[hf.col_to_num(col_def_dict['From Col'][0])]
-        lk_col_to = list(lk_dict.keys())[hf.col_to_num(col_def_dict['To Col'][0])]
+        lk_col_from = list(lk_dict.keys())[hf.col_to_num(col_def_dict['From Col'][0]) - 1]
+        lk_col_to = list(lk_dict.keys())[hf.col_to_num(col_def_dict['To Col'][0]) - 1]
 
         try:
             # find the index of cell value in the from column
@@ -43,8 +43,8 @@ def up(col_def_row, cell_val, compiled_sheets, obj_dict):
         lk_dict_name = col_def_dict['Lookup Sheet Name'][0]
         lk_dict = compiled_sheets[lk_dict_name]['library']
 
-        lk_col_from = list(lk_dict.keys())[hf.col_to_num(col_def_dict['From Col'][0])]
-        lk_col_to = list(lk_dict.keys())[hf.col_to_num(col_def_dict['To Col'][0])]
+        lk_col_from = list(lk_dict.keys())[hf.col_to_num(col_def_dict['From Col'][0]) - 1]
+        lk_col_to = list(lk_dict.keys())[hf.col_to_num(col_def_dict['To Col'][0]) - 1]
 
         try:
             # find the index of cell value in the from column
