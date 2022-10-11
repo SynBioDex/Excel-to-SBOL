@@ -11,7 +11,7 @@ import excel_sbol_utils.library2 as exutil2
 class rowobj():
 
     def __init__(self, obj, obj_uri, obj_dict, doc, col_cell_dict,
-                 sheet, display_id, term_coldef_df,  doc_pref_terms):
+                 sheet, display_id, term_coldef_df,  doc_pref_terms, data_source_id_to_update):
         self.obj = obj
         self.obj_uri = obj_uri
         self.obj_dict = obj_dict
@@ -21,7 +21,7 @@ class rowobj():
         self.sht_row = display_id
         self.term_coldef_df = term_coldef_df
         self.doc_pref_terms = doc_pref_terms
-        self.data_source_id_to_update = {}
+        self.data_source_id_to_update = data_source_id_to_update
 
 
 class switch1():
