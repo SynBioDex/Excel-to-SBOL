@@ -273,6 +273,7 @@ class TermClass:
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                  col_read_df, doc, file_path_out, sbol_version=3, file_format=None):
     doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
+    data_source_id_to_update = {}
 
     for sht in to_convert:
         print(sht)
@@ -376,10 +377,11 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
                     rj = cf2.rowobj(obj, obj_uri, dict_of_objs, doc,
                                     col_cell_dict, sht, disp_id,
-                                    term_coldef_df, doc_pref_terms)
+                                    term_coldef_df, doc_pref_terms, data_source_id_to_update)
                     sw = cf2.switch1()
                     sw.switch(rj, term, sbol_version)
                     doc_pref_terms = rj.doc_pref_terms
+                    data_source_id_to_update = rj.data_source_id_to_update
             # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     if file_format is None:
         doc.write(file_path_out)
