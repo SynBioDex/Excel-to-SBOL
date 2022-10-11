@@ -106,6 +106,7 @@ def initialise(file_path_in):
                 new_row = new_row[new_row['Column Name'] == xcol].to_dict('records')
                 new_row[0]['Sheet Name'] = conv_sht
                 new_row_df = pd.DataFrame(new_row)
+                # col_read_df = col_read_df.append(new_row_df)
                 col_read_df = pd.concat([col_read_df, new_row_df])
 
                 # add col to compiled_sheets
@@ -229,7 +230,7 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
         for ind, id in enumerate(ids):
             sanitised_id = hf.check_name(id)
 
-            uri = f'{sbol3.get_namespace()}{sanitised_id}'
+            uri = f'{sbol3.get_namespace()}/{sanitised_id}'
 
             if hasattr(sbol3, obj_types[ind]):
                 varfunc = getattr(sbol3, obj_types[ind])
@@ -243,7 +244,7 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
                 elif obj_types[ind] == "CombinatorialDerivation":
                     template = sbol3.Component(f'{homespace}/{sanitised_id}_template', sbol3.SBO_DNA)
                     template.displayId = f'{sanitised_id}_template'
-                    dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{homespace}{sanitised_id}_template',
+                    dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{homespace}/{sanitised_id}_template',
                                                                 'object': template, 'displayId': f'{sanitised_id}_template'}
 
                     obj = varfunc(sanitised_id, template)
@@ -383,8 +384,14 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     doc_pref_terms = rj.doc_pref_terms
                     data_source_id_to_update = rj.data_source_id_to_update
             # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print(data_source_id_to_update)
+    # if len(data_source_id_to_update) > 0:
+    #     for old_uri in data_source_id_to_update:
+    #         print(old_uri)
+
     if file_format is None:
         doc.write(file_path_out)
     else:
         doc.write(file_path_out, file_format = file_format)
+    
     return
