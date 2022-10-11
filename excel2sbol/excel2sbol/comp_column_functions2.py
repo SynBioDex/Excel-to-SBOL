@@ -21,6 +21,7 @@ class rowobj():
         self.sht_row = display_id
         self.term_coldef_df = term_coldef_df
         self.doc_pref_terms = doc_pref_terms
+        self.data_source_id_to_update = {}
 
 
 class switch1():
