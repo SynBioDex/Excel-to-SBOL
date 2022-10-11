@@ -2,7 +2,7 @@
 import excel2sbol.compiler as e2s
 
 
-def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/"):
+def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format):
     """Convert a given excel file to SBOL
 
     Args:
@@ -32,4 +32,4 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
 
     e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict,
                      dict_of_objs, col_read_df, doc, file_path_out,
-                     sbol_version=sbol_version)
+                     sbol_version=sbol_version, file_format=file_format)
