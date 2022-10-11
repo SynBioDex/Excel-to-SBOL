@@ -2,7 +2,7 @@
 import excel2sbol.compiler as e2s
 
 
-def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format):
+def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None):
     """Convert a given excel file to SBOL
 
     Args:
