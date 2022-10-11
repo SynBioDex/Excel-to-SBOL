@@ -243,7 +243,7 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
                 elif obj_types[ind] == "CombinatorialDerivation":
                     template = sbol3.Component(f'{homespace}/{sanitised_id}_template', sbol3.SBO_DNA)
                     template.displayId = f'{sanitised_id}_template'
-                    dict_of_objs[f'{homespace}/{sanitised_id}_template'] = {'uri': f'{homespace}{sanitised_id}_template',
+                    dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{homespace}{sanitised_id}_template',
                                                                 'object': template, 'displayId': f'{sanitised_id}_template'}
 
                     obj = varfunc(sanitised_id, template)
