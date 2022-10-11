@@ -78,7 +78,7 @@ def initialise(file_path_in):
         else:
             sheet_dict['description'] = ""
 
-        skipval = val['Lib Start Row'] - 1  # to avoid zero index confusion
+        skipval = val['Lib Start Row'] - 1  #to avoid zero index confusion
         lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
@@ -187,7 +187,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
 
 def parse_objects3(col_read_df, to_convert, compiled_sheets,
-                   homespace='http://examples.org/', sbol_version=3):
+                   homespace='http://examples.org', sbol_version=3):
     """Making a list of all objects in the document"""
 
     # create uris for every item in to convert sheets
@@ -236,20 +236,20 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
                 if obj_types[ind] == "Component":
                     # checks that a molecule type is given and it isn't a boolean like circular
                     if mol_types is not None and isinstance(mol_types[ind], str):
-                        obj = varfunc(sanitised_id, mol_types[ind])
+                        obj = varfunc(f'{homespace}/{sanitised_id}', mol_types[ind])
                     else:
                         obj = varfunc(sanitised_id, sbol3.SBO_DNA)
                         logging.warning(f'As no molecule type was giving the component {id} was initiated as a DNA molecule')
                 elif obj_types[ind] == "CombinatorialDerivation":
-                    template = sbol3.Component(f'{sanitised_id}_template', sbol3.SBO_DNA)
+                    template = sbol3.Component(f'{homespace}/{sanitised_id}_template', sbol3.SBO_DNA)
                     template.displayId = f'{sanitised_id}_template'
-                    dict_of_objs[f'{sanitised_id}_template'] = {'uri': f'{sbol3.get_namespace()}{sanitised_id}_template',
+                    dict_of_objs[f'{homespace}/{sanitised_id}_template'] = {'uri': f'{homespace}{sanitised_id}_template',
                                                                 'object': template, 'displayId': f'{sanitised_id}_template'}
 
                     obj = varfunc(sanitised_id, template)
                     # doesnt work for comb dev at the moment!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 else:
-                    obj = varfunc(sanitised_id)
+                    obj = varfunc(f'{homespace}/{sanitised_id}')
                 obj.displayId = sanitised_id
 
             else:
@@ -367,10 +367,10 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
 
                     setattr(term_dict, sbol_term, sbol_dict)
 
+
             # print(term_dict.__dict__)
             for term in term_dict.__dict__:
                 if term != 'row_num':
-                    print(obj_uri, term)
                     # print(term, getattr(term_dict, term))
                     col_cell_dict = getattr(term_dict, term)
                     term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
