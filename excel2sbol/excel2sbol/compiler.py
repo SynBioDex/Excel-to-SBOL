@@ -106,7 +106,7 @@ def initialise(file_path_in):
                 new_row = new_row[new_row['Column Name'] == xcol].to_dict('records')
                 new_row[0]['Sheet Name'] = conv_sht
                 new_row_df = pd.DataFrame(new_row)
-                col_read_df = col_read_df.append(new_row_df)
+                col_read_df = pd.concat([col_read_df, new_row_df])
 
                 # add col to compiled_sheets
                 num_rows = len(list(compiled_sheets[conv_sht]['library'].values())[0])
