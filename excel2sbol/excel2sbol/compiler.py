@@ -271,7 +271,7 @@ class TermClass:
 
 
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
-                 col_read_df, doc, file_path_out, sbol_version=3):
+                 col_read_df, doc, file_path_out, sbol_version=3, file_format=None):
     doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
 
     for sht in to_convert:
@@ -381,5 +381,8 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     sw.switch(rj, term, sbol_version)
                     doc_pref_terms = rj.doc_pref_terms
             # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    doc.write(file_path_out)
+    if file_format is None:
+        doc.write(file_path_out)
+    else:
+        doc.write(file_path_out, file_format = file_format)
     return
