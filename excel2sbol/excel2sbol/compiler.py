@@ -78,7 +78,7 @@ def initialise(file_path_in):
         else:
             sheet_dict['description'] = ""
 
-        skipval = val['Lib Start Row'] - 1  #to avoid zero index confusion
+        skipval = val['Lib Start Row'] - 1  # to avoid zero index confusion
         lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
@@ -367,10 +367,10 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
 
                     setattr(term_dict, sbol_term, sbol_dict)
 
-
             # print(term_dict.__dict__)
             for term in term_dict.__dict__:
                 if term != 'row_num':
+                    print(obj_uri, term)
                     # print(term, getattr(term_dict, term))
                     col_cell_dict = getattr(term_dict, term)
                     term_coldef_df = col_read_df[(col_read_df['SBOL Term'] == term) & (col_read_df['Sheet Name'] == sht)]
