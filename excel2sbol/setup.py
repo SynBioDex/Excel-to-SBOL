@@ -26,5 +26,5 @@ setup(name='excel2sbol',
                         'tyto>=1.2',
                         'sbol3>=1.0.1',
                         'xlrd >= 1.0.0',
-                        'excel_sbol_utils >= 1.0.38'],
+                        'excel_sbol_utils >= 1.0.42'],
       zip_safe=False)
