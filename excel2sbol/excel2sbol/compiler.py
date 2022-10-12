@@ -1,10 +1,6 @@
-# from multiprocessing.sharedctypes import Value
 import pandas as pd
-# import numpy as np
-# import excel2sbol.helper_functions as hf
 import excel_sbol_utils.helpers as hf
 import excel2sbol.lookup_compiler as lk
-# import excel2sbol.comp_column_functions as cf
 import excel2sbol.comp_column_functions2 as cf2
 import logging
 import sbol2
@@ -384,10 +380,10 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     doc_pref_terms = rj.doc_pref_terms
                     data_source_id_to_update = rj.data_source_id_to_update
             # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print(data_source_id_to_update)
-    # if len(data_source_id_to_update) > 0:
-    #     for old_uri in data_source_id_to_update:
-    #         print(old_uri)
+
+    # this makes sure all references to an object are also updated (as well as any derived terms)
+    if len(data_source_id_to_update) > 0:
+        doc = hf.update_uri_refs(doc, data_source_id_to_update, use_derived=True, derived_ls = ['_sequence'])
 
     if file_format is None:
         doc.write(file_path_out)
