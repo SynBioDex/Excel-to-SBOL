@@ -1,8 +1,8 @@
 # from ensurepip import version
 import excel2sbol.compiler as e2s
+import os
 
-
-def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None):
+def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
     """Convert a given excel file to SBOL
 
     Args:
@@ -10,6 +10,11 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         file_path_out (string): desired path to sbol file
         sbol_version (int): sbol version number, defaults to 3
     """
+    if username is not None and password is not None and url is not None:
+        # print(username, password, url)
+        os.environ["SBOL_USERNAME"] = username
+        os.environ["SBOL_PASSWORD"] = password
+        os.environ["SBOL_URL"] = url
     col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
 
     if len(homespace2) > 0:
@@ -33,3 +38,4 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
     e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict,
                      dict_of_objs, col_read_df, doc, file_path_out,
                      sbol_version=sbol_version, file_format=file_format)
+    
