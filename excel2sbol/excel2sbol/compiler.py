@@ -10,7 +10,53 @@ import re
 
 # the homespace only works if the change is made to pysbol2 shown in https://github.com/SynBioDex/pySBOL2/pull/411/files
 
+def initialise_welcome(file_path_in):
+    init_info = pd.read_excel(file_path_in, sheet_name="Init",
+                              skiprows=9, index_col=0,
+                              engine='openpyxl')
+    init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
 
+    version_info = pd.read_excel(file_path_in, sheet_name="Init",
+                                 nrows=4, index_col=0, header=None,
+                                 engine='openpyxl')
+    version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+    if 'Homespace' in version_info:
+        homespace = version_info['Homespace'][1]
+    else:
+        homespace = ""
+    version_info = version_info['SBOL Version'][1]
+
+    # For key in dict read in sheet,
+    # if sheet convert = true, add to convert list
+    compiled_sheets = {}
+    to_convert = []
+    for sheet_name, val in init_info.items():
+        # print(f"reading in {sheet_name}...")
+        # MY CODE
+        if sheet_name.lower() == "welcome":
+            print("Processing the welcome page...")
+            try:
+                welcome_metadata = pd.read_excel(file_path_in, sheet_name=sheet_name,
+                                                 index_col=0, engine='openpyxl').fillna("")
+                print("Welcome Page Metadata:")
+                
+                dict = {}
+                for _, row in welcome_metadata.iterrows():
+                    if len(row) >= 2:
+                        key, value = row[0], row[1]
+                        if isinstance(key, str) and key.strip():
+                            dict[key.strip()] = value.strip() if isinstance(value, str) else value
+                for key, value in dict.items():
+                    print(f"{key}: {value}")
+                return dict
+                
+            except Exception as e:
+                print(f"Error reading the welcome page: {e}")
+                return None
+            
+        else:
+            return
+    
 def initialise(file_path_in):
     init_info = pd.read_excel(file_path_in, sheet_name="Init",
                               skiprows=9, index_col=0,
@@ -33,6 +79,11 @@ def initialise(file_path_in):
     to_convert = []
     for sheet_name, val in init_info.items():
         # print(f"reading in {sheet_name}...")
+        # MY CODE
+        if sheet_name.lower() == "welcome":
+            continue
+		# MY CODE
+        
         convert = val['Convert']
 
         if convert:

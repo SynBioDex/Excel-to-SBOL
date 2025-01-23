@@ -1,6 +1,8 @@
 # from ensurepip import version
 import excel2sbol.compiler as e2s
 import os
+import json
+from datetime import datetime
 
 def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
     """Convert a given excel file to SBOL
@@ -15,7 +17,15 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         os.environ["SBOL_USERNAME"] = username
         os.environ["SBOL_PASSWORD"] = password
         os.environ["SBOL_URL"] = url
+        
     col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
+    dict = e2s.initialise_welcome(file_path_in)
+    for key, value in dict.items():
+        if isinstance(value, datetime):
+            dict[key] = value.isoformat()
+    if dict is not None:
+        os.environ["SBOL_DICTIONARY"] = json.dumps(dict)
+    # print(dict)
 
     if len(homespace2) > 0:
         homespace = homespace2
@@ -38,4 +48,5 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
     e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict,
                      dict_of_objs, col_read_df, doc, file_path_out,
                      sbol_version=sbol_version, file_format=file_format)
+   
     
