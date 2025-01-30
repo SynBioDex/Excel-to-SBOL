@@ -7,6 +7,7 @@ import sbol2
 import sbol3
 import math
 import re
+import os
 
 # the homespace only works if the change is made to pysbol2 shown in https://github.com/SynBioDex/pySBOL2/pull/411/files
 
@@ -436,7 +437,10 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
     if len(data_source_id_to_update) > 0:
         doc = hf.update_uri_refs(doc, data_source_id_to_update, use_derived=True, derived_ls = ['_sequence'])
 
-    if file_format is None:
+    
+    if os.getenv("COUNTER") == "Error found":
+        return
+    elif file_format is None:
         doc.write(file_path_out)
     else:
         doc.write(file_path_out, file_format = file_format)
