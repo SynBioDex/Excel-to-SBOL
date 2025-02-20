@@ -12,11 +12,12 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         file_path_out (string): desired path to sbol file
         sbol_version (int): sbol version number, defaults to 3
     """
-    if username is not None and password is not None and url is not None:
-        # print(username, password, url)
-        os.environ["SBOL_USERNAME"] = username
-        os.environ["SBOL_PASSWORD"] = password
-        os.environ["SBOL_URL"] = url
+   
+    # if username is not None and password is not None and url is not None:
+    #     # print(username, password, url)
+    #     os.environ["SBOL_USERNAME"] = username
+    #     os.environ["SBOL_PASSWORD"] = password
+    #     os.environ["SBOL_URL"] = url
         
     col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
     dict = e2s.initialise_welcome(file_path_in)
@@ -25,6 +26,14 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
             dict[key] = value.isoformat()
     if dict is not None:
         os.environ["SBOL_DICTIONARY"] = json.dumps(dict)
+    data = json.loads(os.environ["SBOL_DICTIONARY"])
+    # initializing the environment variables
+    os.environ["SBOL_USERNAME"] = data["Email"]
+    os.environ["SBOL_URL"] = data["Domain"]
+    print(data["Email"])
+    print(data["Domain"])
+    if password is not None:
+        os.environ["SBOL_PASSWORD"] = password
     # print(dict)
 
     if len(homespace2) > 0:
