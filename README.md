@@ -41,9 +41,11 @@ There are several ways to install the converter. The easiest is via pip: `pip in
 Use the code below to run the converter. Converter file needs to be within the same directory as the Excel template.
 The following script asks the user for the name of the input file, version of SBOL to use, and offers the option to sign in to gain access to private repositories.
 
+If you want to use the tool in offline mode for a custom SynBioHub instance, leave the "Domain" field empty on the spreadsheet "Welcome page".
+
 [Converter File](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/Excel2SBOLConverter.py)
 
-Tip: the use of `os.getcwd()` and `os.path.join` is reccommended for the creation of the file paths. This is safer from a cybersecurity stand point and provide better operating system interoperability.
+Tip: the use of `os.getcwd()` and `os.path.join` is recommended for the creation of the file paths. This is safer from a cybersecurity stand point and provide better operating system interoperability.
 
 **4) Use the output file**
 The SBOL file that is output can then be used by further [SBOL tools](https://sbolstandard.org/applications/) or uploaded to an SBOL repository like [SynBioHub](https://synbiohub.org/).
