@@ -1,4 +1,4 @@
-﻿openpyxl==3.0.7
+openpyxl==3.0.7
 pandas==1.2.4
 rdflib==5.0.0
 requests==2.25.1
@@ -7,4 +7,4 @@ sbol3==1.0.1
 tyto==1.2
 urllib3==1.26.5
 validators==0.18.2
-excel_sbol_utils==1.0.49
+
