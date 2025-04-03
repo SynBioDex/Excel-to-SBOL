@@ -4,8 +4,8 @@
 import sbol3
 import sbol2
 from inspect import getmembers, isfunction
-import excel_sbol_utils.library3 as exutil3
-import excel_sbol_utils.library2 as exutil2
+import library3 as exutil3
+import library2 as exutil2
 
 
 class rowobj():

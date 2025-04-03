@@ -1,6 +1,6 @@
 import tyto
 import re
-import excel_sbol_utils.helpers as hf
+import helpers as hf
 
 
 def up(col_def_row, cell_val, compiled_sheets, obj_dict):
