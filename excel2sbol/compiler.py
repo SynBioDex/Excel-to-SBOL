@@ -1,7 +1,7 @@
 import pandas as pd
-import excel_sbol_utils.helpers as hf
-import excel2sbol.lookup_compiler as lk
-import excel2sbol.comp_column_functions2 as cf2
+import helpers as hf
+import lookup_compiler as lk
+import comp_column_functions2 as cf2
 import logging
 import sbol2
 import sbol3
