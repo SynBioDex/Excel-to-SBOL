@@ -216,7 +216,7 @@ def is_url(str):
 		return False
 
 def displayId(rowobj):
-    # used to check the object display id in the converter function
+    
 	username = os.getenv("SBOL_USERNAME")
 	password = os.getenv("SBOL_PASSWORD")
 	
