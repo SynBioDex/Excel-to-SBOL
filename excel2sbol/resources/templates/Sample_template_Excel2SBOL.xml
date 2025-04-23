@@ -1,0 +1,361 @@
+<rdf:RDF xmlns:brick="https://brickschema.org/schema/Brick#" xmlns:csvw="http://www.w3.org/ns/csvw#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:geo="http://www.opengis.net/ont/geosparql#" xmlns:odrl="http://www.w3.org/ns/odrl/2/" xmlns:org="http://www.w3.org/ns/org#" xmlns:prof="http://www.w3.org/ns/dx/prof/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:schema="https://schema.org/" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa/" xmlns:ssn="http://www.w3.org/ns/ssn/" xmlns:time="http://www.w3.org/2006/time#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:void="http://rdfs.org/ns/void#" xmlns:wgs="https://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/pTet/1">
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <dcterms:title>pTet</dcterms:title>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <prov:wasDerivedFrom rdf:resource="https://parts.igem.org/Part:BBa_R0040"/>
+    <sbol:displayId>pTet</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pTet"/>
+    <sbol:sequence rdf:resource="http://examples.org/pTet_sequence/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/BBa_B0032/1">
+    <dcterms:title>BBa_B0032</dcterms:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/BBa_B0032"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <prov:wasDerivedFrom rdf:resource="https://parts.igem.org/Part:BBa_B0032"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>BBa_B0032</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/tetR/1">
+    <prov:wasDerivedFrom rdf:resource="http://parts.igem.org/Part:BBa_C0040"/>
+    <sbol:sequence rdf:resource="http://examples.org/tetR_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <dcterms:title>tetR</dcterms:title>
+    <sbol:displayId>tetR</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tetR"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/GFP/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
+    <sbol:sequence rdf:resource="http://examples.org/GFP_sequence/1"/>
+    <dcterms:description>green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP</dcterms:description>
+    <sbol:displayId>GFP</sbol:displayId>
+    <dcterms:title>GFP</dcterms:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP"/>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <prov:wasDerivedFrom rdf:resource="https://parts.igem.org/Part:BBa_E0040"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/BBa_B0015/1">
+    <sbol:displayId>BBa_B0015</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/BBa_B0015_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/BBa_B0015"/>
+    <dcterms:title>BBa_B0015</dcterms:title>
+    <prov:wasDerivedFrom rdf:resource="https://parts.igem.org/Part:BBa_B0015"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/TetR_Protein/1">
+    <dcterms:title>TetR_Protein</dcterms:title>
+    <sbol:displayId>TetR_Protein</sbol:displayId>
+    <dcterms:description>TetR Protein</dcterms:description>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_Protein"/>
+    <sbol:sequence rdf:resource="http://examples.org/TetR_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://www.rcsb.org/structure/5OJX"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/GFP_Protein/1">
+    <dcterms:description>GFP Protein</dcterms:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_Protein"/>
+    <sbol:sequence rdf:resource="http://examples.org/GFP_Protein_proteinSequence/1"/>
+    <dcterms:title>GFP_Protein</dcterms:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>GFP_Protein</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/TetR_u43_Tetracycline/1">
+    <sbol:version>1</sbol:version>
+    <dcterms:title>TetR+Tetracycline</dcterms:title>
+    <sbol:displayId>TetR_u43_Tetracycline</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline"/>
+    <prov:wasDerivedFrom rdf:resource="https://www.rcsb.org/structure/5OJX"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Complex"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/PC54675776/1">
+    <sbol:version>1</sbol:version>
+    <dcterms:title>PC54675776</dcterms:title>
+    <dcterms:description>Tetracycline, Tet</dcterms:description>
+    <prov:wasDerivedFrom rdf:resource="https://pubchem.ncbi.nlm.nih.gov/compound/54675776"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PC54675776"/>
+    <sbol:displayId>PC54675776</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline/1">
+        <sbol:definition rdf:resource="http://examples.org/TetR_u43_Tetracycline"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>TetR_u43_Tetracycline</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>pTet_TetR_u43_Tetracycline</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/pTet/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>pTet</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/pTet"/>
+        <sbol:definition rdf:resource="http://examples.org/pTet"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression/1">
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression/pTet_inhibited/1">
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression/pTet_inhibited"/>
+            <sbol:participant rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/pTet/1"/>
+            <sbol:displayId>pTet_inhibited</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>TetR_u43_Tetracycline_repression</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression/TetR_u43_Tetracycline_inhibition/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline_repression/TetR_u43_Tetracycline_inhibition"/>
+            <sbol:version>1</sbol:version>
+            <sbol:participant rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline/TetR_u43_Tetracycline/1"/>
+            <sbol:displayId>TetR_u43_Tetracycline_inhibition</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:version>1</sbol:version>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_TetR_u43_Tetracycline"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/tetR_TetR_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/tetR_TetR_Protein/TetR_Protein/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>TetR_Protein</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein/TetR_Protein"/>
+        <sbol:definition rdf:resource="http://examples.org/TetR_Protein"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>tetR_TetR_Protein</sbol:displayId>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/tetR_TetR_Protein/TetR_Protein_production/1">
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/tetR_TetR_Protein/TetR_Protein_production/TetR_Protein_product/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein/TetR_Protein_production/TetR_Protein_product"/>
+            <sbol:displayId>TetR_Protein_product</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/tetR_TetR_Protein/TetR_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/tetR_TetR_Protein/TetR_Protein_production/tetR_template/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>tetR_template</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/tetR_TetR_Protein/tetR/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein/TetR_Protein_production/tetR_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein/TetR_Protein_production"/>
+        <sbol:displayId>TetR_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/tetR_TetR_Protein/tetR/1">
+        <sbol:displayId>tetR</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_TetR_Protein/tetR"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="http://examples.org/tetR"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/GFP_GFP_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein"/>
+    <sbol:displayId>GFP_GFP_Protein</sbol:displayId>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/GFP_GFP_Protein/GFP_Protein_production/1">
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/GFP_GFP_Protein/GFP_Protein_production/GFP_template/1">
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:participant rdf:resource="http://examples.org/GFP_GFP_Protein/GFP/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein/GFP_Protein_production/GFP_template"/>
+            <sbol:displayId>GFP_template</sbol:displayId>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>GFP_Protein_production</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein/GFP_Protein_production"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/GFP_GFP_Protein/GFP_Protein_production/GFP_Protein_product/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>GFP_Protein_product</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/GFP_GFP_Protein/GFP_Protein/1"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein/GFP_Protein_production/GFP_Protein_product"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:version>1</sbol:version>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/GFP_GFP_Protein/GFP/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein/GFP"/>
+        <sbol:displayId>GFP</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="http://examples.org/GFP"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/GFP_GFP_Protein/GFP_Protein/1">
+        <sbol:definition rdf:resource="http://examples.org/GFP_Protein"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>GFP_Protein</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_GFP_Protein/GFP_Protein"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/1">
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/1">
+        <sbol:displayId>TetR_u43_Tetracycline_complex_formation</sbol:displayId>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000177"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_product/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_product"/>
+            <sbol:participant rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline/1"/>
+            <sbol:displayId>TetR_u43_Tetracycline_product</sbol:displayId>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation"/>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/TetR_Protein_reactor/1">
+            <sbol:displayId>TetR_Protein_reactor</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000010"/>
+            <sbol:participant rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_Protein/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/TetR_Protein_reactor"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/PC54675776_reactor/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000010"/>
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>PC54675776_reactor</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/PC54675776/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline_complex_formation/PC54675776_reactor"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/PC54675776/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/PC54675776"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/PC54675776"/>
+        <sbol:displayId>PC54675776</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>TetR_u43_Tetracycline_complex_formation</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/TetR_u43_Tetracycline"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_u43_Tetracycline"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>TetR_u43_Tetracycline</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_Protein/1">
+        <sbol:definition rdf:resource="http://examples.org/TetR_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>TetR_Protein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation/TetR_Protein"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_u43_Tetracycline_complex_formation"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/pTet_sequence/1">
+    <dcterms:title>pTet Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>pTet_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/pTet_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>TCCCTATCAGTGATAGAGATTGACATCCCTATCAGTGATAGAGATACTGAGCAC</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/tetR_sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>tetR_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/tetR_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ATGTCCAGATTAGATAAAAGTAAAGTGATTAACAGCGCATTAGAGCTGCTTAATGAGGTCGGAATCGAAGGTTTAACAACCCGTAAACTCGCCCAGAAGCTAGGTGTAGAGCAGCCTACATTGTATTGGCATGTAAAAAATAAGCGGGCTTTGCTCGACGCCTTAGCCATTGAGATGTTAGATAGGCACCATACTCACTTTTGCCCTTTAGAAGGGGAAAGCTGGCAAGATTTTTTACGTAATAACGCTAAAAGTTTTAGATGTGCTTTACTAAGTCATCGCGATGGAGCAAAAGTACATTTAGGTACACGGCCTACAGAAAAACAGTATGAAACTCTCGAAAATCAATTAGCCTTTTTATGCCAACAAGGTTTTTCACTAGAGAATGCATTATATGCACTCAGCGCTGTGGGGCATTTTACTTTAGGTTGCGTATTGGAAGATCAAGAGCATCAAGTCGCTAAAGAAGAAAGGGAAACACCTACTACTGATAGTATGCCGCCATTATTACGACAAGCTATCGAATTATTTGATCACCAAGGTGCAGAGCCAGCCTTCTTATTCGGCCTTGAATTGATCATATGCGGATTAGAAAAACAACTTAAATGTGAAAGTGGGTCCGCTGCAAACGACGAAAACTACGCTTTAGTAGCTTAATAACACTGATAGTGCTAGTGTAGATCAC</sbol:elements>
+    <dcterms:title>tetR Sequence</dcterms:title>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/GFP_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_sequence"/>
+    <sbol:displayId>GFP_sequence</sbol:displayId>
+    <dcterms:title>GFP Sequence</dcterms:title>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ATGCGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCGGTTATGGTGTTCAATGCTTTGCGAGATACCCAGATCATATGAAACAGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAATAA</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/BBa_B0015_sequence/1">
+    <dcterms:title>BBa_B0015 Sequence</dcterms:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/BBa_B0015_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>CCAGGCATCAAATAAAACGAAAGGCTCAGTCGAAAGACTGGGCCTTTCGTTTTATCTGTTGTTTGTCGGTGAACGCTCTCTACTAGAGTCACACTGGCTCACCTTCGGGTGGGCCTTTCTGCGTTTATA</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>BBa_B0015_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/TetR_Protein_proteinSequence/1">
+    <sbol:version>1</sbol:version>
+    <dcterms:title>TetR_Protein Protein Sequence</dcterms:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/TetR_Protein_proteinSequence"/>
+    <sbol:displayId>TetR_Protein_proteinSequence</sbol:displayId>
+    <sbol:elements>MSRLDKSKVINSALELLNEVGIEGLTTRKLAQKLGVEQPTLYWHVKNKRALLDALAIEMLDRHHTHFCPLEGESWQDFLRNNAKSFRCALLSHRDGAKVHLGTRPTEKQYETLENQLAFLCQQGFSLENALYALSAVGHFTLGCVLEDQEHQVAKEERETPTTDSMPPLLRQAIELFDHQGAEPAFLFGLELIICGLEKQLKCESGSAANDENYALVA</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/GFP_Protein_proteinSequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:displayId>GFP_Protein_proteinSequence</sbol:displayId>
+    <sbol:elements>MRKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTFGYGVQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK</sbol:elements>
+    <dcterms:title>GFP_Protein Protein Sequence</dcterms:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/GFP_Protein_proteinSequence"/>
+  </sbol:Sequence>
+</rdf:RDF>
