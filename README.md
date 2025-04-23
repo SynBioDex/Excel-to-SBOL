@@ -55,10 +55,10 @@ The SBOL file that is output can then be used by further [SBOL tools](https://sb
 A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xlsm) was converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xlm).
 
 **Example Spreadsheet**
-![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample-template.png)
+![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample_template.png)
 
 **Example SBOL**
-![Example SBOL](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample-xml.png)
+![Example SBOL](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample_xml.png)
 
 
 
