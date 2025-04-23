@@ -52,7 +52,7 @@ The SBOL file that is output can then be used by further [SBOL tools](https://sb
 
 # Example Conversion
 
-A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Example.xlsm) was converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/Example.xml).
+A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xlsm) was converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xlm).
 
 **Example Spreadsheet**
 ![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample-template.png)
