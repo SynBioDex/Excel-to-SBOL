@@ -1,5 +1,5 @@
 # from ensurepip import version
-import compiler as e2s
+import excel2sbol.compiler as e2s
 import os
 import json
 from datetime import datetime
