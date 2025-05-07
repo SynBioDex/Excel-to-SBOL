@@ -722,27 +722,20 @@ def complexComponent(rowobj):
 	molecule_name = None
 	molecule_comp_uri = None
 	components = []
-	# print(rowobj.col_cell_dict)
 	username = os.getenv("SBOL_USERNAME")
 	password = os.getenv("SBOL_PASSWORD")
 	url = os.getenv("SBOL_URL")
-	# print(rowobj.col_cell_dict)
 	# if Components column present
 	
 	for col in rowobj.col_cell_dict.keys():
 		val = rowobj.col_cell_dict[col]
 		if col == "Components Ids":
 			if isinstance(val, list) and len(val) > 0:
-				module_name_suf = val[0].split("/")[-1]  
-				protein_comp_uri = val[0]  
-				for i in val[1:]:
+				
+				for i in val[0:]:
 					components.append((i.split("/")[-1], i))
-				break
-			elif isinstance(val, str):
-				module_name_suf = val.split("/")[-1]
-				protein_comp_uri = val
-				break
-		elif col == "Components (URI)":
+
+		if col == "Components (URI)":
 			if isinstance(val, list) and len(val) > 0:
 				if isinstance(val, list) and len(val) > 0:
 					invalid_uris = []  
@@ -760,33 +753,15 @@ def complexComponent(rowobj):
 						return
 					else:
 						# Process valid URIs
-						module_name_suf = val[0].split("/")[-2]
-						protein_comp_uri = val[0]
-						for i in val[1:]:
+
+						for i in val[0:]:
 							components.append((i.split("/")[-2], i))
 				
-	
-			elif isinstance(val, str):
-				valid_uri = link_validation(username, password, url, val)
-				if not valid_uri:
-					print("URI in '{val}' is invalid. Skipping addition for {col}.")
-					print("Terminating")
-					sys.exit(1)
-				module_name_suf = val.split("/")[-2]
-				protein_comp_uri = val
-				break
-
-	
 	module_name = f"{module_name_pref}_complex_formation"    
 	# create a new module definition
 	module_def = sbol2.ModuleDefinition(module_name)
 
-	# create a protein functional component
-	if module_name_suf not in [fc.displayId for fc in module_def.functionalComponents]:
-		protein_fc = module_def.functionalComponents.create(module_name_suf)
-		protein_fc.definition = protein_comp_uri
-	else:
-		protein_fc = module_def.functionalComponents.get(module_name_suf)
+
 
 	# create a product functional component
 	if module_name_pref not in [fc.displayId for fc in module_def.functionalComponents]:
@@ -797,6 +772,7 @@ def complexComponent(rowobj):
 	
 	# if exists, create functional components
 	components_FC = []
+	
 	for name, uri in components:
 		if name not in [fc.displayId for fc in module_def.functionalComponents]:
 			elem_fc = module_def.functionalComponents.create(name)
@@ -805,18 +781,14 @@ def complexComponent(rowobj):
 		else:
 			elem_fc = module_def.functionalComponents.get(name)
 			components_FC.append(elem_fc)
-
+	
 	# participation for product
 	participation = sbol2.Participation(uri = f'{module_name_pref}_product')
 	participation.participant = prod_fc
 	participation.uri = f'{module_name_pref}_product'
 	participation.roles = [sbol2.SBO_PRODUCT]
 
-	# participation for protein
-	participation2 = sbol2.Participation(uri= f'{module_name_suf}_reactor')
-	participation2.participant = protein_fc
-	participation2.uri = f'{module_name_suf}_reactant'
-	participation2.roles = [sbol2.SBO_REACTANT]
+
 
 	#create participation for each component
 	components_participants = []
@@ -832,7 +804,7 @@ def complexComponent(rowobj):
 	interaction_type = sbol2.SBO_NONCOVALENT_BINDING
 	interaction = sbol2.Interaction(interaction_name, interaction_type)
 	interaction.participations.add(participation)
-	interaction.participations.add(participation2)
+	# interaction.participations.add(participation2)
 	for part in components_participants:
 		interaction.participations.add(part)
 
