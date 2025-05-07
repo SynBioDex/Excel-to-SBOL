@@ -23,12 +23,14 @@ jobs:
         pip install setuptools wheel twine
     - name: Update version
       run: |
-        sed -i "s/version=.*,/version='${{ github.event.release.tag_name }}',/g" ./excel2sbol/setup.py
+        cd ./excel2sbol
+        sed -i "s/version=.*,/version='${{ github.event.release.tag_name }}',/g" setup.py
     - name: Build and publish
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
+        cd ./excel2sbol
         cat setup.py
         python setup.py sdist bdist_wheel
         twine upload dist/*
