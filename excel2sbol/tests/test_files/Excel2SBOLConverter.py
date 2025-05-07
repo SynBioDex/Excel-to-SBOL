@@ -1,8 +1,8 @@
 # # Excel2SBOL Converter
 
-import converter as conf
+import excel2sbol.converter as conf
 from datetime import datetime
-import library2 as exutil2
+import excel2sbol.library2 as exutil2
 import getpass
 import requests
 
