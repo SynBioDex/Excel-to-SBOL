@@ -1,11 +1,11 @@
 import sbol2
-import helpers as hf
+import excel2sbol.helpers as hf
 import re
 import logging
 import requests
 import urllib.parse
 import webbrowser
-import converter as conv
+import excel2sbol.converter as conv
 import os 
 import sys
 import json
