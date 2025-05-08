@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "excel2sbol"
+version = "1.1.7"
+description = "Excel-to-SBOL is an open source python library that converts Excel Templates to SBOL documents"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE.md"}
+keywords = ["SBOL", "Excel", "templates", "convert", "synthetic biology"]
+authors = [
+  { name="Jet Mante", email="jet.mante@colorado.edu" }
+]
+maintainers = [
+  { name = "Carolus Vitalis", email = "carolus.vitalis@colorado.edu" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD 3-clause License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "openpyxl==3.0.7",
+    "pandas==1.3.3",
+    "rdflib==6.1.1",
+    "requests==2.25.1",
+    "sbol2==1.2",
+    "sbol3==1.0.0",
+    "tyto==1.2",
+    "urllib3==1.26.5",
+    "validators==0.18.2"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest < 5.0.0",
+  "pytest-cov[all]"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/SynBioDex/Excel-to-SBOL"
+"Bug Tracker" = "https://github.com/SynBioDex/Excel-to-SBOL/issues"
