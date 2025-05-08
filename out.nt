@@ -1,6 +1,0 @@
-<http://parts.igem.org/hello> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://sbols.org/v3#Component> .
-<http://parts.igem.org/hello> <http://sbols.org/v3#type> <https://identifiers.org/SBO:0000251> .
-<http://parts.igem.org/hello> <http://sbols.org/v3#displayId> "hello" .
-<http://parts.igem.org/hello> <http://sbols.org/v3#name> "hello" .
-<http://parts.igem.org/hello> <http://sbols.org/v3#hasNamespace> <http://parts.igem.org> .
-
