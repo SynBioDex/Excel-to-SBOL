@@ -29,7 +29,7 @@ def addToDescription(rowobj):
 			raise TypeError(f"A multicolumn value was unexpectedly given in addToDescription, {rowobj.col_cell_dict}")
 	setattr(rowobj.obj, 'description', current)
 
-constraint_pattern = re.compile('Part (\d+) (.+) Part (\d+)')
+constraint_pattern = re.compile(r'Part\s+(\d+)\s+(.+?)\s+Part\s+(\d+)')
 constraint_dict = {'same as': sbol3.SBOL_VERIFY_IDENTICAL,
                    'different from': sbol3.SBOL_DIFFERENT_FROM,
                    'same orientation as': sbol3.SBOL_SAME_ORIENTATION_AS,
