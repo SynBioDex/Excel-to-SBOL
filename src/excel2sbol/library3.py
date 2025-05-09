@@ -52,7 +52,7 @@ def make_constraint(constraint, part_list, template):
            raise ValueError(f'Part number "{str(n)}" is not between 1 and {len(part_list)}')
     return sbol3.Constraint(restriction, template.features[x-1].identity, template.features[y-1].identity)
 
-def subcomponents(rowobj): #UPDATE TO WORK WITH CELL DICT, ALLOW CONSTRAINTS
+def subcomponents(rowobj, template): #UPDATE TO WORK WITH CELL DICT, ALLOW CONSTRAINTS
 	if 'subcomp' in rowobj.col_cell_dict:
 		subcomps = list(rowobj.col_cell_dict['subcomp'].values())
 	if 'constraint' in rowobj.col_cell_dict:
