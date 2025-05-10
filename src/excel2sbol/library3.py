@@ -29,7 +29,7 @@ def addToDescription(rowobj):
 			raise TypeError(f"A multicolumn value was unexpectedly given in addToDescription, {rowobj.col_cell_dict}")
 	setattr(rowobj.obj, 'description', current)
 
-constraint_pattern = re.compile('Part (\d+) (.+) Part (\d+)')
+constraint_pattern = re.compile(r'Part\s+(\d+)\s+(.+?)\s+Part\s+(\d+)')
 constraint_dict = {'same as': sbol3.SBOL_VERIFY_IDENTICAL,
                    'different from': sbol3.SBOL_DIFFERENT_FROM,
                    'same orientation as': sbol3.SBOL_SAME_ORIENTATION_AS,
@@ -52,7 +52,7 @@ def make_constraint(constraint, part_list, template):
            raise ValueError(f'Part number "{str(n)}" is not between 1 and {len(part_list)}')
     return sbol3.Constraint(restriction, template.features[x-1].identity, template.features[y-1].identity)
 
-def subcomponents(rowobj): #UPDATE TO WORK WITH CELL DICT, ALLOW CONSTRAINTS
+def subcomponents(rowobj, template): #UPDATE TO WORK WITH CELL DICT, ALLOW CONSTRAINTS
 	if 'subcomp' in rowobj.col_cell_dict:
 		subcomps = list(rowobj.col_cell_dict['subcomp'].values())
 	if 'constraint' in rowobj.col_cell_dict:
