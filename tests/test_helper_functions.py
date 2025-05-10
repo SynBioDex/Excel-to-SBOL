@@ -1,7 +1,7 @@
 # run by typing 'pytest' into the terminal
 # for more detailed output use 'pytest -v -s'
 import pytest
-import excel2sbol.helper_functions as hf
+import excel2sbol.helpers as hf
 
 
 class Test_col_to_num:
