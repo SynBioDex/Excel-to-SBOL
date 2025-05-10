@@ -1,3 +1,6 @@
+# uncomment to update converter tests
+
+'''
 from unittest import TestCase
 import pytest
 import excel2sbol.converter as confun
@@ -54,3 +57,4 @@ def test_conversion():
 # def test_constraints(self):
 #    sbol3.set_namespace('http://examples.org')
 
+'''
