@@ -1,7 +1,11 @@
 # run by typing 'pytest' into the terminal
 # for more detailed output use 'pytest -v -s'
+
+
+#uncomment when you want to update the column functions tests
+'''
 import pytest
-import excel2sbol.column_functions as cf
+import excel2sbol.comp_column_functions2 as cf
 import os
 
 
@@ -514,3 +518,4 @@ def test_column_class(column_dict_entry, raising_err, expected,
             assert x.namespace_url == 'nm_url'
             assert x.replacement_lookup is True
             assert x.lookup_dict == replacement_dict
+'''

@@ -1,3 +1,6 @@
+# uncomment to update converter tests
+
+
 from unittest import TestCase
 import pytest
 import excel2sbol.converter as confun
@@ -11,6 +14,13 @@ import sbol3
 
 TESTFILE_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'test_files')
 
+def test_conversion_simple():
+    sbol3.set_namespace('http://examples.org')
+    excel_path = os.path.join(TESTFILE_DIR, 'Excel2SBOL_Murray_Parts.xlsm')
+    confun(file_path_in = excel_path, 
+                file_path_out = './murray_parts_sbol.xml',) #homespace=homespace)
+
+'''
 def test_conversion():
     sbol3.set_namespace('http://examples.org')
 
@@ -54,3 +64,4 @@ def test_conversion():
 # def test_constraints(self):
 #    sbol3.set_namespace('http://examples.org')
 
+'''

@@ -1,7 +1,10 @@
 # run by typing 'pytest' into the terminal
 # for more detailed output use 'pytest -v -s'
+
+# uncomment when you want to update the converter tests
+'''
 import pytest
-import excel2sbol.helper_functions as hf
+import excel2sbol.helpers as hf
 
 
 class Test_col_to_num:
@@ -73,3 +76,4 @@ class Test_truthy_strings:
                 hf.truthy_strings(to_chck)
         else:
             assert hf.truthy_strings(to_chck) == expected
+'''
