@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "excel2sbol"
-version = "1.1.11"
+version = "1.1.12"
 description = "Excel-to-SBOL is an open source python library that converts Excel Templates to SBOL documents"
 readme = "README.md"
 requires-python = ">=3.7"
