@@ -7,7 +7,7 @@ name = "excel2sbol"
 version = "1.1.13"
 description = "Excel-to-SBOL is an open source python library that converts Excel Templates to SBOL documents"
 readme = "README.md"
-requires-python = "==3.7"
+requires-python = "==3.9"
 license = "BSD-3-Clause"
 license-files = ["LICEN[CS]E*"]
 keywords = ["SBOL", "Excel", "templates", "convert", "synthetic biology"]
