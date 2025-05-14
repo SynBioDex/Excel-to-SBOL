@@ -24,12 +24,12 @@ jobs:
     - name: Update version
       run: |
         cd ./excel2sbol
-        sed -i "s/version=.*,/version='${{ github.event.release.tag_name }}',/g" setup.py
+        sed -i "s/version=.*,/version='${{ github.event.release.tag_name }}',/g" pyproject.toml
     - name: Build and publish
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
-        cat setup.py
-        python setup.py sdist bdist_wheel
+        cat pyproject.toml
+        python pyproject.toml sdist bdist_wheel
         twine upload dist/*
