@@ -180,7 +180,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
     doc = sbol2.Document()
     sbol2.setHomespace(homespace)
 
-    # sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_COMPLIANT_URIS, False)
+    sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_COMPLIANT_URIS, True)
     sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_TYPED_URIS, False)
 
     for sht in to_convert:

@@ -145,9 +145,10 @@ def biochemical_reaction(rowobj):
 def module(rowobj):
 	module_name_pref = rowobj.obj_uri.split("/")[-1]
 	# print("Module Def Name: ", module_name_pref)
-	module_def_name = f"{module_name_pref}_module_definition"
+	module_def_name = f"{module_name_pref}"
 	if module_def_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
 		module_def = sbol2.ModuleDefinition(module_def_name)
+		rowobj.doc.addModuleDefinition(module_def)
 	else:
 		module_def = rowobj.doc.moduleDefinitions.get(module_def_name)
 	for col in rowobj.col_cell_dict.keys():
@@ -169,18 +170,16 @@ def module(rowobj):
 					mod.definition = module_uri
 				else:
 					mod = module_def.modules.get(module_name)
-			
-	if module_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
-		rowobj.doc.addModuleDefinition(module_def)	
 
 
 def funcComp(rowobj):
 	module_def_name = rowobj.obj_uri.split("/")[-1]
 	# print("MD Name: ", module_def_name)
 	fc_name = None
-	module_name = f"{module_def_name}_module_definition"
+	module_name = f"{module_def_name}"
 	if module_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
 		module_def = sbol2.ModuleDefinition(module_name)
+		rowobj.doc.addModuleDefinition(module_def)
 	else:
 		module_def = rowobj.doc.moduleDefinitions.get(module_name)
 
@@ -198,10 +197,6 @@ def funcComp(rowobj):
 				fc.definition = fc_uri
 			else:
 				fc = module_def.functionalComponents.get(fc_name)
-			
-	if module_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
-		rowobj.doc.addModuleDefinition(module_def)	
-
 
 
 def objectType(rowobj):
