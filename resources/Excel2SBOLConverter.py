@@ -1,7 +1,5 @@
 # # Excel2SBOL Converter
 
-# # Excel2SBOL Converter
-
 import os
 import glob
 import excel2sbol as conf
