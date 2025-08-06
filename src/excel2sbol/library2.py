@@ -216,6 +216,9 @@ def displayId(rowobj):
 	password = os.getenv("SBOL_PASSWORD")
 	
 	dict = os.getenv("SBOL_DICTIONARY")
+	if dict is None:
+		# print("No welcome page provided. Returning")
+		return
 	data = json.loads(dict)
 	url = data["Domain"].strip()
 	if url.endswith('/'):
@@ -496,8 +499,8 @@ def encodesFor(rowobj):
     password = os.getenv("SBOL_PASSWORD")
     url = os.getenv("SBOL_URL")
     # print(rowobj.col_cell_dict)
-    dict = os.getenv("SBOL_DICTIONARY")
-    data = json.loads(dict)
+    # dict = os.getenv("SBOL_DICTIONARY")
+    # data = json.loads(dict)
 	
     
     for col in rowobj.col_cell_dict.keys():
@@ -878,6 +881,7 @@ def subcomponents(rowobj):
 		raise KeyError(f'The object type "{type(rowobj.obj)}" does not allow subcomponents. (sheet:{rowobj.sheet}, row:{rowobj.sht_row}, col:{rowobj.col_cell_dict})')
 
 def dataSource(rowobj):
+	print(rowobj.col_cell_dict)
 	prefs = rowobj.col_cell_dict['pref']
 	vals = rowobj.col_cell_dict['val']
 	for colnum in range(len(prefs.keys())):
@@ -929,6 +933,10 @@ def sequence(rowobj):
 		password = os.getenv("SBOL_PASSWORD")
 		url = os.getenv("SBOL_URL")
 		dict = os.getenv("SBOL_DICTIONARY")
+		if dict is None:
+			# print("No welcome page provided. Returning")
+			return
+		
 		data = json.loads(dict)
 	
 		if isinstance(val, str):
@@ -995,6 +1003,9 @@ def proteinSequence(rowobj):
 		password = os.getenv("SBOL_PASSWORD")
 		url = os.getenv("SBOL_URL")
 		dict = os.getenv("SBOL_DICTIONARY")
+		if dict is None:
+			# print("No welcome page provided. Returning")
+			return
 		data = json.loads(dict)
 		if isinstance(val, str):
 			# might need to be careful if the object type is sequence!

@@ -130,6 +130,7 @@ def initialise(file_path_in):
         lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
+       
         sheet_dict['library'] = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('list')
 
         # need dicitonary with as keys every column name and as values a list of values (note ordered list and need place holder empty values)
@@ -182,7 +183,10 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
     sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_COMPLIANT_URIS, True)
     sbol2.Config.setOption(sbol2.ConfigOptions.SBOL_TYPED_URIS, False)
-
+    # print("[DEBUG]")
+    # print(compiled_sheets)
+    
+    
     for sht in to_convert:
         sht_df = col_read_df.loc[col_read_df['Sheet Name'] == sht]
 
@@ -197,6 +201,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
             raise KeyError(f'The sheet "{sht}" has no column with sbol_objectType as type. Thus the following error was raised: {e}')
 
         sht_convert_dict[sht] = dis_name_col
+
         ids = compiled_sheets[sht]['library'][dis_name_col]
         types = compiled_sheets[sht]['library'][obj_type_col]
 
@@ -272,7 +277,10 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
             mol_types = None
 
         sht_convert_dict[sht] = dis_name_col
+        
         ids = compiled_sheets[sht]['library'][dis_name_col]
+
+
         obj_types = compiled_sheets[sht]['library'][obj_type_col]
 
         for ind, id in enumerate(ids):
@@ -400,7 +408,9 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     # the sbol_term of the column
                     # This creates an object with the converted cell values
                     # hierarchy: sbol term, multicolumn, column name, cell val
+                    
                     mcol = col_convert_df['Multicolumn'].values[0]
+
                     sbol_term = col_convert_df['SBOL Term'].values[0]
 
                     if hasattr(term_dict, sbol_term):
