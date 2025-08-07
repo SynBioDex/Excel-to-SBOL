@@ -881,7 +881,6 @@ def subcomponents(rowobj):
 		raise KeyError(f'The object type "{type(rowobj.obj)}" does not allow subcomponents. (sheet:{rowobj.sheet}, row:{rowobj.sht_row}, col:{rowobj.col_cell_dict})')
 
 def dataSource(rowobj):
-	print(rowobj.col_cell_dict)
 	prefs = rowobj.col_cell_dict['pref']
 	vals = rowobj.col_cell_dict['val']
 	for colnum in range(len(prefs.keys())):
