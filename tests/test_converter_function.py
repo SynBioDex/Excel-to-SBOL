@@ -19,6 +19,8 @@ def test_conversion_simple():
     excel_path = os.path.join(TESTFILE_DIR, 'Excel2SBOL_Murray_Parts.xlsm')
     confun(file_path_in = excel_path, 
                 file_path_out = './murray_parts_sbol.xml',) #homespace=homespace)
+    print('working tests')
+
 
 '''
 def test_conversion():
