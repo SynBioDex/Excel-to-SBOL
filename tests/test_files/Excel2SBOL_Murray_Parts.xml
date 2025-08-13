@@ -1,0 +1,224 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:obo="http://purl.obolibrary.org/obo/" xmlns:sbh="https://wiki.synbiohub.org/wiki/Terms/synbiohub#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/POR1OR2/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/POR1OR2"/>
+    <sbol:displayId>POR1OR2</sbol:displayId>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <ns0:title>POR1OR2</ns0:title>
+    <sbol:sequence rdf:resource="http://examples.org/POR1OR2_sequence/1"/>
+    <ns0:description>A phage lambda promoter region regulated by CI repressor binding at operator sites OR1 and OR2, controlling transcription in the lysogenic-lytic switch.</ns0:description>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/PT7/1">
+    <ns0:description>A strong, bacteriophage-derived promoter recognized by T7 RNA polymerase, commonly used for high-level expression in E. coli systems.</ns0:description>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PT7"/>
+    <sbol:sequence rdf:resource="http://examples.org/PT7_sequence/1"/>
+    <ns0:title>PT7</ns0:title>
+    <sbol:displayId>PT7</sbol:displayId>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Ptet/1">
+    <sbol:displayId>Ptet</sbol:displayId>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <ns0:title>Ptet</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <ns0:description>A tetracycline-regulated promoter used for inducible gene expression in both prokaryotic and eukaryotic systems, responsive to tetracycline or its analogs.</ns0:description>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Ptet"/>
+    <sbol:sequence rdf:resource="http://examples.org/Ptet_sequence/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Ribosome_binding_site/1">
+    <sbol:version>1</sbol:version>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_562"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbol:sequence rdf:resource="http://examples.org/Ribosome_binding_site_sequence/1"/>
+    <ns0:description>A short RNA sequence upstream of the start codon that facilitates ribosome binding and initiates translation in prokaryotic gene expression.</ns0:description>
+    <ns0:title>Ribosome binding site</ns0:title>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <sbol:displayId>Ribosome_binding_site</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Ribosome_binding_site"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/deGFP/1">
+    <sbol:displayId>deGFP</sbol:displayId>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <ns0:title>deGFP</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/deGFP_sequence/1"/>
+    <ns0:description>\deGFP is  an N- and C-terminally truncated version of the reporter eGFP</ns0:description>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/deGFP"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/mTurquoise2/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbh:sourceOrganism rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6100"/>
+    <ns0:description>mTurquoise2 is a basic cyan fluorescent protein  derived from Aequorea victoria.</ns0:description>
+    <ns0:title>mTurquoise2</ns0:title>
+    <sbol:displayId>mTurquoise2</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mTurquoise2"/>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <sbol:sequence rdf:resource="http://examples.org/mTurquoise2_sequence/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/T500/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/T500"/>
+    <ns0:description>A transcription terminator which a DNA sequence that signals RNA polymerase to stop transcription, leading to the release of the newly synthesized RNA molecule.</ns0:description>
+    <ns0:title>T500</ns0:title>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:displayId>T500</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/T500_sequence/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/T7_terminator/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>T7_terminator</sbol:displayId>
+    <ns0:description>A transcription terminator which a DNA sequence that signals RNA polymerase to stop transcription, leading to the release of the newly synthesized RNA molecule.</ns0:description>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <ns0:title>T7 terminator</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/T7_terminator"/>
+    <sbol:sequence rdf:resource="http://examples.org/T7_terminator_sequence/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ECK120029600/1">
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:title>ECK120029600</ns0:title>
+    <ns0:description>A transcription terminator which a DNA sequence that signals RNA polymerase to stop transcription, leading to the release of the newly synthesized RNA molecule.</ns0:description>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ECK120029600"/>
+    <sbol:sequence rdf:resource="http://examples.org/ECK120029600_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:displayId>ECK120029600</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/deGFP_Protein/1">
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <ns0:title>deGFP_Protein</ns0:title>
+    <sbol:displayId>deGFP_Protein</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/deGFP_Protein"/>
+    <ns0:description>deGFP is  an N- and C-terminally truncated version of the reporter eGFP</ns0:description>
+    <sbol:sequence rdf:resource="http://examples.org/deGFP_Protein_proteinSequence/1"/>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/mTurquoise2_Protein/1">
+    <ns0:description>mTurquoise2 is a basic cyan fluorescent protein  derived from Aequorea victoria.</ns0:description>
+    <sbol:sequence rdf:resource="http://examples.org/mTurquoise2_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mTurquoise2_Protein</sbol:displayId>
+    <ns0:title>mTurquoise2_Protein</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mTurquoise2_Protein"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/aTc/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/aTc"/>
+    <obo:OBI_0001617>39565716</obo:OBI_0001617>
+    <ns0:title>aTc</ns0:title>
+    <ns0:description>aTc is anhydrotetracycline, a widely used small-molecule inducer of the Ptet promoter, a tetracycline-responsive regulatory element commonly employed in synthetic biology and gene expression systems. As a derivative of tetracycline, aTc exhibits high affinity for the TetR (tetracycline repressor) protein, binding to it and inducing a conformational change that releases TetR from the Ptet operator site. This de-repression allows RNA polymerase to access the promoter and initiate transcription of the downstream gene(s).</ns0:description>
+    <sbol:displayId>aTc</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/POR1OR2_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>POR1OR2_sequence</sbol:displayId>
+    <ns0:title>POR1OR2 Sequence</ns0:title>
+    <sbol:elements>TGAGCTAACACCGTGCGTGTTGACAATTTTACCTCTGGCGGTGATAATGGTTGCA</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/POR1OR2_sequence"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/PT7_sequence/1">
+    <sbol:elements>TAATACGACTCACTATAGGGAGA</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PT7_sequence"/>
+    <sbol:displayId>PT7_sequence</sbol:displayId>
+    <ns0:title>PT7 Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Ptet_sequence/1">
+    <sbol:elements>TCCCTATCAGTGATAGAGATTGACATCCCTATCAGTGATAGAGATACTGAGCAC</sbol:elements>
+    <ns0:title>Ptet Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Ptet_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Ptet_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Ribosome_binding_site_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>Ribosome_binding_site_sequence</sbol:displayId>
+    <sbol:elements>AATAATTTTGTTTAACTTTAAGAAGGAGATATA</sbol:elements>
+    <ns0:title>Ribosome binding site Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Ribosome_binding_site_sequence"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/deGFP_sequence/1">
+    <sbol:elements>ATGGAGCTTTTCACTGGCGTTGTTCCCATCCTGGTCGAGCTGGACGGCGACGTAAACGGCCACAAGTTCAGCGTGTCCGGCGAGGGCGAGGGCGATGCCACCTACGGCAAGCTGACCCTGAAGTTCATCTGCACCACCGGCAAGCTGCCCGTGCCCTGGCCCACCCTCGTGACCACCCTGACCTACGGCGTGCAGTGCTTCAGCCGCTACCCCGACCACATGAAGCAGCACGACTTCTTCAAGTCCGCCATGCCCGAAGGCTACGTCCAGGAGCGCACCATCTTCTTCAAGGACGACGGCAACTACAAGACCCGCGCCGAGGTGAAGTTCGAGGGCGACACCCTGGTGAACCGCATCGAGCTGAAGGGCATCGACTTCAAGGAGGACGGCAACATCCTGGGGCACAAGCTGGAGTACAACTACAACAGCCACAACGTCTATATCATGGCCGACAAGCAGAAGAACGGCATCAAGGTGAACTTCAAGATCCGCCACAACATCGAGGACGGCAGCGTGCAGCTCGCCGACCACTACCAGCAGAACACCCCCATCGGCGACGGCCCCGTGCTGCTGCCCGACAACCACTACCTGAGCACCCAGTCCGCCCTGAGCAAAGACCCCAACGAGAAGCGCGATCACATGGTCCTGCTGGAGTTCGTGACCGCCGCCGGGATCTAA</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>deGFP Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/deGFP_sequence"/>
+    <sbol:displayId>deGFP_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/mTurquoise2_sequence/1">
+    <sbol:elements>ATGGTAAGTAAGGGCGAAGAGTTGTTTACTGGGGTAGTCCCGATCCTGGTCGAGCTGGATGGGGACGTTAACGGCCATAAATTTAGCGTGTCGGGTGAAGGCGAGGGGGACGCGACCTACGGGAAACTGACCTTGAAGTTTATCTGTACGACCGGGAAACTTCCGGTGCCATGGCCTACACTCGTCACGACCTTGAGCTGGGGTGTTCAATGCTTTGCACGTTACCCAGACCATATGAAACAGCATGATTTCTTCAAAAGTGCAATGCCAGAAGGGTATGTTCAAGAGCGCACCATCTTTTTTAAGGACGATGGCAACTATAAGACCCGTGCCGAAGTCAAGTTCGAAGGTGACACCCTTGTCAACCGTATCGAGTTGAAAGGTATCGACTTTAAGGAAGATGGGAATATCCTGGGTCATAAACTTGAATATAATTACTTTTCCGACAATGTTTATATCACAGCCGACAAACAAAAAAACGGTATCAAGGCCAATTTCAAGATTCGGCATAACATCGAAGATGGGGGGGTTCAACTCGCTGATCATTACCAGCAGAATACACCTATCGGCGACGGCCCAGTCTTATTACCTGATAATCATTACCTTAGCACCCAATCCAAACTCAGCAAGGATCCAAACGAAAAGCGCGATCACATGGTGCTTTTGGAGTTTGTCACTGCTGCTGGTATTACATTGGGTATGGATGAATTGTACAAAGGGGGCGGCGGTAGCCATCATCATCATCACCATTAA</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mTurquoise2_sequence"/>
+    <sbol:displayId>mTurquoise2_sequence</sbol:displayId>
+    <ns0:title>mTurquoise2 Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/T500_sequence/1">
+    <sbol:elements>CAAAGCCCGCCGAAAGGCGGGCTTTTCTGT</sbol:elements>
+    <ns0:title>T500 Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/T500_sequence"/>
+    <sbol:displayId>T500_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/T7_terminator_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/T7_terminator_sequence"/>
+    <sbol:displayId>T7_terminator_sequence</sbol:displayId>
+    <ns0:title>T7 terminator Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>CTAGCATAACCCCTTGGGGCCTCTAAACGGGTCTTGAGGGGTTTTTTG</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ECK120029600_sequence/1">
+    <ns0:title>ECK120029600 Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>ECK120029600_sequence</sbol:displayId>
+    <sbol:elements>TTCAGCCAAAAAACTTAAGACCGCCGGTCTTGTCCACTACCTTGCAGTAATGCGGTGGACAGGATCGGCGGTTTTCTTTTCTCTTCTCAA</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ECK120029600_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/deGFP_Protein_proteinSequence/1">
+    <sbol:elements>MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTFTYGVQCFSRYPDHMKRHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSGNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSCQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK</sbol:elements>
+    <sbol:displayId>deGFP_Protein_proteinSequence</sbol:displayId>
+    <ns0:title>deGFP_Protein Protein Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/deGFP_Protein_proteinSequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/mTurquoise2_Protein_proteinSequence/1">
+    <sbol:displayId>mTurquoise2_Protein_proteinSequence</sbol:displayId>
+    <ns0:title>mTurquoise2_Protein Protein Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mTurquoise2_Protein_proteinSequence"/>
+    <sbol:elements>MVSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTLSWGVQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYFSDNVYITADKQKNGIKANFKIRHNIEDGGVQLADHYQQNTPIGDGPVLLPDNHYLSTQSKLSKDPNEKRDHMVLLEFVTAAGITLGMDELYK</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+</rdf:RDF>

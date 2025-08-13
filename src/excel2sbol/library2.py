@@ -931,12 +931,11 @@ def sequence(rowobj):
 		username = os.getenv("SBOL_USERNAME")
 		password = os.getenv("SBOL_PASSWORD")
 		url = os.getenv("SBOL_URL")
-		dict = os.getenv("SBOL_DICTIONARY")
-		if dict is None:
-			# print("No welcome page provided. Returning")
-			return
+		dict_env = os.getenv("SBOL_DICTIONARY")
+		data = None
+		if dict_env is not None:
+			data = json.loads(dict_env)
 		
-		data = json.loads(dict)
 	
 		if isinstance(val, str):
 			# might need to be careful if the object type is sequence!
@@ -964,7 +963,7 @@ def sequence(rowobj):
 				# if data["Domain"].strip() == "":
 				# 	# print("Domain not provided. Proceding without checking the domain for duplicate sequences.")
 				# 	return
-				if data["Domain"].strip() != "":
+				if data and data["Domain"].strip() != "":
 					# print("Domain provided. Proceeding with checking the domain for duplicate sequences.")
 					valid_uri = sequence_authentication(username, password, url,uri)
 					if not valid_uri:
@@ -1001,11 +1000,12 @@ def proteinSequence(rowobj):
 		username = os.getenv("SBOL_USERNAME")
 		password = os.getenv("SBOL_PASSWORD")
 		url = os.getenv("SBOL_URL")
-		dict = os.getenv("SBOL_DICTIONARY")
-		if dict is None:
-			# print("No welcome page provided. Returning")
-			return
-		data = json.loads(dict)
+		dict_env = os.getenv("SBOL_DICTIONARY")
+
+		data = None
+		if dict_env is not None:
+			data = json.loads(dict_env)
+
 		if isinstance(val, str):
 			# might need to be careful if the object type is sequence!
 			# THIS MIGHT HAVE BUGS IF MULTIPLE SEQUENCES ARE PROVIDED FOR
@@ -1033,7 +1033,7 @@ def proteinSequence(rowobj):
 				# if data["Domain"].strip() == "":
 				# 	# print("Domain not provided. Proceding without checking the domain for duplicate sequences.")
 				# 	return
-				if data["Domain"].strip() != "":
+				if data and data["Domain"].strip() != "":
 					# print("Domain provided. Proceeding with checking the domain for duplicate sequences.")
 					valid_uri = sequence_authentication(username, password, url,uri)
 					if not valid_uri:
