@@ -80,4 +80,4 @@ cd ./Excel_to_SBOL/src/excel2sbol
 
 # Excel2SBOL Paper
 
-An updated version of the template referenced in the paper [Excel–SBOL Converter: Creating SBOL from Excel Templates and Vice Versa](https://pubs.acs.org/doi/full/10.1021/acssynbio.2c00521) can be found in the [test_files folder].
+An updated version of the Excel template referenced in the paper [Excel–SBOL Converter: Creating SBOL from Excel Templates and Vice Versa](https://pubs.acs.org/doi/full/10.1021/acssynbio.2c00521) can be found [here](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/tests/test_files/sb2c00521_si_001.xlsx).
