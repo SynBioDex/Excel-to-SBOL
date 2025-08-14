@@ -43,7 +43,7 @@ The following script asks the user for the name of the input file, version of SB
 
 If you want to use the tool in offline mode for a custom SynBioHub instance, leave the "Domain" field empty on the spreadsheet "Welcome page".
 
-[Converter File](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/tests/test_files/Excel2SBOLConverter.py)
+[Converter File](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/resources/Excel2SBOLConverter.py)
 
 Tip: the use of `os.getcwd()` and `os.path.join` is recommended for the creation of the file paths. This is safer from a cybersecurity stand point and provide better operating system interoperability.
 
@@ -52,7 +52,7 @@ The SBOL file that is output can then be used by further [SBOL tools](https://sb
 
 # Example Conversion
 
-A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xlsm) was converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/excel2sbol/resources/templates/Sample_template_Excel2SBOL.xml).
+A data-filled [spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/resources/templates/Sample_template_Excel2SBOL.xlsm) was converted to an [SBOL file](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/resources/templates/Sample_template_Excel2SBOL.xml).
 
 **Example Spreadsheet**
 ![Example Spreadsheet](https://github.com/SynBioDex/Excel-to-SBOL/blob/master/images/sample_template.png)
@@ -74,6 +74,10 @@ Alternatively you can also make changes to the package and then use it locally:
 1. Clone the directory: `git clone https://github.com/SynBioDex/Excel-to-SBOL`
 2. Change to the excel2sbol folder: 
                                    
-cd ./Excel_to_SBOL/excel2sbol
+cd ./Excel_to_SBOL/src/excel2sbol
                                    
 3. Install an editable version of the package: `python -m pip install -e .` (will overwrite the directory in site-packages with a symbolic link to the locations repository). If a virtual environment is being used the python -m can be left off.
+
+# Excel2SBOL Paper
+
+An updated version of the template referenced in the paper [Excel–SBOL Converter: Creating SBOL from Excel Templates and Vice Versa](https://pubs.acs.org/doi/full/10.1021/acssynbio.2c00521) can be found in the [test_files folder].
