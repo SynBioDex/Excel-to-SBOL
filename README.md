@@ -1,6 +1,6 @@
 # Excel-to-SBOL
 
-**Excel-to-SBOL** is an open source python library that converts [Excel Templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates) to [SBOL](https://sbolstandard.org/) documents.
+**Excel-to-SBOL** is an open source python library that converts [Excel Templates](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/resources/templates) to [SBOL](https://sbolstandard.org/) documents.
 
 A similar utility developed for SBOL3 support (developed by Jake Beal) is in [SBOL-utilities](https://github.com/SynBioDex/SBOL-utilities).
 
@@ -31,7 +31,7 @@ To get the latest version you can use `git clone https://github.com/SynBioDex/Ex
 ## How to use
 
 **1) Choose an Excel Template**
-Choose an excel template from the [templates folder](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/excel2sbol/resources/templates).
+Choose an excel template from the [templates folder](https://github.com/SynBioDex/Excel-to-SBOL/tree/master/resources/templates).
 We suggest choosing the latest version. Fill out the template as the instructions indicate. 
 
 **2) Install the Converter**
