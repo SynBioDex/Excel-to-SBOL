@@ -1,10 +1,13 @@
 # # Excel2SBOL Converter
 
-import excel2sbol.converter as conf
+# import excel2sbol.converter as conf
+
+from excel2sbol.converter import converter
 from datetime import datetime
 import excel2sbol.library2 as exutil2
 import getpass
 import requests
+
 
 # Ask the user for the name of the input file
 input_file = input("Please enter the name of the input file: ")
@@ -61,7 +64,8 @@ if signin_permission == 'y':
 
         if login_response.status_code == 200:
             print("Login successful.")
-            conf.converter(input_file, output_file, sbol_version=sbol_version, username=user_email, password=user_password, url=domain)
+            # conf.converter(input_file, output_file, sbol_version=sbol_version, username=user_email, password=user_password, url=domain)
+            converter(input_file, output_file, sbol_version=sbol_version, username=user_email, password=user_password, url=domain)
             break
         else:
             print(f"Login unsuccessful. Attempt {attempt} of {max_attempts}.")
@@ -69,6 +73,7 @@ if signin_permission == 'y':
                 print("Maximum login attempts reached. Exiting the program.")
                 exit()
 else:
-    conf.converter(input_file, output_file, sbol_version=sbol_version)
+    # conf.converter(input_file, output_file, sbol_version=sbol_version)
+    converter(input_file, output_file, sbol_version=sbol_version)
 
 

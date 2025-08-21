@@ -20,10 +20,13 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         
     col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
     dict = e2s.initialise_welcome(file_path_in)
-    for key, value in dict.items():
-        if isinstance(value, datetime):
-            dict[key] = value.isoformat()
+    # for key, value in dict.items():
+    #     if isinstance(value, datetime):
+    #         dict[key] = value.isoformat()
     if dict is not None:
+        for key, value in dict.items():
+            if isinstance(value, datetime):
+                dict[key] = value.isoformat()
         os.environ["SBOL_DICTIONARY"] = json.dumps(dict)
     # print(dict)
 
