@@ -354,7 +354,7 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     # checks that the cell isn't blank
                     col_convert_df = col_read_df.loc[(col_read_df['Sheet Name'] == sht) & (col_read_df['Column Name'] == col)]
                     if col_convert_df.empty:
-                        raise ValueError(f"There is an issue with the column definitions sheet missing values. Sheet:'{sht}' with Column:'{col}' cannot be found. Please check for any spaces.")
+                        continue
 
                     # split method
                     split_on = col_convert_df['Split On'].values[0]
