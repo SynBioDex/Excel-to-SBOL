@@ -11,6 +11,15 @@ import os
 
 # the homespace only works if the change is made to pysbol2 shown in https://github.com/SynBioDex/pySBOL2/pull/411/files
 
+def _is_update_true(val):
+    if val is None:
+        return False
+    if isinstance(val, bool):
+        return val
+    if isinstance(val, (int, float)):
+        return val == 1
+    return str(val).strip().upper() in {"TRUE", "T", "YES", "Y", "1"}
+
 def initialise_welcome(file_path_in):
     init_info = pd.read_excel(file_path_in, sheet_name="Init",
                               skiprows=9, index_col=0,
@@ -130,9 +139,17 @@ def initialise(file_path_in):
         lib_df = pd.read_excel(file_path_in, sheet_name=sheet_name,
                                header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
-       
-        sheet_dict['library'] = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('list')
 
+        lib_df = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
+        # Only convert rows where Update is TRUE
+        if 'Update' in lib_df.columns:
+            before_count = len(lib_df)
+            lib_df = lib_df[lib_df['Update'].apply(_is_update_true)].copy()
+            after_count = len(lib_df)
+            print(f"INFO: Sheet '{sheet_name}': kept {after_count}/{before_count} rows where Update is TRUE.")
+
+        sheet_dict['library'] = lib_df.to_dict('list')
         # need dicitonary with as keys every column name and as values a list of values (note ordered list and need place holder empty values)
         compiled_sheets[sheet_name] = sheet_dict
 
