@@ -42,12 +42,25 @@ class ValidationCollector:
     validate_only=True: collect errors/warnings and keep going.
     validate_only=False: raise on first error (fail-fast).
     echo=True: print each error/warning as it's added.
+    verbose=True: return the full validation payload.
+    verbose=False: return a minimal payload.
     """
-    def __init__(self, validate_only: bool = True, echo: bool = False):
+    def __init__(self, validate_only: bool = True, echo: bool = False, verbose: bool = True):
         self.validate_only = validate_only
         self.echo = echo
+        self.verbose = verbose
         self.errors: List[ValidationItem] = []
         self.warnings: List[ValidationItem] = []
+
+    def build_payload(self, ok: bool, validated_sheets: Optional[List[str]] = None) -> Any:
+        if self.verbose:
+            return {
+                "ok": ok,
+                "errors": [e.__dict__ for e in self.errors],
+                "warnings": [w.__dict__ for w in self.warnings],
+                "validated_sheets": validated_sheets or [],
+            }
+        return "Pass" if ok else None
 
     def error(self, sheet: str, row_display_id: Optional[str], column: Optional[str], code: str, message: str) -> None:
     # Force one-line messages (collapse whitespace/newlines)
@@ -513,7 +526,8 @@ def run_sheet_validator(
     *,
     validate_only: bool = True,
     echo: bool = False,
-) -> Dict[str, Any]:
+    verbose: bool = True,
+) -> Any:
     """
     Validate a workbook using sheet-level checks.
 
@@ -522,7 +536,7 @@ def run_sheet_validator(
       - MISSING_SHEET
       - UNDECLARED_COLUMN
     """
-    validator = ValidationCollector(validate_only=validate_only, echo=echo)
+    validator = ValidationCollector(validate_only=validate_only, echo=echo, verbose=verbose)
 
     # Read column_definitions directly (so we can validate sheet names even if compiler.initialise would crash)
     col_read_df = pd.read_excel(
@@ -545,12 +559,7 @@ def run_sheet_validator(
     # stop early to avoid downstream crashes inside compiler.initialise.
     if validate_only and len(validator.errors) > 0:
         ok = False
-        return {
-            "ok": ok,
-            "errors": [e.__dict__ for e in validator.errors],
-            "warnings": [w.__dict__ for w in validator.warnings],
-            "validated_sheets": [],
-        }
+        return validator.build_payload(ok=ok, validated_sheets=[])
 
     # Reuse 1.1.18's compiler parsing for checks that need compiled_sheets/to_convert
     col_read_df2, to_convert, compiled_sheets, _version_info, _homespace = compiler.initialise(file_path_in)
@@ -560,12 +569,7 @@ def run_sheet_validator(
     _error_missing_sheet_columns(col_read_df2, compiled_sheets, to_convert, validator)
 
     ok = (len(validator.errors) == 0)
-    return {
-        "ok": ok,
-        "errors": [e.__dict__ for e in validator.errors],
-        "warnings": [w.__dict__ for w in validator.warnings],
-        "validated_sheets": list(to_convert),
-    }
+    return validator.build_payload(ok=ok, validated_sheets=list(to_convert))
 
 
 # -----------------------------
