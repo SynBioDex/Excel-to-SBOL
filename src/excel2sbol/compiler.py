@@ -11,52 +11,33 @@ import os
 
 # the homespace only works if the change is made to pysbol2 shown in https://github.com/SynBioDex/pySBOL2/pull/411/files
 
-def initialise_welcome(file_path_in):
-    init_info = pd.read_excel(file_path_in, sheet_name="Init",
-                              skiprows=9, index_col=0,
-                              engine='openpyxl')
-    init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+def initialise_welcome(init_info, file_path_in):
+    for sheet_name in init_info:
+        if sheet_name.lower() != "welcome":
+            continue
 
-    version_info = pd.read_excel(file_path_in, sheet_name="Init",
-                                 nrows=4, index_col=0, header=None,
-                                 engine='openpyxl')
-    version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
-    if 'Homespace' in version_info:
-        homespace = version_info['Homespace'][1]
-    else:
-        homespace = ""
-    version_info = version_info['SBOL Version'][1]
+        try:
+            welcome_metadata = pd.read_excel(
+                file_path_in, sheet_name=sheet_name,
+                index_col=0, engine='openpyxl'
+            ).fillna("")
+        except Exception as e:
+            logging.warning(
+                f'Sheet "{sheet_name}" is listed in Init but could not be read: {e}. '
+                f'Welcome metadata will not be captured.'
+            )
+            return None
 
-    # For key in dict read in sheet,
-    # if sheet convert = true, add to convert list
-    compiled_sheets = {}
-    to_convert = []
-    for sheet_name, val in init_info.items():
-        # print(f"reading in {sheet_name}...")
-        # MY CODE
-        if sheet_name.lower() == "welcome":
-            print("Processing the welcome page...")
-            try:
-                welcome_metadata = pd.read_excel(file_path_in, sheet_name=sheet_name,
-                                                 index_col=0, engine='openpyxl').fillna("")
-                print("Welcome Page Metadata:")
-                
-                dict = {}
-                for _, row in welcome_metadata.iterrows():
-                    if len(row) >= 2:
-                        key, value = row[0], row[1]
-                        if isinstance(key, str) and key.strip():
-                            dict[key.strip()] = value.strip() if isinstance(value, str) else value
-                for key, value in dict.items():
-                    print(f"{key}: {value}")
-                return dict
-                
-            except Exception as e:
-                print(f"Error reading the welcome page: {e}")
-                return None
-            
-        else:
-            return
+        logging.info(f'Processing welcome sheet "{sheet_name}".')
+        metadata = {}
+        for _, row in welcome_metadata.iterrows():
+            if len(row) >= 2:
+                key, value = row[0], row[1]
+                if isinstance(key, str) and key.strip():
+                    metadata[key.strip()] = value.strip() if isinstance(value, str) else value
+        return metadata
+
+    return None
     
 def initialise(file_path_in):
     init_info = pd.read_excel(file_path_in, sheet_name="Init",
@@ -165,7 +146,7 @@ def initialise(file_path_in):
 
     # re index as otherwise causes issues later
     col_read_df = col_read_df.reset_index(drop=True)
-    return(col_read_df, to_convert, compiled_sheets, version_info, homespace)
+    return(col_read_df, to_convert, compiled_sheets, version_info, homespace, init_info)
 
 
 def parse_objects(col_read_df, to_convert, compiled_sheets,
@@ -207,6 +188,14 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
 
         for ind, id in enumerate(ids):
             sanitised_id = hf.check_name(id)
+
+            if not sanitised_id:
+                logging.warning(
+                    f'Sheet "{sht}", row {ind + 1}: display id "{id}" '
+                    f'normalizes to an empty string; skipping object creation for this row.'
+                )
+                continue
+
             uri = f'{sbol2.getHomespace()}{sanitised_id}'
 
             if hasattr(sbol2, types[ind]):
@@ -229,6 +218,12 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
             else:
                 # if not a known sbol class use generic toplevel
                 obj = sbol2.TopLevel(type_uri=types[ind], uri=uri, version='1')
+
+            if id in dict_of_objs:
+                raise ValueError(
+                    f'Sheet "{sht}", row {ind + 1}: duplicate display id "{id}" detected. '
+                    f'Each display id must be unique across the sheet.'
+                )
 
             dict_of_objs[id] = {'uri': uri, 'object': obj,
                                 'displayId': sanitised_id}
@@ -286,6 +281,13 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
         for ind, id in enumerate(ids):
             sanitised_id = hf.check_name(id)
 
+            if not sanitised_id:
+                logging.warning(
+                    f'Sheet "{sht}", row {ind + 1}: display id "{id}" '
+                    f'normalizes to an empty string; skipping object creation for this row.'
+                )
+                continue
+
             uri = f'{sbol3.get_namespace()}/{sanitised_id}'
 
             if hasattr(sbol3, obj_types[ind]):
@@ -312,6 +314,12 @@ def parse_objects3(col_read_df, to_convert, compiled_sheets,
             else:
                 # if not a known sbol class use generic toplevel
                 obj = sbol3.TopLevel(type_uri=obj_types[ind], identity=uri)
+
+            if id in dict_of_objs:
+                raise ValueError(
+                    f'Sheet "{sht}", row {ind + 1}: duplicate display id "{id}" detected. '
+                    f'Each display id must be unique across the sheet.'
+                )
 
             dict_of_objs[id] = {'uri': uri, 'object': obj,
                                 'displayId': sanitised_id}
@@ -344,6 +352,12 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
             term_dict = TermClass(row_num)
 
             disp_id = sht_lib[sht_convert_dict[sht]][row_num]
+            if disp_id not in dict_of_objs:
+                logging.warning(
+                    f'Sheet "{sht}", row {row_num + 1}: display id "{disp_id}" was not created '
+                    f'(blank or skipped); skipping row processing.'
+                )
+                continue
             obj = dict_of_objs[disp_id]['object']
             obj_uri = dict_of_objs[disp_id]['uri']
 
@@ -408,24 +422,30 @@ def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                     # the sbol_term of the column
                     # This creates an object with the converted cell values
                     # hierarchy: sbol term, multicolumn, column name, cell val
-                    
-                    mcol = col_convert_df['Multicolumn'].values[0]
+                    #
+                    # A column may appear multiple times in column_definitions
+                    # with different SBOL terms (e.g. Part Name mapped to both
+                    # sbol_displayId and sbol_name). The split/lookup/pattern
+                    # transformation above is applied once using the first row's
+                    # settings; the transformed value is then stored under each
+                    # row's sbol_term so all mappings are honoured.
+                    for _, col_def_row in col_convert_df.iterrows():
+                        mcol = col_def_row['Multicolumn']
+                        sbol_term = col_def_row['SBOL Term']
 
-                    sbol_term = col_convert_df['SBOL Term'].values[0]
+                        if hasattr(term_dict, sbol_term):
+                            sbol_dict = getattr(term_dict, sbol_term)
+                        else:
+                            sbol_dict = {}
 
-                    if hasattr(term_dict, sbol_term):
-                        sbol_dict = getattr(term_dict, sbol_term)
-                    else:
-                        sbol_dict = {}
+                        if isinstance(mcol, str):
+                            if mcol not in sbol_dict:
+                                sbol_dict[mcol] = {}
+                            sbol_dict[mcol][col] = cell_val
+                        else:
+                            sbol_dict[col] = cell_val
 
-                    if isinstance(mcol, str):
-                        if mcol not in sbol_dict:
-                            sbol_dict[mcol] = {}
-                        sbol_dict[mcol][col] = cell_val
-                    else:
-                        sbol_dict[col] = cell_val
-
-                    setattr(term_dict, sbol_term, sbol_dict)
+                        setattr(term_dict, sbol_term, sbol_dict)
 
 
             # print(term_dict.__dict__)

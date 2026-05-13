@@ -154,22 +154,17 @@ def module(rowobj):
 	for col in rowobj.col_cell_dict.keys():
 		val = rowobj.col_cell_dict[col]
 
-		for col in rowobj.col_cell_dict.keys():
-			val = rowobj.col_cell_dict[col]
+		if isinstance(val, str):
+			module_uris = val.split(",")
 
-			if isinstance(val, str):
-				module_uris = val.split(",")
-
-			for module_uri in module_uris:
-				module_uri = module_uri.strip()
-				module_name = module_uri.split("/")[-2]
-				# print("Module Name: ", module_name)
-				# print("Module URI: ", module_uri)
-				if module_name not in [m.displayId for m in module_def.modules]:
-					mod = module_def.modules.create(module_name)
-					mod.definition = module_uri
-				else:
-					mod = module_def.modules.get(module_name)
+		for module_uri in module_uris:
+			module_uri = module_uri.strip()
+			module_name = module_uri.split("/")[-2]
+			if module_name not in [m.displayId for m in module_def.modules]:
+				mod = module_def.modules.create(module_name)
+				mod.definition = module_uri
+			else:
+				mod = module_def.modules.get(module_name)
 
 
 def funcComp(rowobj):
@@ -250,7 +245,7 @@ def displayId(rowobj):
 		if col == "Previous Version (URI)":
 			# print(rowobj.obj)
 			# print(rowobj.col_cell_dict)
-			display_id = rowobj.col_cell_dict['Part Id']
+			display_id = rowobj.obj.displayId
 			previous_id = rowobj.col_cell_dict['Previous Version (URI)']
 			rowobj.obj.wasDerivedFrom = previous_id
 			return
@@ -1012,13 +1007,12 @@ def proteinSequence(rowobj):
 			# ONE OBJECT. E.g overwrite in self.obj.sequences = [val] ?
 			if re.fullmatch(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', val):
 				# if a url
-				rowobj.obj.sequences = [val]
+				# rowobj.obj.sequences = [val]
 				valid_uri = link_validation(username, password, url, val)
 				if not valid_uri:
 					print(f"URI '{val}' is invalid. Skipping addition for {col}.")
 					print("Terminating")
 					sys.exit(1)
-					return
 				rowobj.obj.sequences = [val]
 
 			elif re.match(r'^[ACDEFGHIKLMNPQRSTVWYacdefghiklmnpqrstvwy\s*]+$', val):

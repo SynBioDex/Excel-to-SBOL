@@ -32,7 +32,10 @@ def up(col_def_row, cell_val, compiled_sheets, obj_dict):
             # find the item with the same index in the to column
             cell_val = lk_dict[lk_col_to][lk_dict[lk_col_from].index(cell_val)]
         except ValueError:
-            raise KeyError(f'cell vlaue: {cell_val} not in the lookup dictionary: {lk_dict_name}')
+            raise KeyError(
+                f'Cell value "{cell_val}" was not found in lookup dictionary "{lk_dict_name}" '
+                f'(sheet: "{col_def_dict["Sheet Name"][0]}", column: "{col_def_dict["Column Name"][0]}").'
+            )
     elif col_def_dict['Sheet Lookup'][0]:
         # if it is a lookup and a replacement lookup
         # create a url based on the prefix
@@ -51,7 +54,10 @@ def up(col_def_row, cell_val, compiled_sheets, obj_dict):
             # find the item with the same index in the to column
             cell_val = lk_dict[lk_col_to][lk_dict[lk_col_from].index(cell_val_prefix)].replace("{REPLACE_HERE}", cell_val_suffix)
         except ValueError:
-            raise KeyError(f'cell vlaue: {cell_val_prefix} not in the lookup dictionary: {lk_dict_name}')
+            raise KeyError(
+                f'Cell value prefix "{cell_val_prefix}" was not found in lookup dictionary "{lk_dict_name}" '
+                f'(sheet: "{col_def_dict["Sheet Name"][0]}", column: "{col_def_dict["Column Name"][0]}").'
+            )
 
     elif col_def_dict['Object_ID Lookup'][0] and not col_def_dict['Parent Lookup'][0]:
         # changes part name to the uri to reference (if not a parental lookup)
@@ -62,5 +68,11 @@ def up(col_def_row, cell_val, compiled_sheets, obj_dict):
         try:
             cell_val = obj_dict[cell_val]['uri']
         except KeyError:
-            raise KeyError(f'The object "{cell_val}" is referenced in Sheet: "{col_def_dict["Sheet Name"][0]}", Column: "{col_def_dict["Column Name"][0]}" but is never created')
+            raise KeyError(
+                f'The object "{cell_val}" is referenced in Sheet: '
+                f'"{col_def_dict["Sheet Name"][0]}", Column: '
+                f'"{col_def_dict["Column Name"][0]}" but was never created. '
+                f'The target row may have been skipped due to a blank or invalid display id, '
+                f'or it may not be defined in any converted sheet.'
+            )
     return cell_val

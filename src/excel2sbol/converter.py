@@ -18,16 +18,13 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         os.environ["SBOL_PASSWORD"] = password
         os.environ["SBOL_URL"] = url
         
-    col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
-    dict = e2s.initialise_welcome(file_path_in)
-    # for key, value in dict.items():
-    #     if isinstance(value, datetime):
-    #         dict[key] = value.isoformat()
-    if dict is not None:
-        for key, value in dict.items():
+    col_read_df, to_convert, compiled_sheets, version_info, homespace2, init_info = e2s.initialise(file_path_in)
+    welcome_data = e2s.initialise_welcome(init_info, file_path_in)
+    if welcome_data is not None:
+        for key, value in welcome_data.items():
             if isinstance(value, datetime):
-                dict[key] = value.isoformat()
-        os.environ["SBOL_DICTIONARY"] = json.dumps(dict)
+                welcome_data[key] = value.isoformat()
+        os.environ["SBOL_DICTIONARY"] = json.dumps(welcome_data)
     # print(dict)
 
     if len(homespace2) > 0:
