@@ -144,7 +144,7 @@ def biochemical_reaction(rowobj):
 		
 def module(rowobj):
 	module_name_pref = rowobj.obj_uri.split("/")[-1]
-	# print("Module Def Name: ", module_name_pref)
+	#print("Module Def Name: ", module_name_pref)	
 	module_def_name = f"{module_name_pref}"
 	if module_def_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
 		module_def = sbol2.ModuleDefinition(module_def_name)
@@ -153,13 +153,18 @@ def module(rowobj):
 		module_def = rowobj.doc.moduleDefinitions.get(module_def_name)
 	for col in rowobj.col_cell_dict.keys():
 		val = rowobj.col_cell_dict[col]
-
-		if isinstance(val, str):
-			module_uris = val.split(",")
+		#print("Column: ", col)
+		#print("Module links: ", val)
+		module_uris = [val] if isinstance(val, str) else val
 
 		for module_uri in module_uris:
 			module_uri = module_uri.strip()
-			module_name = module_uri.split("/")[-2]
+			if module_uri.split("/")[-1][0].isdigit():	
+				module_name = module_uri.split("/")[-2]
+			else:
+				module_name = module_uri.split("/")[-1]
+			#print("Module Name: ", module_name)
+			#print("Module URI: ", module_uri)
 			if module_name not in [m.displayId for m in module_def.modules]:
 				mod = module_def.modules.create(module_name)
 				mod.definition = module_uri
@@ -184,7 +189,11 @@ def funcComp(rowobj):
 		fc_uris = [val] if isinstance(val, str) else val
 		
 		for fc_uri in fc_uris:
-			fc_name = fc_uri.split("/")[-2]
+			fc_uri = fc_uri.strip()
+			if fc_uri.split("/")[-1][0].isdigit():	
+				fc_name = fc_uri.split("/")[-2]
+			else:
+				fc_name = fc_uri.split("/")[-1]
 			# print("FC Name: ", fc_name)
 			# print("FC URI: ", fc_uri)
 			if fc_name not in [fc.displayId for fc in module_def.functionalComponents]:
