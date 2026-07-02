@@ -196,7 +196,7 @@ def parse_objects(col_read_df, to_convert, compiled_sheets,
                 )
                 continue
 
-            uri = f'{sbol2.getHomespace()}{sanitised_id}'
+            uri = f'{sbol2.getHomespace().rstrip("/")}/{sanitised_id}'
 
             if hasattr(sbol2, types[ind]):
                 varfunc = getattr(sbol2, types[ind])

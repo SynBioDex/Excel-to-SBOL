@@ -4,13 +4,15 @@ import os
 import json
 from datetime import datetime
 
-def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
+def converter(file_path_in, file_path_out, sbol_version=None, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
     """Convert a given excel file to SBOL
 
     Args:
         file_path_in (string): path to excel file
         file_path_out (string): desired path to sbol file
-        sbol_version (int): sbol version number, defaults to 3
+        sbol_version (int, optional): sbol version number. When provided (e.g.
+            from the UI version selector), it takes precedence. When None, the
+            value from the workbook's Init sheet is used. See I20.
     """
     if username is not None and password is not None and url is not None:
         # print(username, password, url)
@@ -31,8 +33,14 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         homespace = homespace2
         print(f'Conversion will happen with homespace {homespace} as specified in the excel sheet')
 
-    sbol_version = version_info
-    print(f'Conversion will happen with sbol version {sbol_version} as specified in the excel sheet')
+    # Respect a caller-supplied version (UI selector); fall back to the Init
+    # sheet value only when none was given. See I20.
+    if sbol_version is None:
+        sbol_version = version_info
+        print(f'Conversion will happen with sbol version {sbol_version} as specified in the excel sheet')
+    else:
+        sbol_version = int(sbol_version)
+        print(f'Conversion will happen with sbol version {sbol_version} (from caller / UI selector)')
 
     if sbol_version == 2:
         doc, dict_of_objs, sht_convert_dict = e2s.parse_objects(col_read_df,

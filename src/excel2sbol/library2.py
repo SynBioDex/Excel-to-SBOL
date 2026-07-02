@@ -142,6 +142,20 @@ def biochemical_reaction(rowobj):
 	rowobj.doc.addModuleDefinition(module_def)
 		
 		
+def _uri_display_id(uri: str) -> str:
+    """Return the display ID segment of a URI.
+
+    Uses the penultimate segment when the terminal segment is a bare integer
+    (SBOL version suffix, e.g. /1). Otherwise uses the terminal segment.
+    Handles both versioned SBOL URIs (http://host/id/1) and plain URIs
+    (http://host/id).
+    """
+    parts = uri.rstrip("/").split("/")
+    if len(parts) >= 2 and parts[-1].isdigit():
+        return parts[-2]
+    return parts[-1]
+
+
 def module(rowobj):
 	module_name_pref = rowobj.obj_uri.split("/")[-1]
 	#print("Module Def Name: ", module_name_pref)	
@@ -159,10 +173,7 @@ def module(rowobj):
 
 		for module_uri in module_uris:
 			module_uri = module_uri.strip()
-			if module_uri.split("/")[-1][0].isdigit():	
-				module_name = module_uri.split("/")[-2]
-			else:
-				module_name = module_uri.split("/")[-1]
+			module_name = _uri_display_id(module_uri)
 			#print("Module Name: ", module_name)
 			#print("Module URI: ", module_uri)
 			if module_name not in [m.displayId for m in module_def.modules]:
@@ -190,10 +201,7 @@ def funcComp(rowobj):
 		
 		for fc_uri in fc_uris:
 			fc_uri = fc_uri.strip()
-			if fc_uri.split("/")[-1][0].isdigit():	
-				fc_name = fc_uri.split("/")[-2]
-			else:
-				fc_name = fc_uri.split("/")[-1]
+			fc_name = _uri_display_id(fc_uri)
 			# print("FC Name: ", fc_name)
 			# print("FC URI: ", fc_uri)
 			if fc_name not in [fc.displayId for fc in module_def.functionalComponents]:
