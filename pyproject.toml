@@ -44,6 +44,9 @@ test = [
   "pytest < 5.0.0",
   "pytest-cov[all]"
 ]
+gui = [
+  "pywebview>=5.0"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/SynBioDex/Excel-to-SBOL"
