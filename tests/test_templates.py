@@ -1,8 +1,11 @@
 from pathlib import Path
+from xml.etree import ElementTree
 
 import pytest
+import sbol2
 
 from excel2sbol.compiler import initialise, initialise_welcome
+from excel2sbol.converter import converter
 
 
 TEMPLATES_DIR = Path(__file__).parents[1] / "resources" / "templates"
@@ -14,6 +17,11 @@ TEMPLATE_SHEETS = {
     "Strains.xlsm": {"Init", "column_definitions", "strain"},
     "Study.xlsm": {"Init", "column_definitions", "study", "assay", "sample"},
 }
+
+# Base is a source workbook and Resources currently includes a workbook-only
+# "Translate to Protein" field. The remaining templates are complete converter
+# inputs and must produce valid SBOL.
+CONVERTIBLE_TEMPLATES = ("SampleDesign.xlsm", "Strains.xlsm", "Study.xlsm")
 
 
 @pytest.mark.parametrize("template_name", TEMPLATE_SHEETS)
@@ -38,3 +46,19 @@ def test_converter_can_read_template_configuration(template_name):
     assert set(sheets_to_convert).issubset(compiled_sheets)
     assert not col_definitions.empty
     assert initialise_welcome(init_info, TEMPLATES_DIR / template_name) is not None
+
+
+@pytest.mark.parametrize("template_name", CONVERTIBLE_TEMPLATES)
+def test_converter_generates_valid_sbol(template_name, tmp_path):
+    """Convert each standalone template and validate the resulting SBOL2 XML."""
+    output_path = tmp_path / f"{Path(template_name).stem}.xml"
+
+    converter(file_path_in=TEMPLATES_DIR / template_name, file_path_out=output_path)
+
+    assert output_path.is_file()
+    assert output_path.stat().st_size > 0
+    ElementTree.parse(output_path)
+
+    document = sbol2.Document()
+    document.read(str(output_path))
+    assert document.validate() == "Valid."
