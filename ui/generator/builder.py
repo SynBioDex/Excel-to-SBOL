@@ -28,7 +28,7 @@ _HERE         = os.path.dirname(os.path.abspath(__file__))
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(_HERE))
 BASE_XLSM     = os.path.join(_PROJECT_ROOT, "resources", "templates", "Base.xlsm")
 
-# ── TC-29 styling constants ───────────────────────────────────────────────────
+# ── Styling constants ─────────────────────────────────────────────────────────
 
 HEADER_FILL  = PatternFill(fill_type="solid", fgColor="1A6468")
 HEADER_FONT  = Font(scheme="minor", color="FFFFFF", bold=True,  size=11)
@@ -113,14 +113,14 @@ _INIT_CD_ROWS = [
 _REFERENCE_SHEETS = ("ontology_terms", "organism_terms", "molecule_types")
 
 # All reference sheets carried from Base.xlsm that are pruned when the selected
-# sheets do not use them (I50). nci_thesaurus is never referenced by the current
+# sheets do not use them. nci_thesaurus is never referenced by the current
 # schema, so it is always pruned.
 _ALL_REFERENCE_SHEETS = ("ontology_terms", "organism_terms", "molecule_types", "nci_thesaurus")
 
 
 # Resolved ontology URIs for the role labels used by SheetDefs. Lets templates
 # that do not otherwise need ontology_terms (no column looks it up) write the role
-# URI straight into Init and drop the ontology_terms sheet entirely (I51).
+# URI straight into Init and drop the ontology_terms sheet entirely.
 _ROLE_URI = {
     "promoter":            "http://identifiers.org/so/SO:0000167",
     "ribosome_entry_site": "http://identifiers.org/so/SO:0000139",
@@ -128,8 +128,14 @@ _ROLE_URI = {
     "terminator":          "http://identifiers.org/so/SO:0000141",
     "RNA":                 "http://identifiers.org/so/SO:0000356",
     "signal":              "http://identifiers.org/ncit/NCIT:C43382",
+    # NCIT:C14419 "Organism Strain" — the host organism, used by chassis.
     "organism_strain":     "http://identifiers.org/ncit/NCIT:C14419",
     "medium":              "http://identifiers.org/ncit/NCIT:C48164",
+    # NCIT:C97158 "Genetically Modified Organism" — an engineered strain, which
+    # is a distinct concept from the unmodified host above.
+    "genetically_modified_organism": "http://purl.obolibrary.org/obo/NCIT_C97158",
+    "sample_design":       "https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign",
+    "supplement":          "http://purl.obolibrary.org/obo/PATO_0000033",
 }
 
 
@@ -139,7 +145,7 @@ def _needed_reference_sheets(sheets: list) -> set:
     molecule_types — any sheet with a molecule_type, or any column that looks it up.
     ontology_terms / organism_terms / nci_thesaurus — only if a column looks them up.
     The role-driven need for ontology_terms is decided in generate(): roles can be
-    written as direct URIs (see _ROLE_URI), which removes that dependency. (I50/I51)
+    written as direct URIs (see _ROLE_URI), which removes that dependency.
     """
     needed = set()
     if any(getattr(s, "molecule_type", "") for s in sheets):
@@ -201,8 +207,8 @@ def generate(config: dict, progress_cb=None) -> str:
         custom_sheets  : list[str] — sheet names from ALL_SHEETS (for custom type)
         output_folder  : str — directory to save the generated file
         metadata       : dict with keys:
-            library_name, author, email, lab, institution,
-            description, pubmed_id, date, sbol_version, domain, master_collection
+            library_name, collection_id, version, author, email, lab, institution,
+            description, pubmed_id, sbol_version, domain, master_collection
 
     Returns the path to the saved file.
     """
@@ -233,7 +239,7 @@ def generate(config: dict, progress_cb=None) -> str:
     for raw_sheet in config.get("user_custom_sheets", []):
         sheets.append(_ui_sheet_to_sheetdef(raw_sheet))
 
-    # F19: order the data-sheet tabs by the user's chosen arrangement, if given.
+    # order the data-sheet tabs by the user's chosen arrangement, if given.
     # `sheet_order` is an ordered list of sheet names (built-in + custom); any
     # sheet not named falls to the end in its existing relative order.
     order = config.get("sheet_order")
@@ -246,18 +252,19 @@ def generate(config: dict, progress_cb=None) -> str:
     shutil.copy2(BASE_XLSM, out_path)
     wb = openpyxl.load_workbook(out_path, keep_vba=True)
 
-    # 2b. Prune reference sheets the selected sheets do not use (I50). Roles can
-    # be written as direct URIs when nothing else needs ontology_terms, which lets
-    # it be pruned too (I51).
+    # 2b. Prune reference sheets the selected sheets do not use. Sheet-level roles
+    # are written as direct URIs whenever every role is known, independently of
+    # whether ontology_terms survives for some column's dropdown. Keeping these two
+    # decisions separate means ontology_terms only has to carry the terms a column
+    # actually offers, not the ones the Init roles happen to need.
     needed_refs = _needed_reference_sheets(sheets)
     roles_present = {s.role for s in sheets if getattr(s, "role", "")}
     direct_uri_roles = (
         bool(roles_present)
-        and "ontology_terms" not in needed_refs            # no column looks it up
         and roles_present <= set(_ROLE_URI)                 # every role has a known URI
     )
     if roles_present and not direct_uri_roles:
-        # fall back to the label + ontology_terms lookup (keeps the sheet)
+        # an unknown role still needs the label + ontology_terms lookup
         needed_refs = needed_refs | {"ontology_terms"}
     for ref in _ALL_REFERENCE_SHEETS:
         if ref not in needed_refs and ref in wb.sheetnames:
@@ -273,7 +280,7 @@ def generate(config: dict, progress_cb=None) -> str:
 
     # 5. Create column_definitions sheet
     _progress("Building column_definitions sheet...")
-    _build_column_definitions(wb, sheets, direct_uri_roles)
+    _build_column_definitions(wb, sheets, direct_uri_roles, needed_refs)
 
     # 6. Create each selected sheet
     for sheet_def in sheets:
@@ -301,6 +308,8 @@ def generate(config: dict, progress_cb=None) -> str:
 
     # 12. Standardize column widths across generated and inherited base sheets
     _apply_workbook_col_widths(wb)
+
+    _apply_sheet_visibility(wb)
 
     # 13. Set welcome as the active sheet on open
     if "welcome" in wb.sheetnames:
@@ -379,12 +388,13 @@ def _write_welcome(wb, metadata: dict, library_name: str, type_label: str):
     ws = wb["welcome"]
     _write_welcome_field(ws, "Author",         metadata.get("author", ""))
     _write_welcome_field(ws, "Email",          metadata.get("email", ""))
-    _write_welcome_field(ws, "Lab",            metadata.get("lab", ""))
+    _write_welcome_field(ws, "Laboratory",     metadata.get("lab", ""))
     _write_welcome_field(ws, "Institution",    metadata.get("institution", ""))
-    _write_welcome_field(ws, "Library Name",   library_name)
+    _write_welcome_field(ws, "ID",             metadata.get("collection_id", ""))
+    _write_welcome_field(ws, "Name",           library_name)
     _write_welcome_field(ws, "Description",    metadata.get("description", ""))
-    _write_welcome_field(ws, "PubId",          metadata.get("pubmed_id", ""))
-    _write_welcome_field(ws, "Date",           metadata.get("date", ""))
+    _write_welcome_field(ws, "Version",        metadata.get("version", 1))
+    _write_welcome_field(ws, "PubMedIDs",      metadata.get("pubmed_id", ""))
     _write_welcome_field(ws, "Domain",         metadata.get("domain", "").rstrip("/"))
     _write_welcome_field(ws, "Master Collection", metadata.get("master_collection", ""))
     _write_welcome_field(ws, "Template Type",  type_label)
@@ -424,7 +434,7 @@ def _build_init(wb, sheets: list, sbol_version: int, library_name: str,
         # objects. Flapjack-only sheets (empty sbol_object_type, e.g. measurement)
         # are written with Convert=False so their data is still loaded for
         # lookups/Flapjack but they never enter parse_objects(), which would
-        # crash on the missing sbol_objectType column otherwise. See I35.
+        # crash on the missing sbol_objectType column otherwise.
         convert = bool(sdef.sbol_object_type and str(sdef.sbol_object_type).strip())
         ws.cell(row, col_map["Sheet Name"]).value      = sdef.name
         ws.cell(row, col_map["Convert"]).value         = convert
@@ -437,7 +447,7 @@ def _build_init(wb, sheets: list, sbol_version: int, library_name: str,
         ws.cell(row, col_map["Lib Start Row"]).value   = 1
         ws.cell(row, col_map["SBOL Object Type"]).value = sdef.sbol_object_type
         ws.cell(row, col_map["Molecule Type"]).value   = sdef.molecule_type
-        # I51: write the role URI directly when ontology_terms is being dropped;
+        # write the role URI directly when ontology_terms is being dropped;
         # otherwise the label (resolved via the ontology_terms lookup at convert).
         role_val = sdef.role
         if direct_uri_roles and role_val:
@@ -446,7 +456,7 @@ def _build_init(wb, sheets: list, sbol_version: int, library_name: str,
         row += 1
 
     for ref_name in _REFERENCE_SHEETS:
-        if ref_name not in needed_refs:  # I50: only list reference sheets in use
+        if ref_name not in needed_refs:  # only list reference sheets in use
             continue
         ws.cell(row, col_map["Sheet Name"]).value        = ref_name
         ws.cell(row, col_map["Convert"]).value           = False
@@ -486,7 +496,8 @@ def _build_init(wb, sheets: list, sbol_version: int, library_name: str,
     _mark_system_sheet(ws)
 
 
-def _build_column_definitions(wb, sheets: list, direct_uri_roles=False):
+def _build_column_definitions(wb, sheets: list, direct_uri_roles=False,
+                              needed_refs=None):
     if "column_definitions" in wb.sheetnames:
         del wb["column_definitions"]
 
@@ -501,12 +512,20 @@ def _build_column_definitions(wb, sheets: list, direct_uri_roles=False):
 
     # Init metadata rows (so compiler can map SBOL Object Type, Molecule Type, Role)
     for row_kwargs in _INIT_CD_ROWS:
-        # I51: when roles are written as direct URIs, the Role row must NOT be an
+        # when roles are written as direct URIs, the Role row must NOT be an
         # ontology_terms sheet lookup (that sheet is pruned) — pass the URI through.
         if direct_uri_roles and row_kwargs.get("col_name") == "Role":
             row_kwargs = dict(sheet_name="Init", col_name="Role",
                               sbol_term="sbol_roles",
                               namespace="http://sbols.org/v2#", col_type="URI")
+        # Same for Molecule Type: molecule_types is pruned when no sheet declares
+        # one, so pointing a lookup at it would leave a dangling reference.
+        if (row_kwargs.get("col_name") == "Molecule Type"
+                and needed_refs is not None
+                and "molecule_types" not in needed_refs):
+            row_kwargs = dict(sheet_name="Init", col_name="Molecule Type",
+                              sbol_term="sbol_types",
+                              namespace="http://sbols.org/v2#", col_type="String")
         _write_cd_row(ws, col_map, row, **row_kwargs)
         row += 1
 
@@ -602,7 +621,7 @@ def _build_sheet(wb, sdef: SheetDef):
         table_name = re.sub(r"\W+", "_", sdef.name).strip("_") or "Sheet"
         last_col   = get_column_letter(len(sdef.columns))
         # Build columns explicitly so the ID/length columns carry a
-        # calculatedColumnFormula -> Excel auto-fills them on new rows (I37).
+        # calculatedColumnFormula -> Excel auto-fills them on new rows.
         table_columns = []
         for i, col in enumerate(sdef.columns, 1):
             tc = TableColumn(id=i, name=col.name)
@@ -635,7 +654,7 @@ def _write_formula_row(ws, sdef: SheetDef) -> dict:
     Returns {header: formula-without-leading-'='} for the columns that should be
     Excel *calculated columns* (ID auto-fill, length), so the caller can mark the
     matching TableColumn with a calculatedColumnFormula and Excel fills them down
-    as rows are added (I37). Update/Translate are static booleans (user-toggleable
+    as rows are added. Update/Translate are static booleans (user-toggleable
     checkboxes), so they are deliberately NOT calculated columns.
     """
     headers  = {col.name: i for i, col in enumerate(sdef.columns, 1)}
@@ -650,8 +669,11 @@ def _write_formula_row(ws, sdef: SheetDef) -> dict:
     name_hdr = f"{dn} Name"
     id_hdr   = f"{dn} ID"
     if name_hdr in headers and id_hdr in headers:
+        # Case is preserved so the derived ID matches what the user typed as the
+        # name; reference columns resolve against the ID, so lowercasing here made
+        # a part named GFP unreachable as GFP.
         f = (f'IF({_sr(name_hdr)}="","",'
-             f'SUBSTITUTE(SUBSTITUTE(TRIM(LOWER({_sr(name_hdr)}))," ","_"),"-","_"))')
+             f'SUBSTITUTE(SUBSTITUTE(TRIM({_sr(name_hdr)})," ","_"),"-","_"))')
         ws.cell(2, headers[id_hdr]).value = "=" + f
         calc[id_hdr] = f
 
@@ -668,14 +690,14 @@ def _write_formula_row(ws, sdef: SheetDef) -> dict:
                 break
 
     # Update flag — default CHECKED boolean (TRUE): by default an entry is
-    # flagged to be created/updated on upload. Renders as a native checkbox
-    # (F13). Static (toggleable), so NOT a calculated column. See I39 / F13.
+    # flagged to be created/updated on upload. Renders as a native checkbox.
+    # Static (toggleable), so NOT a calculated column.
     update_col = headers.get("Update")
     if update_col:
         ws.cell(2, update_col).value = True
 
     # Translate trigger columns default to an unchecked boolean so the native
-    # checkbox renders. Static/toggleable, so NOT a calculated column. See F13.
+    # checkbox renders. Static/toggleable, so NOT a calculated column.
     for col in sdef.columns:
         if col.translate_target and col.name in headers:
             ws.cell(2, headers[col.name]).value = False
@@ -711,6 +733,11 @@ def _apply_data_validations(wb, sheets: list):
 
         for col in sdef.columns:
             if not (col.sheet_lookup and col.lookup_sheet):
+                continue
+            if col.comma_append:
+                # Multi-value column. A native list validation holds one value at
+                # a time, so pairing it with the MultiSelectPicker would put two
+                # competing dropdowns on the same cell; the picker owns these.
                 continue
             if col.name not in target_headers or col.lookup_sheet not in wb.sheetnames:
                 continue
@@ -796,6 +823,40 @@ def _filter_flapjack_cols(wb, sheets: list):
     for r in reversed(rows_to_delete):
         ws.delete_rows(r)
 
+    # Nothing left but the header means no selected sheet maps to Flapjack, so
+    # the sheet would only be dead weight in the generated workbook.
+    if not any(ws.cell(r, 1).value for r in range(2, ws.max_row + 1)):
+        del wb[fj_sheet]
+
+
+# Sheets the user never edits by hand. Hidden at generation time rather than
+# left to the SheetVisibility macro, which only runs once the workbook is opened
+# in Excel with macros enabled.
+_HIDDEN_SYSTEM_SHEETS = ("Init", "column_definitions", "_DropdownMap",
+                         "_DropdownState", "_DropdownLists",
+                         # the role dropdown reads this; users do not edit it directly
+                         "ontology_terms")
+
+# The SBH_* scaffolds are hidden too: they are populated from SynBioHub and
+# consumed through dropdowns, so there is nothing for the user to edit by hand.
+_HIDDEN_SHEET_PREFIXES = ("SBH_",)
+
+# Reference vocabulary the user reads and extends, so it stays visible even
+# though Base.xlsm ships it hidden.
+_VISIBLE_REFERENCE_SHEETS = ("organism_terms",)
+
+
+def _apply_sheet_visibility(wb):
+    for name in _HIDDEN_SYSTEM_SHEETS:
+        if name in wb.sheetnames:
+            wb[name].sheet_state = "hidden"
+    for name in wb.sheetnames:
+        if name.startswith(_HIDDEN_SHEET_PREFIXES):
+            wb[name].sheet_state = "hidden"
+    for name in _VISIBLE_REFERENCE_SHEETS:
+        if name in wb.sheetnames:
+            wb[name].sheet_state = "visible"
+
 
 def _apply_reference_styling(wb):
     for sheet_name in ("ontology_terms", "organism_terms", "molecule_types",
@@ -811,7 +872,7 @@ def _apply_workbook_col_widths(wb):
         _set_fixed_col_widths(ws)
 
 
-# ── Native Excel checkbox injection (F13) ─────────────────────────────────────
+# ── Native Excel checkbox injection ───────────────────────────────────────────
 #
 # Excel's native checkbox cell control (Insert > Checkbox, 2024+) renders a
 # boolean cell as a checkbox. It is stored as a style->feature-bag link that

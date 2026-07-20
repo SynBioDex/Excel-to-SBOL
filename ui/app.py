@@ -117,7 +117,6 @@ class Api:
             # table. Read by label rather than a fixed row index: the old code used
             # hard-coded iloc positions (domain iloc[15] with nrows=13 -> always
             # IndexError -> None; email iloc[7] -> the Institution row), both wrong.
-            # See I19.
             df_w = pd.read_excel(file_path, sheet_name="welcome", header=None, usecols="B,C")
             labels = df_w.iloc[:, 0].astype(str).str.strip()
 
@@ -208,7 +207,7 @@ class Api:
         except Exception as e:
             self._progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x'). See I47.
+                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
                 "message": (str(e.args[0]) if e.args else str(e))
             })
 
@@ -226,8 +225,8 @@ class Api:
           selected_parts: [...],   # Resources only
           output_folder: "/path",
           metadata: {
-            library_name, author, email, lab, institution,
-            description, pubmed_id, date, sbol_version,
+            library_name, collection_id, version, author, email, lab,
+            institution, description, pubmed_id, sbol_version,
             domain, master_collection
           }
         }
@@ -247,7 +246,7 @@ class Api:
                 "output_folder":      config["output_folder"],
                 "metadata":           config["metadata"],
                 "user_custom_sheets": config.get("custom_sheets", []),
-                "sheet_order":        config.get("sheet_order", []),  # F19
+                "sheet_order":        config.get("sheet_order", []),
             }
             if template_type in ("resources", "custom"):
                 gen_config["selected_sheets"] = config.get("selected_parts", [])
@@ -266,7 +265,7 @@ class Api:
         except Exception as e:
             self._sc_progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x'). See I47.
+                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
                 "message": (str(e.args[0]) if e.args else str(e))
             })
 
@@ -278,7 +277,7 @@ class Api:
         if template_type == "custom":
             # All unique sheets from every template config, nothing pre-checked.
             # Sheets flagged ui_selectable=False (e.g. signal) are excluded from
-            # the custom catalog. See I40.
+            # the custom catalog.
             seen = set()
             sheets_to_show = []
             for config_sheets in TEMPLATE_CONFIGS.values():

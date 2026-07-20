@@ -20,6 +20,7 @@ NS_OBO   = "http://purl.obolibrary.org/obo/"
 NS_SBH   = "https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
 NS_FJ    = "https://wiki.synbiohub.org/wiki/Terms/Flapjack#"
 NS_ISA   = "http://isa-tools.org/ns/"
+NS_EDAM  = "http://edamontology.org/"
 NS_NA    = "Not_applicable"
 
 
@@ -61,7 +62,7 @@ class SheetDef:
     ui_group: str = ""                # checkbox group label in the Spreadsheet Creator UI
     ui_hint: str = ""                 # short description shown under the checkbox label
     ui_default_checked: bool = False  # whether the checkbox is pre-checked by default
-    ui_selectable: bool = True        # whether to offer this sheet in the custom catalog (I40)
+    ui_selectable: bool = True        # whether to offer this sheet in the custom catalog
 
 
 # ── Column factories ──────────────────────────────────────────────────────────
@@ -594,7 +595,7 @@ SIGNAL = SheetDef(
     ui_group="Study",
     ui_hint="Fluorescent / reporter signal",
     ui_default_checked=True,
-    ui_selectable=False,  # I40: not offered in the custom catalog; belongs to Study only
+    ui_selectable=False,  # not offered in the custom catalog; belongs to Study only
     columns=(
         _bio_base_cols("Signal")
         + [_signal_color_col()]
@@ -655,6 +656,15 @@ CHEMICALS = SheetDef(
     ui_default_checked=True,
     columns=(
         _bio_base_cols("Chemical")
+        + [
+            ColumnDef(
+                name="PubChem ID",
+                tooltip="The PubChem Compound ID (CID) for this chemical.",
+                sbol_term="edam_data_2639",
+                namespace=NS_EDAM,
+                col_type="String",
+            ),
+        ]
         + _provenance_cols()
         + _bio_tail_cols()
     ),
@@ -665,7 +675,8 @@ STRAIN = SheetDef(
     display_name="Strain",
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="organism_strain",
+    # An engineered strain, not the unmodified host; chassis keeps organism_strain.
+    role="genetically_modified_organism",
     flapjack_object=None,
     sbh_collections=["SBH_chassis_collections", "SBH_plasmids_collections"],
     name_column="Strain Name",
@@ -731,10 +742,10 @@ SUPPLEMENT = SheetDef(
     # ModuleDefinition (not ComponentDefinition): the Chemical column maps to
     # sbol_funcComp, which builds a ModuleDefinition for the row object. Keeping
     # the row as a ModuleDefinition lets funcComp() reuse that same object
-    # instead of creating a colliding one (SBOL_ERROR_URI_NOT_UNIQUE). See I29.
+    # instead of creating a colliding one (SBOL_ERROR_URI_NOT_UNIQUE).
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="",
+    role="supplement",
     flapjack_object=None,
     sbh_collections=["SBH_chemicals_collection"],
     name_column="Supplement Name",
@@ -770,7 +781,7 @@ SAMPLE_DESIGN = SheetDef(
     display_name="Sample Design",
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="",
+    role="sample_design",
     flapjack_object=None,
     sbh_collections=["SBH_strains_collection", "SBH_media_collection"],
     name_column="Sample Design Name",
@@ -810,7 +821,7 @@ SAMPLE_DESIGN = SheetDef(
                 col_type="URI",
                 # Local resolution against the supplement entries in this
                 # workbook (Object_ID lookup), not the online SBH collection.
-                # split_on="," allows multiple comma-separated IDs. See I43.
+                # split_on="," allows multiple comma-separated IDs.
                 object_id_lookup=True,
                 split_on='","',
             ),

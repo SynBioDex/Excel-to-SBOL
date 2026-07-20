@@ -44,7 +44,9 @@ class switch1():
         try:
             self.sbol_term_suf = sbol_term.split("_", 1)[1]
         except IndexError:
-            raise ValueError(f"The SBOL Term '{sbol_term}' (sheet name: {self.sheet}) does not appear to have an underscore")
+            # The sheet name lives on the row object, not on self (switch1 never
+            # sets it); reading self.sheet raised AttributeError and hid this message.
+            raise ValueError(f"The SBOL Term '{sbol_term}' (sheet name: {rowobj.sheet}) does not appear to have an underscore")
 
         # if not applicable then do nothing
         if sbol_term == "Not_applicable":

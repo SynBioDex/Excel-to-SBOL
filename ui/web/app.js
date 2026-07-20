@@ -282,7 +282,6 @@ function initSpreadsheetCreator() {
     document.getElementById('sc-btn-next').addEventListener('click', scNext);
 
     // Set today's date as default
-    document.getElementById('sc-date').value = new Date().toISOString().split('T')[0];
 
     scGoToStep(1);
 }
@@ -701,13 +700,14 @@ async function runGeneration() {
         output_folder:  scOutputFolder,
         metadata: {
             library_name:      document.getElementById('sc-library-name').value.trim(),
+            collection_id:     document.getElementById('sc-collection-id').value.trim(),
+            version:           document.getElementById('sc-version').value.trim() || '1',
             author:            document.getElementById('sc-author').value.trim(),
             email:             document.getElementById('sc-email').value.trim(),
             lab:               document.getElementById('sc-lab').value.trim(),
             institution:       document.getElementById('sc-institution').value.trim(),
             description:       document.getElementById('sc-description').value.trim(),
             pubmed_id:         document.getElementById('sc-pubmed').value.trim(),
-            date:              document.getElementById('sc-date').value,
             sbol_version:      sbolVersion,
             domain:            document.getElementById('sc-domain').value.trim(),
             master_collection: document.getElementById('sc-master-collection').value.trim(),
@@ -1070,11 +1070,12 @@ function resetSpreadsheetCreator() {
     });
 
     // Clear metadata fields
-    ['sc-library-name','sc-author','sc-email','sc-lab','sc-institution',
-     'sc-description','sc-pubmed','sc-domain','sc-master-collection'].forEach(id => {
+    ['sc-library-name','sc-collection-id','sc-author','sc-email','sc-lab',
+     'sc-institution','sc-description','sc-pubmed','sc-domain',
+     'sc-master-collection'].forEach(id => {
         document.getElementById(id).value = '';
     });
-    document.getElementById('sc-date').value = new Date().toISOString().split('T')[0];
+    document.getElementById('sc-version').value = '1';   // keeps its default
     document.getElementById('sc-sbol-v2').checked = true;
 
     // Reset output folder

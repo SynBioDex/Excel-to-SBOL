@@ -47,7 +47,7 @@ def biochemical_reaction(rowobj):
 					continue
 				else:
 					enzyme_uri = val
-					enzyme_name = val.split("/")[-2]
+					enzyme_name = _uri_display_id(val)
 
 		if col == "Substrate":
 			if isinstance(val, str):
@@ -64,7 +64,7 @@ def biochemical_reaction(rowobj):
 					continue
 				else:
 					substrate_uri = val
-					substrate_name = val.split("/")[-2]
+					substrate_name = _uri_display_id(val)
 
 				
 	# enzyme not provided
@@ -235,7 +235,7 @@ def displayId(rowobj):
 	url = data["Domain"].strip()
 	if url.endswith('/'):
 		url = url[:-1]
-	collection = data["Library Name"]
+	collection = data["Name"]
 	
 	master_collection = False
 	private_collection = False
@@ -400,8 +400,10 @@ def sequence_authentication(email, password, base_url,uri):
 		'password': password
 	}
 	if email is None or password is None or base_url is None:
+		# uri is already a full URL; query it directly, as the authenticated
+		# branch below does. Prefixing a host here double-prefixed it and failed.
 		seq_search = requests.get(
-					f'https://synbiohub.org/{uri}',
+					uri,
 					headers={
 						'Accept': 'application/json'
 		}
@@ -414,6 +416,10 @@ def sequence_authentication(email, password, base_url,uri):
 				for result in public_results:
 					print("The sequence already exists in the public repository. The URI is: ", result['uri'])
 					return False
+			# 200 with no matches means the sequence is absent. Return here so the
+			# no-credentials path does not fall through to the authenticated block,
+			# where login_response is undefined (which raised NameError).
+			return True
 		else:
 			# print("Sequence not found in public repository.")
 			# double check the logic fo public repos and sequence search
@@ -531,7 +537,7 @@ def encodesFor(rowobj):
                     print("Terminating")
                     sys.exit(1)
                     # return
-                module_name_suf = val.split("/")[-2]
+                module_name_suf = _uri_display_id(val)
                 protein_comp_uri = val
                 break
    
@@ -609,7 +615,7 @@ def repressor(rowobj):
                 module_name_suf = protein_comp_uri.split("/")[-1]
 
             elif col == "Repressors (URI)":
-                module_name_suf = protein_comp_uri.split("/")[-2]
+                module_name_suf = _uri_display_id(protein_comp_uri)
 
             module_name = f"{module_name_pref}_{module_name_suf}"
             module_def = sbol2.ModuleDefinition(module_name)
@@ -685,7 +691,7 @@ def activator(rowobj):
 
 			elif col == "Activators (URI)":
 				# print("Protein comp uri: ", protein_comp_uri)
-				module_name_suf = protein_comp_uri.split("/")[-2]
+				module_name_suf = _uri_display_id(protein_comp_uri)
 
 			module_name = f"{module_name_pref}_{module_name_suf}"
 			module_def = sbol2.ModuleDefinition(module_name)
@@ -765,7 +771,7 @@ def complexComponent(rowobj):
 						# Process valid URIs
 
 						for i in val[0:]:
-							components.append((i.split("/")[-2], i))
+							components.append((_uri_display_id(i), i))
 				
 	module_name = f"{module_name_pref}_complex_formation"    
 	# create a new module definition

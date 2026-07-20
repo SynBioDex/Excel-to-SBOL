@@ -204,9 +204,19 @@
 
           <div class="form-row">
             <label class="form-label" for="sc-library-name">
-              Library Name <span class="required-star">*</span>
+              Name <span class="required-star">*</span>
             </label>
             <input type="text" id="sc-library-name" placeholder="e.g. iGEM_2025_Parts">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-collection-id">ID</label>
+            <input type="text" id="sc-collection-id" placeholder="e.g. iGEM_2025_Parts_Collection">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-version">Version</label>
+            <input type="text" id="sc-version" value="1" placeholder="1">
           </div>
 
           <div class="form-row">
@@ -220,7 +230,7 @@
           </div>
 
           <div class="form-row">
-            <label class="form-label" for="sc-lab">Lab</label>
+            <label class="form-label" for="sc-lab">Laboratory</label>
             <input type="text" id="sc-lab" placeholder="Lab name">
           </div>
 
@@ -235,14 +245,10 @@
           </div>
 
           <div class="form-row">
-            <label class="form-label" for="sc-pubmed">PubMed ID</label>
+            <label class="form-label" for="sc-pubmed">PubMed IDs</label>
             <input type="text" id="sc-pubmed" placeholder="e.g. 12345678">
           </div>
 
-          <div class="form-row">
-            <label class="form-label" for="sc-date">Date</label>
-            <input type="date" id="sc-date">
-          </div>
 
           <div class="form-row" style="margin-bottom: 0;">
             <label class="form-label">SBOL Version</label>
@@ -278,7 +284,7 @@
         </div>
 
         <div class="sc-required-warning hidden" id="sc-name-warning">
-          Library Name is required.
+          Name is required.
         </div>
       </div>
 
