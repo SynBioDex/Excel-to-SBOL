@@ -1,5 +1,5 @@
 """
-sheet_definitions.py — single source of truth for all sheet types.
+sheet_definitions.py: single source of truth for all sheet types.
 
 Every ColumnDef and SheetDef instance here drives:
   - column headers written to generated workbooks
@@ -260,7 +260,7 @@ def _activators_col() -> ColumnDef:
         name="Activators",
         tooltip=(
             "The ID(s) of the components activated by this promoter. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_activator",
         namespace=NS_SBH,
@@ -278,7 +278,7 @@ def _repressors_col() -> ColumnDef:
         name="Repressors",
         tooltip=(
             "The ID(s) of the components repressed by this promoter. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_repressor",
         namespace=NS_SBH,
@@ -370,7 +370,7 @@ def _components_ids_col() -> ColumnDef:
         name="Components IDs",
         tooltip=(
             "The ID(s) of the sub-components that make up this complex. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_complexComponent",
         namespace=NS_SBOLS,
@@ -386,8 +386,9 @@ def _components_ids_col() -> ColumnDef:
 # ── Standard column block helpers ────────────────────────────────────────────
 
 def _bio_tail_cols() -> list:
-    """URI + Update tail present on all bio-sequence sheets."""
-    return [_uri_col(), _update_col()]
+    """Formerly the URI + Update tail. Both columns were removed (no converter or
+    VBA consumer), so this is now empty; kept as a hook in case a tail returns."""
+    return []
 
 
 def _bio_base_cols(dn: str) -> list:
@@ -719,8 +720,8 @@ STRAIN = SheetDef(
             ),
             ColumnDef(
                 name="More Plasmids",
-                tooltip=("Additional plasmids in this strain. Select from the "
-                         "SBH_plasmids_collections dropdown — each selection is appended."),
+                tooltip=("Additional plasmids in this strain. Double-click the cell to "
+                         "open the selector and choose one or more from SBH_plasmids_collections."),
                 sbol_term="sbol_funcComp",
                 namespace=NS_SBOLS,
                 col_type="URI",
@@ -813,9 +814,9 @@ SAMPLE_DESIGN = SheetDef(
             ),
             ColumnDef(
                 name="Supplements",
-                tooltip=("The supplement(s) for this sample design. Enter the "
-                         "Supplement ID(s) defined on the supplement sheet, "
-                         "comma-separated."),
+                tooltip=("The supplement(s) for this sample design. Double-click the cell "
+                         "to open the selector and choose one or more Supplement IDs "
+                         "defined on the supplement sheet."),
                 sbol_term="sbol_module",
                 namespace=NS_SBOLS,
                 col_type="URI",
@@ -840,6 +841,9 @@ STUDY = SheetDef(
     sbh_collections=[],
     name_column=None,
     ui_group="Study",
+    # Retired: capture is now at the assay level, so the study sheet is no longer
+    # part of any template nor offered in the custom catalog.
+    ui_selectable=False,
     columns=[
         _name_col("Study"),
         _id_col("Study"),
@@ -941,16 +945,6 @@ ASSAY = SheetDef(
             sbol_term="fj_temperature",
             namespace=NS_FJ,
             col_type="String",
-        ),
-        ColumnDef(
-            name="Study ID",
-            tooltip="The ID of the Study this assay belongs to.",
-            sbol_term="sbol_members",
-            namespace=NS_SBOLS,
-            col_type="String",
-            # Resolve to the local Study object created in this workbook.
-            object_id_lookup=True,
-            parent_lookup=True,
         ),
         _pubmed_col(),
         _doi_col(),
@@ -1104,8 +1098,7 @@ TEMPLATE_CONFIGS: dict = {
         ALL_SHEETS["sample design"],
         ALL_SHEETS["supplement"],
     ],
-    "study": [
-        ALL_SHEETS["study"],
+    "assay": [
         ALL_SHEETS["assay"],
         ALL_SHEETS["sample"],
         ALL_SHEETS["measurement"],

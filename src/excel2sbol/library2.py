@@ -566,7 +566,7 @@ def encodesFor(rowobj):
     participation = sbol2.Participation(uri = f'{module_name_pref}_template')
     participation.participant = dna_fc
     participation.uri = f'{module_name_pref}_template'
-    participation.roles = [sbol2.SBOL_TEMPLATE]
+    participation.roles = ['http://identifiers.org/biomodels.sbo/SBO:0000645']  # SBO "template" (sbol2 has no SBO_TEMPLATE constant; SBOL_TEMPLATE was the wrong namespace)
 
 
     # participation_name2 = f'{module_name_suf}_product'

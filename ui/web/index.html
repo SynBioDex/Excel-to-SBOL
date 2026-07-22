@@ -106,7 +106,7 @@
         <div class="sc-step-line" id="sc-line-12"></div>
         <div class="sc-step-node" id="sc-node-2">
           <div class="sc-step-circle">2</div>
-          <div class="sc-step-label">Parts</div>
+          <div class="sc-step-label">Sheets</div>
         </div>
         <div class="sc-step-line" id="sc-line-23"></div>
         <div class="sc-step-node" id="sc-node-3">
@@ -143,10 +143,10 @@
             <div class="sc-type-desc">Experimental sample designs with strains, media, and supplements</div>
           </button>
 
-          <button class="sc-type-card" data-type="study">
+          <button class="sc-type-card" data-type="assay">
             <img class="sc-type-icon" src="icons/chart-line.svg" alt="">
-            <div class="sc-type-name">Study</div>
-            <div class="sc-type-desc">Experimental studies with assays, samples, and measurements</div>
+            <div class="sc-type-name">Assay</div>
+            <div class="sc-type-desc">Experimental assays with samples, measurements, and signals</div>
           </button>
 
           <button class="sc-type-card" data-type="custom">
@@ -161,6 +161,7 @@
       <!-- ── Step 2: Part Types (Resources + Custom) ──── -->
       <div id="sc-panel-2" class="sc-panel hidden">
         <div class="sc-panel-title" id="sc-panel-2-title">Which part types do you need?</div>
+        <div class="sc-panel-sub">Drag <span class="sc-inline-glyph">⠿</span> to set the workbook tab order, and use <span class="sc-inline-glyph">⚙</span> to reorder a sheet's columns.</div>
 
         <div class="sc-select-all-row">
           <button class="btn btn-sm" id="sc-btn-select-all">Select All</button>
@@ -178,14 +179,6 @@
           <button class="sc-custom-add-btn" id="sc-add-sheet-btn" type="button">
             + Add custom sheet
           </button>
-        </div>
-
-        <!-- F19: drag to set the order of sheet tabs in the generated workbook -->
-        <div class="sc-order-section hidden" id="sc-order-section">
-          <div class="sc-order-section-title">
-            Sheet order <span class="sc-order-hint">— drag to arrange the workbook tabs</span>
-          </div>
-          <div id="sc-order-list"></div>
         </div>
 
         <div class="sc-parts-warning hidden" id="sc-no-parts-warning">
@@ -218,6 +211,10 @@
             <label class="form-label" for="sc-version">Version</label>
             <input type="text" id="sc-version" value="1" placeholder="1">
           </div>
+          <div class="form-row">
+            <label class="form-label" for="sc-description">Description</label>
+            <textarea id="sc-description" class="sc-textarea" placeholder="A brief description of this library or study..."></textarea>
+          </div>
 
           <div class="form-row">
             <label class="form-label" for="sc-author">Author</label>
@@ -239,10 +236,6 @@
             <input type="text" id="sc-institution" placeholder="University or organization">
           </div>
 
-          <div class="form-row">
-            <label class="form-label" for="sc-description">Description</label>
-            <textarea id="sc-description" class="sc-textarea" placeholder="A brief description of this library or study..."></textarea>
-          </div>
 
           <div class="form-row">
             <label class="form-label" for="sc-pubmed">PubMed IDs</label>
@@ -304,15 +297,15 @@
           <div class="card-title">File Preview</div>
           <div class="sc-preview-row">
             <span class="sc-preview-label">Filename</span>
-            <span class="sc-preview-value" id="sc-preview-filename">—</span>
+            <span class="sc-preview-value" id="sc-preview-filename">-</span>
           </div>
           <div class="sc-preview-row">
             <span class="sc-preview-label">Template</span>
-            <span class="sc-preview-value" id="sc-preview-type">—</span>
+            <span class="sc-preview-value" id="sc-preview-type">-</span>
           </div>
           <div class="sc-preview-row" id="sc-preview-parts-row">
             <span class="sc-preview-label">Sheets</span>
-            <span class="sc-preview-value" id="sc-preview-parts">—</span>
+            <span class="sc-preview-value" id="sc-preview-parts">-</span>
           </div>
         </section>
 
@@ -385,7 +378,7 @@
 
       <div id="se-col-list"></div>
       <div class="se-col-empty hidden" id="se-col-empty">
-        No columns yet — add at least one.
+        No columns yet. Add at least one.
       </div>
 
       <div class="se-modal-footer">
@@ -402,8 +395,22 @@
       <div class="notice-icon" id="notice-icon"></div>
       <div class="notice-title" id="notice-title"></div>
       <div class="notice-message" id="notice-message"></div>
+      <div class="notice-details hidden" id="notice-details"></div>
       <div class="notice-footer">
         <button class="btn btn-accent" id="notice-ok-btn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- F4: column reorder popup -->
+  <div id="sc-colorder-overlay" class="se-overlay hidden">
+    <div class="se-modal">
+      <div class="se-modal-title" id="sc-colorder-title">Reorder columns</div>
+      <div class="se-modal-sub">Drag to set the left-to-right order. This changes only the on-sheet arrangement.</div>
+      <div class="sc-order-list" id="sc-colorder-list"></div>
+      <div class="notice-footer">
+        <button class="btn" id="sc-colorder-cancel" type="button">Cancel</button>
+        <button class="btn btn-accent" id="sc-colorder-done" type="button">Done</button>
       </div>
     </div>
   </div>
