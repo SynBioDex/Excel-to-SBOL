@@ -1,5 +1,5 @@
 /* ============================================
-   Excel2SBOL — Liquid Glass UI
+   Excel2SBOL - Liquid Glass UI
    System Fonts · Light/Dark · Accent #48A9AE
    ============================================ */
 
@@ -526,7 +526,7 @@ input[type="text"]:read-only {
 }
 
 /* ============================================
-   Spreadsheet Creator — Wizard
+   Spreadsheet Creator - Wizard
    ============================================ */
 
 /* --- Step Indicator ------------------------- */
@@ -656,15 +656,18 @@ input[type="text"]:read-only {
   height: 32px;
   margin: 0 auto 10px;
   display: block;
-  opacity: 0.55;
-  transition: opacity var(--transition), filter var(--transition);
+  /* The per-card icon SVG (set via --icon) is used as a mask, so the visible
+     color is background-color. That lets it track --text-secondary, which flips
+     with the light/dark theme, matching the secondary text in both modes. */
+  background-color: var(--text-secondary);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+  transition: background-color var(--transition);
 }
 
 .sc-type-card:hover .sc-type-icon,
 .sc-type-card.selected .sc-type-icon {
-  opacity: 1;
-  /* converts black svg stroke to #48A9AE */
-  filter: invert(61%) sepia(14%) saturate(1517%) hue-rotate(143deg) brightness(89%) contrast(89%);
+  background-color: var(--accent);
 }
 
 .sc-type-name {
@@ -850,7 +853,7 @@ input[type="text"]:read-only {
   text-align: center;
 }
 
-/* F6: non-blocking dependency advisory — amber, softer than the red blockers */
+/* F6: non-blocking dependency advisory - amber, softer than the red blockers */
 .sc-dep-warning {
   font-size: 0.82rem;
   color: #B26B00;
@@ -906,6 +909,100 @@ input[type="text"]:read-only {
   color: var(--text-tertiary);
   cursor: grab;
   user-select: none;
+}
+
+/* F4: gear button on part cards + column-reorder popup */
+.sc-part-item {
+  position: relative;
+  padding-right: 26px;
+}
+.sc-part-gear {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 2px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.sc-part-gear:hover {
+  color: var(--accent);
+}
+.sc-order-list {
+  max-height: 320px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+.sc-order-label {
+  flex: 1;
+}
+.se-modal-sub {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+/* Unified step-2 sheet list (select + drag-reorder + column gear) */
+.sc-panel-sub {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin: -4px 0 14px;
+  line-height: 1.45;
+}
+.sc-inline-glyph {
+  color: var(--text);
+  font-weight: 600;
+}
+.sc-sheet-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  margin-bottom: 6px;
+  background: var(--input-bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), opacity var(--transition);
+}
+.sc-sheet-row.checked {
+  border-color: var(--accent);
+  background: rgba(72, 169, 174, 0.08);
+}
+.sc-sheet-row.dragging {
+  opacity: 0.45;
+}
+.sc-sheet-row.drag-over {
+  border-color: var(--accent);
+}
+.sc-sheet-row .sc-part-chk {
+  margin: 0;
+  flex: none;
+}
+.sc-sheet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+.sc-sheet-row .sc-part-name {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.sc-sheet-row .sc-part-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+.sc-sheet-row .sc-part-gear {
+  position: static;
+  margin-left: 4px;
+  flex: none;
 }
 
 /* --- Required Star -------------------------- */
@@ -1326,6 +1423,22 @@ input[type="date"]:focus {
   white-space: pre-wrap;
   word-break: break-word;
   margin-bottom: 20px;
+}
+
+/* F21: scrollable list of converter warnings inside the notice modal */
+.notice-details {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  text-align: left;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  word-break: break-word;
 }
 
 .notice-footer {

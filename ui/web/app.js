@@ -1,5 +1,5 @@
 /* ============================================
-   Excel2SBOL — Frontend Logic
+   Excel2SBOL - Frontend Logic
    pywebview JS ↔ Python API bridge
    ============================================ */
 
@@ -175,8 +175,15 @@ function startConvPolling() {
                 pollingTimer = null;
                 document.getElementById('progress-section').classList.add('hidden');
                 resetConvertButton();
-                if (data.success) showNotice('success', 'Conversion complete', data.message);
-                else              showNotice('error', 'Conversion failed', data.message);
+                const warns = data.warnings || [];
+                if (data.success) {
+                    const t = warns.length
+                        ? `Conversion complete (${warns.length} warning${warns.length > 1 ? 's' : ''})`
+                        : 'Conversion complete';
+                    showNotice('success', t, data.message, warns);
+                } else {
+                    showNotice('error', 'Conversion failed', data.message, warns);
+                }
             }
         } catch (e) { console.error('[conv poll]', e); }
     }, 500);
@@ -193,38 +200,44 @@ function resetConvertButton() {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — STATE
+   SPREADSHEET CREATOR - STATE
    ============================================ */
 
 let scCustomSheets  = [];  // [{name, columns:[{header,sbolTerm,type,...}]}]
 let seEditingIndex  = null; // index into scCustomSheets when editing; null = new
+let scSheetColumns  = {};   // F4: sheet name -> default column-name order (from catalog)
+let scColumnOrders  = {};   // F4: sheet name -> user-chosen column-name order
+let scColOrderSheet = null; // F4: sheet whose columns the reorder modal is editing
 
 const SC_TYPE_LABELS = {
     resources:    'Parts Library',
     strains:      'Strains',
     sample_design:'Sample Design',
-    study:        'Study',
+    assay:        'Assay',
     custom:       'Custom',
 };
 
 // Steps per template type (step 2 = Parts, for resources and custom)
 const SC_STEPS = {
     resources:    [1, 2, 3, 4],
-    strains:      [1, 3, 4],
-    sample_design:[1, 3, 4],
-    study:        [1, 3, 4],
+    strains:      [1, 2, 3, 4],
+    sample_design:[1, 2, 3, 4],
+    assay:        [1, 2, 3, 4],
     custom:       [1, 2, 3, 4],
 };
+// Template types whose sheet set is fixed: the step-2 list shows them locked
+// (always included, no checkbox), offering reorder + column-edit only.
+const SC_FIXED_TYPES = new Set(['strains', 'sample_design', 'assay']);
 
 let scStep        = 1;
-let scType        = null;  // "resources"|"strains"|"sample_design"|"study"
+let scType        = null;  // "resources"|"strains"|"sample_design"|"assay"
 let scOutputFolder = null;
 let scPollTimer   = null;
 let scSheetOrder  = [];    // F19: ordered sheet names = workbook tab order
 let scSheetDisplay = {};   // F19: built-in sheet name -> display name
 
 /* ============================================
-   SPREADSHEET CREATOR — INIT
+   SPREADSHEET CREATOR - INIT
    ============================================ */
 
 function initSpreadsheetCreator() {
@@ -235,21 +248,18 @@ function initSpreadsheetCreator() {
 
     // Catalog is loaded per-type when step 2 is entered (see scGoToStep)
 
-    // Select / Deselect all
-    document.getElementById('sc-btn-select-all').addEventListener('click', () => {
-        document.querySelectorAll('.sc-part-chk').forEach(chk => {
-            chk.checked = true;
-            syncPartItem(chk.closest('.sc-part-item'), chk);
+    // Select / Deselect all (skips locked rows on fixed templates)
+    const setAllChecked = (state) => {
+        document.querySelectorAll('#sc-parts-container .sc-part-chk').forEach(chk => {
+            if (chk.disabled) return;
+            chk.checked = state;
+            const row = chk.closest('.sc-sheet-row');
+            if (row) row.classList.toggle('checked', state);
         });
         validatePartsStep();
-    });
-    document.getElementById('sc-btn-deselect-all').addEventListener('click', () => {
-        document.querySelectorAll('.sc-part-chk').forEach(chk => {
-            chk.checked = false;
-            syncPartItem(chk.closest('.sc-part-item'), chk);
-        });
-        validatePartsStep();
-    });
+    };
+    document.getElementById('sc-btn-select-all').addEventListener('click', () => setAllChecked(true));
+    document.getElementById('sc-btn-deselect-all').addEventListener('click', () => setAllChecked(false));
 
     // Library name → live filename preview + re-validate so Next enables/disables
     document.getElementById('sc-library-name').addEventListener('input', () => {
@@ -264,7 +274,13 @@ function initSpreadsheetCreator() {
     document.getElementById('se-save-btn').addEventListener('click', saveSheetEditor);
     document.getElementById('se-add-col-btn').addEventListener('click', () => addColumnRow());
     initColDragDrop(document.getElementById('se-col-list'));
-    initSheetOrderDragDrop(document.getElementById('sc-order-list'));  // F19
+    // F19+F4: the unified step-2 list is drag-reorderable (sets the tab order).
+    initGenericOrderDrag(document.getElementById('sc-parts-container'), '.sc-sheet-row');
+
+    // F4: column-reorder popup
+    initGenericOrderDrag(document.getElementById('sc-colorder-list'), '.sc-order-item');
+    document.getElementById('sc-colorder-done').addEventListener('click', saveColumnOrder);
+    document.getElementById('sc-colorder-cancel').addEventListener('click', closeColumnOrderModal);
 
     // Advanced toggle
     document.getElementById('sc-advanced-toggle').addEventListener('click', () => {
@@ -282,13 +298,12 @@ function initSpreadsheetCreator() {
     document.getElementById('sc-btn-next').addEventListener('click', scNext);
 
     // Set today's date as default
-    document.getElementById('sc-date').value = new Date().toISOString().split('T')[0];
 
     scGoToStep(1);
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — CATALOG LOAD
+   SPREADSHEET CREATOR - CATALOG LOAD
    ============================================ */
 
 async function loadSheetCatalog(templateType) {
@@ -302,68 +317,111 @@ async function loadSheetCatalog(templateType) {
     }
 }
 
+/* Unified step-2 sheet list: one draggable row per sheet that serves selection
+   (checkbox), workbook tab order (drag), and column reordering (gear). Replaces
+   the old grouped selection cards + separate tab-order list. For fixed template
+   types (SC_FIXED_TYPES) the checkbox is locked-checked so every sheet is always
+   included and only reorder/column-edit are offered. */
 function buildPartCheckboxes(groups) {
     const container = document.getElementById('sc-parts-container');
     container.innerHTML = '';
+    const selectable = !SC_FIXED_TYPES.has(scType);
 
-    groups.forEach(({ group, sheets }) => {
-        const groupDiv = document.createElement('div');
-        groupDiv.className = 'sc-parts-group';
-
-        const heading = document.createElement('div');
-        heading.className = 'sc-parts-group-title';
-        heading.textContent = group;
-        groupDiv.appendChild(heading);
-
-        const grid = document.createElement('div');
-        grid.className = 'sc-parts-grid';
-
+    groups.forEach(({ sheets }) => {
         sheets.forEach(sheet => {
             scSheetDisplay[sheet.name] = sheet.display_name;  // F19
-            const label = document.createElement('label');
-            label.className = 'sc-part-item' + (sheet.default_checked ? ' checked' : '');
-            label.dataset.defaultChecked = sheet.default_checked ? 'true' : 'false';
+            scSheetColumns[sheet.name] = sheet.columns || []; // F4
+
+            const row = document.createElement('div');
+            row.className    = 'sc-sheet-row';
+            row.draggable    = true;
+            row.dataset.name = sheet.name;
+
+            const handle = document.createElement('span');
+            handle.className   = 'sc-order-handle';
+            handle.title       = 'Drag to reorder';
+            handle.textContent = '⠿';
+            row.appendChild(handle);
 
             const chk = document.createElement('input');
             chk.type      = 'checkbox';
             chk.className = 'sc-part-chk';
             chk.value     = sheet.name;
-            chk.checked   = sheet.default_checked;
+            chk.checked   = selectable ? !!sheet.default_checked : true;
+            chk.disabled  = !selectable;   // fixed types: always included
+            chk.addEventListener('click', (e) => e.stopPropagation());
+            chk.addEventListener('change', () => {
+                row.classList.toggle('checked', chk.checked);
+                validatePartsStep();
+            });
+            row.appendChild(chk);
 
+            const info = document.createElement('div');
+            info.className = 'sc-sheet-info';
             const nameSpan = document.createElement('span');
             nameSpan.className   = 'sc-part-name';
             nameSpan.textContent = sheet.display_name;
-
-            label.appendChild(chk);
-            label.appendChild(nameSpan);
-
+            info.appendChild(nameSpan);
             if (sheet.hint) {
                 const hint = document.createElement('span');
                 hint.className   = 'sc-part-hint';
                 hint.textContent = sheet.hint;
-                label.appendChild(hint);
+                info.appendChild(hint);
+            }
+            row.appendChild(info);
+
+            if ((sheet.columns || []).length > 1) {
+                const gear = document.createElement('button');
+                gear.type        = 'button';
+                gear.className    = 'sc-part-gear';
+                gear.title        = 'Reorder columns';
+                gear.textContent  = '⚙';
+                gear.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openColumnOrderModal(sheet.name, sheet.display_name);
+                });
+                row.appendChild(gear);
             }
 
-            label.addEventListener('click', (e) => {
-                e.preventDefault();
-                chk.checked = !chk.checked;
-                syncPartItem(label, chk);
-                validatePartsStep();
-            });
+            row.classList.toggle('checked', chk.checked);
 
-            grid.appendChild(label);
+            // Clicking the row toggles selection (selectable types only). Drag is
+            // a separate gesture and does not fire a click.
+            if (selectable) {
+                row.addEventListener('click', () => {
+                    chk.checked = !chk.checked;
+                    row.classList.toggle('checked', chk.checked);
+                    validatePartsStep();
+                });
+            }
+
+            container.appendChild(row);
         });
-
-        groupDiv.appendChild(grid);
-
-        container.appendChild(groupDiv);
     });
 
     validatePartsStep();
 }
 
+/* Ordered names of the sheets that will be generated, in the list's drag order:
+   checked built-in rows (top-to-bottom) followed by any custom sheets. This is
+   both the selection and the workbook tab order. */
+function scOrderedSheetNames() {
+    const names = [...document.querySelectorAll('#sc-parts-container .sc-sheet-row')]
+        .filter(r => {
+            const c = r.querySelector('.sc-part-chk');
+            return c && c.checked;
+        })
+        .map(r => r.dataset.name);
+    scCustomSheets.forEach(s => {
+        const n = (s.name || '').trim();
+        if (n) names.push(n);
+    });
+    return names;
+}
+
 /* ============================================
-   SPREADSHEET CREATOR — STEP NAV
+   SPREADSHEET CREATOR - STEP NAV
    ============================================ */
 
 function scNext() {
@@ -413,15 +471,30 @@ function scGoToStep(n) {
 
     // Load catalog when entering step 2 (type-specific)
     if (n === 2) {
+        const fixed = SC_FIXED_TYPES.has(scType);
         const title = document.getElementById('sc-panel-2-title');
-        if (title) title.textContent = scType === 'custom'
-            ? 'Which sheets do you need?'
-            : 'Which part types do you need?';
+        if (title) {
+            title.textContent = fixed
+                ? 'Arrange your sheets'
+                : (scType === 'custom' ? 'Which sheets do you need?'
+                                       : 'Which part types do you need?');
+        }
+        // Fixed templates have a locked sheet set: no select-all or custom sheets,
+        // just reorder + column-edit.
+        const selRow = document.querySelector('#sc-panel-2 .sc-select-all-row');
+        if (selRow) selRow.classList.toggle('hidden', fixed);
+        const customSec = document.querySelector('#sc-panel-2 .sc-custom-section');
+        if (customSec) customSec.classList.toggle('hidden', fixed);
         loadSheetCatalog(scType);
     }
 
     // Update preview on step 4
     if (n === 4) updatePreview();
+
+    // Start each step at the top. The user usually scrolls down to reach the
+    // Next button, so without this the next panel opens still scrolled to the
+    // bottom. Done last so it overrides any scroll caused by focus/validation.
+    window.scrollTo(0, 0);
 }
 
 function updateStepIndicator() {
@@ -456,7 +529,7 @@ function updateStepIndicator() {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — VALIDATION
+   SPREADSHEET CREATOR - VALIDATION
    ============================================ */
 
 function scValidateCurrentStep(silent = false) {
@@ -502,7 +575,7 @@ function scValidateCurrentStep(silent = false) {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — TYPE SELECTION
+   SPREADSHEET CREATOR - TYPE SELECTION
    ============================================ */
 
 function onTypeCardClick(card) {
@@ -510,21 +583,16 @@ function onTypeCardClick(card) {
     card.classList.add('selected');
     scType = card.dataset.type;
 
-    // Show/hide Parts step node based on type
-    const node2 = document.getElementById('sc-node-2');
-    node2.classList.toggle('skipped', scType !== 'resources' && scType !== 'custom');
+    // Step 2 (the sheet list) now shows for every template type.
+    document.getElementById('sc-node-2').classList.remove('skipped');
 
     scValidateCurrentStep(true);
     updateStepIndicator();
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — PARTS
+   SPREADSHEET CREATOR - PARTS
    ============================================ */
-
-function syncPartItem(label, chk) {
-    label.classList.toggle('checked', chk.checked);
-}
 
 function validatePartsStep() {
     const anyChecked = [...document.querySelectorAll('.sc-part-chk')].some(c => c.checked);
@@ -532,58 +600,11 @@ function validatePartsStep() {
     document.getElementById('sc-no-parts-warning').classList.toggle('hidden', valid);
     document.getElementById('sc-btn-next').disabled = !valid;
     renderDependencyWarnings();
-    syncSheetOrder();
-}
-
-/* F19: keep the sheet-order list in sync with the current selection (checked
-   built-in sheets + custom sheets), then render it. The list's order is the
-   workbook tab order sent to the generator. */
-function _selectedSheetNames() {
-    const names = [...document.querySelectorAll('.sc-part-chk')]
-        .filter(c => c.checked).map(c => c.value);
-    scCustomSheets.forEach(s => {
-        const n = (s.name || '').trim();
-        if (n) names.push(n);
-    });
-    return names;
-}
-
-function _sheetDisplay(name) {
-    return scSheetDisplay[name] || name;
-}
-
-function syncSheetOrder() {
-    const selected = _selectedSheetNames();
-    const sel = new Set(selected);
-    // drop deselected, keep existing order
-    scSheetOrder = scSheetOrder.filter(n => sel.has(n));
-    // append newly-selected (in discovery order); user can then drag
-    selected.forEach(n => { if (!scSheetOrder.includes(n)) scSheetOrder.push(n); });
-    renderSheetOrderList();
-}
-
-function renderSheetOrderList() {
-    const section = document.getElementById('sc-order-section');
-    const list = document.getElementById('sc-order-list');
-    if (!section || !list) return;
-    list.innerHTML = '';
-    // only worth showing once there is more than one tab to arrange
-    section.classList.toggle('hidden', scSheetOrder.length < 2);
-    scSheetOrder.forEach(name => {
-        const row = document.createElement('div');
-        row.className = 'sc-order-item';
-        row.draggable = true;
-        row.dataset.name = name;
-        row.innerHTML = '<span class="sc-order-handle" title="Drag to reorder">⠿</span>'
-                      + '<span class="sc-order-name"></span>';
-        row.querySelector('.sc-order-name').textContent = _sheetDisplay(name);
-        list.appendChild(row);
-    });
 }
 
 /* F6: non-blocking dependency advisories. Each key is a sheet that references
    other local objects; `anyOf` lists sheets that would satisfy that reference.
-   These never block "Next" — they just flag combinations that won't fully
+   These never block "Next" - they just flag combinations that won't fully
    resolve at conversion (the references use Object_ID lookups into the same
    workbook). */
 const SC_DEPENDENCIES = {
@@ -624,7 +645,7 @@ function renderDependencyWarnings() {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — OUTPUT FOLDER
+   SPREADSHEET CREATOR - OUTPUT FOLDER
    ============================================ */
 
 async function pickOutputFolder() {
@@ -644,7 +665,7 @@ async function pickOutputFolder() {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — PREVIEW
+   SPREADSHEET CREATOR - PREVIEW
    ============================================ */
 
 function updatePreview() {
@@ -652,13 +673,13 @@ function updatePreview() {
     const safeName = libName.replace(/[^\w\s\-]/g, '').trim().replace(/\s+/g, '_') || 'MyLibrary';
     const typeLabel = {
         resources: 'Resources', strains: 'Strains',
-        sample_design: 'SampleDesign', study: 'Study', custom: 'Custom'
-    }[scType] || '—';
+        sample_design: 'SampleDesign', assay: 'Assay', custom: 'Custom'
+    }[scType] || '-';
 
     document.getElementById('sc-preview-filename').textContent =
-        scType ? `${safeName}_${typeLabel}.xlsm` : '—';
+        scType ? `${safeName}_${typeLabel}.xlsm` : '-';
     document.getElementById('sc-preview-type').textContent =
-        scType ? SC_TYPE_LABELS[scType] : '—';
+        scType ? SC_TYPE_LABELS[scType] : '-';
 
     const partsRow = document.getElementById('sc-preview-parts-row');
     if (scType === 'resources' || scType === 'custom') {
@@ -669,14 +690,14 @@ function updatePreview() {
             ? ` + ${scCustomSheets.length} custom`
             : '';
         document.getElementById('sc-preview-parts').textContent =
-            (selected.length ? selected.join(', ') : '') + customLabel || '—';
+            (selected.length ? selected.join(', ') : '') + customLabel || '-';
     } else {
         partsRow.style.display = 'none';
     }
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — GENERATE
+   SPREADSHEET CREATOR - GENERATE
    ============================================ */
 
 async function runGeneration() {
@@ -697,17 +718,19 @@ async function runGeneration() {
         template_type:  scType,
         selected_parts: selectedParts,
         custom_sheets:  scCustomSheets,
-        sheet_order:    scSheetOrder,   // F19: workbook tab order
+        sheet_order:    scOrderedSheetNames(),  // F19: workbook tab order (list order)
+        column_orders:  scColumnOrders, // F4: per-sheet column arrangement
         output_folder:  scOutputFolder,
         metadata: {
             library_name:      document.getElementById('sc-library-name').value.trim(),
+            collection_id:     document.getElementById('sc-collection-id').value.trim(),
+            version:           document.getElementById('sc-version').value.trim() || '1',
             author:            document.getElementById('sc-author').value.trim(),
             email:             document.getElementById('sc-email').value.trim(),
             lab:               document.getElementById('sc-lab').value.trim(),
             institution:       document.getElementById('sc-institution').value.trim(),
             description:       document.getElementById('sc-description').value.trim(),
             pubmed_id:         document.getElementById('sc-pubmed').value.trim(),
-            date:              document.getElementById('sc-date').value,
             sbol_version:      sbolVersion,
             domain:            document.getElementById('sc-domain').value.trim(),
             master_collection: document.getElementById('sc-master-collection').value.trim(),
@@ -764,7 +787,7 @@ function startScPolling(progressSection, nextBtn, backBtn) {
 }
 
 /* ============================================
-   SPREADSHEET CREATOR — RESET
+   SPREADSHEET CREATOR - RESET
    ============================================ */
 
 /* ============================================
@@ -1011,13 +1034,13 @@ function initColDragDrop(colList) {
     });
 }
 
-/* F19: drag-to-reorder for the sheet-order list (mirrors initColDragDrop).
-   On drop the workbook tab order (scSheetOrder) is rebuilt from the DOM. */
-function initSheetOrderDragDrop(list) {
+/* F4/F19: generic drag-to-reorder that only reorders the DOM (no side effects);
+   the caller reads the final order from the DOM (see scOrderedSheetNames). */
+function initGenericOrderDrag(list, rowSelector) {
     if (!list) return;
     let src = null;
     list.addEventListener('dragstart', e => {
-        const row = e.target.closest('.sc-order-item');
+        const row = e.target.closest(rowSelector);
         if (!row) return;
         src = row;
         row.classList.add('dragging');
@@ -1025,21 +1048,74 @@ function initSheetOrderDragDrop(list) {
     });
     list.addEventListener('dragend', () => {
         if (src) src.classList.remove('dragging');
-        list.querySelectorAll('.sc-order-item').forEach(r => r.classList.remove('drag-over'));
+        list.querySelectorAll(rowSelector).forEach(r => r.classList.remove('drag-over'));
         src = null;
-        scSheetOrder = [...list.querySelectorAll('.sc-order-item')].map(r => r.dataset.name);
     });
     list.addEventListener('dragover', e => {
         e.preventDefault();
-        const row = e.target.closest('.sc-order-item');
+        const row = e.target.closest(rowSelector);
         if (!row || row === src) return;
-        list.querySelectorAll('.sc-order-item').forEach(r => r.classList.remove('drag-over'));
+        list.querySelectorAll(rowSelector).forEach(r => r.classList.remove('drag-over'));
         row.classList.add('drag-over');
         const rect  = row.getBoundingClientRect();
         const after = e.clientY > rect.top + rect.height / 2;
         list.insertBefore(src, after ? row.nextSibling : row);
     });
     list.addEventListener('drop', e => e.preventDefault());
+}
+
+/* F4: column-reorder popup for a built-in sheet. Reorder-only; the result is
+   stored in scColumnOrders and applied by the generator. Columns resolve by name
+   everywhere (converter, Excel Table, VBA, dropdowns), so this only changes the
+   left-to-right arrangement on the sheet, never references or output. */
+function openColumnOrderModal(sheetName, displayName) {
+    scColOrderSheet = sheetName;
+    const cols = scColumnOrders[sheetName] || scSheetColumns[sheetName] || [];
+    const titleEl = document.getElementById('sc-colorder-title');
+    if (titleEl) titleEl.textContent = 'Reorder columns: ' + (displayName || sheetName);
+    const list = document.getElementById('sc-colorder-list');
+    list.innerHTML = '';
+    cols.forEach(name => {
+        const row = document.createElement('div');
+        row.className    = 'sc-order-item';
+        row.draggable    = true;
+        row.dataset.name = name;
+        row.innerHTML = '<span class="sc-order-handle" title="Drag to reorder">⠿</span>'
+                      + '<span class="sc-order-label">' + escHtml(name) + '</span>';
+        list.appendChild(row);
+    });
+    const overlay = document.getElementById('sc-colorder-overlay');
+    overlay.classList.remove('closing');
+    overlay.classList.remove('hidden');
+    // Reset scroll AFTER the modal is shown; assigning scrollTop while it is
+    // still hidden (display:none) has no effect, which is why the earlier fix
+    // did not work. Reset both scroll containers (the list and the modal box)
+    // so a fresh popup always starts at the top whichever one is scrolling.
+    requestAnimationFrame(() => {
+        list.scrollTop = 0;
+        const modal = overlay.querySelector('.se-modal');
+        if (modal) modal.scrollTop = 0;
+    });
+}
+
+function closeColumnOrderModal() {
+    const overlay = document.getElementById('sc-colorder-overlay');
+    if (overlay) overlay.classList.add('hidden');
+    scColOrderSheet = null;
+}
+
+function saveColumnOrder() {
+    if (scColOrderSheet) {
+        const list  = document.getElementById('sc-colorder-list');
+        const order = [...list.querySelectorAll('.sc-order-item')].map(r => r.dataset.name);
+        const def   = scSheetColumns[scColOrderSheet] || [];
+        // Store only if it differs from the default order, so an untouched sheet
+        // sends nothing and the generator keeps its native column order.
+        const isDefault = order.length === def.length && order.every((n, i) => n === def[i]);
+        if (isDefault) delete scColumnOrders[scColOrderSheet];
+        else           scColumnOrders[scColOrderSheet] = order;
+    }
+    closeColumnOrderModal();
 }
 
 /* --- HTML escape helper -------------------- */
@@ -1057,24 +1133,23 @@ function resetSpreadsheetCreator() {
     scOutputFolder = null;
     scCustomSheets = [];
     scSheetOrder   = [];   // F19
+    scColumnOrders = {};   // F4
+    scSheetColumns = {};   // F4
     refreshCustomSheetsList();
 
     // Clear type selection
     document.querySelectorAll('.sc-type-card').forEach(c => c.classList.remove('selected'));
 
-    // Reset parts to their catalog defaults
-    document.querySelectorAll('.sc-part-item').forEach(label => {
-        const chk = label.querySelector('input[type="checkbox"]');
-        chk.checked = label.dataset.defaultChecked === 'true';
-        syncPartItem(label, chk);
-    });
+    // The sheet list is rebuilt from the catalog when a type is next chosen.
+    document.getElementById('sc-parts-container').innerHTML = '';
 
     // Clear metadata fields
-    ['sc-library-name','sc-author','sc-email','sc-lab','sc-institution',
-     'sc-description','sc-pubmed','sc-domain','sc-master-collection'].forEach(id => {
+    ['sc-library-name','sc-collection-id','sc-author','sc-email','sc-lab',
+     'sc-institution','sc-description','sc-pubmed','sc-domain',
+     'sc-master-collection'].forEach(id => {
         document.getElementById(id).value = '';
     });
-    document.getElementById('sc-date').value = new Date().toISOString().split('T')[0];
+    document.getElementById('sc-version').value = '1';   // keeps its default
     document.getElementById('sc-sbol-v2').checked = true;
 
     // Reset output folder
@@ -1104,10 +1179,11 @@ const NOTICE_ICONS = {
     success: '<svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>',
 };
 
-function showNotice(type, title, message) {
+function showNotice(type, title, message, details) {
     const overlay = document.getElementById('notice-overlay');
     if (!overlay) {  // fallback if markup is missing
-        alert((title ? title + '\n\n' : '') + (message || ''));
+        alert((title ? title + '\n\n' : '') + (message || '') +
+              (details && details.length ? '\n\n' + details.join('\n') : ''));
         return;
     }
     const kind = type === 'success' ? 'success' : 'error';
@@ -1116,6 +1192,17 @@ function showNotice(type, title, message) {
     icon.innerHTML = NOTICE_ICONS[kind];
     document.getElementById('notice-title').textContent = title || (kind === 'success' ? 'Success' : 'Error');
     document.getElementById('notice-message').textContent = message || '';
+    // F21: optional list of converter warnings/errors, one per line, scrollable.
+    const detailsEl = document.getElementById('notice-details');
+    if (detailsEl) {
+        if (details && details.length) {
+            detailsEl.innerHTML = details.map(d => '⚠ ' + escHtml(d)).join('<br>');
+            detailsEl.classList.remove('hidden');
+        } else {
+            detailsEl.innerHTML = '';
+            detailsEl.classList.add('hidden');
+        }
+    }
     overlay.classList.remove('closing');  // F17: clear any in-flight exit
     overlay.classList.remove('hidden');
     document.getElementById('notice-ok-btn').focus();

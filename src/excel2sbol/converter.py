@@ -12,7 +12,7 @@ def converter(file_path_in, file_path_out, sbol_version=None, homespace="http://
         file_path_out (string): desired path to sbol file
         sbol_version (int, optional): sbol version number. When provided (e.g.
             from the UI version selector), it takes precedence. When None, the
-            value from the workbook's Init sheet is used. See I20.
+            value from the workbook's Init sheet is used.
     """
     if username is not None and password is not None and url is not None:
         # print(username, password, url)
@@ -34,7 +34,7 @@ def converter(file_path_in, file_path_out, sbol_version=None, homespace="http://
         print(f'Conversion will happen with homespace {homespace} as specified in the excel sheet')
 
     # Respect a caller-supplied version (UI selector); fall back to the Init
-    # sheet value only when none was given. See I20.
+    # sheet value only when none was given.
     if sbol_version is None:
         sbol_version = version_info
         print(f'Conversion will happen with sbol version {sbol_version} as specified in the excel sheet')
@@ -52,6 +52,11 @@ def converter(file_path_in, file_path_out, sbol_version=None, homespace="http://
                                                                  to_convert,
                                                                  compiled_sheets,
                                                                  homespace)
+    else:
+        # Fail clearly here; otherwise doc and its companions stay unassigned and
+        # column_parse below raises an opaque UnboundLocalError.
+        raise ValueError(
+            f"SBOL version ({sbol_version}) is not supported; expected 2 or 3.")
 
     e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict,
                      dict_of_objs, col_read_df, doc, file_path_out,

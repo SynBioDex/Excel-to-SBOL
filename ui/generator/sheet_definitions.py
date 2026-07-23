@@ -1,5 +1,5 @@
 """
-sheet_definitions.py — single source of truth for all sheet types.
+sheet_definitions.py: single source of truth for all sheet types.
 
 Every ColumnDef and SheetDef instance here drives:
   - column headers written to generated workbooks
@@ -20,6 +20,7 @@ NS_OBO   = "http://purl.obolibrary.org/obo/"
 NS_SBH   = "https://wiki.synbiohub.org/wiki/Terms/synbiohub#"
 NS_FJ    = "https://wiki.synbiohub.org/wiki/Terms/Flapjack#"
 NS_ISA   = "http://isa-tools.org/ns/"
+NS_EDAM  = "http://edamontology.org/"
 NS_NA    = "Not_applicable"
 
 
@@ -61,7 +62,7 @@ class SheetDef:
     ui_group: str = ""                # checkbox group label in the Spreadsheet Creator UI
     ui_hint: str = ""                 # short description shown under the checkbox label
     ui_default_checked: bool = False  # whether the checkbox is pre-checked by default
-    ui_selectable: bool = True        # whether to offer this sheet in the custom catalog (I40)
+    ui_selectable: bool = True        # whether to offer this sheet in the custom catalog
 
 
 # ── Column factories ──────────────────────────────────────────────────────────
@@ -259,7 +260,7 @@ def _activators_col() -> ColumnDef:
         name="Activators",
         tooltip=(
             "The ID(s) of the components activated by this promoter. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_activator",
         namespace=NS_SBH,
@@ -277,7 +278,7 @@ def _repressors_col() -> ColumnDef:
         name="Repressors",
         tooltip=(
             "The ID(s) of the components repressed by this promoter. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_repressor",
         namespace=NS_SBH,
@@ -369,7 +370,7 @@ def _components_ids_col() -> ColumnDef:
         name="Components IDs",
         tooltip=(
             "The ID(s) of the sub-components that make up this complex. "
-            "Multiple entries can be added using the dropdown — each selection is appended."
+            "Double-click the cell to open the selector and choose one or more values."
         ),
         sbol_term="sbol_complexComponent",
         namespace=NS_SBOLS,
@@ -385,8 +386,8 @@ def _components_ids_col() -> ColumnDef:
 # ── Standard column block helpers ────────────────────────────────────────────
 
 def _bio_tail_cols() -> list:
-    """URI + Update tail present on all bio-sequence sheets."""
-    return [_uri_col(), _update_col()]
+    """Hook for trailing columns shared by every part sheet; currently none."""
+    return []
 
 
 def _bio_base_cols(dn: str) -> list:
@@ -594,7 +595,7 @@ SIGNAL = SheetDef(
     ui_group="Study",
     ui_hint="Fluorescent / reporter signal",
     ui_default_checked=True,
-    ui_selectable=False,  # I40: not offered in the custom catalog; belongs to Study only
+    ui_selectable=False,  # not offered in the custom catalog; belongs to Study only
     columns=(
         _bio_base_cols("Signal")
         + [_signal_color_col()]
@@ -655,6 +656,15 @@ CHEMICALS = SheetDef(
     ui_default_checked=True,
     columns=(
         _bio_base_cols("Chemical")
+        + [
+            ColumnDef(
+                name="PubChem ID",
+                tooltip="The PubChem Compound ID (CID) for this chemical.",
+                sbol_term="edam_data_2639",
+                namespace=NS_EDAM,
+                col_type="String",
+            ),
+        ]
         + _provenance_cols()
         + _bio_tail_cols()
     ),
@@ -665,7 +675,8 @@ STRAIN = SheetDef(
     display_name="Strain",
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="organism_strain",
+    # An engineered strain, not the unmodified host; chassis keeps organism_strain.
+    role="genetically_modified_organism",
     flapjack_object=None,
     sbh_collections=["SBH_chassis_collections", "SBH_plasmids_collections"],
     name_column="Strain Name",
@@ -685,31 +696,9 @@ STRAIN = SheetDef(
                 to_col="B",
             ),
             ColumnDef(
-                name="Plasmid 1",
-                tooltip="The first plasmid in this strain. Select from the SBH_plasmids_collections dropdown.",
-                sbol_term="sbol_funcComp",
-                namespace=NS_SBOLS,
-                col_type="URI",
-                sheet_lookup=True,
-                lookup_sheet="SBH_plasmids_collections",
-                from_col="A",
-                to_col="B",
-            ),
-            ColumnDef(
-                name="Plasmid 2",
-                tooltip="A second plasmid in this strain. Select from the SBH_plasmids_collections dropdown.",
-                sbol_term="sbol_funcComp",
-                namespace=NS_SBOLS,
-                col_type="URI",
-                sheet_lookup=True,
-                lookup_sheet="SBH_plasmids_collections",
-                from_col="A",
-                to_col="B",
-            ),
-            ColumnDef(
-                name="More Plasmids",
-                tooltip=("Additional plasmids in this strain. Select from the "
-                         "SBH_plasmids_collections dropdown — each selection is appended."),
+                name="Plasmids",
+                tooltip=("The plasmids in this strain. Double-click the cell to open "
+                         "the selector and choose one or more from SBH_plasmids_collections."),
                 sbol_term="sbol_funcComp",
                 namespace=NS_SBOLS,
                 col_type="URI",
@@ -731,10 +720,10 @@ SUPPLEMENT = SheetDef(
     # ModuleDefinition (not ComponentDefinition): the Chemical column maps to
     # sbol_funcComp, which builds a ModuleDefinition for the row object. Keeping
     # the row as a ModuleDefinition lets funcComp() reuse that same object
-    # instead of creating a colliding one (SBOL_ERROR_URI_NOT_UNIQUE). See I29.
+    # instead of creating a colliding one (SBOL_ERROR_URI_NOT_UNIQUE).
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="",
+    role="supplement",
     flapjack_object=None,
     sbh_collections=["SBH_chemicals_collection"],
     name_column="Supplement Name",
@@ -770,7 +759,7 @@ SAMPLE_DESIGN = SheetDef(
     display_name="Sample Design",
     sbol_object_type="ModuleDefinition",
     molecule_type="",
-    role="",
+    role="sample_design",
     flapjack_object=None,
     sbh_collections=["SBH_strains_collection", "SBH_media_collection"],
     name_column="Sample Design Name",
@@ -802,15 +791,15 @@ SAMPLE_DESIGN = SheetDef(
             ),
             ColumnDef(
                 name="Supplements",
-                tooltip=("The supplement(s) for this sample design. Enter the "
-                         "Supplement ID(s) defined on the supplement sheet, "
-                         "comma-separated."),
+                tooltip=("The supplement(s) for this sample design. Double-click the cell "
+                         "to open the selector and choose one or more Supplement IDs "
+                         "defined on the supplement sheet."),
                 sbol_term="sbol_module",
                 namespace=NS_SBOLS,
                 col_type="URI",
                 # Local resolution against the supplement entries in this
                 # workbook (Object_ID lookup), not the online SBH collection.
-                # split_on="," allows multiple comma-separated IDs. See I43.
+                # split_on="," allows multiple comma-separated IDs.
                 object_id_lookup=True,
                 split_on='","',
             ),
@@ -829,6 +818,8 @@ STUDY = SheetDef(
     sbh_collections=[],
     name_column=None,
     ui_group="Study",
+    # Not part of any template and not offered in the custom catalog.
+    ui_selectable=False,
     columns=[
         _name_col("Study"),
         _id_col("Study"),
@@ -930,16 +921,6 @@ ASSAY = SheetDef(
             sbol_term="fj_temperature",
             namespace=NS_FJ,
             col_type="String",
-        ),
-        ColumnDef(
-            name="Study ID",
-            tooltip="The ID of the Study this assay belongs to.",
-            sbol_term="sbol_members",
-            namespace=NS_SBOLS,
-            col_type="String",
-            # Resolve to the local Study object created in this workbook.
-            object_id_lookup=True,
-            parent_lookup=True,
         ),
         _pubmed_col(),
         _doi_col(),
@@ -1093,8 +1074,7 @@ TEMPLATE_CONFIGS: dict = {
         ALL_SHEETS["sample design"],
         ALL_SHEETS["supplement"],
     ],
-    "study": [
-        ALL_SHEETS["study"],
+    "assay": [
         ALL_SHEETS["assay"],
         ALL_SHEETS["sample"],
         ALL_SHEETS["measurement"],
