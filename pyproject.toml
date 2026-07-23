@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "setuptools>=61.0",
+    "setuptools<81.0",
     "wheel",
     "numpy==1.26.2"
 ]
@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "excel2sbol"
-version = "1.1.19"
+version = "2.0.1"
 description = "Excel-to-SBOL is an open source python library that converts Excel Templates to SBOL documents"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -36,7 +36,8 @@ dependencies = [
     "sbol3==1.1",
     "tyto==1.4",
     "urllib3==1.26.5",
-    "validators==0.18.2"
+    "validators==0.18.2",
+    "packaging==21.3"
 ]
 
 [project.optional-dependencies]
