@@ -11,6 +11,7 @@ For further depth and information on Excel-to-SBOL, including how to contribute 
 # Table of Contents
 - [Installation & How to Use](#installation--how-to-use)
     - [Installation](#installation)
+    - [Run the GUI](#run-the-gui)
     - [How to Use](#how-to-use)
 - [Example Conversion](#example-conversion)
 - [Architecture](#architecture)
@@ -24,9 +25,56 @@ For further depth and information on Excel-to-SBOL, including how to contribute 
 
 ## Installation
 
-Excel-to-SBOL can be installed using `pip install excel2sbol`
+Excel-to-SBOL requires Python 3.9 or later. We recommend installing it in a virtual environment so the converter dependencies do not conflict with other Python projects.
 
-To get the latest version you can use `git clone https://github.com/SynBioDex/Excel-to-SBOL` followed by `cd .\excel2sbol` and `python setup.py install`
+### Install the released package
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install excel2sbol
+```
+
+### Install from a source checkout
+
+Use this option when you want the latest repository version or want to run the bundled GUI.
+
+```bash
+git clone https://github.com/SynBioDex/Excel-to-SBOL.git
+cd Excel-to-SBOL
+python -m venv .venv
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e .
+```
+
+To include the Python GUI dependency while installing from source, install the `gui` extra instead:
+
+```bash
+python -m pip install -e ".[gui]"
+```
+
+## Run the GUI
+
+The repository includes a pywebview-based graphical interface in the `ui/` directory. Install the project from a source checkout with the GUI extra first, then launch the app from the repository root:
+
+```bash
+python ui/app.py
+```
+
+When the window opens:
+
+1. Choose the Excel-to-SBOL template type you want to use, or select an existing completed template.
+2. Confirm or enter the SBOL version, SynBioHub domain, and email metadata.
+3. Pick an output folder.
+4. Start the conversion or spreadsheet generation from the GUI.
+
+Notes:
+
+- On Linux, pywebview may require system WebKit/GTK packages supplied by your distribution. If the GUI does not open, install the pywebview Linux prerequisites for your desktop environment and rerun `python ui/app.py`.
+- The GUI should be run from a cloned repository because the `ui/` assets are not part of the published `excel2sbol` library package.
+- If you only need the library/converter in scripts, `python -m pip install excel2sbol` is sufficient; the GUI extra is only needed to run `ui/app.py`.
 
 ## How to use
 

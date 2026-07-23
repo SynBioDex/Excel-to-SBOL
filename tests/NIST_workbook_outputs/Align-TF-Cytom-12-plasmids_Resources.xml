@@ -1,0 +1,1408 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/">
+  <sbol:ComponentDefinition rdf:about="http://examples.org/P150/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/P150_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/P150"/>
+    <sbol:displayId>P150</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>P150</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Lac_Promoter/1">
+    <ns0:title>Lac Promoter</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:displayId>Lac_Promoter</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/Lac_Promoter_sequence/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/RamR_Promoter/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter"/>
+    <sbol:sequence rdf:resource="http://examples.org/RamR_Promoter_sequence/1"/>
+    <sbol:displayId>RamR_Promoter</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <ns0:title>RamR Promoter</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/VanR_am_Promoter/1">
+    <sbol:displayId>VanR_am_Promoter</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter"/>
+    <ns0:title>VanR-am Promoter</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/VanR_am_Promoter_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Pramr_lacOid/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Pramr_lacOid</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Pramr_lacOid"/>
+    <sbol:sequence rdf:resource="http://examples.org/Pramr_lacOid_sequence/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:title>Pramr-lacOid</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/VanR_am2_Promoter/1">
+    <sbol:sequence rdf:resource="http://examples.org/VanR_am2_Promoter_sequence/1"/>
+    <ns0:title>VanR-am2 Promoter</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:displayId>VanR_am2_Promoter</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/VanR_am3_Promoter/1">
+    <sbol:version>1</sbol:version>
+    <ns0:title>VanR-am3 Promoter</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000167"/>
+    <sbol:sequence rdf:resource="http://examples.org/VanR_am3_Promoter_sequence/1"/>
+    <sbol:displayId>VanR_am3_Promoter</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/_5prime_UTR/1">
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <ns0:title>5prime UTR</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/_5prime_UTR"/>
+    <sbol:displayId>_5prime_UTR</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/_5prime_UTR_sequence/1"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/RBS/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>RBS</sbol:displayId>
+    <ns0:title>RBS</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000139"/>
+    <sbol:sequence rdf:resource="http://examples.org/RBS_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RBS"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/lacI/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI"/>
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/lacI_sequence/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>lacI</sbol:displayId>
+    <ns0:title>lacI</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/lacI_leader_peptide/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide"/>
+    <ns0:title>lacI_leader peptide</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/lacI_leader_peptide_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>lacI_leader_peptide</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/mScarlet_I3/1">
+    <ns0:title>mScarlet-I3</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3"/>
+    <sbol:displayId>mScarlet_I3</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:sequence rdf:resource="http://examples.org/mScarlet_I3_sequence/1"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ramR/1">
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>ramR</sbol:displayId>
+    <ns0:title>ramR</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR"/>
+    <sbol:sequence rdf:resource="http://examples.org/ramR_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ramR_leader_peptide/1">
+    <sbol:displayId>ramR_leader_peptide</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/ramR_leader_peptide_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>ramR_leader_peptide</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_am/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am"/>
+    <sbol:displayId>vanR_am</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/vanR_am_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>vanR-am</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_am_leader_peptide/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:sequence rdf:resource="http://examples.org/vanR_am_leader_peptide_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide"/>
+    <ns0:title>vanR-am_leader_peptide</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>vanR_am_leader_peptide</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/noFP_leader_peptide/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>noFP_leader_peptide</sbol:displayId>
+    <ns0:title>noFP_leader_peptide</ns0:title>
+    <sbol:sequence rdf:resource="http://examples.org/noFP_leader_peptide_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_WT/1">
+    <sbol:sequence rdf:resource="http://examples.org/vanR_WT_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:displayId>vanR_WT</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>vanR-WT</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_am2/1">
+    <sbol:displayId>vanR_am2</sbol:displayId>
+    <ns0:title>vanR-am2</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2"/>
+    <sbol:sequence rdf:resource="http://examples.org/vanR_am2_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000316"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/L3S2P00_terminator/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/L3S2P00_terminator_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>L3S2P00 terminator</ns0:title>
+    <sbol:displayId>L3S2P00_terminator</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/L3S2P00_terminator"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/DT60_double_terminator/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DT60_double_terminator"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>DT60_double_terminator</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/DT60_double_terminator_sequence/1"/>
+    <ns0:title>DT60 double terminator</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/DT5_double_terminator/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:displayId>DT5_double_terminator</sbol:displayId>
+    <ns0:title>DT5 double terminator</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/DT5_double_terminator_sequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DT5_double_terminator"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ECK12_spy_terminator/1">
+    <ns0:title>ECK12 spy terminator</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000141"/>
+    <sbol:displayId>ECK12_spy_terminator</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/ECK12_spy_terminator_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ECK12_spy_terminator"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Barcode_Align_LacI_305/1">
+    <sbol:displayId>Barcode_Align_LacI_305</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/Barcode_Align_LacI_305_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Barcode_Align_LacI_305"/>
+    <ns0:title>Barcode Align-LacI-305</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001978"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/RiboJ/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>RiboJ</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/RiboJ_sequence/1"/>
+    <ns0:title>RiboJ</ns0:title>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001977"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RiboJ"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/PlmJ/1">
+    <sbol:version>1</sbol:version>
+    <sbol:sequence rdf:resource="http://examples.org/PlmJ_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PlmJ"/>
+    <sbol:displayId>PlmJ</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0001977"/>
+    <ns0:title>PlmJ</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Twist_Backbone/1">
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000755"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://examples.org/Twist_Backbone_sequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Twist_Backbone"/>
+    <ns0:title>Twist Backbone</ns0:title>
+    <sbol:displayId>Twist_Backbone</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Terminator_Promoter_Spacer/1">
+    <ns0:title>Terminator-Promoter Spacer</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Terminator_Promoter_Spacer"/>
+    <sbol:sequence rdf:resource="http://examples.org/Terminator_Promoter_Spacer_sequence/1"/>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0002223"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Terminator_Promoter_Spacer</sbol:displayId>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/LacI_Protein/1">
+    <sbol:sequence rdf:resource="http://examples.org/LacI_Protein_proteinSequence/1"/>
+    <sbol:displayId>LacI_Protein</sbol:displayId>
+    <ns0:title>LacI_Protein</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI_Protein"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/LacI_Leader_Peptide_Protein/1">
+    <sbol:displayId>LacI_Leader_Peptide_Protein</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/LacI_Leader_Peptide_Protein_proteinSequence/1"/>
+    <ns0:title>LacI_Leader_Peptide_Protein</ns0:title>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI_Leader_Peptide_Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/mScarlet_I3_Protein/1">
+    <sbol:displayId>mScarlet_I3_Protein</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <ns0:title>mScarlet-I3_Protein</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_Protein"/>
+    <sbol:sequence rdf:resource="http://examples.org/mScarlet_I3_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ramR_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_Protein"/>
+    <sbol:displayId>ramR_Protein</sbol:displayId>
+    <ns0:title>ramR_Protein</ns0:title>
+    <sbol:sequence rdf:resource="http://examples.org/ramR_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/ramR_leader_peptide_Protein/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <sbol:sequence rdf:resource="http://examples.org/ramR_leader_peptide_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>ramR_leader_peptide_Protein</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_Protein"/>
+    <ns0:title>ramR_leader_peptide_Protein</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_am_Protein/1">
+    <sbol:sequence rdf:resource="http://examples.org/vanR_am_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>vanR_am_Protein</sbol:displayId>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <ns0:title>vanR-am_Protein</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_am_leader_peptide_Protein/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <ns0:title>vanR-am_leader_peptide_Protein</ns0:title>
+    <sbol:sequence rdf:resource="http://examples.org/vanR_am_leader_peptide_Protein_proteinSequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_Protein"/>
+    <sbol:displayId>vanR_am_leader_peptide_Protein</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/noFP_leader_peptide_Protein/1">
+    <sbol:sequence rdf:resource="http://examples.org/noFP_leader_peptide_Protein_proteinSequence/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>noFP_leader_peptide_Protein</sbol:displayId>
+    <ns0:title>noFP_leader_peptide_Protein</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_Protein"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/vanR_WT_Protein/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+    <ns0:title>vanR-WT_Protein</ns0:title>
+    <sbol:displayId>vanR_WT_Protein</sbol:displayId>
+    <sbol:sequence rdf:resource="http://examples.org/vanR_WT_Protein_proteinSequence/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_Protein"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://examples.org/Van/1">
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Van"/>
+    <sbol:displayId>Van</sbol:displayId>
+    <ns0:title>Van</ns0:title>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/MG1655_dLac/1">
+    <ns0:title>MG1655-dLac</ns0:title>
+    <sbol:displayId>MG1655_dLac</sbol:displayId>
+    <sbol:role rdf:resource="http://identifiers.org/ncit/NCIT:C14419"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/MG1655_dLac"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9/1">
+    <sbol:role rdf:resource="http://identifiers.org/ncit/NCIT:C48164"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>m9</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9"/>
+    <ns0:title>m9</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein"/>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression/Lac_Promoter_inhibited/1">
+            <sbol:participant rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/Lac_Promoter/1"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression/Lac_Promoter_inhibited"/>
+            <sbol:displayId>Lac_Promoter_inhibited</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>LacI_Protein_repression</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression/LacI_Protein_inhibition/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein_repression/LacI_Protein_inhibition"/>
+            <sbol:displayId>LacI_Protein_inhibition</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein/1"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/Lac_Promoter/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/Lac_Promoter"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/Lac_Promoter"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Lac_Promoter</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein/1">
+        <sbol:definition rdf:resource="http://examples.org/LacI_Protein"/>
+        <sbol:displayId>LacI_Protein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_LacI_Protein/LacI_Protein"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>Lac_Promoter_LacI_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/RamR_Promoter/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/RamR_Promoter"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/RamR_Promoter"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>RamR_Promoter</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+        <sbol:displayId>ramR_Protein_repression</sbol:displayId>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression/ramR_Protein_inhibition/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>ramR_Protein_inhibition</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression/ramR_Protein_inhibition"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression/RamR_Promoter_inhibited/1">
+            <sbol:participant rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/RamR_Promoter/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression/RamR_Promoter_inhibited"/>
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>RamR_Promoter_inhibited</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein_repression"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein/1">
+        <sbol:definition rdf:resource="http://examples.org/ramR_Protein"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_ramR_Protein/ramR_Protein"/>
+        <sbol:displayId>ramR_Protein</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>RamR_Promoter_ramR_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/VanR_am_Promoter/1">
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/VanR_am_Promoter"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/VanR_am_Promoter"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>VanR_am_Promoter</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein/1">
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein"/>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_Protein"/>
+        <sbol:displayId>vanR_am_Protein</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+        <sbol:displayId>vanR_am_Protein_repression</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition"/>
+            <sbol:participant rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein/1"/>
+            <sbol:displayId>vanR_am_Protein_inhibition</sbol:displayId>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am_Promoter_inhibited/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+            <sbol:displayId>VanR_am_Promoter_inhibited</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/VanR_am_Promoter/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am_Promoter_inhibited"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:displayId>VanR_am_Promoter_vanR_am_Protein</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/VanR_am2_Promoter/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="http://examples.org/VanR_am2_Promoter"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/VanR_am2_Promoter"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>VanR_am2_Promoter</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein"/>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>vanR_am_Protein_inhibition</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>vanR_am_Protein_repression</sbol:displayId>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am2_Promoter_inhibited/1">
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+            <sbol:displayId>VanR_am2_Promoter_inhibited</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/VanR_am2_Promoter/1"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am2_Promoter_inhibited"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_vanR_am_Protein/vanR_am_Protein"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>vanR_am_Protein</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_Protein"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>VanR_am2_Promoter_vanR_am_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/1">
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000169"/>
+        <sbol:displayId>vanR_am_Protein_repression</sbol:displayId>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am3_Promoter_inhibited/1">
+            <sbol:participant rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/VanR_am3_Promoter/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression/VanR_am3_Promoter_inhibited"/>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000642"/>
+            <sbol:displayId>VanR_am3_Promoter_inhibited</sbol:displayId>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition/1">
+            <sbol:displayId>vanR_am_Protein_inhibition</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000020"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein_repression/vanR_am_Protein_inhibition"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/VanR_am3_Promoter/1">
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/VanR_am3_Promoter"/>
+        <sbol:displayId>VanR_am3_Promoter</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/VanR_am3_Promoter"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein"/>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_vanR_am_Protein/vanR_am_Protein"/>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_Protein"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>vanR_am_Protein</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>VanR_am3_Promoter_vanR_am_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/lacI_LacI_Protein/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/lacI_LacI_Protein/LacI_Protein/1">
+        <sbol:displayId>LacI_Protein</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein/LacI_Protein"/>
+        <sbol:definition rdf:resource="http://examples.org/LacI_Protein"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/lacI_LacI_Protein/LacI_Protein_production/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein/LacI_Protein_production"/>
+        <sbol:displayId>LacI_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/lacI_LacI_Protein/LacI_Protein_production/LacI_Protein_product/1">
+            <sbol:displayId>LacI_Protein_product</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein/LacI_Protein_production/LacI_Protein_product"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:participant rdf:resource="http://examples.org/lacI_LacI_Protein/LacI_Protein/1"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/lacI_LacI_Protein/LacI_Protein_production/lacI_template/1">
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein/LacI_Protein_production/lacI_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:displayId>lacI_template</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/lacI_LacI_Protein/lacI/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/lacI_LacI_Protein/lacI/1">
+        <sbol:definition rdf:resource="http://examples.org/lacI"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>lacI</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_LacI_Protein/lacI"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>lacI_LacI_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/lacI_leader_peptide/1">
+        <sbol:definition rdf:resource="http://examples.org/lacI_leader_peptide"/>
+        <sbol:displayId>lacI_leader_peptide</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/lacI_leader_peptide"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>LacI_Leader_Peptide_Protein</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/LacI_Leader_Peptide_Protein"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein"/>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production/1">
+        <sbol:displayId>LacI_Leader_Peptide_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production/lacI_leader_peptide_template/1">
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production/lacI_leader_peptide_template"/>
+            <sbol:displayId>lacI_leader_peptide_template</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/lacI_leader_peptide/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production/LacI_Leader_Peptide_Protein_product/1">
+            <sbol:version>1</sbol:version>
+            <sbol:participant rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_LacI_Leader_Peptide_Protein/LacI_Leader_Peptide_Protein_production/LacI_Leader_Peptide_Protein_product"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>LacI_Leader_Peptide_Protein_product</sbol:displayId>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:displayId>lacI_leader_peptide_LacI_Leader_Peptide_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/1">
+    <sbol:version>1</sbol:version>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production/1">
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production/mScarlet_I3_template/1">
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:participant rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3/1"/>
+            <sbol:displayId>mScarlet_I3_template</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production/mScarlet_I3_template"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production/mScarlet_I3_Protein_product/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production/mScarlet_I3_Protein_product"/>
+            <sbol:participant rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>mScarlet_I3_Protein_product</sbol:displayId>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>mScarlet_I3_Protein_production</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein_production"/>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein/1">
+        <sbol:displayId>mScarlet_I3_Protein</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="http://examples.org/mScarlet_I3_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3_Protein"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3/1">
+        <sbol:definition rdf:resource="http://examples.org/mScarlet_I3"/>
+        <sbol:displayId>mScarlet_I3</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein/mScarlet_I3"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>mScarlet_I3_mScarlet_I3_Protein</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_mScarlet_I3_Protein"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/ramR_ramR_Protein/1">
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ramR_ramR_Protein/ramR/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ramR</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein/ramR"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/ramR"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/ramR_ramR_Protein/ramR_Protein_production/1">
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/ramR_ramR_Protein/ramR_Protein_production/ramR_Protein_product/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein/ramR_Protein_production/ramR_Protein_product"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:participant rdf:resource="http://examples.org/ramR_ramR_Protein/ramR_Protein/1"/>
+            <sbol:displayId>ramR_Protein_product</sbol:displayId>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein/ramR_Protein_production"/>
+        <sbol:displayId>ramR_Protein_production</sbol:displayId>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/ramR_ramR_Protein/ramR_Protein_production/ramR_template/1">
+            <sbol:participant rdf:resource="http://examples.org/ramR_ramR_Protein/ramR/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein/ramR_Protein_production/ramR_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:displayId>ramR_template</sbol:displayId>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ramR_ramR_Protein/ramR_Protein/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ramR_Protein"/>
+        <sbol:displayId>ramR_Protein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein/ramR_Protein"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>ramR_ramR_Protein</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_ramR_Protein"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/1">
+    <sbol:displayId>ramR_leader_peptide_ramR_leader_peptide_Protein</sbol:displayId>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production/1">
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production/ramR_leader_peptide_Protein_product/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>ramR_leader_peptide_Protein_product</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production/ramR_leader_peptide_Protein_product"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>ramR_leader_peptide_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production/ramR_leader_peptide_template/1">
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:displayId>ramR_leader_peptide_template</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production/ramR_leader_peptide_template"/>
+            <sbol:participant rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein_production"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide/1">
+        <sbol:definition rdf:resource="http://examples.org/ramR_leader_peptide"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>ramR_leader_peptide</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein/ramR_leader_peptide_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/ramR_leader_peptide_Protein"/>
+        <sbol:displayId>ramR_leader_peptide_Protein</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_ramR_leader_peptide_Protein"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/vanR_am_vanR_am_Protein/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am_vanR_am_Protein/vanR_am/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am"/>
+        <sbol:displayId>vanR_am</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_Protein"/>
+        <sbol:displayId>vanR_am_Protein</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein"/>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production/1">
+        <sbol:displayId>vanR_am_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production/vanR_am_Protein_product/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production/vanR_am_Protein_product"/>
+            <sbol:participant rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>vanR_am_Protein_product</sbol:displayId>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production/vanR_am_template/1">
+            <sbol:displayId>vanR_am_template</sbol:displayId>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:participant rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am/1"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_vanR_am_Protein/vanR_am_Protein_production/vanR_am_template"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:displayId>vanR_am_vanR_am_Protein</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/1">
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide/1">
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_leader_peptide"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>vanR_am_leader_peptide</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>vanR_am_leader_peptide_vanR_am_leader_peptide_Protein</sbol:displayId>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production/vanR_am_leader_peptide_template/1">
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:participant rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide/1"/>
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production/vanR_am_leader_peptide_template"/>
+            <sbol:displayId>vanR_am_leader_peptide_template</sbol:displayId>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:displayId>vanR_am_leader_peptide_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production/vanR_am_leader_peptide_Protein_product/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>vanR_am_leader_peptide_Protein_product</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein_production/vanR_am_leader_peptide_Protein_product"/>
+            <sbol:participant rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein/1">
+        <sbol:displayId>vanR_am_leader_peptide_Protein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein/vanR_am_leader_peptide_Protein"/>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am_leader_peptide_Protein"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_vanR_am_leader_peptide_Protein"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/1">
+    <sbol:displayId>noFP_leader_peptide_noFP_leader_peptide_Protein</sbol:displayId>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:displayId>noFP_leader_peptide_Protein_production</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production/noFP_leader_peptide_Protein_product/1">
+            <sbol:participant rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>noFP_leader_peptide_Protein_product</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production/noFP_leader_peptide_Protein_product"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production/noFP_leader_peptide_template/1">
+            <sbol:displayId>noFP_leader_peptide_template</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein_production/noFP_leader_peptide_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:participant rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide/1"/>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide_Protein"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/noFP_leader_peptide_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>noFP_leader_peptide_Protein</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>noFP_leader_peptide</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_noFP_leader_peptide_Protein/noFP_leader_peptide"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://examples.org/noFP_leader_peptide"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/1">
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production"/>
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_Protein_product/1">
+            <sbol:version>1</sbol:version>
+            <sbol:participant rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein/1"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>vanR_WT_Protein_product</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_Protein_product"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>vanR_WT_Protein_production</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_template/1">
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:displayId>vanR_WT_template</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:participant rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>vanR_WT</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/vanR_WT"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_vanR_WT_Protein/vanR_WT_Protein"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>vanR_WT_Protein</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="http://examples.org/vanR_WT_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>vanR_WT_vanR_WT_Protein</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>vanR_WT_Protein</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/vanR_WT_Protein"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production/1">
+        <sbol:type rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000589"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production"/>
+        <sbol:version>1</sbol:version>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production/vanR_am2_template/1">
+            <sbol:participant rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_am2/1"/>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production/vanR_am2_template"/>
+            <sbol:role rdf:resource="http://sbols.org/v2#template"/>
+            <sbol:displayId>vanR_am2_template</sbol:displayId>
+            <sbol:version>1</sbol:version>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:displayId>vanR_WT_Protein_production</sbol:displayId>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_Protein_product/1">
+            <sbol:version>1</sbol:version>
+            <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein_production/vanR_WT_Protein_product"/>
+            <sbol:role rdf:resource="http://identifiers.org/biomodels.sbo/SBO:0000011"/>
+            <sbol:displayId>vanR_WT_Protein_product</sbol:displayId>
+            <sbol:participant rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_WT_Protein/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:displayId>vanR_am2_vanR_WT_Protein</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_am2/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_vanR_WT_Protein/vanR_am2"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>vanR_am2</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/vanR_am2"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+  <sbol:Sequence rdf:about="http://examples.org/P150_sequence/1">
+    <ns0:title>P150 Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/P150_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>AACGGGCTGTCGACCTTTGAAAAGTTCGTTTACCGCTAGCTCAGTCCTAGGTACAATGCTAGCGGATGGC</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>P150_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Lac_Promoter_sequence/1">
+    <ns0:title>Lac Promoter Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>GCTTAACGATCGTTGGCTGTGTTGACAATTAATCATCGGCTCGTATAATGTGTGGAATTGTGAGCGGATAACAATT</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Lac_Promoter_sequence"/>
+    <sbol:displayId>Lac_Promoter_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/RamR_Promoter_sequence/1">
+    <ns0:title>RamR Promoter Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RamR_Promoter_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>ATTGTATGCGCTCTCGAGGTTTCAAAAGTACCTTGACGGCGTATCTTTGCTTTCTATAATGAGTGCTTACTCACTCATAATCAAG</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>RamR_Promoter_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/VanR_am_Promoter_sequence/1">
+    <ns0:title>VanR-am Promoter Sequence</ns0:title>
+    <sbol:elements>ATTGGATCCAATTGACAGCTAGCTCAGTCCTAGGTACCATTGGATCCAAT</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am_Promoter_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>VanR_am_Promoter_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Pramr_lacOid_sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Pramr_lacOid_sequence</sbol:displayId>
+    <sbol:elements>AACGTCGCCTGTGCAGGTTTCAAAACTACCTTGACGGCGTATCTTTGCTTTCTATAATGTGTGGAATTGTGAGCGCTCACAATT</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Pramr_lacOid_sequence"/>
+    <ns0:title>Pramr-lacOid Sequence</ns0:title>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/VanR_am2_Promoter_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns0:title>VanR-am2 Promoter Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am2_Promoter_sequence"/>
+    <sbol:displayId>VanR_am2_Promoter_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>AATGGATCCATTTGACAGCTAGCTCAGTCCTAGGTACCAATGGATCCATT</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/VanR_am3_Promoter_sequence/1">
+    <ns0:title>VanR-am3 Promoter Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>VanR_am3_Promoter_sequence</sbol:displayId>
+    <sbol:elements>TTTGGATCCAAATGACAGCTAGCTCAGTCCTAGGTACCTTTGGATCCAAA</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/VanR_am3_Promoter_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/_5prime_UTR_sequence/1">
+    <sbol:displayId>_5prime_UTR_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/_5prime_UTR_sequence"/>
+    <ns0:title>5prime UTR Sequence</ns0:title>
+    <sbol:elements>GGGCCCAAGTTCACTTAAAAAGGAGATCAACA</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/RBS_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>CGTAAACCTCCGGGTTAATAAGGAGTAATT</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RBS_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>RBS_sequence</sbol:displayId>
+    <ns0:title>RBS Sequence</ns0:title>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/lacI_sequence/1">
+    <sbol:version>1</sbol:version>
+    <ns0:title>lacI Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ATGAAACCAGTAACGTTATACGATGTCGCAGAGTATGCCGGTGTCTCTTATCAGACCGTTTCCCGCGTGGTGAACCAGGCCAGCCACGTTTCTGCGAAAACGCGGGAAAAAGTGGAAGCGGCGATGGCGGAGCTGAATTACATTCCCAACCGCGTGGCACAACAACTGGCGGGCAAACAGTCGTTGCTGATTGGCGTTGCCACCTCCAGTCTGGCCCTGCACGCGCCGTCGCAAATTGTCGCGGCGATTAAATCTCGCGCCGATCAACTGGGTGCCAGCGTGGTGGTGTCGATGGTAGAACGAAGCGGCGTCGAAGCCTGTAAAGCGGCGGTGCACAATCTTCTCGCGCAACGCGTCAGTGGGCTGATCATTAACTATCCGCTGGATGACCAGGATGCCATTGCTGTGGAAGCTGCCTGCACTAATGTTCCGGCGTTATTTCTTGATGTCTCTGACCAGACACCCATCAACAGTATTATTTTCTCCCATGAGGACGGTACGCGACTGGGCGTGGAGCATCTGGTCGCATTGGGTCACCAGCAAATCGCGCTGTTAGCGGGCCCATTAAGTTCTGTCTCGGCGCGTCTGCGTCTGGCTGGCTGGCATAAATATCTCACTCGCAATCAAATTCAGCCGATAGCGGAACGGGAAGGCGACTGGAGTGCCATGTCCGGTTTTCAACAAACCATGCAAATGCTGAATGAGGGCATCGTTCCCACTGCGATGCTGGTTGCCAACGATCAGATGGCGCTGGGCGCAATGCGCGCCATTACCGAGTCCGGGCTGCGCGTTGGTGCGGATATCTCGGTAGTGGGATACGACGATACCGAAGATAGCTCATGTTATATCCCGCCGTTAACCACCATCAAACAGGATTTTCGCCTGCTGGGGCAAACCAGCGTGGACCGCTTGCTGCAACTCTCTCAGGGCCAGGCGGTGAAGGGCAATCAGCTGTTGCCAGTCTCACTGGTGAAAAGAAAAACCACCCTGGCGCCCAATACGCAAACCGCCTCTCCCCGCGCGTTGGCCGATTCATTAATGCAGCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGA</sbol:elements>
+    <sbol:displayId>lacI_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/lacI_leader_peptide_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>lacI_leader_peptide_sequence</sbol:displayId>
+    <ns0:title>lacI_leader peptide Sequence</ns0:title>
+    <sbol:elements>ATGAAAGCAATTTTCGTACTGAAACATCTTAATCATGCGGATTCTAGTTAA</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/lacI_leader_peptide_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/mScarlet_I3_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ATGGACTCGACAGAGGCTGTGATTAAAGAGTTCATGCGCTTCAAGGTTCACATGGAAGGCTCGATGAACGGTCACGAGTTTGAGATTGAGGGCGAGGGCGAAGGCCGCCCCTATGAGGGTACACAAACAGCAAAATTGAAGGTGACAAAAGGGGGCCCGCTGCCGTTTAGTTGGGACATCTTAAGTCCCCAGTTCATGTACGGATCTCGCGCCTTTATTAAGCATCCAGCGGATATTCCTGATTATTGGAAGCAGAGCTTCCCCGAAGGCTTCAAATGGGAGCGCGTGATGATCTTTGAGGACGGGGGTACTGTCTCAGTAACCCAAGATACAAGCTTGGAGGATGGGACCCTGATCTACAAAGTAAAATTGCGTGGTGGCAACTTCCCGCCCGATGGTCCGGTCATGCAAAAGCGCACTATGGGATGGGAGGCGAGTACTGAGCGCTTATACCCAGAGGACGTGGTATTGAAGGGGGATATTAAGATGGCTTTACGTCTTAAAGATGGCGGGCGCTACTTAGCCGATTTCAAAACGACCTACAAAGCTAAAAAACCTGTTCAAATGCCAGGAGCGTTTAATATTGATCGCAAATTGGATATCACCTCTCATAACGAGGACTACACCGTAGTAGAACAGTACGAACGCTCCGTGGCACGCCATAGCACTGGTGGTTCCGGGGGGAGCTAA</sbol:elements>
+    <ns0:title>mScarlet-I3 Sequence</ns0:title>
+    <sbol:displayId>mScarlet_I3_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ramR_sequence/1">
+    <ns0:title>ramR Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_sequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>ramR_sequence</sbol:displayId>
+    <sbol:elements>ATGGTTGCTCGCCCAAAGTCTGAGGACAAAAAGCAGGCATTGCTTGAAGCGGCAACTCAAGCCATCGCGCAATCAGGCATTGCCGCTAGTACCGCTGTAATTGCACGCAATGCGGGAGTTGCGGAAGGGACGTTGTTCCGCTATTTCGCAACGAAAGATGAGTTGATCAACACCCTTTACTTACATTTGAAACAGGACCTGTGCCAATCAATGATCATGGAATTGGATCGTTCTATTACTGACGCTAAGATGATGACCCGTTTTATCTGGAACAGTTATATTAGCTGGGGATTGAACCACCCAGCTCGCCATCGTGCCATTCGTCAGTTGGCGGTTTCTGAAAAGTTGACGAAGGAAACCGAACAACGCGCGGATGATATGTTCCCGGAGTTACGCGACTTGGAACACCGTGAAGTTCTTATGGTGTTTATGTCCGACGAGTACCGCGCCTTCGGCGACGGGTTGTTCTTGGCGCTTGCTGAAACGACTATGGATTTCGCTGCGCGCGACCCGGCTCGCGCTGGTGAGTACATTGCGTTGGGCTTCGAGGCTATGTGGCGCGCACTTACGCGCGAAGAGCAGTAA</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ramR_leader_peptide_sequence/1">
+    <ns0:title>ramR_leader_peptide Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:elements>ATGAAAGCAATTTTCGTACTGAAACATCTTAATCATGCGCCGGTGTTTTAA</sbol:elements>
+    <sbol:displayId>ramR_leader_peptide_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_am_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_sequence"/>
+    <ns0:title>vanR-am Sequence</ns0:title>
+    <sbol:elements>ATGGATATGCCCCGTATTAAGCCTGGACAACGTGTTATGATGGCCTTACGTAAAATGATTGCATCAGGTGAAATTAAGTCTGGCGAACGTATTGCAGAGATTCCGACCGCAGCCGCATTAGGCGTTTCGCGCATGCCTGTACGTATCGCTCTTCGCTCTCTTGAACAGGAGGGTTTAGTCGTCCGTCTGGGGGCACGCGGATATGCAGCGCGTGGTGTAAGTTCCGATCAGATTCGTGACGCTATTGAAGTTCGTGGCGTACTTGAAGGGTTTGCCGCTCGTCGTTTGGCCGAACGCGGGATGACAGCTGAAACCCACGCCCGCTTCGTAGTATTGATCGCAGAGGGTGAAGCACTGTTTGCAGCTGGGCGTCTGAACGGAGAGGACTTAGACCGCTACGCAGCGTATAACCAAGCGTTTCACGACACATTAGTAAGTGCAGCGGGCAACGGCGCAGTGGAATCAGCTCTGGCGCGCAATGGCTTTGAACCTTTTGCTGCTGCTGGAGCATTAGCATTGGATTTGATGGACTTGTCCGCCGAGTATGAGCATCTGCTGGCTGCACATCGCCAGCACCAGGCCGTGCTGGATGCAGTGTCCTGTGGAGATGCCGAAGGAGCGGAGCGCATTATGCGCGATCACGCTTTGGCAGCTATTCGTAACGCGAAGGTCTTCGAAGCGGCGGCTAGTGCAGGTGCCCCCCTTGGTGCTGCCTGGAGTATCCGTGCCGACTAA</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>vanR_am_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_am_leader_peptide_sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:elements>ATGAAAGCAATTTTCGTACTGAAACATCTTAATCATGCCGTCAAAATTTAA</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns0:title>vanR-am_leader_peptide Sequence</ns0:title>
+    <sbol:displayId>vanR_am_leader_peptide_sequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/noFP_leader_peptide_sequence/1">
+    <sbol:elements>ATGAAAGCAATTTTCGTACTGAAACATCTTAATCATGCTATGTGTTTTTAA</sbol:elements>
+    <ns0:title>noFP_leader_peptide Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>noFP_leader_peptide_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_WT_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>vanR_WT_sequence</sbol:displayId>
+    <ns0:title>vanR-WT Sequence</ns0:title>
+    <sbol:elements>ATGGATATGCCACGGATTAAGCCAGGCCAGAGAGTGATGATGGCGCTGCGTAAGATGATCGCCTCAGGTGAAATTAAATCCGGAGAACGCATAGCGGAAATTCCGACGGCGGCCGCACTTGGAGTCAGCAGGATGCCAGTAAGAACAGCACTTCGAAGCCTGGAACAAGAGGGCTTAGTCGTCCGACTCGGAGCCCGCGGTTATGCAGCACGTGGGGTATCATCGGATCAGATCCGAGATGCGATAGAAGTCCGTGGAGTTTTAGAAGGCTTCGCGGCCCGCAGGTTAGCTGAGAGGGGTATGACTGCAGAAACTCATGCGAGGTTTGTGGCTCTGATCGCAGAAGGAGAAGCATTGTTTGCAGCGGGTAGACTCAATGGAGAAGATTTAGATAGATATGCTGCGTACAATCAGGCCTTTCACGATACCTTGGTCTCAGCAGCAGGTAACGGAGCAGTAGAATCAGCGTTAGCTCGGAATGGTTTTGAACCGTTTGCCGCCGCAGGTGCATTAGCACTCGATCTCATGGATCTTCCGGCGGAATACGAACATCTTCTTGCCGCTCATCGGCAGCATCAGGCTGTTCTGGATGCAGTTTCATGCGGAGATGCAGAAGGTGCTGAACGTATTATGAGAGACCATGCATTAGCTGCTATCCGTAATGCAAAAGTTTTTGAAGCGGCGGCATCGGCTGGCGCCCCATTAGGAGCAGCGTGGTCTATACGGGCTGACTAA</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_am2_sequence/1">
+    <sbol:elements>ATGGATATGCCCCGTATTAAGCCTGGACAACGTGTTATGATGGCCTTACGCAAAATGATTGCATCAGGTGAAATTAAATCTGGCGAACGTATTGCAGAGATTCCGACCGCAGCCGCATTAGGCGTTTCGCGCATGCCTGTACGTATCGCTCTTCGCTCTCTTGAACAGGAGGGTTTAGTGGTCCGTCTGGGTGCACGTGGTTATGCAGCGCGTGGTGTAAGTTCCGATCAGATTCGTGACGCTATTGAAGTTCGTGGCGTACTTGAAGGGTTTGCCGCTCGTCGTTTGGCCGAACGCGGGATGACTGCTGAAACCCACGCCCGCTTCGTAGTATTGATCGCAGAGGGTGAAGCACTGTTTGCAGCTGGGCGTCTGAACGGAGAGGACTTAGACCGCTACGCAGCGTATAACCAAGCGTTTCACGACACATTAGTAAGTGCAGCGGGTAATGGTGCAGTGGAATCAGCTCTGGCGCGCAATGGCTTTGAACCTTTTGCTGCTGCTGGAGCATTAGCATTGGATTTGATGGACTTGTCCGCCGAGTATGAGCATTTACTGGCTGCACATCGTCAGCACCAGGCAGTGCTGGATGCAGTGTCCTGTGGTGATGCCGAAGGAGCGGAGCGCATTATGCGCGATCACGCTTTGGCAGCTATTCGTAACGCGAAGGTCTTCGAAGCGGCGGCTAGTGCAGGTGCCCCACTTGGTGCTGCCTGGAGTATCCGTGCCGACTAA</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>vanR_am2_sequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am2_sequence"/>
+    <ns0:title>vanR-am2 Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/L3S2P00_terminator_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <ns0:title>L3S2P00 terminator Sequence</ns0:title>
+    <sbol:displayId>L3S2P00_terminator_sequence</sbol:displayId>
+    <sbol:elements>CTCGGTACCAAATTCCAGAAAAGAGGGGAGCGGGAAACCGCTCCCCTTTTTTCGTTTTGGTCC</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/L3S2P00_terminator_sequence"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/DT60_double_terminator_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>DT60_double_terminator_sequence</sbol:displayId>
+    <sbol:elements>ACATTTAATAAAAAAAGGGCGGTCGCAAGATCGCCCTTTTTTACGTATGACACAGTGAAAAATGGCGCCCATCGGCGCCATTTTTTTATG</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DT60_double_terminator_sequence"/>
+    <ns0:title>DT60 double terminator Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/DT5_double_terminator_sequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>DT5_double_terminator_sequence</sbol:displayId>
+    <ns0:title>DT5 double terminator Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/DT5_double_terminator_sequence"/>
+    <sbol:elements>TCCGGCAATTAAAAAAGCGGCTAACCACGCCGCTTTTTTTACGTCTGCACTCGGTACCAAATTCCAGAAAAGAGGCCTCCCGAAAGGGGGGCCTTTTTTCGTTTTGGTCC</sbol:elements>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ECK12_spy_terminator_sequence/1">
+    <sbol:displayId>ECK12_spy_terminator_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>ECK12 spy terminator Sequence</ns0:title>
+    <sbol:elements>TTCAGCCAAAAAACTTAAGACCGCCGGTCTTGTCCACTACCTTGCAGTAATGCGGTGGACAGGATCGGCGGTTTTCTTTTCTCTTCTCAA</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ECK12_spy_terminator_sequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Barcode_Align_LacI_305_sequence/1">
+    <sbol:displayId>Barcode_Align_LacI_305_sequence</sbol:displayId>
+    <sbol:elements>TCGCAGACGTTTTGCAGACTCCTGCACGAGATGTCCTAGACAGCACAGACAGACCTACGTGACGATCCGACTGAGTCTATCACACGTCTAGGCC</sbol:elements>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Barcode_Align_LacI_305_sequence"/>
+    <ns0:title>Barcode Align-LacI-305 Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/RiboJ_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/RiboJ_sequence"/>
+    <sbol:elements>AGCTGTCACCGGATGTGCTTTCCGGTCTGATGAGTCCGTGAGGACGAAACAGCCTCTACAAATAATTTTGTTTAA</sbol:elements>
+    <ns0:title>RiboJ Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:displayId>RiboJ_sequence</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/PlmJ_sequence/1">
+    <sbol:version>1</sbol:version>
+    <ns0:title>PlmJ Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/PlmJ_sequence"/>
+    <sbol:elements>AGTCATAAGTCTGGGCTAAGCCCACTGATGAGTCGCTGAAATGCGACGAAACTTATGACCTCTACAAATAATTTTGTTTAA</sbol:elements>
+    <sbol:displayId>PlmJ_sequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Twist_Backbone_sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Twist_Backbone_sequence</sbol:displayId>
+    <ns0:title>Twist Backbone Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Twist_Backbone_sequence"/>
+    <sbol:elements>AGGCTAGGTGGAGGCTCAGTGATGATAAGTCTGCGATGGTGGATGCATGTGTCATGGTCATAGCTGTTTCCTGTGTGAAATTGTTATCCGCTCAGAGGGCACAATCCTATTCCGCGCTATCCGACAATCTCCAAGACATTAGGTGGAGTTCAGTTCGGCGAGCGGAAATGGCTTACGAACGGGGCGGAGATTTCCTGGAAGATGCCAGGAAGATACTTAACAGGGAAGTGAGAGGGCCGCGGCAAAGCCGTTTTTCCATAGGCTCCGCCCCCCTGACAAGCATCACGAAATCTGACGCTCAAATCAGTGGTGGCGAAACCCGACAGGACTATAAAGATACCAGGCGTTTCCCCCTGGCGGCTCCCTCGTGCGCTCTCCTGTTCCTGCCTTTCGGTTTACCGGTGTCATTCCGCTGTTATGGCCGCGTTTGTCTCATTCCACGCCTGACACTCAGTTCCGGGTAGGCAGTTCGCTCCAAGCTGGACTGTATGCACGAACCCCCCGTTCAGTCCGACCGCTGCGCCTTATCCGGTAACTATCGTCTTGAGTCCAACCCGGAAAGACATGCAAAAGCACCACTGGCAGCAGCCACTGGTAATTGATTTAGAGGAGTTAGTCTTGAAGTCATGCGCCGGTTAAGGCTAAACTGAAAGGACAAGTTTTGGTGACTGCGCTCCTCCAAGCCAGTTACCTCGGTTCAAAGAGTTGGTAGCTCAGAGAACCTTCGAAAAACCGCCCTGCAAGGCGGTTTTTTCGTTTTCAGAGCAAGAGATTACGCGCAGACCAAAACGATCTCAAGAAGATCATCTTATTAAGTCTGACGCTCTATTCAACAAAGCCGCCGTCCATGGGTAGGGGGCTTCAAATCGTCCGCTCTGCCAGTGTTACAACCAATTAACAAATTCTGATTAGAAAAACTCATCGAGCATCAAATGAAACTGCAATTTATTCATATCAGGATTATCAATACCATATTTTTGAAAAAGCCGTTTCTGTAATGAAGGAGAAAACTCACCGAGGCAGTTCCATAGGATGGCAAGATCCTGGTATCGGTCTGCGATTCCGACTCGTCCAACATCAATACAACCTATTAATTTCCCCTCGTCAAAAATAAGGTTATCAAGTGAGAAATCACCATGAGTGACGACTGAATCCGGTGAGAATGGCAAAAGCTTATGCATTTCTTTCCAGACTTGTTCAACAGGCCAGCCATTACGCTCGTCATCAAAATCACTCGCATCAACCAAACCGTTATTCATTCGTGATTGCGCCTGAGCGAGACGAAATACGCGATCGCTGTTAAAAGGACAATTACAAACAGGAATCGAATGCAACCGGCGCAGGAACACTGCCAGCGCATCAACAATATTTTCACCTGAATCAGGATATTCTTCTAATACCTGGAATGCTGTTTTCCCGGGGATCGCAGTGGTGAGTAACCATGCATCATCAGGAGTACGGATAAAATGCTTGATGGTCGGAAGAGGCATAAATTCCGTCAGCCAGTTTAGTCTGACCATCTCATCTGTAACATCATTGGCAACGCTACCTTTGCCATGTTTCAGAAACAACTCTGGCGCATCGGGCTTCCCATACAATCGATAGATTGTCGCACCTGATTGCCCGACATTATCGCGAGCCCATTTATACCCATATAAATCAGCATCCATGTTGGAATTTAATCGCGGCCTCGAGCAAGACGTTTCCCGTTGAATATGGCTCATAACACCCCTTGTATTACTGTTTATGTAAGCAGACAGTTTTATTGTTCATGATGATATATTTTTATCTTGTGCAATGTAACATCAGAGATTTTGAGACACAACGTGGCTTTCCCCCGCCGCTCTAGAACTAGTGGATCCAAATAAAACGAAAGGCTCAGTCGAAAGACTGGGCCTTTCGTTTTATCTGTTGTTTGTCGCATTATACGAGACGTCCAGGTTGGGATACCTGAAACAAAACCCATCGTACGGCCAAGGAAGTCTCCAATAACTGTGATCCACCACAAGCGCCAGGGTTTTCCCAGTCACGACGTTGTAAAACGACGGCCAGTCATGCATAATCCGCACGCATCTGGAATAAGGAAGTGCCATTCCGCCTGACCT</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/Terminator_Promoter_Spacer_sequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/Terminator_Promoter_Spacer_sequence"/>
+    <ns0:title>Terminator-Promoter Spacer Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>Terminator_Promoter_Spacer_sequence</sbol:displayId>
+    <sbol:elements>GCTTAACGATCGTTGGCTG</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/LacI_Protein_proteinSequence/1">
+    <sbol:displayId>LacI_Protein_proteinSequence</sbol:displayId>
+    <sbol:elements>MKPVTLYDVAEYAGVSYQTVSRVVNQASHVSAKTREKVEAAMAELNYIPNRVAQQLAGKQSLLIGVATSSLALHAPSQIVAAIKSRADQLGASVVVSMVERSGVEACKAAVHNLLAQRVSGLIINYPLDDQDAIAVEAACTNVPALFLDVSDQTPINSIIFSHEDGTRLGVEHLVALGHQQIALLAGPLSSVSARLRLAGWHKYLTRNQIQPIAEREGDWSAMSGFQQTMQMLNEGIVPTAMLVANDQMALGAMRAITESGLRVGADISVVGYDDTEDSSCYIPPLTTIKQDFRLLGQTSVDRLLQLSQGQAVKGNQLLPVSLVKRKTTLAPNTQTASPRALADSLMQLARQVSRLESGQ</sbol:elements>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI_Protein_proteinSequence"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>LacI_Protein Protein Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/LacI_Leader_Peptide_Protein_proteinSequence/1">
+    <sbol:elements>MKAIFVLKHLNHADSS</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/LacI_Leader_Peptide_Protein_proteinSequence"/>
+    <ns0:title>LacI_Leader_Peptide_Protein Protein Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>LacI_Leader_Peptide_Protein_proteinSequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/mScarlet_I3_Protein_proteinSequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mScarlet_I3_Protein_proteinSequence"/>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>MDSTEAVIKEFMRFKVHMEGSMNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFSWDILSPQFMYGSRAFIKHPADIPDYWKQSFPEGFKWERVMIFEDGGTVSVTQDTSLEDGTLIYKVKLRGGNFPPDGPVMQKRTMGWEASTERLYPEDVVLKGDIKMALRLKDGGRYLADFKTTYKAKKPVQMPGAFNIDRKLDITSHNEDYTVVEQYERSVARHSTGGSGGS</sbol:elements>
+    <ns0:title>mScarlet-I3_Protein Protein Sequence</ns0:title>
+    <sbol:displayId>mScarlet_I3_Protein_proteinSequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ramR_Protein_proteinSequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_Protein_proteinSequence"/>
+    <sbol:elements>MVARPKSEDKKQALLEAATQAIAQSGIAASTAVIARNAGVAEGTLFRYFATKDELINTLYLHLKQDLCQSMIMELDRSITDAKMMTRFIWNSYISWGLNHPARHRAIRQLAVSEKLTKETEQRADDMFPELRDLEHREVLMVFMSDEYRAFGDGLFLALAETTMDFAARDPARAGEYIALGFEAMWRALTREEQ</sbol:elements>
+    <ns0:title>ramR_Protein Protein Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>ramR_Protein_proteinSequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/ramR_leader_peptide_Protein_proteinSequence/1">
+    <sbol:displayId>ramR_leader_peptide_Protein_proteinSequence</sbol:displayId>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <ns0:title>ramR_leader_peptide_Protein Protein Sequence</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/ramR_leader_peptide_Protein_proteinSequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>MKAIFVLKHLNHAPVF</sbol:elements>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_am_Protein_proteinSequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_Protein_proteinSequence"/>
+    <ns0:title>vanR-am_Protein Protein Sequence</ns0:title>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:version>1</sbol:version>
+    <sbol:elements>MDMPRIKPGQRVMMALRKMIASGEIKSGERIAEIPTAAALGVSRMPVRIALRSLEQEGLVVRLGARGYAARGVSSDQIRDAIEVRGVLEGFAARRLAERGMTAETHARFVVLIAEGEALFAAGRLNGEDLDRYAAYNQAFHDTLVSAAGNGAVESALARNGFEPFAAAGALALDLMDLSAEYEHLLAAHRQHQAVLDAVSCGDAEGAERIMRDHALAAIRNAKVFEAAASAGAPLGAAWSIRAD</sbol:elements>
+    <sbol:displayId>vanR_am_Protein_proteinSequence</sbol:displayId>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_am_leader_peptide_Protein_proteinSequence/1">
+    <sbol:elements>MKAIFVLKHLNHAVKI</sbol:elements>
+    <ns0:title>vanR-am_leader_peptide_Protein Protein Sequence</ns0:title>
+    <sbol:displayId>vanR_am_leader_peptide_Protein_proteinSequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_am_leader_peptide_Protein_proteinSequence"/>
+    <sbol:version>1</sbol:version>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/noFP_leader_peptide_Protein_proteinSequence/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/noFP_leader_peptide_Protein_proteinSequence"/>
+    <sbol:elements>MKAIFVLKHLNHAMCF</sbol:elements>
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <sbol:displayId>noFP_leader_peptide_Protein_proteinSequence</sbol:displayId>
+    <ns0:title>noFP_leader_peptide_Protein Protein Sequence</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+  <sbol:Sequence rdf:about="http://examples.org/vanR_WT_Protein_proteinSequence/1">
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iupac/AminoAcid/"/>
+    <ns0:title>vanR-WT_Protein Protein Sequence</ns0:title>
+    <sbol:elements>MDMPRIKPGQRVMMALRKMIASGEIKSGERIAEIPTAAALGVSRMPVRTALRSLEQEGLVVRLGARGYAARGVSSDQIRDAIEVRGVLEGFAARRLAERGMTAETHARFVALIAEGEALFAAGRLNGEDLDRYAAYNQAFHDTLVSAAGNGAVESALARNGFEPFAAAGALALDLMDLPAEYEHLLAAHRQHQAVLDAVSCGDAEGAERIMRDHALAAIRNAKVFEAAASAGAPLGAAWSIRAD</sbol:elements>
+    <sbol:displayId>vanR_WT_Protein_proteinSequence</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/vanR_WT_Protein_proteinSequence"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Sequence>
+</rdf:RDF>
