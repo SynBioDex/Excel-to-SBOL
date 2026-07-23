@@ -656,15 +656,18 @@ input[type="text"]:read-only {
   height: 32px;
   margin: 0 auto 10px;
   display: block;
-  opacity: 0.55;
-  transition: opacity var(--transition), filter var(--transition);
+  /* The per-card icon SVG (set via --icon) is used as a mask, so the visible
+     color is background-color. That lets it track --text-secondary, which flips
+     with the light/dark theme, matching the secondary text in both modes. */
+  background-color: var(--text-secondary);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+  transition: background-color var(--transition);
 }
 
 .sc-type-card:hover .sc-type-icon,
 .sc-type-card.selected .sc-type-icon {
-  opacity: 1;
-  /* converts black svg stroke to #48A9AE */
-  filter: invert(61%) sepia(14%) saturate(1517%) hue-rotate(143deg) brightness(89%) contrast(89%);
+  background-color: var(--accent);
 }
 
 .sc-type-name {

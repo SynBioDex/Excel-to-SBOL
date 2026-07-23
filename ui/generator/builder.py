@@ -201,13 +201,13 @@ _LOOKUP_DISPLAY_HEADER = {
     "organism_terms":          "Organism",
     "molecule_types":          "Name",
     "nci_thesaurus":           "NAME",
-    "SBH_chassis_collections": "name",
-    "SBH_plasmids_collections": "name",
-    "SBH_chemicals_collection": "name",
-    "SBH_strains_collection":   "name",
-    "SBH_media_collection":     "name",
-    "SBH_supplements_collection": "name",
-    "SBH_sampledesigns_collection": "name",
+    "SBH_chassis_collections": "Name",
+    "SBH_plasmids_collections": "Name",
+    "SBH_chemicals_collection": "Name",
+    "SBH_strains_collection":   "Name",
+    "SBH_media_collection":     "Name",
+    "SBH_supplements_collection": "Name",
+    "SBH_sampledesigns_collection": "Name",
 }
 
 # Single-value object references get a native dropdown sourced from the ID column
@@ -852,7 +852,7 @@ def _build_sbh_scaffolds(wb, sheets: list):
             if scaffold_name in created or scaffold_name in wb.sheetnames:
                 continue
             ws = wb.create_sheet(scaffold_name)
-            ws.cell(1, 1).value = "name"
+            ws.cell(1, 1).value = "Name"
             ws.cell(1, 2).value = "URI"
             _style_sheet(ws)
             _mark_system_sheet(ws)

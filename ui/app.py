@@ -354,7 +354,7 @@ def main():
         "Excel2SBOL",
         url=os.path.join(web_dir, "index.html"),
         width=620,
-        height=780,
+        height=800,
         min_size=(500, 600),
         text_select=False,
         js_api=api

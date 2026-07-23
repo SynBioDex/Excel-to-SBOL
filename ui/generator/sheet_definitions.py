@@ -386,8 +386,7 @@ def _components_ids_col() -> ColumnDef:
 # ── Standard column block helpers ────────────────────────────────────────────
 
 def _bio_tail_cols() -> list:
-    """Formerly the URI + Update tail. Both columns were removed (no converter or
-    VBA consumer), so this is now empty; kept as a hook in case a tail returns."""
+    """Hook for trailing columns shared by every part sheet; currently none."""
     return []
 
 
@@ -697,31 +696,9 @@ STRAIN = SheetDef(
                 to_col="B",
             ),
             ColumnDef(
-                name="Plasmid 1",
-                tooltip="The first plasmid in this strain. Select from the SBH_plasmids_collections dropdown.",
-                sbol_term="sbol_funcComp",
-                namespace=NS_SBOLS,
-                col_type="URI",
-                sheet_lookup=True,
-                lookup_sheet="SBH_plasmids_collections",
-                from_col="A",
-                to_col="B",
-            ),
-            ColumnDef(
-                name="Plasmid 2",
-                tooltip="A second plasmid in this strain. Select from the SBH_plasmids_collections dropdown.",
-                sbol_term="sbol_funcComp",
-                namespace=NS_SBOLS,
-                col_type="URI",
-                sheet_lookup=True,
-                lookup_sheet="SBH_plasmids_collections",
-                from_col="A",
-                to_col="B",
-            ),
-            ColumnDef(
-                name="More Plasmids",
-                tooltip=("Additional plasmids in this strain. Double-click the cell to "
-                         "open the selector and choose one or more from SBH_plasmids_collections."),
+                name="Plasmids",
+                tooltip=("The plasmids in this strain. Double-click the cell to open "
+                         "the selector and choose one or more from SBH_plasmids_collections."),
                 sbol_term="sbol_funcComp",
                 namespace=NS_SBOLS,
                 col_type="URI",
@@ -841,8 +818,7 @@ STUDY = SheetDef(
     sbh_collections=[],
     name_column=None,
     ui_group="Study",
-    # Retired: capture is now at the assay level, so the study sheet is no longer
-    # part of any template nor offered in the custom catalog.
+    # Not part of any template and not offered in the custom catalog.
     ui_selectable=False,
     columns=[
         _name_col("Study"),
