@@ -24,14 +24,20 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
 
-      - name: Install package and test runner
+      - name: Install package with test dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e .
-          python -m pip install pytest
+          python -m pip install -e ".[test]"
+          python -m pip check
+          python - <<'PY'
+          import packaging
+          import packaging.version as packaging_version
+          assert packaging.__version__ == "21.3", packaging.__version__
+          assert hasattr(packaging_version, "NegativeInfinity")
+          PY
 
-      - name: Compile template tests
-        run: python -m py_compile tests/test_templates.py
+      - name: Compile tests
+        run: python -m compileall -q src tests
 
       - name: Run template tests
         run: python -m pytest -q tests/test_templates.py
