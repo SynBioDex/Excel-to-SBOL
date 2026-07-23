@@ -9,6 +9,8 @@ from excel2sbol.converter import converter
 
 
 TEMPLATES_DIR = Path(__file__).parents[1] / "resources" / "templates"
+NIST_WORKBOOKS_DIR = Path(__file__).parents[1] / "resources" / "NIST_workbooks"
+NIST_WORKBOOK_OUTPUTS_DIR = Path(__file__).parent / "NIST_workbook_outputs"
 
 TEMPLATE_SHEETS = {
     "Base.xlsm": {"welcome", "ontology_terms", "organism_terms"},
@@ -22,6 +24,7 @@ TEMPLATE_SHEETS = {
 # "Translate to Protein" field. The remaining templates are complete converter
 # inputs and must produce valid SBOL.
 CONVERTIBLE_TEMPLATES = ("SampleDesign.xlsm", "Strains.xlsm", "Study.xlsm")
+NIST_WORKBOOKS = tuple(sorted(path.name for path in NIST_WORKBOOKS_DIR.glob("*.xlsm")))
 
 
 @pytest.mark.parametrize("template_name", TEMPLATE_SHEETS)
@@ -54,6 +57,23 @@ def test_converter_generates_valid_sbol(template_name, tmp_path):
     output_path = tmp_path / f"{Path(template_name).stem}.xml"
 
     converter(file_path_in=TEMPLATES_DIR / template_name, file_path_out=output_path)
+
+    assert output_path.is_file()
+    assert output_path.stat().st_size > 0
+    ElementTree.parse(output_path)
+
+    document = sbol2.Document()
+    document.read(str(output_path))
+    assert document.validate() == "Valid."
+
+
+@pytest.mark.parametrize("workbook_name", NIST_WORKBOOKS)
+def test_converter_generates_valid_sbol_from_nist_workbook(workbook_name):
+    """Convert each NIST workbook, retain its XML output, and validate it."""
+    NIST_WORKBOOK_OUTPUTS_DIR.mkdir(exist_ok=True)
+    output_path = NIST_WORKBOOK_OUTPUTS_DIR / f"{Path(workbook_name).stem}.xml"
+
+    converter(file_path_in=NIST_WORKBOOKS_DIR / workbook_name, file_path_out=output_path)
 
     assert output_path.is_file()
     assert output_path.stat().st_size > 0

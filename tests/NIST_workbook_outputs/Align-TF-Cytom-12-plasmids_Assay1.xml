@@ -1,0 +1,968 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:fj="https://wiki.synbiohub.org/wiki/Terms/Flapjack#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://www.w3.org/ns/prov#" xmlns:ns1="http://purl.org/dc/terms/">
+  <sbol:Experiment rdf:about="http://examples.org/align_tf_cytom_12_plasmids_growth_plate_1_1/1">
+    <sbol:experimentalData rdf:resource="http://examples.org/sample47"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample67"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample73"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample42"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample88"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample33"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample96"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample81"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample82"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample51"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample19"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample92"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample6"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample48"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample10"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample13"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample89"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample3"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample76"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample50"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample74"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample64"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample83"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample46"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample23"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample72"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample34"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample40"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample30"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample86"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample20"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample45"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample85"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample17"/>
+    <sbol:version>1</sbol:version>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample16"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample18"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample37"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample29"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample68"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample11"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample8"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample54"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample4"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample59"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample62"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample69"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample1"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample84"/>
+    <ns1:title>Align-TF-Cytom-12-plasmids_growth-plate_1-1</ns1:title>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample35"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample39"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample41"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample28"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample9"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample44"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample24"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample7"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample79"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample57"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample22"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample27"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample25"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample91"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample75"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample12"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample14"/>
+    <sbol:displayId>align_tf_cytom_12_plasmids_growth_plate_1_1</sbol:displayId>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample53"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample36"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample55"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample15"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample77"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample60"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample66"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample58"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample21"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample90"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample93"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample2"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample94"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample61"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample56"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample49"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample87"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample32"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample78"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample52"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample80"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/align_tf_cytom_12_plasmids_growth_plate_1_1"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample31"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample70"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample26"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample43"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample63"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample95"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample5"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample65"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample38"/>
+    <sbol:experimentalData rdf:resource="http://examples.org/sample71"/>
+  </sbol:Experiment>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample1/1">
+    <sbol:displayId>sample1</sbol:displayId>
+    <fj:column>1</fj:column>
+    <ns1:title>sample1</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample1"/>
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample2/1">
+    <fj:column>1</fj:column>
+    <fj:row>B</fj:row>
+    <ns1:title>sample2</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample2"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample3/1">
+    <ns1:title>sample3</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>1</fj:column>
+    <sbol:displayId>sample3</sbol:displayId>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample3"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample4/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>D</fj:row>
+    <sbol:displayId>sample4</sbol:displayId>
+    <fj:column>1</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample4"/>
+    <ns1:title>sample4</ns1:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample5/1">
+    <sbol:version>1</sbol:version>
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample5"/>
+    <fj:column>1</fj:column>
+    <sbol:displayId>sample5</sbol:displayId>
+    <ns1:title>sample5</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample6/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>1</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample6"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample6</sbol:displayId>
+    <fj:row>F</fj:row>
+    <ns1:title>sample6</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample7/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample7"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample7</sbol:displayId>
+    <ns1:title>sample7</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>1</fj:column>
+    <fj:row>G</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample8/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample8"/>
+    <ns1:title>sample8</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>H</fj:row>
+    <fj:column>1</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample8</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample9/1">
+    <sbol:displayId>sample9</sbol:displayId>
+    <fj:column>2</fj:column>
+    <ns1:title>sample9</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample9"/>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>A</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample10/1">
+    <fj:row>B</fj:row>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample10</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>2</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample10"/>
+    <sbol:displayId>sample10</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample11/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>2</fj:column>
+    <sbol:displayId>sample11</sbol:displayId>
+    <ns1:title>sample11</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample11"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample12/1">
+    <sbol:version>1</sbol:version>
+    <fj:column>2</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample12"/>
+    <sbol:displayId>sample12</sbol:displayId>
+    <ns1:title>sample12</ns1:title>
+    <fj:row>D</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample13/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample13"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample13</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <ns1:title>sample13</ns1:title>
+    <fj:row>E</fj:row>
+    <fj:column>2</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample14/1">
+    <fj:column>2</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample14"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:displayId>sample14</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample14</ns1:title>
+    <fj:row>F</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample15/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample15"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>2</fj:column>
+    <sbol:displayId>sample15</sbol:displayId>
+    <fj:row>G</fj:row>
+    <ns1:title>sample15</ns1:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample16/1">
+    <fj:column>2</fj:column>
+    <ns1:title>sample16</ns1:title>
+    <fj:row>H</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample16"/>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:displayId>sample16</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample17/1">
+    <sbol:displayId>sample17</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample17</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample17"/>
+    <fj:column>3</fj:column>
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample18/1">
+    <sbol:displayId>sample18</sbol:displayId>
+    <fj:row>B</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <ns1:title>sample18</ns1:title>
+    <fj:column>3</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample18"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample19/1">
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>3</fj:column>
+    <sbol:displayId>sample19</sbol:displayId>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample19"/>
+    <ns1:title>sample19</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample20/1">
+    <ns1:title>sample20</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample20"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample20</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:column>3</fj:column>
+    <fj:row>D</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample21/1">
+    <sbol:version>1</sbol:version>
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:column>3</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample21"/>
+    <sbol:displayId>sample21</sbol:displayId>
+    <ns1:title>sample21</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample22/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample22"/>
+    <fj:column>3</fj:column>
+    <ns1:title>sample22</ns1:title>
+    <sbol:displayId>sample22</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <fj:row>F</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample23/1">
+    <sbol:displayId>sample23</sbol:displayId>
+    <fj:row>G</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample23</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample23"/>
+    <fj:column>3</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample24/1">
+    <ns1:title>sample24</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample24"/>
+    <fj:column>3</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>H</fj:row>
+    <sbol:displayId>sample24</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample25/1">
+    <fj:column>4</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample25</sbol:displayId>
+    <ns1:title>sample25</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample25"/>
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample26/1">
+    <ns1:title>sample26</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample26"/>
+    <fj:column>4</fj:column>
+    <fj:row>B</fj:row>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample26</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample27/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample27"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>4</fj:column>
+    <sbol:displayId>sample27</sbol:displayId>
+    <ns1:title>sample27</ns1:title>
+    <fj:row>C</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample28/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>D</fj:row>
+    <sbol:displayId>sample28</sbol:displayId>
+    <fj:column>4</fj:column>
+    <ns1:title>sample28</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample28"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample29/1">
+    <fj:column>4</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample29"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample29</sbol:displayId>
+    <ns1:title>sample29</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>E</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample30/1">
+    <ns1:title>sample30</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample30"/>
+    <fj:column>4</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>F</fj:row>
+    <sbol:displayId>sample30</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample31/1">
+    <fj:row>G</fj:row>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample31</sbol:displayId>
+    <ns1:title>sample31</ns1:title>
+    <fj:column>4</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample31"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample32/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample32"/>
+    <fj:column>4</fj:column>
+    <fj:row>H</fj:row>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample32</sbol:displayId>
+    <ns1:title>sample32</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample33/1">
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample33"/>
+    <fj:column>5</fj:column>
+    <sbol:displayId>sample33</sbol:displayId>
+    <ns1:title>sample33</ns1:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample34/1">
+    <ns1:title>sample34</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:column>5</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample34"/>
+    <fj:row>B</fj:row>
+    <sbol:displayId>sample34</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample35/1">
+    <ns1:title>sample35</ns1:title>
+    <fj:column>5</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample35"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample35</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample36/1">
+    <sbol:displayId>sample36</sbol:displayId>
+    <fj:row>D</fj:row>
+    <ns1:title>sample36</ns1:title>
+    <fj:column>5</fj:column>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample36"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample37/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample37"/>
+    <fj:column>5</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:displayId>sample37</sbol:displayId>
+    <ns1:title>sample37</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample38/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample38"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:displayId>sample38</sbol:displayId>
+    <ns1:title>sample38</ns1:title>
+    <fj:column>5</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>F</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample39/1">
+    <fj:row>G</fj:row>
+    <fj:column>5</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample39"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample39</sbol:displayId>
+    <ns1:title>sample39</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample40/1">
+    <fj:row>H</fj:row>
+    <fj:column>5</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample40"/>
+    <sbol:displayId>sample40</sbol:displayId>
+    <ns1:title>sample40</ns1:title>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample41/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample41"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>A</fj:row>
+    <sbol:displayId>sample41</sbol:displayId>
+    <fj:column>6</fj:column>
+    <ns1:title>sample41</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample42/1">
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample42</sbol:displayId>
+    <fj:column>6</fj:column>
+    <ns1:title>sample42</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample42"/>
+    <fj:row>B</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample43/1">
+    <fj:column>6</fj:column>
+    <ns1:title>sample43</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample43"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample43</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample44/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>D</fj:row>
+    <sbol:displayId>sample44</sbol:displayId>
+    <ns1:title>sample44</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:column>6</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample44"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample45/1">
+    <sbol:displayId>sample45</sbol:displayId>
+    <fj:column>6</fj:column>
+    <fj:row>E</fj:row>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample45</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample45"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample46/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample46"/>
+    <fj:row>F</fj:row>
+    <fj:column>6</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:displayId>sample46</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample46</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample47/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample47"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:row>G</fj:row>
+    <sbol:displayId>sample47</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <fj:column>6</fj:column>
+    <ns1:title>sample47</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample48/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:displayId>sample48</sbol:displayId>
+    <ns1:title>sample48</ns1:title>
+    <fj:row>H</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample48"/>
+    <sbol:version>1</sbol:version>
+    <fj:column>6</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample49/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample49"/>
+    <fj:column>7</fj:column>
+    <sbol:displayId>sample49</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample49</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>A</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample50/1">
+    <fj:column>7</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample50</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample50"/>
+    <ns1:title>sample50</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:row>B</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample51/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample51"/>
+    <fj:column>7</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>C</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample51</sbol:displayId>
+    <ns1:title>sample51</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample52/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <ns1:title>sample52</ns1:title>
+    <fj:column>7</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample52"/>
+    <fj:row>D</fj:row>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample52</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample53/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample53</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample53"/>
+    <ns1:title>sample53</ns1:title>
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:column>7</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample54/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>7</fj:column>
+    <sbol:displayId>sample54</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample54"/>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample54</ns1:title>
+    <fj:row>F</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample55/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample55"/>
+    <fj:column>7</fj:column>
+    <fj:row>G</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:displayId>sample55</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample55</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample56/1">
+    <sbol:displayId>sample56</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <ns1:title>sample56</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample56"/>
+    <fj:column>7</fj:column>
+    <fj:row>H</fj:row>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample57/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample57</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample57"/>
+    <ns1:title>sample57</ns1:title>
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:column>8</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample58/1">
+    <ns1:title>sample58</ns1:title>
+    <fj:row>B</fj:row>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample58"/>
+    <sbol:displayId>sample58</sbol:displayId>
+    <fj:column>8</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample59/1">
+    <ns1:title>sample59</ns1:title>
+    <fj:column>8</fj:column>
+    <sbol:displayId>sample59</sbol:displayId>
+    <fj:row>C</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample59"/>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample60/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample60</sbol:displayId>
+    <ns1:title>sample60</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample60"/>
+    <fj:column>8</fj:column>
+    <fj:row>D</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample61/1">
+    <fj:row>E</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample61"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:column>8</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample61</sbol:displayId>
+    <ns1:title>sample61</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample62/1">
+    <ns1:title>sample62</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>8</fj:column>
+    <fj:row>F</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample62"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample62</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample63/1">
+    <sbol:displayId>sample63</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample63"/>
+    <ns1:title>sample63</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>8</fj:column>
+    <sbol:version>1</sbol:version>
+    <fj:row>G</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample64/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample64"/>
+    <fj:row>H</fj:row>
+    <sbol:displayId>sample64</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample64</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:column>8</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample65/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample65</sbol:displayId>
+    <fj:row>A</fj:row>
+    <ns1:title>sample65</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample65"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:column>9</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample66/1">
+    <sbol:displayId>sample66</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <fj:row>B</fj:row>
+    <ns1:title>sample66</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample66"/>
+    <fj:column>9</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample67/1">
+    <fj:column>9</fj:column>
+    <sbol:displayId>sample67</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample67"/>
+    <ns1:title>sample67</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:row>C</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample68/1">
+    <sbol:displayId>sample68</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>D</fj:row>
+    <fj:column>9</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample68"/>
+    <ns1:title>sample68</ns1:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample69/1">
+    <ns1:title>sample69</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample69"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <fj:row>E</fj:row>
+    <fj:column>9</fj:column>
+    <sbol:displayId>sample69</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample70/1">
+    <fj:column>9</fj:column>
+    <sbol:displayId>sample70</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample70</ns1:title>
+    <fj:row>F</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample70"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample71/1">
+    <fj:column>9</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample71"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample71</sbol:displayId>
+    <fj:row>G</fj:row>
+    <ns1:title>sample71</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample72/1">
+    <sbol:displayId>sample72</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <ns1:title>sample72</ns1:title>
+    <fj:column>9</fj:column>
+    <fj:row>H</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample72"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample73/1">
+    <sbol:displayId>sample73</sbol:displayId>
+    <ns1:title>sample73</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample73"/>
+    <sbol:version>1</sbol:version>
+    <fj:column>10</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>A</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample74/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample74"/>
+    <fj:row>B</fj:row>
+    <fj:column>10</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample74</sbol:displayId>
+    <ns1:title>sample74</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample75/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <fj:row>C</fj:row>
+    <sbol:displayId>sample75</sbol:displayId>
+    <fj:column>10</fj:column>
+    <ns1:title>sample75</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample75"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample76/1">
+    <sbol:displayId>sample76</sbol:displayId>
+    <fj:row>D</fj:row>
+    <ns1:title>sample76</ns1:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample76"/>
+    <fj:column>10</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample77/1">
+    <fj:column>10</fj:column>
+    <sbol:displayId>sample77</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample77"/>
+    <ns1:title>sample77</ns1:title>
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample78/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample78"/>
+    <sbol:displayId>sample78</sbol:displayId>
+    <fj:column>10</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <ns1:title>sample78</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:row>F</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample79/1">
+    <fj:column>10</fj:column>
+    <sbol:displayId>sample79</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <ns1:title>sample79</ns1:title>
+    <fj:row>G</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample79"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample80/1">
+    <ns1:title>sample80</ns1:title>
+    <sbol:version>1</sbol:version>
+    <fj:column>10</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample80"/>
+    <fj:row>H</fj:row>
+    <sbol:displayId>sample80</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample81/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample81"/>
+    <fj:column>11</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample81</sbol:displayId>
+    <fj:row>A</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <ns1:title>sample81</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample82/1">
+    <sbol:displayId>sample82</sbol:displayId>
+    <fj:column>11</fj:column>
+    <fj:row>B</fj:row>
+    <ns1:title>sample82</ns1:title>
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample82"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample83/1">
+    <sbol:displayId>sample83</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <ns1:title>sample83</ns1:title>
+    <fj:row>C</fj:row>
+    <fj:column>11</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample83"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample84/1">
+    <fj:column>11</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample84"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:displayId>sample84</sbol:displayId>
+    <fj:row>D</fj:row>
+    <ns1:title>sample84</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample85/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample85</sbol:displayId>
+    <ns1:title>sample85</ns1:title>
+    <fj:row>E</fj:row>
+    <fj:column>11</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample85"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample86/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <fj:column>11</fj:column>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample86"/>
+    <fj:row>F</fj:row>
+    <sbol:displayId>sample86</sbol:displayId>
+    <ns1:title>sample86</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample87/1">
+    <sbol:displayId>sample87</sbol:displayId>
+    <ns1:title>sample87</ns1:title>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample87"/>
+    <fj:row>G</fj:row>
+    <fj:column>11</fj:column>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample88/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>sample88</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <ns1:title>sample88</ns1:title>
+    <fj:row>H</fj:row>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample88"/>
+    <fj:column>11</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample89/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <fj:row>A</fj:row>
+    <sbol:displayId>sample89</sbol:displayId>
+    <ns1:title>sample89</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample89"/>
+    <sbol:version>1</sbol:version>
+    <fj:column>12</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample90/1">
+    <sbol:version>1</sbol:version>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample90"/>
+    <sbol:displayId>sample90</sbol:displayId>
+    <ns1:title>sample90</ns1:title>
+    <fj:row>B</fj:row>
+    <fj:column>12</fj:column>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample91/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample91"/>
+    <fj:column>12</fj:column>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp_m9/1"/>
+    <sbol:displayId>sample91</sbol:displayId>
+    <ns1:title>sample91</ns1:title>
+    <fj:row>C</fj:row>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample92/1">
+    <sbol:version>1</sbol:version>
+    <fj:column>12</fj:column>
+    <sbol:displayId>sample92</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <fj:row>D</fj:row>
+    <ns1:title>sample92</ns1:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample92"/>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample93/1">
+    <fj:row>E</fj:row>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301_m9/1"/>
+    <ns1:title>sample93</ns1:title>
+    <sbol:displayId>sample93</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample93"/>
+    <fj:column>12</fj:column>
+    <sbol:version>1</sbol:version>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample94/1">
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <sbol:version>1</sbol:version>
+    <fj:row>F</fj:row>
+    <ns1:title>sample94</ns1:title>
+    <fj:column>12</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample94"/>
+    <sbol:displayId>sample94</sbol:displayId>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample95/1">
+    <sbol:version>1</sbol:version>
+    <fj:column>12</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample95"/>
+    <fj:row>G</fj:row>
+    <sbol:displayId>sample95</sbol:displayId>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1"/>
+    <ns1:title>sample95</ns1:title>
+  </sbol:ExperimentalData>
+  <sbol:ExperimentalData rdf:about="http://examples.org/sample96/1">
+    <fj:column>12</fj:column>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/sample96"/>
+    <ns0:wasDerivedFrom rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9only/1"/>
+    <sbol:displayId>sample96</sbol:displayId>
+    <fj:row>H</fj:row>
+    <sbol:version>1</sbol:version>
+    <ns1:title>sample96</ns1:title>
+  </sbol:ExperimentalData>
+</rdf:RDF>

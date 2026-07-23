@@ -1,0 +1,2288 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:fj="https://wiki.synbiohub.org/wiki/Terms/Flapjack#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/">
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only/1">
+    <ns0:title>m9only</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only"/>
+    <sbol:displayId>m9only</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9/1">
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9/mg1655_dlac_align_vanr_301/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9/mg1655_dlac_align_vanr_301"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9"/>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9/1">
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9/mg1655_dlac_pbcd_nofp/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9/mg1655_dlac_pbcd_nofp"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_24/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_24/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_24/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_24/van_24/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_24/van_24"/>
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>m9only_van_24</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_24"/>
+    <ns0:title>m9only_van_24</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/1">
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_24</sbol:displayId>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_24</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/van_24/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/van_24"/>
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_24"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/van_24/1">
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_24"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_24</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24"/>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/van_24/1">
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_24</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/mg1655_dlac_pbcd_nofp/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_24/mg1655_dlac_pbcd_nofp"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/van_24/1">
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/van_24"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24"/>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_24/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/van_24/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_24"/>
+        <sbol:displayId>van_24</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/van_24"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_24</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_49/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_49/van_49/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_49/van_49"/>
+        <sbol:displayId>van_49</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_49"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_49/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_49/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>m9only_van_49</sbol:displayId>
+    <ns0:title>m9only_van_49</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/van_49/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/van_49"/>
+        <sbol:displayId>van_49</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/mg1655_dlac_align_vanr_301/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_49/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_49</sbol:displayId>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_49</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/1">
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49</sbol:displayId>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/van_49/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_49</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/van_49"/>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_49"/>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/1">
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_49</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_49</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/van_49/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/van_49"/>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_49</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/mg1655_dlac_pbcd_nofp/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/mg1655_dlac_pbcd_nofp"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_49/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/1">
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49"/>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/van_49/1">
+        <sbol:displayId>van_49</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_49/van_49"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/1">
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/mg1655_dlac_pvanr_am_t2a_mscar"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/van_49/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/van_49"/>
+        <sbol:displayId>van_49</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_49"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49</ns0:title>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_49</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_98/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_98/van_98/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_98/van_98"/>
+        <sbol:displayId>van_98</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_98/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_98/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>m9only_van_98</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_98"/>
+    <ns0:title>m9only_van_98</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/van_98/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/van_98"/>
+        <sbol:displayId>van_98</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/mg1655_dlac_align_vanr_301/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_98</sbol:displayId>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_98</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_98/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/van_98/1">
+        <sbol:displayId>van_98</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/van_98"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_98"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/1">
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/van_98/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/van_98"/>
+        <sbol:displayId>van_98</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98"/>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_98</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/mg1655_dlac_pbcd_nofp/1">
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/mg1655_dlac_pbcd_nofp"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_98</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_98/m9"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/van_98/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98/van_98"/>
+        <sbol:displayId>van_98</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98"/>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_98</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/van_98/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_98</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/van_98"/>
+        <sbol:definition rdf:resource="http://examples.org/van_98"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98"/>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_98/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_195/1">
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_195/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_195/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>m9only_van_195</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_195/van_195/1">
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_195/van_195"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>m9only_van_195</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_195"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/mg1655_dlac_align_vanr_301/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/mg1655_dlac_align_vanr_301"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/van_195/1">
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/van_195"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195"/>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_195</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_195/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_195</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/1">
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195"/>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/van_195/1">
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_195/van_195"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/van_195/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/van_195"/>
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_195</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_195</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/mg1655_dlac_pbcd_nofp/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/mg1655_dlac_pbcd_nofp"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_195/m9"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/van_195/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/van_195"/>
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_195</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/mg1655_dlac_pvanr_am_t2a_mscar"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/van_195/1">
+        <sbol:displayId>van_195</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_195"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/van_195"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_195"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_391/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_391/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_391/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_391/van_391/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_391</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_391/van_391"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_391"/>
+    <sbol:displayId>m9only_van_391</sbol:displayId>
+    <ns0:title>m9only_van_391</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/mg1655_dlac_align_vanr_301"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_391</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_391</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/van_391/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_391/van_391"/>
+        <sbol:displayId>van_391</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/1">
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/van_391/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/van_391"/>
+        <sbol:displayId>van_391</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_391/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/1">
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_391</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/mg1655_dlac_pbcd_nofp/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/mg1655_dlac_pbcd_nofp"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_391</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/van_391/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_391/van_391"/>
+        <sbol:displayId>van_391</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/1">
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/van_391/1">
+        <sbol:displayId>van_391</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/van_391"/>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_391"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/van_391/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/van_391"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_391</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_391"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391"/>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_391/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_781/1">
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_781/van_781/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_781/van_781"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_781/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_781/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>m9only_van_781</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_781"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>m9only_van_781</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/1">
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_781</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/van_781/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/van_781"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_781</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_781/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/1">
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/van_781/1">
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781/van_781"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781</sbol:displayId>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_781</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/1">
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_781</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/mg1655_dlac_pbcd_nofp/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/mg1655_dlac_pbcd_nofp"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_781</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/van_781/1">
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_781/van_781"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781</sbol:displayId>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/van_781/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781/van_781"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_781"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/van_781/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_781</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781/van_781"/>
+        <sbol:definition rdf:resource="http://examples.org/van_781"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_781"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_1563/1">
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_1563/van_1563/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_1563</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_1563/van_1563"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_1563"/>
+    <ns0:title>m9only_van_1563</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>m9only_van_1563</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_1563/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_1563/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/van_1563/1">
+        <sbol:displayId>van_1563</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/van_1563"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/mg1655_dlac_align_vanr_301/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/mg1655_dlac_align_vanr_301"/>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_1563</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_1563"/>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_1563</sbol:displayId>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/1">
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/van_1563/1">
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563/van_1563"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_1563</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_1563"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/1">
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_1563</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_1563</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/van_1563/1">
+        <sbol:displayId>van_1563</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/van_1563"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/mg1655_dlac_pbcd_nofp/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_1563/mg1655_dlac_pbcd_nofp"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/1">
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563</sbol:displayId>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563"/>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/mg1655_dlac_pvanr_am_a1t_mscar"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/van_1563/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_1563/van_1563"/>
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_1563</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/1">
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/van_1563/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563/van_1563"/>
+        <sbol:definition rdf:resource="http://examples.org/van_1563"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_1563</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_1563</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_3125/1">
+    <sbol:displayId>m9only_van_3125</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_3125"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>m9only_van_3125</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_3125/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_3125/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_3125/van_3125/1">
+        <sbol:displayId>van_3125</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_3125/van_3125"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125"/>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_3125</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_3125</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/van_3125/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+        <sbol:displayId>van_3125</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_3125/van_3125"/>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125</sbol:displayId>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/van_3125/1">
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_3125/van_3125"/>
+        <sbol:displayId>van_3125</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125"/>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/van_3125/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+        <sbol:displayId>van_3125</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/van_3125"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/mg1655_dlac_pbcd_nofp/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_3125/mg1655_dlac_pbcd_nofp"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_3125</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_3125</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/van_3125/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+        <sbol:displayId>van_3125</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/van_3125"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_3125</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/van_3125/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/van_3125"/>
+        <sbol:definition rdf:resource="http://examples.org/van_3125"/>
+        <sbol:displayId>van_3125</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125"/>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_3125/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_6150/1">
+    <sbol:displayId>m9only_van_6150</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>m9only_van_6150</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_6150/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_6150/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_6150/van_6150/1">
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_6150/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_6150"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/1">
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_6150</sbol:displayId>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_6150</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/mg1655_dlac_align_vanr_301/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/mg1655_dlac_align_vanr_301"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/van_6150/1">
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_6150/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/van_6150/1">
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_6150/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/van_6150/1">
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/van_6150"/>
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/mg1655_dlac_pbcd_nofp/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/mg1655_dlac_pbcd_nofp"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_6150</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_6150"/>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_6150</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/1">
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150</sbol:displayId>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/van_6150/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_6150/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/1">
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/van_6150/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_6150"/>
+        <sbol:displayId>van_6150</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/van_6150"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_6150/mg1655_dlac_pvanr_am_t2a_mscar"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_12500/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_12500"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_12500/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_12500/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>m9only_van_12500</sbol:displayId>
+    <ns0:title>m9only_van_12500</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_12500/van_12500/1">
+        <sbol:displayId>van_12500</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_12500/van_12500"/>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/1">
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_12500</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/van_12500/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/van_12500"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+        <sbol:displayId>van_12500</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/mg1655_dlac_align_vanr_301"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_12500"/>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_12500</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/m9/1">
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/van_12500/1">
+        <sbol:displayId>van_12500</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/van_12500"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_12500</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_12500</sbol:displayId>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_12500</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/van_12500/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/van_12500"/>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_12500</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/mg1655_dlac_pbcd_nofp/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_12500/mg1655_dlac_pbcd_nofp"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500</sbol:displayId>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/van_12500/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/van_12500"/>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+        <sbol:displayId>van_12500</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_12500"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/van_12500/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/van_12500"/>
+        <sbol:displayId>van_12500</sbol:displayId>
+        <sbol:definition rdf:resource="http://examples.org/van_12500"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_12500/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/m9only_van_25000/1">
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_25000"/>
+    <sbol:displayId>m9only_van_25000</sbol:displayId>
+    <ns0:title>m9only_van_25000</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_25000/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_25000/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/m9only_van_25000/van_25000/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/m9only_van_25000/van_25000"/>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+        <sbol:displayId>van_25000</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/m9/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/m9"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/van_25000/1">
+        <sbol:displayId>van_25000</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/van_25000"/>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_align_vanr_301_m9_van_25000</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/mg1655_dlac_align_vanr_301/1">
+        <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301_m9_van_25000/mg1655_dlac_align_vanr_301"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_align_vanr_301/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_align_vanr_301_m9_van_25000</ns0:title>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/m9"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/van_25000/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/van_25000"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+        <sbol:displayId>van_25000</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000"/>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000</sbol:displayId>
+    <ns0:title>mg1655_dlac_p150_r1_5_vanr_wt_pvanr_m9_van_25000</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/mg1655_dlac_pbcd_nofp/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/mg1655_dlac_pbcd_nofp"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pbcd_nofp/1"/>
+        <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/m9/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/m9"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp_m9_van_25000</sbol:displayId>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/van_25000/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000/van_25000"/>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+        <sbol:displayId>van_25000</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <ns0:title>mg1655_dlac_pbcd_nofp_m9_van_25000</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp_m9_van_25000"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/m9"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/mg1655_dlac_pvanr_am_a1t_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/mg1655_dlac_pvanr_am_a1t_mscar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_a1t_mscar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/van_25000/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar_m9_van_25000/van_25000"/>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>van_25000</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/1">
+    <sbol:role rdf:resource="https://wiki.synbiohub.org/wiki/Terms/SynBioSuite#SampleDesign"/>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000</sbol:displayId>
+    <ns0:title>mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/m9/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/m9"/>
+        <sbol:displayId>m9</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/m9/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/mg1655_dlac_pvanr_am_t2a_mscar/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/mg1655_dlac_pvanr_am_t2a_mscar"/>
+        <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac_pvanr_am_t2a_mscar/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/van_25000/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000/van_25000"/>
+        <sbol:displayId>van_25000</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://examples.org/van_25000"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar_m9_van_25000"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_24/1">
+    <sbol:displayId>van_24</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_24"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <fj:concentration>0.244140625</fj:concentration>
+    <ns0:title>van_24</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_24/van/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_24/van"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_49/1">
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <sbol:displayId>van_49</sbol:displayId>
+    <fj:concentration>0.48828125</fj:concentration>
+    <ns0:title>van_49</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_49/van/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_49/van"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>van</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_49"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_98/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_98/van/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_98/van"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>van_98</sbol:displayId>
+    <fj:concentration>0.9765625</fj:concentration>
+    <ns0:title>van_98</ns0:title>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_98"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_195/1">
+    <sbol:displayId>van_195</sbol:displayId>
+    <ns0:title>van_195</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_195"/>
+    <fj:concentration>1.953125</fj:concentration>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_195/van/1">
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_195/van"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_391/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_391"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_391/van/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_391/van"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <fj:concentration>3.90625</fj:concentration>
+    <sbol:displayId>van_391</sbol:displayId>
+    <ns0:title>van_391</ns0:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_781/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_781"/>
+    <fj:concentration>7.8125</fj:concentration>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_781/van/1">
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_781/van"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>van_781</sbol:displayId>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <ns0:title>van_781</ns0:title>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_1563/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_1563/van/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_1563/van"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_1563"/>
+    <sbol:displayId>van_1563</sbol:displayId>
+    <fj:concentration>15.625</fj:concentration>
+    <ns0:title>van_1563</ns0:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_3125/1">
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_3125"/>
+    <ns0:title>van_3125</ns0:title>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_3125/van/1">
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_3125/van"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>van</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <fj:concentration>31.25</fj:concentration>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>van_3125</sbol:displayId>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_6150/1">
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_6150/van/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_6150/van"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_6150"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <fj:concentration>62.5</fj:concentration>
+    <sbol:displayId>van_6150</sbol:displayId>
+    <ns0:title>van_6150</ns0:title>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_12500/1">
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_12500/van/1">
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:displayId>van</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_12500/van"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>van_12500</sbol:displayId>
+    <ns0:title>van_12500</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_12500"/>
+    <fj:concentration>125.0</fj:concentration>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/van_25000/1">
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+    <fj:concentration>250.0</fj:concentration>
+    <sbol:displayId>van_25000</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/van_25000/van/1">
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/van/1"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/van_25000/van"/>
+        <sbol:version>1</sbol:version>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>van</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <ns0:title>van_25000</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/van_25000"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+</rdf:RDF>
