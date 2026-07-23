@@ -14,8 +14,13 @@ def types(rowobj):
 	pass
 
 def displayId(rowobj):
-	# used to set the object display id in converter function
-	pass
+	# Row-level consistency check: warn if the base object lacks a valid display_id.
+	# Valid ids should have been guaranteed by parse_objects3(); this is a diagnostic fallback.
+	if not getattr(rowobj.obj, 'display_id', None):
+		logging.warning(
+			f'SBOL3 object in sheet "{rowobj.sheet}", row "{rowobj.sht_row}" '
+			f'has an empty or missing display_id; downstream identity derivation may be malformed.'
+		)
 
 def addToDescription(rowobj):
 	current = getattr(rowobj.obj, 'description')
@@ -333,8 +338,9 @@ def circular(rowobj): # NOT IMPLEMENTED
 	# if false add to linear collection if true add to types
 
 	tempObj = rowobj.obj
-	if rowobj.col_cell_dict['Circular'] not in tempObj.types:
-		tempObj.types.append(rowobj.col_cell_dict['Circular'])
+	circular_val = list(rowobj.col_cell_dict.values())[0]
+	if circular_val not in tempObj.types:
+		tempObj.types.append(circular_val)
 
 	pass
 

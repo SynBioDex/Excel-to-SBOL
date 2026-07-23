@@ -4,13 +4,15 @@ import os
 import json
 from datetime import datetime
 
-def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
+def converter(file_path_in, file_path_out, sbol_version=None, homespace="http://examples.org/", file_format=None,  username=None, password=None, url = None):
     """Convert a given excel file to SBOL
 
     Args:
         file_path_in (string): path to excel file
         file_path_out (string): desired path to sbol file
-        sbol_version (int): sbol version number, defaults to 3
+        sbol_version (int, optional): sbol version number. When provided (e.g.
+            from the UI version selector), it takes precedence. When None, the
+            value from the workbook's Init sheet is used.
     """
     if username is not None and password is not None and url is not None:
         # print(username, password, url)
@@ -18,24 +20,27 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
         os.environ["SBOL_PASSWORD"] = password
         os.environ["SBOL_URL"] = url
         
-    col_read_df, to_convert, compiled_sheets, version_info, homespace2 = e2s.initialise(file_path_in)
-    dict = e2s.initialise_welcome(file_path_in)
-    # for key, value in dict.items():
-    #     if isinstance(value, datetime):
-    #         dict[key] = value.isoformat()
-    if dict is not None:
-        for key, value in dict.items():
+    col_read_df, to_convert, compiled_sheets, version_info, homespace2, init_info = e2s.initialise(file_path_in)
+    welcome_data = e2s.initialise_welcome(init_info, file_path_in)
+    if welcome_data is not None:
+        for key, value in welcome_data.items():
             if isinstance(value, datetime):
-                dict[key] = value.isoformat()
-        os.environ["SBOL_DICTIONARY"] = json.dumps(dict)
+                welcome_data[key] = value.isoformat()
+        os.environ["SBOL_DICTIONARY"] = json.dumps(welcome_data)
     # print(dict)
 
     if len(homespace2) > 0:
         homespace = homespace2
         print(f'Conversion will happen with homespace {homespace} as specified in the excel sheet')
 
-    sbol_version = version_info
-    print(f'Conversion will happen with sbol version {sbol_version} as specified in the excel sheet')
+    # Respect a caller-supplied version (UI selector); fall back to the Init
+    # sheet value only when none was given.
+    if sbol_version is None:
+        sbol_version = version_info
+        print(f'Conversion will happen with sbol version {sbol_version} as specified in the excel sheet')
+    else:
+        sbol_version = int(sbol_version)
+        print(f'Conversion will happen with sbol version {sbol_version} (from caller / UI selector)')
 
     if sbol_version == 2:
         doc, dict_of_objs, sht_convert_dict = e2s.parse_objects(col_read_df,
@@ -47,6 +52,11 @@ def converter(file_path_in, file_path_out, sbol_version=3, homespace="http://exa
                                                                  to_convert,
                                                                  compiled_sheets,
                                                                  homespace)
+    else:
+        # Fail clearly here; otherwise doc and its companions stay unassigned and
+        # column_parse below raises an opaque UnboundLocalError.
+        raise ValueError(
+            f"SBOL version ({sbol_version}) is not supported; expected 2 or 3.")
 
     e2s.column_parse(to_convert, compiled_sheets, sht_convert_dict,
                      dict_of_objs, col_read_df, doc, file_path_out,

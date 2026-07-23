@@ -47,7 +47,7 @@ def biochemical_reaction(rowobj):
 					continue
 				else:
 					enzyme_uri = val
-					enzyme_name = val.split("/")[-2]
+					enzyme_name = _uri_display_id(val)
 
 		if col == "Substrate":
 			if isinstance(val, str):
@@ -64,7 +64,7 @@ def biochemical_reaction(rowobj):
 					continue
 				else:
 					substrate_uri = val
-					substrate_name = val.split("/")[-2]
+					substrate_name = _uri_display_id(val)
 
 				
 	# enzyme not provided
@@ -142,9 +142,23 @@ def biochemical_reaction(rowobj):
 	rowobj.doc.addModuleDefinition(module_def)
 		
 		
+def _uri_display_id(uri: str) -> str:
+    """Return the display ID segment of a URI.
+
+    Uses the penultimate segment when the terminal segment is a bare integer
+    (SBOL version suffix, e.g. /1). Otherwise uses the terminal segment.
+    Handles both versioned SBOL URIs (http://host/id/1) and plain URIs
+    (http://host/id).
+    """
+    parts = uri.rstrip("/").split("/")
+    if len(parts) >= 2 and parts[-1].isdigit():
+        return parts[-2]
+    return parts[-1]
+
+
 def module(rowobj):
 	module_name_pref = rowobj.obj_uri.split("/")[-1]
-	# print("Module Def Name: ", module_name_pref)
+	#print("Module Def Name: ", module_name_pref)	
 	module_def_name = f"{module_name_pref}"
 	if module_def_name not in [m.displayId for m in rowobj.doc.moduleDefinitions]:
 		module_def = sbol2.ModuleDefinition(module_def_name)
@@ -153,23 +167,20 @@ def module(rowobj):
 		module_def = rowobj.doc.moduleDefinitions.get(module_def_name)
 	for col in rowobj.col_cell_dict.keys():
 		val = rowobj.col_cell_dict[col]
+		#print("Column: ", col)
+		#print("Module links: ", val)
+		module_uris = [val] if isinstance(val, str) else val
 
-		for col in rowobj.col_cell_dict.keys():
-			val = rowobj.col_cell_dict[col]
-
-			if isinstance(val, str):
-				module_uris = val.split(",")
-
-			for module_uri in module_uris:
-				module_uri = module_uri.strip()
-				module_name = module_uri.split("/")[-2]
-				# print("Module Name: ", module_name)
-				# print("Module URI: ", module_uri)
-				if module_name not in [m.displayId for m in module_def.modules]:
-					mod = module_def.modules.create(module_name)
-					mod.definition = module_uri
-				else:
-					mod = module_def.modules.get(module_name)
+		for module_uri in module_uris:
+			module_uri = module_uri.strip()
+			module_name = _uri_display_id(module_uri)
+			#print("Module Name: ", module_name)
+			#print("Module URI: ", module_uri)
+			if module_name not in [m.displayId for m in module_def.modules]:
+				mod = module_def.modules.create(module_name)
+				mod.definition = module_uri
+			else:
+				mod = module_def.modules.get(module_name)
 
 
 def funcComp(rowobj):
@@ -189,7 +200,8 @@ def funcComp(rowobj):
 		fc_uris = [val] if isinstance(val, str) else val
 		
 		for fc_uri in fc_uris:
-			fc_name = fc_uri.split("/")[-2]
+			fc_uri = fc_uri.strip()
+			fc_name = _uri_display_id(fc_uri)
 			# print("FC Name: ", fc_name)
 			# print("FC URI: ", fc_uri)
 			if fc_name not in [fc.displayId for fc in module_def.functionalComponents]:
@@ -223,7 +235,7 @@ def displayId(rowobj):
 	url = data["Domain"].strip()
 	if url.endswith('/'):
 		url = url[:-1]
-	collection = data["Library Name"]
+	collection = data["Name"]
 	
 	master_collection = False
 	private_collection = False
@@ -250,7 +262,7 @@ def displayId(rowobj):
 		if col == "Previous Version (URI)":
 			# print(rowobj.obj)
 			# print(rowobj.col_cell_dict)
-			display_id = rowobj.col_cell_dict['Part Id']
+			display_id = rowobj.obj.displayId
 			previous_id = rowobj.col_cell_dict['Previous Version (URI)']
 			rowobj.obj.wasDerivedFrom = previous_id
 			return
@@ -388,8 +400,10 @@ def sequence_authentication(email, password, base_url,uri):
 		'password': password
 	}
 	if email is None or password is None or base_url is None:
+		# uri is already a full URL; query it directly, as the authenticated
+		# branch below does. Prefixing a host here double-prefixed it and failed.
 		seq_search = requests.get(
-					f'https://synbiohub.org/{uri}',
+					uri,
 					headers={
 						'Accept': 'application/json'
 		}
@@ -402,6 +416,10 @@ def sequence_authentication(email, password, base_url,uri):
 				for result in public_results:
 					print("The sequence already exists in the public repository. The URI is: ", result['uri'])
 					return False
+			# 200 with no matches means the sequence is absent. Return here so the
+			# no-credentials path does not fall through to the authenticated block,
+			# where login_response is undefined (which raised NameError).
+			return True
 		else:
 			# print("Sequence not found in public repository.")
 			# double check the logic fo public repos and sequence search
@@ -519,7 +537,7 @@ def encodesFor(rowobj):
                     print("Terminating")
                     sys.exit(1)
                     # return
-                module_name_suf = val.split("/")[-2]
+                module_name_suf = _uri_display_id(val)
                 protein_comp_uri = val
                 break
    
@@ -548,7 +566,7 @@ def encodesFor(rowobj):
     participation = sbol2.Participation(uri = f'{module_name_pref}_template')
     participation.participant = dna_fc
     participation.uri = f'{module_name_pref}_template'
-    participation.roles = [sbol2.SBOL_TEMPLATE]
+    participation.roles = ['http://identifiers.org/biomodels.sbo/SBO:0000645']  # SBO "template" (sbol2 has no SBO_TEMPLATE constant; SBOL_TEMPLATE was the wrong namespace)
 
 
     # participation_name2 = f'{module_name_suf}_product'
@@ -597,7 +615,7 @@ def repressor(rowobj):
                 module_name_suf = protein_comp_uri.split("/")[-1]
 
             elif col == "Repressors (URI)":
-                module_name_suf = protein_comp_uri.split("/")[-2]
+                module_name_suf = _uri_display_id(protein_comp_uri)
 
             module_name = f"{module_name_pref}_{module_name_suf}"
             module_def = sbol2.ModuleDefinition(module_name)
@@ -673,7 +691,7 @@ def activator(rowobj):
 
 			elif col == "Activators (URI)":
 				# print("Protein comp uri: ", protein_comp_uri)
-				module_name_suf = protein_comp_uri.split("/")[-2]
+				module_name_suf = _uri_display_id(protein_comp_uri)
 
 			module_name = f"{module_name_pref}_{module_name_suf}"
 			module_def = sbol2.ModuleDefinition(module_name)
@@ -753,7 +771,7 @@ def complexComponent(rowobj):
 						# Process valid URIs
 
 						for i in val[0:]:
-							components.append((i.split("/")[-2], i))
+							components.append((_uri_display_id(i), i))
 				
 	module_name = f"{module_name_pref}_complex_formation"    
 	# create a new module definition
@@ -1012,13 +1030,12 @@ def proteinSequence(rowobj):
 			# ONE OBJECT. E.g overwrite in self.obj.sequences = [val] ?
 			if re.fullmatch(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', val):
 				# if a url
-				rowobj.obj.sequences = [val]
+				# rowobj.obj.sequences = [val]
 				valid_uri = link_validation(username, password, url, val)
 				if not valid_uri:
 					print(f"URI '{val}' is invalid. Skipping addition for {col}.")
 					print("Terminating")
 					sys.exit(1)
-					return
 				rowobj.obj.sequences = [val]
 
 			elif re.match(r'^[ACDEFGHIKLMNPQRSTVWYacdefghiklmnpqrstvwy\s*]+$', val):

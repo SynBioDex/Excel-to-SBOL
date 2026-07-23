@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel2SBOL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <img src="E2S.png" alt="Excel2SBOL" class="header-banner" id="app-banner">
+    </header>
+
+    <!-- Tab Bar -->
+    <nav class="tab-bar" id="tab-bar">
+      <div class="tab-indicator" id="tab-indicator"></div>
+      <button class="tab active" data-tab="converter">Converter</button>
+      <button class="tab" data-tab="spreadsheet">Spreadsheet Creator</button>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- TAB 1: Converter                             -->
+    <!-- ============================================ -->
+    <div id="tab-converter" class="tab-content active">
+
+      <section class="card">
+        <div class="card-title">Excel File</div>
+        <div class="folder-row">
+          <input type="text" id="file-path" placeholder="No file selected" readonly>
+          <button class="btn" id="btn-browse">Browse</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-title">SBOL Version</div>
+        <div class="option-group option-group-row">
+          <label class="option-row">
+            <input type="radio" name="sbol-version" value="2" id="sbol-v2" checked>
+            <label for="sbol-v2">SBOL 2</label>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="sbol-version" value="3" id="sbol-v3">
+            <label for="sbol-v3">SBOL 3</label>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="toggle-row" style="margin-bottom: 0;">
+          <label class="toggle">
+            <input type="checkbox" id="chk-signin">
+            <span class="toggle-track"></span>
+          </label>
+          <span class="toggle-label">Sign in to use private repositories</span>
+        </div>
+
+        <div id="signin-fields" class="hidden">
+          <div class="divider"></div>
+          <div class="form-row">
+            <label class="form-label" for="domain-input">Domain</label>
+            <input type="text" id="domain-input" list="domain-list" placeholder="https://synbiohub.org">
+            <datalist id="domain-list"></datalist>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="email-input">Email</label>
+            <input type="text" id="email-input" list="email-list" placeholder="user@example.com">
+            <datalist id="email-list"></datalist>
+          </div>
+          <div class="form-row" style="margin-bottom: 0;">
+            <label class="form-label" for="password-input">Password</label>
+            <input type="password" id="password-input" placeholder="••••••••">
+          </div>
+        </div>
+      </section>
+
+      <section class="progress-section hidden" id="progress-section">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill indeterminate" id="progress-fill"></div>
+        </div>
+        <div class="status-text" id="status-text">Converting...</div>
+      </section>
+
+      <div class="extract-row">
+        <button class="btn btn-accent" id="btn-convert" disabled>Convert</button>
+      </div>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TAB 2: Spreadsheet Creator                   -->
+    <!-- ============================================ -->
+    <div id="tab-spreadsheet" class="tab-content">
+
+      <!-- Step indicator -->
+      <div class="sc-stepper" id="sc-stepper">
+        <div class="sc-step-node active" id="sc-node-1">
+          <div class="sc-step-circle">1</div>
+          <div class="sc-step-label">Type</div>
+        </div>
+        <div class="sc-step-line" id="sc-line-12"></div>
+        <div class="sc-step-node" id="sc-node-2">
+          <div class="sc-step-circle">2</div>
+          <div class="sc-step-label">Sheets</div>
+        </div>
+        <div class="sc-step-line" id="sc-line-23"></div>
+        <div class="sc-step-node" id="sc-node-3">
+          <div class="sc-step-circle">3</div>
+          <div class="sc-step-label">Info</div>
+        </div>
+        <div class="sc-step-line" id="sc-line-34"></div>
+        <div class="sc-step-node" id="sc-node-4">
+          <div class="sc-step-circle">4</div>
+          <div class="sc-step-label">Save</div>
+        </div>
+      </div>
+
+      <!-- ── Step 1: Template Type ────────────────── -->
+      <div id="sc-panel-1" class="sc-panel">
+        <div class="sc-panel-title">What would you like to create?</div>
+        <div class="sc-type-grid">
+
+          <button class="sc-type-card" data-type="resources">
+            <span class="sc-type-icon" style="--icon: url('icons/dna.svg')" aria-hidden="true"></span>
+            <div class="sc-type-name">Parts Library</div>
+            <div class="sc-type-desc">Genetic parts: promoters, RBS, CDS, terminators, proteins, and more</div>
+          </button>
+
+          <button class="sc-type-card" data-type="strains">
+            <span class="sc-type-icon" style="--icon: url('icons/worm.svg')" aria-hidden="true"></span>
+            <div class="sc-type-name">Strains</div>
+            <div class="sc-type-desc">Engineered organism strains with chassis and plasmid references</div>
+          </button>
+
+          <button class="sc-type-card" data-type="sample_design">
+            <span class="sc-type-icon" style="--icon: url('icons/test-tube-diagonal.svg')" aria-hidden="true"></span>
+            <div class="sc-type-name">Sample Design</div>
+            <div class="sc-type-desc">Experimental sample designs with strains, media, and supplements</div>
+          </button>
+
+          <button class="sc-type-card" data-type="assay">
+            <span class="sc-type-icon" style="--icon: url('icons/chart-line.svg')" aria-hidden="true"></span>
+            <div class="sc-type-name">Assay</div>
+            <div class="sc-type-desc">Experimental assays with samples, measurements, and signals</div>
+          </button>
+
+          <button class="sc-type-card" data-type="custom">
+            <span class="sc-type-icon" style="--icon: url('icons/pencil-ruler.svg')" aria-hidden="true"></span>
+            <div class="sc-type-name">Custom</div>
+            <div class="sc-type-desc">Pick any combination of sheets from all available types</div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ── Step 2: Part Types (Resources + Custom) ──── -->
+      <div id="sc-panel-2" class="sc-panel hidden">
+        <div class="sc-panel-title" id="sc-panel-2-title">Which part types do you need?</div>
+        <div class="sc-panel-sub">Drag <span class="sc-inline-glyph">⠿</span> to set the workbook tab order, and use <span class="sc-inline-glyph">⚙</span> to reorder a sheet's columns.</div>
+
+        <div class="sc-select-all-row">
+          <button class="btn btn-sm" id="sc-btn-select-all">Select All</button>
+          <button class="btn btn-sm" id="sc-btn-deselect-all">Deselect All</button>
+        </div>
+
+        <div id="sc-parts-container">
+          <!-- populated dynamically by buildPartCheckboxes() from Python catalog -->
+        </div>
+
+        <!-- Custom Sheets -->
+        <div class="sc-custom-section">
+          <div class="sc-custom-section-title">Custom Sheets</div>
+          <div id="sc-custom-sheets-list"></div>
+          <button class="sc-custom-add-btn" id="sc-add-sheet-btn" type="button">
+            + Add custom sheet
+          </button>
+        </div>
+
+        <div class="sc-parts-warning hidden" id="sc-no-parts-warning">
+          Please select at least one part type or add a custom sheet.
+        </div>
+
+        <!-- F6: non-blocking dependency advisories (e.g. complex without protein/cds) -->
+        <div class="sc-dep-warning hidden" id="sc-dep-warning"></div>
+      </div>
+
+      <!-- ── Step 3: Library Info ──────────────────── -->
+      <div id="sc-panel-3" class="sc-panel hidden">
+        <div class="sc-panel-title">Tell us about your library</div>
+
+        <section class="card" style="margin-bottom: 12px;">
+
+          <div class="form-row">
+            <label class="form-label" for="sc-library-name">
+              Name <span class="required-star">*</span>
+            </label>
+            <input type="text" id="sc-library-name" placeholder="e.g. iGEM_2025_Parts">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-collection-id">ID</label>
+            <input type="text" id="sc-collection-id" placeholder="e.g. iGEM_2025_Parts_Collection">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-version">Version</label>
+            <input type="text" id="sc-version" value="1" placeholder="1">
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="sc-description">Description</label>
+            <textarea id="sc-description" class="sc-textarea" placeholder="A brief description of this library or study..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-author">Author</label>
+            <input type="text" id="sc-author" placeholder="Your name">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-email">Email</label>
+            <input type="text" id="sc-email" placeholder="you@institution.edu">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-lab">Laboratory</label>
+            <input type="text" id="sc-lab" placeholder="Lab name">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="sc-institution">Institution</label>
+            <input type="text" id="sc-institution" placeholder="University or organization">
+          </div>
+
+
+          <div class="form-row">
+            <label class="form-label" for="sc-pubmed">PubMed IDs</label>
+            <input type="text" id="sc-pubmed" placeholder="e.g. 12345678">
+          </div>
+
+
+          <div class="form-row" style="margin-bottom: 0;">
+            <label class="form-label">SBOL Version</label>
+            <div class="option-group option-group-row">
+              <label class="option-row">
+                <input type="radio" name="sc-sbol-version" value="2" id="sc-sbol-v2" checked>
+                <label for="sc-sbol-v2">SBOL 2</label>
+              </label>
+              <label class="option-row">
+                <input type="radio" name="sc-sbol-version" value="3" id="sc-sbol-v3">
+                <label for="sc-sbol-v3">SBOL 3</label>
+              </label>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Advanced -->
+        <div class="sc-advanced-toggle" id="sc-advanced-toggle">
+          <span id="sc-advanced-arrow">▶</span> Advanced
+        </div>
+        <div id="sc-advanced-fields" class="hidden">
+          <section class="card" style="margin-bottom: 0;">
+            <div class="form-row">
+              <label class="form-label" for="sc-domain">Domain</label>
+              <input type="text" id="sc-domain" placeholder="https://synbiohub.org">
+            </div>
+            <div class="form-row" style="margin-bottom: 0;">
+              <label class="form-label" for="sc-master-collection">Master Collection</label>
+              <input type="text" id="sc-master-collection" placeholder="Collection URI">
+            </div>
+          </section>
+        </div>
+
+        <div class="sc-required-warning hidden" id="sc-name-warning">
+          Name is required.
+        </div>
+      </div>
+
+      <!-- ── Step 4: Save ──────────────────────────── -->
+      <div id="sc-panel-4" class="sc-panel hidden">
+        <div class="sc-panel-title">Choose where to save</div>
+
+        <section class="card">
+          <div class="card-title">Output Folder</div>
+          <div class="folder-row">
+            <input type="text" id="sc-output-folder" placeholder="No folder selected" readonly>
+            <button class="btn" id="sc-btn-folder">Browse</button>
+          </div>
+        </section>
+
+        <section class="card" id="sc-preview-card" style="margin-bottom: 12px;">
+          <div class="card-title">File Preview</div>
+          <div class="sc-preview-row">
+            <span class="sc-preview-label">Filename</span>
+            <span class="sc-preview-value" id="sc-preview-filename">-</span>
+          </div>
+          <div class="sc-preview-row">
+            <span class="sc-preview-label">Template</span>
+            <span class="sc-preview-value" id="sc-preview-type">-</span>
+          </div>
+          <div class="sc-preview-row" id="sc-preview-parts-row">
+            <span class="sc-preview-label">Sheets</span>
+            <span class="sc-preview-value" id="sc-preview-parts">-</span>
+          </div>
+        </section>
+
+        <section class="progress-section hidden" id="sc-progress-section">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill indeterminate"></div>
+          </div>
+          <div class="status-text" id="sc-status-text">Generating...</div>
+        </section>
+
+        <div class="sc-folder-warning hidden" id="sc-folder-warning">
+          Please select an output folder.
+        </div>
+
+      </div>
+
+      <!-- Navigation -->
+      <div class="sc-nav" id="sc-nav">
+        <button class="btn" id="sc-btn-back" style="visibility: hidden;">← Back</button>
+        <button class="btn btn-accent" id="sc-btn-next" disabled>Next →</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SBOL term suggestions for sheet editor combo box -->
+  <datalist id="se-sbol-terms">
+    <option value="sbol_displayId">
+    <option value="sbol_name">
+    <option value="sbol_objectType">
+    <option value="sbol_types">
+    <option value="sbol_description">
+    <option value="sbol_role">
+    <option value="sbol_sequence">
+    <option value="sbol_sequenceAnnotation">
+    <option value="sbol_sequenceConstraint">
+    <option value="sbol_subComponent">
+    <option value="sbol_module">
+    <option value="sbol_interaction">
+    <option value="sbol_functionalComponent">
+    <option value="sbol_participation">
+    <option value="sbol_measure">
+    <option value="sbol_dataSource">
+    <option value="sbol_model">
+    <option value="sbol_wasDerivedFrom">
+  </datalist>
+
+  <!-- Sheet Editor Modal -->
+  <div id="se-overlay" class="se-overlay hidden">
+    <div class="se-modal">
+
+      <div class="se-modal-header">
+        <div class="se-modal-title" id="se-modal-title">Add Custom Sheet</div>
+        <button class="se-close-btn" id="se-close-btn" type="button">✕</button>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label" for="se-sheet-name">
+          Sheet Name <span class="required-star">*</span>
+        </label>
+        <input type="text" id="se-sheet-name" placeholder="e.g. riboswitches">
+        <div class="se-warning hidden" id="se-name-warning">Sheet name is required.</div>
+      </div>
+
+      <div class="se-col-list-header">
+        <label class="form-label" style="margin:0;">Columns</label>
+        <button class="btn btn-sm" id="se-add-col-btn" type="button">+ Column</button>
+      </div>
+
+      <div id="se-col-list"></div>
+      <div class="se-col-empty hidden" id="se-col-empty">
+        No columns yet. Add at least one.
+      </div>
+
+      <div class="se-modal-footer">
+        <button class="btn" id="se-cancel-btn" type="button">Cancel</button>
+        <button class="btn btn-accent btn-sm" id="se-save-btn" type="button">Save Sheet</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Notice Modal (error / success dialogs) -->
+  <div id="notice-overlay" class="se-overlay hidden">
+    <div class="se-modal notice-modal">
+      <div class="notice-icon" id="notice-icon"></div>
+      <div class="notice-title" id="notice-title"></div>
+      <div class="notice-message" id="notice-message"></div>
+      <div class="notice-details hidden" id="notice-details"></div>
+      <div class="notice-footer">
+        <button class="btn btn-accent" id="notice-ok-btn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- F4: column reorder popup -->
+  <div id="sc-colorder-overlay" class="se-overlay hidden">
+    <div class="se-modal">
+      <div class="se-modal-title" id="sc-colorder-title">Reorder columns</div>
+      <div class="se-modal-sub">Drag to set the left-to-right order. This changes only the on-sheet arrangement.</div>
+      <div class="sc-order-list" id="sc-colorder-list"></div>
+      <div class="notice-footer">
+        <button class="btn" id="sc-colorder-cancel" type="button">Cancel</button>
+        <button class="btn btn-accent" id="sc-colorder-done" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

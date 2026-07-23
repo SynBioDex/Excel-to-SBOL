@@ -8,12 +8,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "excel2sbol"
-version = "1.1.18"
+version = "2.0.0"
 description = "Excel-to-SBOL is an open source python library that converts Excel Templates to SBOL documents"
 readme = "README.md"
 requires-python = ">=3.9"
-license = "BSD-3-Clause"
-license-files = ["LICEN[CS]E*"]
+license = { text = "BSD-3-Clause" }
 keywords = ["SBOL", "Excel", "templates", "convert", "synthetic biology"]
 authors = [
   { name="Jet Mante", email="jet.mante@colorado.edu" }
@@ -27,7 +26,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "openpyxl==3.0.7",
+    "openpyxl==3.0.9",
     "numpy==1.26.2",
     "pandas==1.5.3",
     "rdflib==6.2",

@@ -69,14 +69,23 @@ while True:
         print("Invalid input. Please enter either y or n.")
 
 if signin_permission == 'y':
-    # Retrieve domain from Excel 'welcome' sheet cell C16
+    # Read welcome sheet once, keyed by label in column B, value in column C
+    def _read_welcome_field(input_file, field_name):
+        df = pd.read_excel(input_file, sheet_name="welcome", header=None,
+                           index_col=0, engine='openpyxl').fillna("")
+        for _, row in df.iterrows():
+            if len(row) >= 2 and isinstance(row.iloc[0], str) and row.iloc[0].strip() == field_name:
+                val = row.iloc[1]
+                return str(val).strip() if not pd.isna(val) else ""
+        return ""
+
+    # Retrieve domain from welcome sheet by label, not by row position
     try:
-        df_welcome = pd.read_excel(input_file, sheet_name="welcome", header=None, usecols="C", nrows=16)
-        raw_domain = df_welcome.iloc[15, 0]
-        if pd.isna(raw_domain) or str(raw_domain).strip() == "":
+        raw_domain = _read_welcome_field(input_file, "Domain")
+        if not raw_domain:
             raise ValueError("Empty domain")
-        domain = str(raw_domain).rstrip("/")
-        print(f"Using domain {domain} from 'welcome' sheet cell C16")
+        domain = raw_domain.rstrip("/")
+        print(f"Using domain {domain} from 'welcome' sheet")
     except Exception as e:
         print(f"Failed to read domain from Excel file: {e}")
         # Fallback to user prompt
@@ -102,14 +111,13 @@ if signin_permission == 'y':
             print("Invalid input. Please enter either y or n.")
 
     if self_generated == 'y':
-        # Retrieve email from Excel 'welcome' sheet cell C8
+        # Retrieve email from welcome sheet by label, not by row position
         try:
-            df_email = pd.read_excel(input_file, sheet_name="welcome", header=None, usecols="C", nrows=8)
-            raw_email = df_email.iloc[7, 0]
-            if pd.isna(raw_email) or str(raw_email).strip() == "":
+            raw_email = _read_welcome_field(input_file, "Email")
+            if not raw_email:
                 raise ValueError("Empty email")
-            user_email = str(raw_email)
-            print(f"Using email {user_email} from 'welcome' sheet cell C8")
+            user_email = raw_email
+            print(f"Using email {user_email} from 'welcome' sheet")
         except Exception as e:
             print(f"Failed to read email from Excel file: {e}")
             user_email = input("Please enter your email address: ")
