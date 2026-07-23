@@ -2,6 +2,18 @@ import pytest
 import sbol2
 
 
+@pytest.fixture(autouse=True)
+def disable_online_sbol_validation():
+    """Keep tests deterministic by avoiding the remote SBOL validator service."""
+    old_validate = sbol2.Config.getOption(sbol2.ConfigOptions.VALIDATE)
+    old_validate_online = sbol2.Config.getOption(sbol2.ConfigOptions.VALIDATE_ONLINE)
+    sbol2.Config.setOption(sbol2.ConfigOptions.VALIDATE, False)
+    sbol2.Config.setOption(sbol2.ConfigOptions.VALIDATE_ONLINE, False)
+    yield
+    sbol2.Config.setOption(sbol2.ConfigOptions.VALIDATE, old_validate)
+    sbol2.Config.setOption(sbol2.ConfigOptions.VALIDATE_ONLINE, old_validate_online)
+
+
 @pytest.fixture()
 def sbol_doc():
     # invoked once per test function
