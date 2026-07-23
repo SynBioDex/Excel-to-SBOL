@@ -345,6 +345,12 @@ class TermClass:
 
 def column_parse(to_convert, compiled_sheets, sht_convert_dict, dict_of_objs,
                  col_read_df, doc, file_path_out, sbol_version=3, file_format=None):
+    # Clear any stale duplicate-found flag from a previous run. The auth helpers
+    # set COUNTER when a duplicate exists, and the write below is skipped while it
+    # is set; in the long-lived GUI process it is otherwise never reset, so one
+    # duplicate would silently suppress output on every later conversion.
+    os.environ.pop("COUNTER", None)
+
     doc_pref_terms = ['rdf', 'rdfs', 'xsd', 'sbol']
     data_source_id_to_update = {}
 

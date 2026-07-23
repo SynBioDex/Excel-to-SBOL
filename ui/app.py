@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-app.py — pywebview host for Excel2SBOL
+app.py - pywebview host for Excel2SBOL
 Serves web/index.html in a native OS window and exposes a Python API
 to the frontend via window.pywebview.api.
 """
@@ -8,6 +8,7 @@ to the frontend via window.pywebview.api.
 import os
 import sys
 import json
+import logging
 import threading
 from datetime import datetime
 
@@ -52,6 +53,24 @@ def save_history(domain, email):
         history["emails"].append(email)
     with open(HISTORY_FILE, "w") as f:
         json.dump(history, f, indent=2)
+
+
+class _WarningCollector(logging.Handler):
+    """Collects WARNING+ log records emitted during a conversion so the GUI can
+    show them. The converter/compiler report skipped rows, blank ids, etc. via
+    logging.warning(), which otherwise only reaches the terminal. Attach around
+    the converter call, then read `.messages`.
+    """
+
+    def __init__(self):
+        super().__init__(level=logging.WARNING)
+        self.messages = []
+
+    def emit(self, record):
+        try:
+            self.messages.append(self.format(record))
+        except Exception:
+            pass
 
 
 # ------------------------------------------------------------------ #
@@ -101,7 +120,7 @@ class Api:
             return None
 
     # ------------------------------------------------------------------ #
-    # Converter — Excel metadata                                           #
+    # Converter - Excel metadata                                           #
     # ------------------------------------------------------------------ #
 
     def get_excel_metadata(self, file_path):
@@ -117,7 +136,6 @@ class Api:
             # table. Read by label rather than a fixed row index: the old code used
             # hard-coded iloc positions (domain iloc[15] with nrows=13 -> always
             # IndexError -> None; email iloc[7] -> the Institution row), both wrong.
-            # See I19.
             df_w = pd.read_excel(file_path, sheet_name="welcome", header=None, usecols="B,C")
             labels = df_w.iloc[:, 0].astype(str).str.strip()
 
@@ -139,14 +157,14 @@ class Api:
         return json.dumps(result)
 
     # ------------------------------------------------------------------ #
-    # Converter — history                                                  #
+    # Converter - history                                                  #
     # ------------------------------------------------------------------ #
 
     def get_history(self):
         return json.dumps(load_history())
 
     # ------------------------------------------------------------------ #
-    # Converter — run                                                      #
+    # Converter - run                                                      #
     # ------------------------------------------------------------------ #
 
     def run_conversion(self, config_json):
@@ -157,6 +175,15 @@ class Api:
         return "ok"
 
     def _do_conversion(self, config):
+        # Capture the converter's logging.warning() output (skipped rows, blank
+        # ids, unresolved lookups) so the GUI can report it, not just the terminal.
+        collector = _WarningCollector()
+        collector.setFormatter(logging.Formatter("%(message)s"))
+        root = logging.getLogger()
+        root.addHandler(collector)
+        prev_level = root.level
+        if not root.isEnabledFor(logging.WARNING):
+            root.setLevel(logging.WARNING)
         try:
             file_path = config["file_path"]
             sbol_version = int(config["sbol_version"])
@@ -203,14 +230,19 @@ class Api:
 
             self._progress.update({
                 "finished": True, "success": True,
-                "message": f"Output saved to: {out}"
+                "message": f"Output saved to: {out}",
+                "warnings": collector.messages,
             })
         except Exception as e:
             self._progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x'). See I47.
-                "message": (str(e.args[0]) if e.args else str(e))
+                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
+                "message": (str(e.args[0]) if e.args else str(e)),
+                "warnings": collector.messages,
             })
+        finally:
+            root.removeHandler(collector)
+            root.setLevel(prev_level)
 
     def get_progress(self):
         return json.dumps(self._progress)
@@ -222,12 +254,12 @@ class Api:
     def generate_spreadsheet(self, config_json):
         """
         config = {
-          template_type: "resources"|"strains"|"sample_design"|"study",
+          template_type: "resources"|"strains"|"sample_design"|"assay",
           selected_parts: [...],   # Resources only
           output_folder: "/path",
           metadata: {
-            library_name, author, email, lab, institution,
-            description, pubmed_id, date, sbol_version,
+            library_name, collection_id, version, author, email, lab,
+            institution, description, pubmed_id, sbol_version,
             domain, master_collection
           }
         }
@@ -247,7 +279,8 @@ class Api:
                 "output_folder":      config["output_folder"],
                 "metadata":           config["metadata"],
                 "user_custom_sheets": config.get("custom_sheets", []),
-                "sheet_order":        config.get("sheet_order", []),  # F19
+                "sheet_order":        config.get("sheet_order", []),
+                "column_orders":      config.get("column_orders", {}),  # F4
             }
             if template_type in ("resources", "custom"):
                 gen_config["selected_sheets"] = config.get("selected_parts", [])
@@ -266,7 +299,7 @@ class Api:
         except Exception as e:
             self._sc_progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x'). See I47.
+                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
                 "message": (str(e.args[0]) if e.args else str(e))
             })
 
@@ -278,7 +311,7 @@ class Api:
         if template_type == "custom":
             # All unique sheets from every template config, nothing pre-checked.
             # Sheets flagged ui_selectable=False (e.g. signal) are excluded from
-            # the custom catalog. See I40.
+            # the custom catalog.
             seen = set()
             sheets_to_show = []
             for config_sheets in TEMPLATE_CONFIGS.values():
@@ -301,6 +334,8 @@ class Api:
                 "display_name":    sdef.display_name,
                 "hint":            sdef.ui_hint,
                 "default_checked": sdef.ui_default_checked if use_default else False,
+                # F4: column names (in default order) for the reorder popup.
+                "columns":         [c.name for c in sdef.columns],
             })
         result = [{"group": g, "sheets": s} for g, s in groups.items()]
         return json.dumps(result)
@@ -319,7 +354,7 @@ def main():
         "Excel2SBOL",
         url=os.path.join(web_dir, "index.html"),
         width=620,
-        height=780,
+        height=800,
         min_size=(500, 600),
         text_select=False,
         js_api=api
