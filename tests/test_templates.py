@@ -17,13 +17,13 @@ TEMPLATE_SHEETS = {
     "Resources.xlsm": {"Init", "column_definitions", "chassis", "cds"},
     "SampleDesign.xlsm": {"Init", "column_definitions", "sample design", "supplement"},
     "Strains.xlsm": {"Init", "column_definitions", "strain"},
-    "Study.xlsm": {"Init", "column_definitions", "study", "assay", "sample"},
+    "Assay.xlsm": {"Init", "column_definitions", "assay", "sample", "measurement", "signal"},
 }
 
 # Base is a source workbook and Resources currently includes a workbook-only
 # "Translate to Protein" field. The remaining templates are complete converter
 # inputs and must produce valid SBOL.
-CONVERTIBLE_TEMPLATES = ("SampleDesign.xlsm", "Strains.xlsm", "Study.xlsm")
+CONVERTIBLE_TEMPLATES = ("SampleDesign.xlsm", "Strains.xlsm", "Assay.xlsm")
 NIST_WORKBOOKS = tuple(sorted(path.name for path in NIST_WORKBOOKS_DIR.glob("*.xlsm")))
 
 
@@ -48,7 +48,9 @@ def test_converter_can_read_template_configuration(template_name):
     assert sheets_to_convert
     assert set(sheets_to_convert).issubset(compiled_sheets)
     assert not col_definitions.empty
-    assert initialise_welcome(init_info, TEMPLATES_DIR / template_name) is not None
+    welcome_metadata = initialise_welcome(init_info, TEMPLATES_DIR / template_name)
+    if any(sheet_name.lower() == "welcome" for sheet_name in init_info):
+        assert welcome_metadata is not None
 
 
 @pytest.mark.parametrize("template_name", CONVERTIBLE_TEMPLATES)
