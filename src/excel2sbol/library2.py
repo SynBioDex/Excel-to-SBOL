@@ -509,6 +509,44 @@ def link_validation(email, password, base_url, target_url):
 	print("Link is not accessible.")
 	return False
 
+def degrades(rowobj):
+
+    module_name_pref = rowobj.obj_uri.split("/")[-1]
+    
+    for col in rowobj.col_cell_dict.keys():
+        val = rowobj.col_cell_dict[col]
+        if isinstance(val, str):
+            if col == "Degrades":	
+                if val == "TRUE":
+                    return
+                break
+
+	# create a new module definitions
+    module_name = f"{module_name_pref}_degradation"
+    module_def = sbol2.ModuleDefinition(module_name)
+
+	#create a fc for the molecule
+    if module_name_pref not in [fc.displayId for fc in module_def.functionalComponents]:
+        molecule_fc = module_def.functionalComponents.create(module_name_pref)
+        molecule_fc.definition = rowobj.obj_uri
+    else:
+        molecule_fc = module_def.functionalComponents.get(module_name_pref)
+
+    # participation_name = f'{module_name_pref}_reactant'
+    participation = sbol2.Participation(uri = f'{module_name_pref}_reactant')
+    participation.participant = dna_fc
+    participation.uri = f'{module_name_pref}_reactant'
+    participation.roles = sbol2.SBO_REACTANT
+
+    interaction_name = f'{module_name_pref}_degradation_interaction'
+    interaction_type = sbol2.SBO_DEGRADATION
+    interaction = sbol2.Interaction(interaction_name, interaction_type)
+    interaction.participations.add(participation)
+    interaction.participations.add(participation2)
+
+    module_def.interactions.add(interaction)
+    rowobj.doc.addModuleDefinition(module_def)
+
 def encodesFor(rowobj):
 
     module_name_pref = rowobj.obj_uri.split("/")[-1]
