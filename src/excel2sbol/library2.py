@@ -782,7 +782,7 @@ def complexComponent(rowobj):
 	
 	for col in rowobj.col_cell_dict.keys():
 		val = rowobj.col_cell_dict[col]
-		if col == "Components Ids":
+		if col == "Components IDs":
 			if isinstance(val, list) and len(val) > 0:
 				
 				for i in val[0:]:
