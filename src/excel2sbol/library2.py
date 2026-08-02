@@ -534,7 +534,7 @@ def degrades(rowobj):
 
     # participation_name = f'{module_name_pref}_reactant'
     participation = sbol2.Participation(uri = f'{module_name_pref}_reactant')
-    participation.participant = dna_fc
+    participation.participant = molecule_fc
     participation.uri = f'{module_name_pref}_reactant'
     participation.roles = sbol2.SBO_REACTANT
 
@@ -542,7 +542,6 @@ def degrades(rowobj):
     interaction_type = sbol2.SBO_DEGRADATION
     interaction = sbol2.Interaction(interaction_name, interaction_type)
     interaction.participations.add(participation)
-    interaction.participations.add(participation2)
 
     module_def.interactions.add(interaction)
     rowobj.doc.addModuleDefinition(module_def)

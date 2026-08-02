@@ -1,8 +1,7 @@
 [build-system]
 requires = [
-    "setuptools>=61.0",
-    "wheel",
-    "numpy==1.26.2"
+    "setuptools<81.0",
+    "wheel"
 ]
 build-backend = "setuptools.build_meta"
 
@@ -26,22 +25,27 @@ classifiers = [
 ]
 
 dependencies = [
-    "openpyxl==3.0.9",
-    "numpy==1.26.2",
-    "pandas==1.5.3",
+    "openpyxl>=3.1",
+    "numpy>=2.2",
+    "pandas>=2.2",
     "rdflib==6.2",
-    "requests==2.25.1",
+    "requests>=2.25",
     "sbol2==1.4",
     "sbol3==1.1",
     "tyto==1.4",
     "urllib3==1.26.5",
-    "validators==0.18.2"
+    "validators==0.18.2",
+    "packaging==24.0"
 ]
 
 [project.optional-dependencies]
 test = [
   "pytest < 5.0.0",
   "pytest-cov[all]"
+]
+
+gui = [
+  "pywebview>=5.0"
 ]
 
 [project.urls]
