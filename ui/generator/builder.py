@@ -6,6 +6,7 @@ All sheets (Init, column_definitions, part sheets, SBH scaffolds) are generated
 from the Python schema in sheet_definitions.py.
 """
 
+import gc
 import os
 import re
 import sys
@@ -867,6 +868,11 @@ def _build_sbh_scaffolds(wb, sheets: list):
             created.add(scaffold_name)
 
 
+# Columns whose values are booleans but which carry no lookup sheet, so they get
+# a literal TRUE/FALSE list validation instead of a sourced dropdown.
+_BOOL_LIST_COLUMNS = ("Degrades",)
+
+
 def _apply_data_validations(wb, sheets: list):
     """Apply native Excel list dropdowns for sheet-backed lookup columns."""
     for sdef in sheets:
@@ -878,6 +884,18 @@ def _apply_data_validations(wb, sheets: list):
             str(target_ws.cell(1, c).value or ""): c
             for c in range(1, target_ws.max_column + 1)
         }
+
+        # Literal TRUE/FALSE dropdown for boolean-valued columns that are not
+        # backed by a lookup sheet.
+        for col in sdef.columns:
+            if col.name not in _BOOL_LIST_COLUMNS or col.name not in target_headers:
+                continue
+            target_col = get_column_letter(target_headers[col.name])
+            target_range = f"{target_col}2:{target_col}{max(2, target_ws.max_row)}"
+            validation = DataValidation(type="list", formula1='"TRUE,FALSE"',
+                                        allow_blank=True)
+            target_ws.add_data_validation(validation)
+            validation.add(target_range)
 
         for col in sdef.columns:
             if not (col.sheet_lookup and col.lookup_sheet):
@@ -1257,7 +1275,27 @@ def _apply_native_checkboxes(out_path: str):
         for name, data in parts.items():
             if name not in written:
                 zout.writestr(name, data)
-    os.replace(tmp_path, out_path)
+    # Windows: os.replace maps to MoveFileEx, which needs DELETE access on the
+    # destination and fails with "Access is denied" while any handle to it is
+    # open. POSIX rename() has no such restriction, so this only breaks on
+    # Windows. Reading the workbook above leaves the source archive's underlying
+    # file object alive: ZipFile.close() sets fp to None but only closes the real
+    # handle once its internal _fileRefCnt reaches zero, so a member stream that
+    # was never closed keeps it open, held in a reference cycle that refcounting
+    # cannot reclaim. Collecting the cycles releases it before the swap.
+    gc.collect()
+    try:
+        os.replace(tmp_path, out_path)
+    except PermissionError:
+        # Fallback if a handle still survives: overwriting in place needs only
+        # write access, not DELETE. This gives up the atomicity of the rename,
+        # acceptable because out_path is a freshly generated file, and it never
+        # leaves the temp archive behind.
+        try:
+            with open(tmp_path, "rb") as src, open(out_path, "wb") as dst:
+                shutil.copyfileobj(src, dst)
+        finally:
+            os.remove(tmp_path)
 
 
 # ── Utilities ─────────────────────────────────────────────────────────────────

@@ -153,6 +153,19 @@ def _doi_col() -> ColumnDef:
     )
 
 
+def _degrades_col() -> ColumnDef:
+    return ColumnDef(
+        name="Degrades",
+        tooltip=(
+            "Whether this entity is subject to degradation. Select TRUE or FALSE "
+            "from the dropdown."
+        ),
+        sbol_term="sbol_degrades",
+        namespace=NS_SBOLS,
+        col_type="String",
+    )
+
+
 def _source_organism_col() -> ColumnDef:
     return ColumnDef(
         name="Source Organism",
@@ -538,7 +551,7 @@ RNA = SheetDef(
     columns=(
         _bio_base_cols("RNA")
         + _provenance_cols()
-        + [_length_col("nt"), _rna_sequence_col()]
+        + [_degrades_col(), _length_col("nt"), _rna_sequence_col()]
         + _bio_tail_cols()
     ),
 )
@@ -558,7 +571,7 @@ PROTEIN = SheetDef(
     columns=(
         _bio_base_cols("Protein")
         + _provenance_cols()
-        + [_length_col("aa"), _protein_sequence_col()]
+        + [_degrades_col(), _length_col("aa"), _protein_sequence_col()]
         + _bio_tail_cols()
     ),
 )
@@ -578,7 +591,7 @@ COMPLEX = SheetDef(
     columns=(
         _bio_base_cols("Complex")
         + _provenance_cols()
-        + [_components_ids_col()]
+        + [_components_ids_col(), _degrades_col()]
         + _bio_tail_cols()
     ),
 )
@@ -666,6 +679,7 @@ CHEMICALS = SheetDef(
             ),
         ]
         + _provenance_cols()
+        + [_degrades_col()]
         + _bio_tail_cols()
     ),
 )
