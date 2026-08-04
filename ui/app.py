@@ -55,6 +55,21 @@ def save_history(domain, email):
         json.dump(history, f, indent=2)
 
 
+def _error_text(exc: Exception) -> str:
+    """Human-readable message for the GUI.
+
+    str(KeyError("x")) renders with quotes ("'x'"), so single-arg exceptions use
+    args[0]. OSError is different: its args are (errno, strerror), so args[0]
+    reports a bare number (a Windows "Access is denied" surfaced as "13") and
+    discards the operation and the paths. Report those in full.
+    """
+    if isinstance(exc, OSError):
+        where = " -> ".join(p for p in (exc.filename, exc.filename2) if p)
+        msg = f"{type(exc).__name__}: {exc.strerror or exc}"
+        return f"{msg} ({where})" if where else msg
+    return (str(exc.args[0]) if exc.args else str(exc)) or type(exc).__name__
+
+
 class _WarningCollector(logging.Handler):
     """Collects WARNING+ log records emitted during a conversion so the GUI can
     show them. The converter/compiler report skipped rows, blank ids, etc. via
@@ -236,8 +251,7 @@ class Api:
         except Exception as e:
             self._progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
-                "message": (str(e.args[0]) if e.args else str(e)),
+                "message": _error_text(e),
                 "warnings": collector.messages,
             })
         finally:
@@ -299,8 +313,7 @@ class Api:
         except Exception as e:
             self._sc_progress.update({
                 "finished": True, "success": False,
-                # use args[0] not str(e): str(KeyError("x")) adds quotes ('x').
-                "message": (str(e.args[0]) if e.args else str(e))
+                "message": _error_text(e)
             })
 
     def get_sc_progress(self):

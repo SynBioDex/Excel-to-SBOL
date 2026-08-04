@@ -31,7 +31,7 @@ dependencies = [
     "numpy==1.26.2",
     "pandas>=2.0",
     "rdflib==6.2",
-    "requests==2.25.1",
+    "requests>=2.25",
     "sbol2==1.4",
     "sbol3==1.1",
     "tyto==1.4",
