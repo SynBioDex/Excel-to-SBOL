@@ -49,10 +49,6 @@ gui = [
   "pywebview>=5.0"
 ]
 
-gui = [
-  "pywebview>=5.0"
-]
-
 [project.urls]
 "Homepage" = "https://github.com/SynBioDex/Excel-to-SBOL"
 "Bug Tracker" = "https://github.com/SynBioDex/Excel-to-SBOL/issues"
