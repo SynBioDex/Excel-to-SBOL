@@ -32,7 +32,7 @@ def initialise_welcome(init_info, file_path_in):
         metadata = {}
         for _, row in welcome_metadata.iterrows():
             if len(row) >= 2:
-                key, value = row[0], row[1]
+                key, value = row.iloc[0], row.iloc[1]
                 if isinstance(key, str) and key.strip():
                     metadata[key.strip()] = value.strip() if isinstance(value, str) else value
         return metadata
@@ -43,12 +43,16 @@ def initialise(file_path_in):
     init_info = pd.read_excel(file_path_in, sheet_name="Init",
                               skiprows=9, index_col=0,
                               engine='openpyxl')
-    init_info = init_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+    init_info = init_info.apply(
+        lambda column: column.map(lambda x: x.strip() if isinstance(x, str) else x)
+    ).to_dict('index')
 
     version_info = pd.read_excel(file_path_in, sheet_name="Init",
                                  nrows=4, index_col=0, header=None,
                                  engine='openpyxl')
-    version_info = version_info.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('index')
+    version_info = version_info.apply(
+        lambda column: column.map(lambda x: x.strip() if isinstance(x, str) else x)
+    ).to_dict('index')
     if 'Homespace' in version_info:
         homespace = version_info['Homespace'][1]
     else:
@@ -112,7 +116,9 @@ def initialise(file_path_in):
                                header=0, skiprows=skipval,
                                engine='openpyxl').fillna("")
        
-        sheet_dict['library'] = lib_df.applymap(lambda x: x.strip() if isinstance(x, str) else x).to_dict('list')
+        sheet_dict['library'] = lib_df.apply(
+            lambda column: column.map(lambda x: x.strip() if isinstance(x, str) else x)
+        ).to_dict('list')
 
         # need dicitonary with as keys every column name and as values a list of values (note ordered list and need place holder empty values)
         compiled_sheets[sheet_name] = sheet_dict
@@ -121,7 +127,9 @@ def initialise(file_path_in):
     col_read_df = pd.read_excel(file_path_in,
                                 sheet_name="column_definitions", header=0,
                                 engine='openpyxl')
-    col_read_df = col_read_df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    col_read_df = col_read_df.apply(
+        lambda column: column.map(lambda x: x.strip() if isinstance(x, str) else x)
+    )
 
     # processing to turn init columns into 'sheet' columns
     # pull all column names

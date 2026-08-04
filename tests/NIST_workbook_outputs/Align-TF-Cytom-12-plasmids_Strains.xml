@@ -1,0 +1,127 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:sbol="http://sbols.org/v2#" xmlns:ns0="http://purl.org/dc/terms/">
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_align_vanr_301/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mg1655_dlac_align_vanr_301/Align_VanR_301/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>Align_VanR_301</sbol:displayId>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301/Align_VanR_301"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/Align_VanR_301/1"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>mg1655_dlac_align_vanr_301</sbol:displayId>
+    <ns0:title>MG1655-dLac-Align-VanR-301</ns0:title>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C97158"/>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_align_vanr_301/mg1655_dlac/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_align_vanr_301/mg1655_dlac"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac/1"/>
+        <sbol:displayId>mg1655_dlac</sbol:displayId>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp/1">
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp/pBCD_NoFP/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/pBCD_NoFP/1"/>
+        <sbol:displayId>pBCD_NoFP</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp/pBCD_NoFP"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pbcd_nofp</sbol:displayId>
+    <ns0:title>mg1655_dlac_pBCD_NoFP</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pbcd_nofp/mg1655_dlac/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp/mg1655_dlac"/>
+        <sbol:displayId>mg1655_dlac</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pbcd_nofp"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C97158"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/1">
+    <ns0:title>mg1655_dlac_P150_R1_5_VanR_WT_Pvanr</ns0:title>
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/mg1655_dlac/1">
+        <sbol:displayId>mg1655_dlac</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/mg1655_dlac"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/P150_R1_5_VanR_WT_Pvanr/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>P150_R1_5_VanR_WT_Pvanr</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr/P150_R1_5_VanR_WT_Pvanr"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/P150_R1_5_VanR_WT_Pvanr/1"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:displayId>mg1655_dlac_p150_r1_5_vanr_wt_pvanr</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_p150_r1_5_vanr_wt_pvanr"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C97158"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar/mg1655_dlac/1">
+        <sbol:displayId>mg1655_dlac</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar/mg1655_dlac"/>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:displayId>mg1655_dlac_pvanr_am_t2a_mscar</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <ns0:title>mg1655_dlac_pVanR_am_t2a_mScar</ns0:title>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C97158"/>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar/pVanR_am_t2a_mScar/1">
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar/pVanR_am_t2a_mScar"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/pVanR_am_t2a_mScar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:displayId>pVanR_am_t2a_mScar</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_t2a_mscar"/>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar/1">
+    <sbol:module>
+      <sbol:Module rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar/mg1655_dlac/1">
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar/mg1655_dlac"/>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>mg1655_dlac</sbol:displayId>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/mg1655_dlac/1"/>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>mg1655_dlac_pvanr_am_a1t_mscar</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C97158"/>
+    <ns0:title>mg1655_dlac_pVanR_am_a1t_mScar</ns0:title>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar/pVanR_am_a1t_mScar/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="https://synbiohub.org/user/myers/Align_TF_Cytom_12_plasmids/pVanR_am_a1t_mScar/1"/>
+        <sbol:version>1</sbol:version>
+        <sbol:persistentIdentity rdf:resource="http://examples.org/mg1655_dlac_pvanr_am_a1t_mscar/pVanR_am_a1t_mScar"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>pVanR_am_a1t_mScar</sbol:displayId>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+  </sbol:ModuleDefinition>
+</rdf:RDF>
