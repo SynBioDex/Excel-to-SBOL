@@ -28,7 +28,7 @@ classifiers = [
 dependencies = [
     "openpyxl==3.0.9",
     "numpy>=2.2",
-    "pandas>=2.2",
+    "pandas>=2.1,<2.2",
     "rdflib==6.2",
     "requests>=2.25",
     "sbol2==1.4",
