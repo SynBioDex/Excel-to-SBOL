@@ -1,8 +1,7 @@
 [build-system]
 requires = [
     "setuptools<81.0",
-    "wheel",
-    "numpy==1.26.2"
+    "wheel"
 ]
 build-backend = "setuptools.build_meta"
 
@@ -27,9 +26,9 @@ classifiers = [
 ]
 
 dependencies = [
-    "openpyxl>=3.1.0",
-    "numpy==1.26.2",
-    "pandas>=2.0",
+    "openpyxl==3.0.9",
+    "numpy>=2.2",
+    "pandas>=2.2",
     "rdflib==6.2",
     "requests>=2.25",
     "sbol2==1.4",
@@ -37,7 +36,7 @@ dependencies = [
     "tyto==1.4",
     "urllib3==1.26.5",
     "validators==0.18.2",
-    "packaging==21.3"
+    "packaging==24.0"
 ]
 
 [project.optional-dependencies]
