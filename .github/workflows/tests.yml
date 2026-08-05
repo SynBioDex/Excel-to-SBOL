@@ -32,7 +32,7 @@ jobs:
           python - <<'PY'
           import packaging
           import packaging.version as packaging_version
-          assert packaging.__version__ == "21.3", packaging.__version__
+          assert packaging.__version__ == "24.0", packaging.__version__
           assert hasattr(packaging_version, "NegativeInfinity")
           PY
 
