@@ -1,0 +1,456 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!-- Created by SBOLCanvas version 1.0 on 2026-08-06 at 21:57:20 UTC with JSBML version 1.6.1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" layout:required="false" level="3" version="2" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
+  <model id="sbolcanvas_model">
+    <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <layout:layout layout:id="iBioSim">
+        <layout:dimensions layout:depth="0" layout:height="531" layout:width="780" />
+        <layout:listOfAdditionalGraphicalObjects>
+          <layout:generalGlyph layout:id="Glyph__HIGH_Ars" layout:reference="HIGH_Ars">
+            <layout:boundingBox>
+              <layout:position layout:x="191.61904761904748" layout:y="86" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="40" layout:width="96" />
+            </layout:boundingBox>
+            <layout:listOfReferenceGlyphs>
+              <layout:referenceGlyph layout:glyph="Glyph__NaAsO2" layout:id="Glyph__HIGH_Ars__product__NaAsO2" layout:role="product">
+                <layout:boundingBox>
+                  <layout:position layout:x="239.61904761904748" layout:y="106" layout:z="0" />
+                  <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+                </layout:boundingBox>
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="239.61904761904748" layout:y="106" layout:z="0" />
+                      <layout:end layout:x="350" layout:y="100" layout:z="0" />
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:referenceGlyph>
+            </layout:listOfReferenceGlyphs>
+          </layout:generalGlyph>
+        </layout:listOfAdditionalGraphicalObjects>
+        <layout:listOfCompartmentGlyphs>
+          <layout:compartmentGlyph layout:compartment="Cell" layout:id="Glyph__Cell">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="0" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="531" layout:width="780" />
+            </layout:boundingBox>
+          </layout:compartmentGlyph>
+        </layout:listOfCompartmentGlyphs>
+        <layout:listOfSpeciesGlyphs>
+          <layout:speciesGlyph layout:id="Glyph__PlacIQ" layout:species="PlacIQ">
+            <layout:boundingBox>
+              <layout:position layout:x="175" layout:y="406" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="30" layout:width="100" />
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__NaAsO2" layout:species="NaAsO2">
+            <layout:boundingBox>
+              <layout:position layout:x="325" layout:y="75" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__arsR_Protein" layout:species="arsR_Protein">
+            <layout:boundingBox>
+              <layout:position layout:x="234.5" layout:y="196" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__Pars" layout:species="Pars">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="406" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="30" layout:width="100" />
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__NaAsO2_arsR_complex" layout:species="NaAsO2_arsR_complex">
+            <layout:boundingBox>
+              <layout:position layout:x="395" layout:y="265.5" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+        </layout:listOfSpeciesGlyphs>
+        <layout:listOfReactionGlyphs>
+          <layout:reactionGlyph layout:id="Glyph__NaAsO2_arsR_complex__activation__Pars">
+            <layout:boundingBox>
+              <layout:position layout:x="630" layout:y="421" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__NaAsO2_arsR_complex__activation__Pars" layout:role="product" layout:speciesGlyph="Glyph__Pars">
+                <layout:boundingBox>
+                  <layout:position layout:x="525" layout:y="355.75" layout:z="0" />
+                  <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+                </layout:boundingBox>
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="420" layout:y="290.5" layout:z="0" />
+                      <layout:end layout:x="630" layout:y="421" layout:z="0" />
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__PlacIQ__Production__arsR_Protein">
+            <layout:boundingBox>
+              <layout:position layout:x="259.5" layout:y="221" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__PlacIQ__Production__arsR_Protein" layout:role="product" layout:speciesGlyph="Glyph__arsR_Protein">
+                <layout:boundingBox>
+                  <layout:position layout:x="242.25" layout:y="321" layout:z="0" />
+                  <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+                </layout:boundingBox>
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="225" layout:y="421" layout:z="0" />
+                      <layout:end layout:x="259.5" layout:y="221" layout:z="0" />
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__NaAsO2__complex__NaAsO2_arsR_complex">
+            <layout:boundingBox>
+              <layout:position layout:x="420" layout:y="290.5" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__NaAsO2__complex__NaAsO2_arsR_complex" layout:role="product" layout:speciesGlyph="Glyph__NaAsO2_arsR_complex">
+                <layout:boundingBox>
+                  <layout:position layout:x="385" layout:y="195.25" layout:z="0" />
+                  <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+                </layout:boundingBox>
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="350" layout:y="100" layout:z="0" />
+                      <layout:end layout:x="420" layout:y="290.5" layout:z="0" />
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__arsR_Protein__complex__NaAsO2_arsR_complex">
+            <layout:boundingBox>
+              <layout:position layout:x="420" layout:y="290.5" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__arsR_Protein__complex__NaAsO2_arsR_complex" layout:role="product" layout:speciesGlyph="Glyph__NaAsO2_arsR_complex">
+                <layout:boundingBox>
+                  <layout:position layout:x="339.75" layout:y="255.75" layout:z="0" />
+                  <layout:dimensions layout:depth="0" layout:height="0" layout:width="0" />
+                </layout:boundingBox>
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="259.5" layout:y="221" layout:z="0" />
+                      <layout:end layout:x="420" layout:y="290.5" layout:z="0" />
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+        </layout:listOfReactionGlyphs>
+        <layout:listOfTextGlyphs>
+          <layout:textGlyph layout:graphicalObject="Glyph__Cell" layout:id="TextGlyph__Cell" layout:text="Cell">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="0" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="531" layout:width="780" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__PlacIQ" layout:id="TextGlyph__PlacIQ" layout:text="PlacIQ">
+            <layout:boundingBox>
+              <layout:position layout:x="175" layout:y="406" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="30" layout:width="100" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__NaAsO2" layout:id="TextGlyph__NaAsO2" layout:text="NaAsO2">
+            <layout:boundingBox>
+              <layout:position layout:x="325" layout:y="75" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__arsR_Protein" layout:id="TextGlyph__arsR_Protein" layout:text="arsR_Protein">
+            <layout:boundingBox>
+              <layout:position layout:x="234.5" layout:y="196" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__Pars" layout:id="TextGlyph__Pars" layout:text="Pars">
+            <layout:boundingBox>
+              <layout:position layout:x="580" layout:y="406" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="30" layout:width="100" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__NaAsO2_arsR_complex" layout:id="TextGlyph__NaAsO2_arsR_complex" layout:text="NaAsO2_arsR_complex">
+            <layout:boundingBox>
+              <layout:position layout:x="395" layout:y="265.5" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="50" layout:width="50" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__HIGH_Ars" layout:id="TextGlyph__HIGH_Ars" layout:text="HIGH_Ars">
+            <layout:boundingBox>
+              <layout:position layout:x="191.61904761904748" layout:y="86" layout:z="0" />
+              <layout:dimensions layout:depth="0" layout:height="40" layout:width="96" />
+            </layout:boundingBox>
+          </layout:textGlyph>
+        </layout:listOfTextGlyphs>
+      </layout:layout>
+    </layout:listOfLayouts>
+    <listOfCompartments>
+      <compartment constant="true" id="Cell" name="Cell" size="1" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="Pars" initialAmount="2" name="Pars" sboTerm="SBO:0000590" />
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="PlacIQ" initialAmount="2" name="PlacIQ" sboTerm="SBO:0000590" />
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="arsR_Protein" initialAmount="0" name="arsR_Protein" sboTerm="SBO:0000252" />
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="NaAsO2" initialAmount="0" name="NaAsO2" sboTerm="SBO:0000247" />
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="NaAsO2_arsR_complex" initialAmount="0" name="NaAsO2_arsR_complex" sboTerm="SBO:0000253" />
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="Pars_mRNA" initialAmount="0" sboTerm="SBO:0000250" />
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction compartment="Cell" id="Production_Pars" reversible="false" sboTerm="SBO:0000589">
+        <listOfProducts>
+          <speciesReference constant="true" species="Pars_mRNA" stoichiometry="10" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference sboTerm="SBO:0000598" species="Pars" />
+          <modifierSpeciesReference sboTerm="SBO:0000459" species="NaAsO2_arsR_complex" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide />
+              <apply>
+                <times />
+                <ci>Pars</ci>
+                <apply>
+                  <plus />
+                  <apply>
+                    <times />
+                    <apply>
+                      <times />
+                      <ci>kb</ci>
+                      <apply>
+                        <divide />
+                        <ci>ko_f</ci>
+                        <ci>ko_r</ci>
+                      </apply>
+                    </apply>
+                    <ci>nr</ci>
+                  </apply>
+                  <apply>
+                    <times />
+                    <apply>
+                      <times />
+                      <apply>
+                        <times />
+                        <ci>ka</ci>
+                        <apply>
+                          <divide />
+                          <ci>kao_f</ci>
+                          <ci>kao_r</ci>
+                        </apply>
+                      </apply>
+                      <ci>nr</ci>
+                    </apply>
+                    <apply>
+                      <power />
+                      <apply>
+                        <times />
+                        <apply>
+                          <divide />
+                          <ci>ka_NaAsO2_arsR_complex_f</ci>
+                          <ci>ka_NaAsO2_arsR_complex_r</ci>
+                        </apply>
+                        <ci>NaAsO2_arsR_complex</ci>
+                      </apply>
+                      <ci>nc_NaAsO2_arsR_complex_a</ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus />
+                <apply>
+                  <plus />
+                  <cn type="integer">1</cn>
+                  <apply>
+                    <times />
+                    <apply>
+                      <divide />
+                      <ci>ko_f</ci>
+                      <ci>ko_r</ci>
+                    </apply>
+                    <ci>nr</ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times />
+                  <apply>
+                    <times />
+                    <apply>
+                      <divide />
+                      <ci>kao_f</ci>
+                      <ci>kao_r</ci>
+                    </apply>
+                    <ci>nr</ci>
+                  </apply>
+                  <apply>
+                    <power />
+                    <apply>
+                      <times />
+                      <apply>
+                        <divide />
+                        <ci>ka_NaAsO2_arsR_complex_f</ci>
+                        <ci>ka_NaAsO2_arsR_complex_r</ci>
+                      </apply>
+                      <ci>NaAsO2_arsR_complex</ci>
+                    </apply>
+                    <ci>nc_NaAsO2_arsR_complex_a</ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="kb" value="0.0001" />
+            <localParameter id="ka" value="0.25" />
+            <localParameter id="ko_f" value="0.033" />
+            <localParameter id="ko_r" value="1" />
+            <localParameter id="kao_f" value="1" />
+            <localParameter id="kao_r" value="1" />
+            <localParameter id="nr" value="30" />
+            <localParameter id="ka_NaAsO2_arsR_complex_f" value="0.0033" />
+            <localParameter id="ka_NaAsO2_arsR_complex_r" value="1" />
+            <localParameter id="nc_NaAsO2_arsR_complex_a" value="2" />
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" id="Production_PlacIQ" reversible="false" sboTerm="SBO:0000589">
+        <listOfProducts>
+          <speciesReference constant="true" species="arsR_Protein" stoichiometry="10" />
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference sboTerm="SBO:0000598" species="PlacIQ" />
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide />
+              <apply>
+                <times />
+                <apply>
+                  <times />
+                  <apply>
+                    <times />
+                    <ci>PlacIQ</ci>
+                    <ci>ko</ci>
+                  </apply>
+                  <apply>
+                    <divide />
+                    <ci>ko_f</ci>
+                    <ci>ko_r</ci>
+                  </apply>
+                </apply>
+                <ci>nr</ci>
+              </apply>
+              <apply>
+                <plus />
+                <cn type="integer">1</cn>
+                <apply>
+                  <times />
+                  <apply>
+                    <divide />
+                    <ci>ko_f</ci>
+                    <ci>ko_r</ci>
+                  </apply>
+                  <ci>nr</ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="ko" value="0.05" />
+            <localParameter id="ko_f" value="0.033" />
+            <localParameter id="ko_r" value="1" />
+            <localParameter id="nr" value="30" />
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Complex_NaAsO2_arsR_complex" reversible="true" sboTerm="SBO:0000177">
+        <listOfReactants>
+          <speciesReference constant="true" species="NaAsO2" stoichiometry="1" />
+          <speciesReference constant="true" species="arsR_Protein" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="NaAsO2_arsR_complex" stoichiometry="1" />
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus />
+              <apply>
+                <times />
+                <apply>
+                  <times />
+                  <ci>kc_f</ci>
+                  <apply>
+                    <power />
+                    <ci>NaAsO2</ci>
+                    <ci>nc_NaAsO2</ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <power />
+                  <ci>arsR_Protein</ci>
+                  <ci>nc_arsR_Protein</ci>
+                </apply>
+              </apply>
+              <apply>
+                <times />
+                <ci>kc_r</ci>
+                <ci>NaAsO2_arsR_complex</ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="nc_NaAsO2" value="2" />
+            <localParameter id="nc_arsR_Protein" value="2" />
+            <localParameter id="kc_f" value="0.05" />
+            <localParameter id="kc_r" value="1" />
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <listOfEvents>
+      <event id="HIGH_Ars" useValuesFromTriggerTime="false">
+        <trigger initialValue="false" persistent="false">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <true />
+          </math>
+        </trigger>
+        <delay>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer">2000</cn>
+          </math>
+        </delay>
+        <listOfEventAssignments>
+          <eventAssignment variable="NaAsO2">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer">1000</cn>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  </model>
+</sbml>

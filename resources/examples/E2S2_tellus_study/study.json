@@ -1,0 +1,15 @@
+{
+  "collectionUri": "https://synbiohub.org/user/Gon/E2S2_tellus_study/E2S2_tellus_study_collection/1",
+  "id": "E2S2_tellus_study",
+  "version": "1",
+  "name": "E2S2_tellus_study",
+  "description": "E2S2_tellus_study",
+  "citations": [],
+  "registryURL": "https://synbiohub.org",
+  "registryAPI": "https://api.synbiohub.org",
+  "registryPrefix": "https://synbiohub.org",
+  "FJid": null,
+  "registryURLFJ": null,
+  "registryAPIFJ": null,
+  "registryPrefixFJ": null
+}

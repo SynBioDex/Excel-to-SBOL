@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ns0="https://seqimprove.org/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#">
+  <sbol:ComponentDefinition rdf:about="https://seqimprove.org/pTTP27/1">
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://seqimprove.org/pTTP27/Bba_B0015_anno_1/1">
+        <dcterms:title>Bba_B0015</dcterms:title>
+        <sbol:component rdf:resource="https://seqimprove.org/pTTP27/Bba_B0015_comp_1/1" />
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_B0015_anno_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_B0015_anno_1" />
+        <sbol:location>
+          <sbol:Range rdf:about="https://seqimprove.org/pTTP27/Bba_B0015_anno_1/Bba_B0015_anno_1_loc/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>Bba_B0015_anno_1_loc</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_B0015_anno_1/Bba_B0015_anno_1_loc" />
+            <sbol:end>1059</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline" />
+            <sbol:start>931</sbol:start>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://seqimprove.org/pTTP27/riboJ_anno_1/1">
+        <dcterms:title>riboJ</dcterms:title>
+        <sbol:component rdf:resource="https://seqimprove.org/pTTP27/riboJ_comp_1/1" />
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>riboJ_anno_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/riboJ_anno_1" />
+        <dcterms:description>Ribozyme-based insulator. Insulation in E.coli,  P. putida and B.subtilis</dcterms:description>
+        <sbol:location>
+          <sbol:Range rdf:about="https://seqimprove.org/pTTP27/riboJ_anno_1/riboJ_anno_1_loc/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>riboJ_anno_1_loc</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/riboJ_anno_1/riboJ_anno_1_loc" />
+            <sbol:end>118</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline" />
+            <sbol:start>44</sbol:start>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://seqimprove.org/pTTP27/BCD2_anno_1/1">
+        <dcterms:title>BCD2</dcterms:title>
+        <sbol:component rdf:resource="https://seqimprove.org/pTTP27/BCD2_comp_1/1" />
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>BCD2_anno_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/BCD2_anno_1" />
+        <dcterms:description>Bicistronic RBS</dcterms:description>
+        <sbol:location>
+          <sbol:Range rdf:about="https://seqimprove.org/pTTP27/BCD2_anno_1/BCD2_anno_1_loc/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>BCD2_anno_1_loc</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/BCD2_anno_1/BCD2_anno_1_loc" />
+            <sbol:end>202</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline" />
+            <sbol:start>119</sbol:start>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://seqimprove.org/pTTP27/Bba_J23106_anno_1/1">
+        <dcterms:title>Bba_J23106</dcterms:title>
+        <sbol:component rdf:resource="https://seqimprove.org/pTTP27/Bba_J23106_comp_1/1" />
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_J23106_anno_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_J23106_anno_1" />
+        <dcterms:description>Constitutive promoter. From Anderson promoter collection, suitable for e. coli.</dcterms:description>
+        <sbol:location>
+          <sbol:Range rdf:about="https://seqimprove.org/pTTP27/Bba_J23106_anno_1/Bba_J23106_anno_1_loc/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>Bba_J23106_anno_1_loc</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_J23106_anno_1/Bba_J23106_anno_1_loc" />
+            <sbol:end>39</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline" />
+            <sbol:start>5</sbol:start>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <sbol:sequenceAnnotation>
+      <sbol:SequenceAnnotation rdf:about="https://seqimprove.org/pTTP27/Bba_E0040m_anno_1/1">
+        <dcterms:title>Bba_E0040m</dcterms:title>
+        <sbol:component rdf:resource="https://seqimprove.org/pTTP27/Bba_E0040m_comp_1/1" />
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_E0040m_anno_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_E0040m_anno_1" />
+        <dcterms:description>GFP. Bba_E0040 modified and included in CIDAR kit.</dcterms:description>
+        <sbol:location>
+          <sbol:Range rdf:about="https://seqimprove.org/pTTP27/Bba_E0040m_anno_1/Bba_E0040m_anno_1_loc/1">
+            <sbol:version>1</sbol:version>
+            <sbol:displayId>Bba_E0040m_anno_1_loc</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_E0040m_anno_1/Bba_E0040m_anno_1_loc" />
+            <sbol:end>926</sbol:end>
+            <sbol:orientation rdf:resource="http://sbols.org/v2#inline" />
+            <sbol:start>207</sbol:start>
+          </sbol:Range>
+        </sbol:location>
+      </sbol:SequenceAnnotation>
+    </sbol:sequenceAnnotation>
+    <dcterms:title>pTTP27</dcterms:title>
+    <sbol:component>
+      <sbol:Component rdf:about="https://seqimprove.org/pTTP27/Bba_B0015_comp_1/1">
+        <dcterms:title>Bba_B0015</dcterms:title>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_B0015_comp_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_B0015_comp_1" />
+        <sbol:definition rdf:resource="https://synbiohub.org/user/Gon/E2S2_tellus_study/Bba_B0015/1" />
+        <sbol:access rdf:resource="http://sbols.org/v2#public" />
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="https://seqimprove.org/pTTP27/Bba_J23106_comp_1/1">
+        <dcterms:title>Bba_J23106</dcterms:title>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_J23106_comp_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_J23106_comp_1" />
+        <sbol:definition rdf:resource="https://synbiohub.org/user/Gon/E2S2_tellus_study/Bba_J23106/1" />
+        <sbol:access rdf:resource="http://sbols.org/v2#public" />
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="https://seqimprove.org/pTTP27/Bba_E0040m_comp_1/1">
+        <dcterms:title>Bba_E0040m</dcterms:title>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>Bba_E0040m_comp_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/Bba_E0040m_comp_1" />
+        <sbol:definition rdf:resource="https://synbiohub.org/user/Gon/E2S2_tellus_study/Bba_E0040m/1" />
+        <sbol:access rdf:resource="http://sbols.org/v2#public" />
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="https://seqimprove.org/pTTP27/riboJ_comp_1/1">
+        <dcterms:title>riboJ</dcterms:title>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>riboJ_comp_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/riboJ_comp_1" />
+        <sbol:definition rdf:resource="https://synbiohub.org/user/Gon/E2S2_tellus_study/riboJ/1" />
+        <sbol:access rdf:resource="http://sbols.org/v2#public" />
+      </sbol:Component>
+    </sbol:component>
+    <sbol:component>
+      <sbol:Component rdf:about="https://seqimprove.org/pTTP27/BCD2_comp_1/1">
+        <dcterms:title>BCD2</dcterms:title>
+        <sbol:version>1</sbol:version>
+        <sbol:displayId>BCD2_comp_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27/BCD2_comp_1" />
+        <sbol:definition rdf:resource="https://synbiohub.org/user/Gon/E2S2_tellus_study/BCD2/1" />
+        <sbol:access rdf:resource="http://sbols.org/v2#public" />
+      </sbol:Component>
+    </sbol:component>
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>pTTP27</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27" />
+    <ns0:richDescription>Expresses GFP under the control of J23106 and RiboJ-BCD2
+Addgene
+pBBR1_DVK_AE(J23106-RiboJ-BCD2-E0040m-B0015)
+(Plasmid #197673)</ns0:richDescription>
+    <sbol:role rdf:resource="http://identifiers.org/so/SO:0000637" />
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion" />
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988" />
+    <dcterms:description>Expresses GFP under the control of J23106 and RiboJ-BCD2
+Addgene
+pBBR1_DVK_AE(J23106-RiboJ-BCD2-E0040m-B0015)
+(Plasmid #197673)</dcterms:description>
+    <sbol:sequence rdf:resource="https://seqimprove.org/pTTP27_Sequence/1" />
+  </sbol:ComponentDefinition>
+  <sbol:Sequence rdf:about="https://seqimprove.org/pTTP27_Sequence/1">
+    <sbol:version>1</sbol:version>
+    <sbol:displayId>pTTP27</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://seqimprove.org/pTTP27_Sequence" />
+    <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html" />
+    <sbol:elements>ggagtttacggctagctcagtcctaggtatagtgctagctactagctgtcaccggatgtgctttccggtctgatgagtccgtgaggacgaaacagcctctacaaataattttgtttaagggcccaagttcacttaaaaaggagatcaacaatgaaagcaattttcgtactgaaacatcttaatcatgctaaggaggttttctaatgatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagatcacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataaaggtccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatagcttatgtcttcagcagtaggacaaatccgccgccctagacagctgggcgcgccccccctacgggcttgctctccgggcttcgccctgcgcggtcgctgcgctcccttgccagcccgtggatatgtggacgatggccgcgagcggccaccggctggctcgcttcgctcggcccgtggacaaccctgctggacaagctgatggacaggctgcgcctgcccacgagcttgaccacagggattgcccaccggctacccagccttcgaccacatacccaccggctccaactgcgcggcctgcggccttgccccatcaatttttttaattttctctggggaaaagcctccggcctgcggcctgcgcgcttcgcttgccggttggacaccaagtggaaggcgggtcaaggctcgcgcagcgaccgcgcagcggcttggccttgacgcgcctggaacgacccaagcctatgcgagtgggggcagtcgaagggcgaagcccgcccgcctgccccccgagcctcacggcggcgagtgcgggggttccaagggggcagcgccaccttgggcaaggccgaaggccgcgcagtcgatcaacaagccccggaggggccactttttgccggagggggagccgcgccgaaggcgtgggggaaccccgcaggggtgcccttctttgggcaccaaagaactagatatagggcgaaatgcgaaagacttaaaaatcaacaacttaaaaaaggggggtacgcaacagctcattgcggcaccccccgcaatagctcattgcgtaggttaaagaaaatctgtaattgactgccacttttacgcaacgcataattgttgtcgcgctgccgaaaagttgcagctgattgcgcatggtgccgcaaccgtgcggcacccctaccgcatggagataagcatggccacgcagtccagagaaatcggcattcaagccaagaacaagcccggtcactgggtgcaaacggaacgcaaagcgcatgaggcgtgggccgggcttattgcgaggaaacccacggcggcaatgctgctgcatcacctcgtggcgcagatgggccaccagaacgccgtggtggtcagccagaaaacactttccaagctcatcggacgttctttgcggacggtccaatacgcagtcaaggacttggtggccgagcgctggatctccgtcgtgaagctcaacggccccggcaccgtgtcggcctacgtggtcaatgaccgcgtggcgtggggccagccccgcgaccagttgcgcctgtcggtgttcagtgccgccgtggtggttgatcacgacgaccaggacgaatcgctgttggggcatggcgacctgcgccgcatcccgaccctgtatccgggcgagcagcaactaccgaccggccccggcgaggagccgcccagccagcccggcattccgggcatggaaccagacctgccagccttgaccgaaacggaggaatgggaacggcgcgggcagcagcgcctgccgatgcccgatgagccgtgttttctggacgatggcgagccgttggagccgccgacacgggtaacgctgccgcgccggtagggccggcctacggccagcctcgcagagcaggattcccgttgagcaccgccaggtgcgaataagggacagtgaagaaggaacacccgctcgcgggtgggcctacttcacctatcctgcccttgtgtctcaaaatctctgatgtacattgcacaagataaaaatatatcatcatgaacaataaaactgtctgcttacataaacagtaatacaaggggtgttatgagccatattcaacgggaaacgtcttgctccaggccgcgattaaattccaacatggatgctgatttatatgggtataaatgggctcgcgataatgtcgggcaatcaggtgcgacaatctatcgattgtatgggaagcccgatgcgccagagttgtttctgaaacatggcaaaggtagcgttgccaatgatgttacagatgagatggtcagactaaactggctgacggaatttatgcctcttccgaccatcaagcattttatccgtactcctgatgatgcatggttactcaccactgcgatccccgggaaaacagcattccaggtattagaagaatatcctgattcaggtgaaaatattgttgatgcgctggcagtgttcctgcgccggttgcattcgattcctgtttgtaattgtccttttaacagcgatcgcgtatttcgtctcgctcaggcgcaatcacgaatgaataacggtttggttgatgcgagtgattttgatgacgagcgtaatggctggcctgttgaacaagtctggaaagaaatgcataagcttttgccattctcaccggattcagtcgtcactcatggtgatttctcacttgataaccttatttttgacgaggggaaattaataggttgtattgatgttggacgagtcggaatcgcagaccgataccaggatcttgccatcctatggaactgcctcggtgagttttctccttcattacagaaacggctttttcaaaaatatggtattgataatcctgatatgaataaattgcagtttcatttgatgctcgatgagtttttctaaggtaactgtcagaccaagtttactcatatatactttagattgatttttcgttccactgagcgtcagaccccagaactctgtcagaccgagtggaagacat</sbol:elements>
+  </sbol:Sequence>
+</rdf:RDF>
